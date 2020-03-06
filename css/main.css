@@ -1,0 +1,239 @@
+@font-face {
+	font-family: "Montserrat";
+	src: url("/fonts/Montserrat-Regular/Montserrat-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/Montserrat-Regular/Montserrat-Regular.woff") format("woff"), url("/fonts/Montserrat-Regular/Montserrat-Regular.ttf") format("truetype");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Bold/Montserrat-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/Montserrat-Bold/Montserrat-Bold.woff") format("woff"), url("/fonts/Montserrat-Bold/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+html, body {
+	overflow-x: hidden;
+}
+
+body {
+	position: relative;
+	min-width: 320px;
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	color: #fff;
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+img {
+	border-style: none;
+}
+
+section {
+	position: relative;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+p {
+	margin: 0;
+}
+
+.main {
+	display: block;
+	width: 100vw;
+	min-height: 100vh;
+	background-color: #000;
+}
+
+.main__logo {
+	position: fixed;
+	z-index: 5;
+	top: 3.43vh;
+	left: 50px;
+	display: block;
+	width: 101px;
+	height: 44px;
+	cursor: pointer;
+	outline: none !important;
+}
+
+.main__logo img, .main__logo svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.main__burder {
+	display: none;
+}
+
+.first {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	width: 100%;
+	height: 100vh;
+	padding-right: 21.25vw;
+	padding-left: 8.85vw;
+}
+
+.first__slogan {
+	position: relative;
+	display: block;
+	width: 35.83vw;
+}
+
+.first__slogan::before {
+	content: '';
+	float: left;
+	padding-bottom: 29.06977%;
+}
+
+.first__slogan::after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.first__slogan img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.first__btn-video {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	outline: none !important;
+}
+
+.first__btn-video img, .first__btn-video svg {
+	display: block;
+	width: 130px;
+	height: 130px;
+	margin-right: 40px;
+}
+
+.main-menu__nav, .main-menu__soc, .main-menu__lang {
+	position: fixed;
+	z-index: 5;
+	display: block;
+}
+
+.main-menu__nav {
+	top: 3.43vh;
+	right: 50px;
+}
+
+.main-menu__lang {
+	right: 50px;
+	bottom: 50px;
+	padding: 0;
+	background-color: transparent;
+	font-family: 'Mosterrat', sans-serif;
+	font-size: 14px;
+	line-height: 14px;
+	text-transform: uppercase;
+	color: #fff;
+	outline: none !important;
+	border: none;
+}
+
+.main-menu__soc {
+	bottom: 50px;
+	left: 50px;
+}
+
+.list {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.menu-nav__item {
+	display: block;
+	margin-right: 60px;
+	line-height: 1;
+}
+
+.menu-nav__item:last-child {
+	margin-right: 0;
+}
+
+.menu-nav__item a {
+	display: inline-block;
+	font-family: 'Mosterrat', sans-serif;
+	font-size: 14px;
+	line-height: 14px;
+	text-transform: uppercase;
+	color: #fff;
+	outline: none !important;
+}
+
+.soc-list__item {
+	display: block;
+	width: 20px;
+	height: 20px;
+	margin-right: 32px;
+}
+
+.soc-list__item:last-child {
+	margin-right: 0;
+}
+
+.soc-list__item a {
+	display: inline-block;
+}
+
+.soc-list__item a img, .soc-list__item a svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.btn-burger {
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	outline: none !important;
+	cursor: pointer;
+}

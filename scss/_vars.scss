@@ -1,0 +1,46 @@
+// Общие настройки
+$font-formats: ("eot", "woff", "ttf"); // Доступны в snippets - eot, woff2, woff, ttf, svg
+$url-img: "/img"; // Путь к изображениям
+$url-fonts: "/fonts"; // Путь к шрифтам
+
+// Переменные цветов
+$ac: #ee0e33;
+$ac2: #cc1535;
+
+$xs: 767.98px;
+$sm: 991.98px;
+$md: 1267.98px;
+
+// Настройки брэкпоинтов
+$breakpoints: (
+	"xs": 0,
+	"sm": 768px,
+	"md": 992px,
+	"lg": 1268px
+) !default;
+
+// Настройки контейнера
+$max-widths: (
+	"xs": 100%,
+	"sm": 586px,
+	"md": 960px,
+	"lg": 1226px
+) !default;
+
+// Переопределение Bootstrap переменных из "bootstrap/_variables.scss"
+$grid-gutter-width: 16px; // Отступ между колонками ( сумма падингов одной колонки )
+$grid-columns: 12; // Количество колонок
+
+// Переопределение Bootstrap брэкпоинтов
+$grid-breakpoints: (
+	"xs": map-get($breakpoints, "xs"),
+	"sm": map-get($breakpoints, "sm"),
+	"md": map-get($breakpoints, "md"),
+	"lg": map-get($breakpoints, "lg")
+);
+// Переопределение Bootstrap контейнера
+$container-max-widths: (
+	"sm": map-get($max-widths, "sm"),
+	"md": map-get($max-widths, "md"),
+	"lg": map-get($max-widths, "lg")
+);

@@ -1,0 +1,67 @@
+.main {
+	display: block;
+	width: 100vw;
+	min-height: 100vh;
+	background-color: #000;
+	&__logo {
+		position: fixed;
+		z-index: 5;
+		top: 3.43vh;
+		left: 50px;
+		display: block;
+		width: 101px;
+		height: 44px;
+		cursor: pointer;
+		outline: none !important;
+		img, svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__burder {
+		display: none;
+	}
+}
+
+.first {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100vh;
+	padding-right: 21.25vw;
+	padding-left: 8.85vw;
+	&__slogan {
+		position: relative;
+		display: block;
+		width: 35.83vw;
+		@include aspect-ratio(86, 25);
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__btn-video {
+		display: flex;
+		align-items: center;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+		outline: none !important;
+		img, svg {
+			display: block;
+			width: 130px;
+			height: 130px;
+			margin-right: 40px;
+		}
+		span {
+			
+		}
+	}
+}
