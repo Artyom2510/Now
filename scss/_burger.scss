@@ -1,11 +1,37 @@
 .btn-burger {
   position: relative;
-	display: block;
-	width: 30px;
+	width: 34px;
 	height: 30px;
 	padding: 0;
 	border: none;
 	background-color: transparent;
 	outline: none !important;
 	cursor: pointer;
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		left: 3px;
+		display: block;
+		width: 28px;
+		height: 3px;
+		background-color: #fff;
+	}
+	&::before {
+		top: 9px;
+	}
+	&::after {
+		bottom: 9px;
+	}
+	&_close {
+		&::before {
+			top: 14px;
+			transform: rotate(-45deg);
+		}
+		&::after {
+			bottom: 14px;
+			transform: rotate(45deg);
+		}
+	}
 }

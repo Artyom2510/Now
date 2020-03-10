@@ -18,9 +18,98 @@
 			width: 100%;
 			height: 100%;
 		}
+		span {
+			position: absolute;
+			display: block;
+			width: 7px;
+			height: 7px;
+			left: 30px;
+			background-color: rgba(#000, 0);
+			&:first-child {
+				top: 8px;
+			}
+			&:nth-child(2) {
+				top: 24px;
+			}
+		}
+		&:hover {
+			span {
+				animation: fliker .8s ease infinite;
+			}
+		}
 	}
 	&__burder {
 		display: none;
+	}
+	&__next {
+		position: fixed;
+		z-index: 5;
+		bottom: 50px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: block;
+		width: 22px;
+		height: 32px;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		outline: none !important;
+		cursor: pointer;
+		img, svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+@keyframes fliker {
+	0% {
+		background-color: rgba(#000, 0);
+	}
+	100% {
+		background-color: rgba(#000, 1);
+	}
+}
+
+@media (max-width: $sm) {
+	.main {
+		&__next {
+			bottom: 40px;
+		}
+	}
+}
+
+@media (max-width: $xs) {
+	.main {
+		&__logo {
+			top: 24px;
+			left: 24px;
+			width: 72px;
+			height: 32px;
+		}
+		&__burder {
+			position: fixed;
+			z-index: 5;
+			top: 24px;
+			right: 24px;
+			display: block;
+			line-height: 1;
+		}
+		&__menu {
+			position: absolute;
+			z-index: 6;
+			top: 0;
+			right: 0;
+			transform: translateX(100%);
+			transition: transform .3s ease;
+			&.transform {
+				transform: translateX(0);
+			}
+		}
+		&__next {
+			bottom: 24px;
+		}
 	}
 }
 
@@ -61,7 +150,57 @@
 			margin-right: 40px;
 		}
 		span {
-			
+			display: block;
+			font-family: "Montserrat", sans-serif;
+			font-size: 14px;
+			line-height: 1;
+			color: $ac;
+			font-weight: 400;
+		}
+	}
+}
+
+@media (max-width: $md) {
+	.first {
+		padding-left: 7vw;
+		padding-right: 12.11vw;
+		&__slogan {
+			width: 42.66vw;
+			@include aspect-ratio(91, 25);
+		}
+	}
+}
+
+
+@media (max-width: $sm) {
+	.first {
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		padding-left: 11.72vw;
+		padding-right: 17.19vw;
+		&__slogan {
+			width: 71.09vw;
+			margin-bottom: 90px;
+		}
+	}
+}
+
+@media (max-width: $xs) {
+	.first {
+		padding-left: 24px;
+		padding-right: 24px;
+		&__slogan {
+			width: 100%;
+			margin-bottom: 40px;
+			@include aspect-ratio(34, 11);
+		}
+		&__btn-video {
+			img, svg {
+				width: 90px;
+				height: 90px;
+				margin-right: 24px;
+			}
 		}
 	}
 }

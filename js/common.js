@@ -48,7 +48,7 @@ $(function () {
 
 	imgSvg();
 
-	$('.main').on("DOMNodeInserted", function (e) {
+	$('.main').on("DOMNodeInserted", function() {
 		imgSvg();
 	});
 
@@ -60,6 +60,14 @@ $(function () {
 
 	$('.js-btn-close').on('click', function() {
 		menu.removeClass('transform');
+	});
+
+	$('.js-tgl-video').on('click', function() {
+		console.log('clik');
+	});
+
+	$('.js-next-sect').on('click', function() {
+		console.log('clik');
 	});
 	
 });

@@ -20,22 +20,32 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/main.css">
 
+	<script src="js/libs/jquery-3.2.1.min.js"></script>
+	<script src="js/libs/jquery.smoothscroll.js"></script>
+	<script src="js/libs/jquery.switchPopup.js"></script>
+	<script src="js/common.js"></script>
+
 </head>
 
 <body>
 	<main class="main">
 		<a href="index-home.html" class="main__logo">
-			<img src="img/icon/logo.svg" alt="">
+			<span></span>
+			<span></span>
+			<img src="img/icon/logo.svg" alt="" class="img-svg">
 		</a>
 		<div class="main__burder">
 			<button class="btn-burger js-btn-open"></button>
 		</div>
+		<button class="main__next js-next-sect">
+			<img src="img/icon/arrow.svg" alt="">
+		</button>
 		<div class="main__menu main-menu js-menu">
 			<div class="main__burder">
-				<button class="btn-burger js-btn-close"></button>
+				<button class="btn-burger btn-burger_close js-btn-close"></button>
 			</div>
 			<div class="main-menu__nav">
-				<ul class="menu-nav list">
+				<ul class="menu-nav list list_column">
 					<li class="menu-nav__item">
 						<a href="agency.html">агенство</a>
 					</li>
@@ -80,7 +90,7 @@
 			<div class="first__slogan">
 				<img src="img/icon/its-now.svg" alt="">
 			</div>
-			<button class="first__btn-video">
+			<button class="first__btn-video js-tgl-video">
 				<img src="img/icon/play.svg" alt="">
 				<span>Смотреть шоурил</span>
 			</button>
