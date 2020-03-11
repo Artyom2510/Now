@@ -373,10 +373,19 @@
 @media (max-width: $xs) {
 	.third {
 		padding: 150px 24px 0;
+		justify-content: flex-start;
 		&__wrap-img {
 			width: 100%;
 			@include aspect-ratio(258, 66);
 			margin-bottom: 45px;
+		}
+		&__contact-us {
+			margin-bottom: 56px;
+		}
+		&__decorate-img {
+			width: 100%;
+			margin-left: 0;
+			@include aspect-ratio(17, 20);
 		}
 	}
 }
@@ -421,5 +430,13 @@
 @media (max-width: $xs) {
 	.info {
 		flex-wrap: wrap;
+		&__email {
+			margin-bottom: 32px;
+		}
+		&__contacts {
+			p {
+				max-width: 218px;
+			}
+		}
 	}
 }

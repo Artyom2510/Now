@@ -57,10 +57,12 @@ $(function () {
 	
 	$('.js-btn-open').on('click', function() {
 		menu.addClass('transform');
+		$('html').css('overflow', 'hidden');
 	});
 
 	$('.js-btn-close').on('click', function() {
 		menu.removeClass('transform');
+		$('html').css('overflow', 'auto');
 	});
 
 	// Видео на главной
@@ -134,22 +136,24 @@ $(function () {
 		};
 	}
 
-	$('.js-logo').on({
-		'mouseenter': function() {
-			$(this).find('#now').css('opacity', '0');
-			$(this).children('svg:last-child').css('opacity', '1');
-			var now = new Date();
-			var hours = now.getHours();
-			var minutes = now.getMinutes();
-			addZero(hours);
-			addZero(minutes);
-		},
-		'mouseleave': function() {
-			$(this).find('#now').css('opacity', '1');
-			$(this).children('svg:last-child').css('opacity', '0');
-			$(this).find('svg:last-child path').attr('fill', '#ee0e33');
-			cnt = 0;
-		}
-	});
+	if ($(window).width > 1024) {
+		$('.js-logo').on({
+			'mouseenter': function() {
+				$(this).find('#now').css('opacity', '0');
+				$(this).children('svg:last-child').css('opacity', '1');
+				var now = new Date();
+				var hours = now.getHours();
+				var minutes = now.getMinutes();
+				addZero(hours);
+				addZero(minutes);
+			},
+			'mouseleave': function() {
+				$(this).find('#now').css('opacity', '1');
+				$(this).children('svg:last-child').css('opacity', '0');
+				$(this).find('svg:last-child path').attr('fill', '#ee0e33');
+				cnt = 0;
+			}
+		});
+	}
 
 });

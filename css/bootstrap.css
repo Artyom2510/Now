@@ -341,9 +341,9 @@ template {
 	}
 }
 
-@media (min-width: 1268px) {
+@media (min-width: 1698px) {
 	.container {
-		max-width: 1226px;
+		max-width: 1600px;
 	}
 }
 
@@ -367,9 +367,9 @@ template {
 	}
 }
 
-@media (min-width: 1268px) {
+@media (min-width: 1698px) {
 	.container, .container-sm, .container-md, .container-lg {
-		max-width: 1226px;
+		max-width: 1600px;
 	}
 }
 
@@ -1358,7 +1358,7 @@ template {
 	}
 }
 
-@media (min-width: 1268px) {
+@media (min-width: 1698px) {
 	.col-lg {
 		-webkit-flex-basis: 0;
 		-ms-flex-preferred-size: 0;
