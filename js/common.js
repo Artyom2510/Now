@@ -52,6 +52,7 @@ $(function () {
 		imgSvg();
 	});
 
+	// Меню
 	var menu = $('.js-menu');
 	
 	$('.js-btn-open').on('click', function() {
@@ -62,12 +63,93 @@ $(function () {
 		menu.removeClass('transform');
 	});
 
+	// Видео на главной
 	$('.js-tgl-video').on('click', function() {
-		console.log('clik');
+		console.log('video');
 	});
 
-	$('.js-next-sect').on('click', function() {
-		console.log('clik');
+	// Скролл
+	function animateSect(sect) {
+		$('html, body').animate({
+			scrollTop: sect.offset().top
+		}, 600);
+	}
+
+	$('.js-first-next').on('click', function() {
+		animateSect($('.js-second'));
 	});
-	
+
+	$('.js-second-next').on('click', function() {
+		animateSect($('.js-third'));
+	});
+
+	// Время при наведении на лого
+	var firstNum, secondNum;
+	var cnt = 0;
+	function addZero(num) {
+		num += "".split('');
+		if(num.length > 1) {
+			firstNum = num[0];
+			secondNum = num[1];
+		} else {
+			firstNum = "0";
+			secondNum = num;
+		}
+		caseOfNum(firstNum);
+		caseOfNum(secondNum);
+	}
+
+	function caseOfNum(part) {
+		cnt++;
+		switch (part) {
+			case "0":
+				$('#middle' + cnt).attr("fill", "transparent");
+				break;
+			case "1":
+				$('#middle' + cnt + ', #left-top' + cnt + ', #left-bottom' + cnt + ', #top' + cnt + ', #bottom' + cnt).attr("fill", "transparent");
+				break;
+			case "2":
+				$('#left-top' + cnt + ', #right-bottom' + cnt).attr("fill", "transparent");
+				break;
+			case "3":
+				$('#left-top' + cnt + ', #left-bottom' + cnt).attr("fill", "transparent");
+				break;
+			case "4":
+				$('#top' + cnt + ', #left-bottom' + cnt + ', #bottom' + cnt).attr("fill", "transparent");
+				break;
+			case "5":
+				$('#right-top' + cnt + ', #left-bottom' + cnt).attr("fill", "transparent");
+				break;
+			case "6":
+				$('#right-top' + cnt).attr("fill", "transparent");
+				break;
+			case "7":
+				$('#middle' + cnt + ', #left-top' + cnt + ', #left-bottom' + cnt + ', #bottom' + cnt).attr("fill", "transparent");
+				break;
+			case "8":
+				break;
+			case "9":
+				$('#left-bottom' + cnt).attr("fill", "transparent");
+				break;
+		};
+	}
+
+	$('.js-logo').on({
+		'mouseenter': function() {
+			$(this).find('#now').css('opacity', '0');
+			$(this).children('svg:last-child').css('opacity', '1');
+			var now = new Date();
+			var hours = now.getHours();
+			var minutes = now.getMinutes();
+			addZero(hours);
+			addZero(minutes);
+		},
+		'mouseleave': function() {
+			$(this).find('#now').css('opacity', '1');
+			$(this).children('svg:last-child').css('opacity', '0');
+			$(this).find('svg:last-child path').attr('fill', '#ee0e33');
+			cnt = 0;
+		}
+	});
+
 });

@@ -13,9 +13,9 @@
 	<meta property="og:image" content="path/to/image.jpg">
 	
 	<link rel="shortcut icon" href="img/favicon/favicon.png" type="image/png">
-	<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
 
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -29,64 +29,56 @@
 
 <body>
 	<main class="main">
-		<a href="index-home.html" class="main__logo">
-			<span></span>
-			<span></span>
+		<a href="/" class="main__logo js-logo">
 			<img src="img/icon/logo.svg" alt="" class="img-svg">
+			<img src="img/icon/time-logo2.svg" alt="" class="img-svg">
 		</a>
 		<div class="main__burder">
 			<button class="btn-burger js-btn-open"></button>
 		</div>
-		<button class="main__next js-next-sect">
-			<img src="img/icon/arrow.svg" alt="">
-		</button>
 		<div class="main__menu main-menu js-menu">
 			<div class="main__burder">
 				<button class="btn-burger btn-burger_close js-btn-close"></button>
 			</div>
-			<div class="main-menu__nav">
-				<ul class="menu-nav list list_column">
-					<li class="menu-nav__item">
-						<a href="agency.html">агенство</a>
-					</li>
-					<li class="menu-nav__item">
-						<a href="cases.html">кейсы</a>
-					</li>
-					<li class="menu-nav__item">
-						<a href="vacancies.html">вакансии</a>
-					</li>
-					<li class="menu-nav__item">
-						<a href="contacts.html">контакты</a>
-					</li>
-				</ul>
-			</div>
+			<ul class="main-menu__nav menu-nav list list_column">
+				<li class="menu-nav__item">
+					<a href="agency.html">агенство</a>
+				</li>
+				<li class="menu-nav__item menu-nav__item_active">
+					<a href="cases.html">кейсы</a>
+				</li>
+				<li class="menu-nav__item">
+					<a href="vacancies.html">вакансии</a>
+				</li>
+				<li class="menu-nav__item">
+					<a href="contacts.html">контакты</a>
+				</li>
+			</ul>
 			<a href="#" class="main-menu__lang">english</a>
-			<div class="main-menu__soc">
-				<ul class="soc-list list">
-					<li class="soc-list__item">
-						<a href="#">
-							<img src="img/icon/soc/facebook.svg" alt="">
-						</a>
-					</li>
-					<li class="soc-list__item">
-						<a href="#">
-							<img src="img/icon/soc/instagram.svg" alt="">
-						</a>
-					</li>
-					<li class="soc-list__item">
-						<a href="#">
-							<img src="img/icon/soc/tiktok.svg" alt="">
-						</a>
-					</li>
-					<li class="soc-list__item">
-						<a href="#">
-							<img src="img/icon/soc/youtube.svg" alt="">
-						</a>
-					</li>
-				</ul>
-			</div>
+			<ul class="main-menu__soc soc-list list">
+				<li class="soc-list__item">
+					<a href="#">
+						<img src="img/icon/soc/facebook.svg" alt="" class="img-svg">
+					</a>
+				</li>
+				<li class="soc-list__item">
+					<a href="#">
+						<img src="img/icon/soc/instagram.svg" alt="" class="img-svg">
+					</a>
+				</li>
+				<li class="soc-list__item">
+					<a href="#">
+						<img src="img/icon/soc/tiktok.svg" alt="" class="img-svg">
+					</a>
+				</li>
+				<li class="soc-list__item">
+					<a href="#">
+						<img src="img/icon/soc/youtube.svg" alt="" class="img-svg">
+					</a>
+				</li>
+			</ul>
 		</div>
-		<section class="first">
+		<section class="first js-first">
 			<div class="first__slogan">
 				<img src="img/icon/its-now.svg" alt="">
 			</div>
@@ -94,8 +86,124 @@
 				<img src="img/icon/play.svg" alt="">
 				<span>Смотреть шоурил</span>
 			</button>
+			<button class="main__next next js-first-next">
+				<img src="img/icon/arrow.svg" alt="" class="img-svg">
+			</button>
+		</section>
+		<section class="second js-second">
+			<ul class="second__tags tags">
+				<li class="tags__item">
+					<a href="#">Тег</a>
+				</li>
+				<li class="tags__item">
+					<a href="#">Мероприятие</a>
+				</li>
+				<li class="tags__item tags__item_active">
+					<a href="#">Событие</a>
+				</li>
+				<li class="tags__item">
+					<a href="#">Ивент</a>
+				</li>
+				<li class="tags__item">
+					<a href="#">Вечеринка</a>
+				</li>
+				<li class="tags__item">
+					<a href="#">Брендинг</a>
+				</li>
+			</ul>
+			<div class="second__cards">
+				<a href="#" class="card">
+					<div class="card__wrap">
+						<img src="img/content/1.png" alt="">
+					</div>
+					<p class="card__text card__text_left">black party</p>
+					<p class="card__text card__text_right">lamoda</p>
+				</a>
+				<a href="#" class="card">
+					<div class="card__wrap">
+						<img src="img/content/1.png" alt="">
+					</div>
+					<p class="card__text card__text_left">"Огни Большой Деревни"</p>
+					<p class="card__text card__text_right">Киностудия «Rock Films»</p>
+				</a>
+				<a href="#" class="card">
+					<div class="card__wrap">
+						<img src="img/content/1.png" alt="">
+					</div>
+					<p class="card__text card__text_left">С НОВЫМ ГОРНЫМ!</p>
+					<p class="card__text card__text_right">emco</p>
+				</a>
+				<a href="#" class="card">
+					<div class="card__wrap">
+						<img src="img/content/1.png" alt="">
+					</div>
+					<p class="card__text card__text_left">С НОВЫМ ГОРНЫМ!</p>
+					<p class="card__text card__text_right">emco</p>
+				</a>
+				<a href="#" class="card">
+					<div class="card__wrap">
+						<img src="img/content/1.png" alt="">
+					</div>
+					<p class="card__text card__text_left"></p>
+					<p class="card__text card__text_right"></p>
+				</a>
+				<a href="#" class="card">
+					<div class="card__wrap">
+						<img src="img/content/1.png" alt="">
+					</div>
+					<p class="card__text card__text_left"></p>
+					<p class="card__text card__text_right"></p>
+				</a>
+				<a href="#" class="card">
+					<div class="card__wrap">
+						<img src="img/content/1.png" alt="">
+					</div>
+					<p class="card__text card__text_left"></p>
+					<p class="card__text card__text_right"></p>
+				</a>
+				<a href="#" class="card">
+					<div class="card__wrap">
+						<img src="img/content/1.png" alt="">
+					</div>
+					<p class="card__text card__text_left"></p>
+					<p class="card__text card__text_right"></p>
+				</a>
+				<a href="#" class="card">
+					<div class="card__wrap">
+						<img src="img/content/1.png" alt="">
+					</div>
+					<p class="card__text card__text_left"></p>
+					<p class="card__text card__text_right"></p>
+				</a>
+				<a href="#" class="card">
+					<div class="card__wrap">
+						<img src="img/content/1.png" alt="">
+					</div>
+					<p class="card__text card__text_left"></p>
+					<p class="card__text card__text_right"></p>
+				</a>
+			</div>
+			<button class="main__next next js-second-next">
+				<img src="img/icon/arrow.svg" alt="" class="img-svg">
+			</button>
+		</section>
+		<section class="third js-third">
+			<div class="third__contact-us">
+				<div class="third__wrap-img">
+					<img src="img/icon/contact-us.svg" alt="">
+				</div>
+				<div class="third__info info">
+					<span class="info__email">hello@now-agency.ru</span>
+					<div class="info__contacts">
+						<p>Россия, Москва, м. Белорусская, ул. Скаковая д.36, 3 этаж, офис 301</p>
+						<span>+7 (495) 604-10-57</span>
+					</div>
+				</div>
+			</div>
+			<div class="third__decorate-img">
+				<img src="img/elvis.png" alt="">
+			</div>
 		</section>
 	</main>
-	<footer class="footer"></footer>
 </body>
 </html>

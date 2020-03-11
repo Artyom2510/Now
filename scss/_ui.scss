@@ -34,3 +34,136 @@ h6, .h6,
 p {
 	margin: 0;
 }
+
+
+
+.main {
+	display: block;
+	width: 100vw;
+	min-height: 100vh;
+	background-color: #000;
+	&__logo {
+		position: fixed;
+		z-index: 5;
+		top: 3.43vh;
+		left: 50px;
+		display: block;
+		width: 101px;
+		height: 44px;
+		cursor: pointer;
+		outline: none !important;
+		img, svg {
+			transition: opacity .8s ease;
+			path {
+				transition: fill .1s ease;
+			}
+			#now {
+				transition: opacity .8s ease;
+			}
+			&:first-child {
+				display: block;
+				width: 100%;
+				height: 100%;
+				opacity: 1;
+				#fliker {
+					animation: fliker 1s linear infinite;
+				}
+			}
+			&:last-child {
+				position: absolute;
+				top: 0;
+				left: -28px;
+				display: block;
+				width: 124px;
+				height: 44px;
+				opacity: 0;
+			}
+		}
+	}
+	&__burder {
+		display: none;
+	}
+	&__next {
+		position: absolute;
+		z-index: 5;
+		bottom: 50px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.next {
+	display: block;
+	width: 22px;
+	height: 32px;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	outline: none !important;
+	cursor: pointer;
+	img, svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+		path {
+			transition: fill .2s ease;
+		}
+	}
+	&:hover, &:focus, &:active {
+		svg {
+			path {
+				fill: $ac;
+			}
+		}
+	}
+}
+
+@keyframes fliker {
+	0% {
+		fill: rgba($ac, 1);
+	}
+	100% {
+		fill: rgba($ac, 0);
+	}
+}
+
+@media (max-width: $sm) {
+	.main {
+		&__next {
+			bottom: 40px;
+		}
+	}
+}
+
+@media (max-width: $xs) {
+	.main {
+		&__logo {
+			top: 24px;
+			left: 24px;
+			width: 72px;
+			height: 32px;
+		}
+		&__burder {
+			position: fixed;
+			z-index: 5;
+			top: 24px;
+			right: 24px;
+			display: block;
+			line-height: 1;
+		}
+		&__menu {
+			position: fixed;
+			z-index: 6;
+			top: 0;
+			right: 0;
+			transform: translateX(100%);
+			transition: transform .3s ease;
+			&.transform {
+				transform: translateX(0);
+			}
+		}
+		&__next {
+			bottom: 24px;
+		}
+	}
+}
