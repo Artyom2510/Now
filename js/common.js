@@ -163,4 +163,15 @@ $(function () {
 		});
 	}
 
+	// Запуск видео по нажатию на нашу кнопку, скрытие постера
+	$('.js-start-video').on('click', function() {
+		var paretn = $(this).parent('.video-full');
+		var iframe = paretn.children('iframe')[0];
+		console.log(iframe)
+		var bg = paretn.children('.video-full__bg');
+		iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+		$(this).hide();
+		bg.hide();
+	});
+
 });

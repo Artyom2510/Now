@@ -345,9 +345,9 @@ template {
 	}
 }
 
-@media (min-width: 1698px) {
+@media (min-width: 1700px) {
 	.container {
-		max-width: 1600px;
+		max-width: 1640px;
 	}
 }
 
@@ -371,9 +371,9 @@ template {
 	}
 }
 
-@media (min-width: 1698px) {
+@media (min-width: 1700px) {
 	.container, .container-sm, .container-md, .container-lg {
-		max-width: 1600px;
+		max-width: 1640px;
 	}
 }
 
@@ -1362,7 +1362,7 @@ template {
 	}
 }
 
-@media (min-width: 1698px) {
+@media (min-width: 1700px) {
 	.col-lg {
 		-webkit-flex-basis: 0;
 		-ms-flex-preferred-size: 0;

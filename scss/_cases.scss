@@ -1,0 +1,35 @@
+.cases-0 {
+	display: block;
+	padding-top: 130px;
+	&__title {
+		display: block;
+		margin-bottom: 40px;
+		text-transform: uppercase;
+	}
+	&__info {
+		margin-bottom: 28px;
+	}
+	&__video {
+		margin-bottom: 28px;
+	}
+}
+
+.cases-0-info {
+	display: flex;
+	&__left {
+		h5 {
+			color: $gray;
+		}
+		display: block;
+		margin-right: 10px;
+	}
+	&__left,
+	&__right {
+		h5 {
+			margin-bottom: 10px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

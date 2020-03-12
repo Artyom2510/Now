@@ -6,6 +6,7 @@ $url-fonts: "/fonts"; // Путь к шрифтам
 // Переменные цветов
 $ac: #ee0e33;
 $ac2: #cc1535;
+$gray: #979797;
 
 $xs: 767.98px;
 $sm: 992px;
@@ -21,7 +22,7 @@ $breakpoints: (
 	"xs": 0,
 	"sm": 768px,
 	"md": 1280px,
-	"lg": 1698px
+	"lg": 1700px
 ) !default;
 
 // Настройки контейнера
@@ -29,7 +30,7 @@ $max-widths: (
 	"xs": 100%,
 	"sm": 668px,
 	"md": 1120px,
-	"lg": 1600px
+	"lg": 1640px
 ) !default;
 
 // Переопределение Bootstrap переменных из "bootstrap/_variables.scss"
