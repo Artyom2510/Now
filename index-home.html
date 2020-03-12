@@ -30,8 +30,8 @@
 <body>
 	<main class="main">
 		<a href="/" class="main__logo js-logo">
-			<img src="img/icon/logo.svg" alt="" class="img-svg">
-			<img src="img/icon/time-logo2.svg" alt="" class="img-svg">
+			<img src="img/icon/ui-icon/logo.svg" alt="" class="img-svg">
+			<img src="img/icon/ui-icon/time-logo.svg" alt="" class="img-svg">
 		</a>
 		<div class="main__burder">
 			<button class="btn-burger js-btn-open"></button>
@@ -87,7 +87,7 @@
 				<span>Смотреть шоурил</span>
 			</button>
 			<button class="main__next next js-first-next">
-				<img src="img/icon/arrow.svg" alt="" class="img-svg">
+				<img src="img/icon/ui-icon/arrow.svg" alt="" class="img-svg">
 			</button>
 		</section>
 		<section class="second js-second">
@@ -184,7 +184,7 @@
 				</a>
 			</div>
 			<button class="main__next next js-second-next">
-				<img src="img/icon/arrow.svg" alt="" class="img-svg">
+				<img src="img/icon/ui-icon/arrow.svg" alt="" class="img-svg">
 			</button>
 		</section>
 		<section class="third js-third">
@@ -205,5 +205,20 @@
 			</div>
 		</section>
 	</main>
+
+	<!-- Попап открывается по клику на "Смотреть шоурил" -->
+	<div class="popup popup-video">
+		<div class="popup__bg js-tgl-video"></div>
+		<button class="popup__close btn-gallary js-tgl-video">
+			<img src="img/icon/ui-icon/close.svg" alt="" class="img-svg">
+		</button>
+		<div class="popup__wrap">
+			<div class="blcok-video">
+				<div class="block-video__wrap js-wrap">
+					<iframe src="https://www.youtube.com/embed/6JmDyQeievA?&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0;enablejsapi=1&mute=1" width="100%" height="420" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" muted autoplay playsinline loop allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

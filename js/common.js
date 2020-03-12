@@ -66,8 +66,15 @@ $(function () {
 	});
 
 	// Видео на главной
-	$('.js-tgl-video').on('click', function() {
-		console.log('video');
+	var popupVideo = $('.popup-video');
+	popupVideo.switchPopup({
+		btnClass: 'js-tgl-video',
+		duration: 300,
+		overflow: true,
+	});
+
+	popupVideo.on('beforeClose', function() {
+		$('.js-wrap iframe')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
 	});
 
 	// Скролл
@@ -136,7 +143,7 @@ $(function () {
 		};
 	}
 
-	if ($(window).width > 1024) {
+	if($(window).width() > 1024) {
 		$('.js-logo').on({
 			'mouseenter': function() {
 				$(this).find('#now').css('opacity', '0');

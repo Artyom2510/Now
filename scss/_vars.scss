@@ -11,24 +11,29 @@ $xs: 767.98px;
 $sm: 992px;
 $md: 1280px;
 
+// Отступ на мобиле
+.col-xs {
+	padding: 0 24px;
+}
+
 // Настройки брэкпоинтов
 $breakpoints: (
 	"xs": 0,
 	"sm": 768px,
-	"md": 992px,
+	"md": 1280px,
 	"lg": 1698px
 ) !default;
 
 // Настройки контейнера
 $max-widths: (
 	"xs": 100%,
-	"sm": 586px,
-	"md": 960px,
+	"sm": 668px,
+	"md": 1120px,
 	"lg": 1600px
 ) !default;
 
 // Переопределение Bootstrap переменных из "bootstrap/_variables.scss"
-$grid-gutter-width: 16px; // Отступ между колонками ( сумма падингов одной колонки )
+$grid-gutter-width: 40px; // Отступ между колонками ( сумма падингов одной колонки )
 $grid-columns: 12; // Количество колонок
 
 // Переопределение Bootstrap брэкпоинтов

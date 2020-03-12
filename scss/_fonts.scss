@@ -13,3 +13,8 @@
 	src: url("#{$url-fonts}/Montserrat-Bold/Montserrat-Bold.eot?#iefix") format("embedded-opentype"), url("#{$url-fonts}/Montserrat-Bold/Montserrat-Bold.woff") format("woff"), url("#{$url-fonts}/Montserrat-Bold/Montserrat-Bold.ttf") format("truetype");
 	font-weight: 700;
 }
+@font-face {
+	font-family: "Montserrat";
+	src: url("#{$url-fonts}/Montserrat-Black/Montserrat-Black.eot?#iefix") format("embedded-opentype"), url("#{$url-fonts}/Montserrat-Black/Montserrat-Black.woff") format("woff"), url("#{$url-fonts}/Montserrat-Black/Montserrat-Black.ttf") format("truetype");
+	font-weight: 900;
+}
