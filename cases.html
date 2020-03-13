@@ -23,132 +23,290 @@
 
 	<script src="js/libs/jquery-3.2.1.min.js"></script>
 	<script src="https://www.youtube.com/iframe_api"></script>
+	<script>
+		function onYouTubeIframeAPIReady() {
+				var players = [];
+				$('.block-video iframe').each( function (i, el) {
+						if (!this.id) { this.id='video-iframe' + i }
+						players.push(new YT.Player(this.id, {
+								events: {
+										'onStateChange': function(event) {
+												if (event.data == YT.PlayerState.PLAYING) {
+														$.each(players, function() {
+																if (this.getIframe().id != event.target.getIframe().id) {
+																		this.pauseVideo();
+																}
+														});
+												}
+										}
+								}
+						}))
+				});
+		}
+	</script>
 	<script src="js/libs/jquery.smoothscroll.js"></script>
 	<script src="js/libs/jquery.switchPopup.js"></script>
 	<script src="js/common.js"></script>
 
 </head>
 
-<body>
-	<main class="main">
-		<a href="/" class="main__logo js-logo">
-			<img src="img/icon/ui-icon/logo.svg" alt="" class="img-svg">
-			<img src="img/icon/ui-icon/time-logo.svg" alt="" class="img-svg">
-		</a>
-		<div class="main__burder">
-			<button class="btn-burger js-btn-open"></button>
-		</div>
-		<div class="main__menu main-menu js-menu">
-			<div class="main__burder">
-				<button class="btn-burger btn-burger_close js-btn-close"></button>
-			</div>
-			<ul class="main-menu__nav menu-nav list list_column">
-				<li class="menu-nav__item">
-					<a href="agency.html">агентство</a>
-				</li>
-				<li class="menu-nav__item menu-nav__item_active">
-					<a href="cases.html">кейсы</a>
-				</li>
-				<li class="menu-nav__item">
-					<a href="vacancies.html">вакансии</a>
-				</li>
-				<li class="menu-nav__item">
-					<a href="contacts.html">контакты</a>
-				</li>
-			</ul>
-			<a href="#" class="main-menu__lang">english</a>
-			<ul class="main-menu__soc soc-list list">
-				<li class="soc-list__item">
-					<a href="#">
-						<img src="img/icon/soc/facebook.svg" alt="" class="img-svg">
-					</a>
-				</li>
-				<li class="soc-list__item">
-					<a href="#">
-						<img src="img/icon/soc/instagram.svg" alt="" class="img-svg">
-					</a>
-				</li>
-				<li class="soc-list__item">
-					<a href="#">
-						<img src="img/icon/soc/tiktok.svg" alt="" class="img-svg">
-					</a>
-				</li>
-				<li class="soc-list__item">
-					<a href="#">
-						<img src="img/icon/soc/youtube.svg" alt="" class="img-svg">
-					</a>
-				</li>
-			</ul>
-		</div>
-		
-	<section class="cases-0">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<h1 class="cases-0__title">Party Like A Russian</h1>
+	<div class="root">
+		<body>
+			<main class="main">
+				<div class="main__top-bg"></div>
+				<a href="/" class="main__logo js-logo">
+					<img src="img/icon/ui-icon/logo.svg" alt="" class="img-svg">
+					<img src="img/icon/ui-icon/time-logo.svg" alt="" class="img-svg">
+				</a>
+				<div class="main__burder">
+					<button class="btn-burger js-btn-open"></button>
 				</div>
-				<div class="col-lg-4">
-					<div class="cases-0__info cases-0-info">
-						<div class="cases-0-info__left">
-							<h5>Клиент:</h5>
-							<h5>Категория:</h5>
-						</div>
-						<div class="cases-0-info__right">
-							<h5>Lamoda</h5>
-							<h5>корпоративный ивент</h5>
-						</div>
+				<div class="main__menu main-menu js-menu">
+					<div class="main__burder">
+						<button class="btn-burger btn-burger_close js-btn-close"></button>
 					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="cases-0__info cases-0-info">
-						<div class="cases-0-info__left">
-							<h5>Дата проведения:</h5>
-							<h5>Место:</h5>
-						</div>
-						<div class="cases-0-info__right">
-							<h5>20 декабря 2016</h5>
-							<h5>Дом Союзов, Москва</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="cases-0__info cases-0-info">
-						<div class="cases-0-info__left">
-							<h5>Гостей:</h5>
-						</div>
-						<div class="cases-0-info__right">
-							<h5>240</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-12">
-					<div class="cases-0__video block-video block-video_large">
-						<iframe src="https://www.youtube.com/embed/xp0pf-7_SO8?&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0;enablejsapi=1&amp;mute=1&amp;autohide=1" width="100%" height="420" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" muted autoplay playsinline loop allowfullscreen></iframe>
-						<div class="block-video__bg" style="background-image: url(https://img.youtube.com/vi/xp0pf-7_SO8/maxresdefault.jpg);"></div>
-						<button class="block-video__btn js-start-video">
-							<img src="img/icon/play.svg" alt="" class="img-svg">
-							<span>Видео кейса</span>
-						</button>
-					</div>
-					<ul class="cases-0__tags tags">
-						<li class="tags__item">
-							<a href="#">Мероприятие</a>
+					<ul class="main-menu__nav menu-nav list list_column">
+						<li class="menu-nav__item">
+							<a href="agency.html">агентство</a>
 						</li>
-						<li class="tags__item tags__item_active">
-							<a href="#">Событие</a>
+						<li class="menu-nav__item menu-nav__item_active">
+							<a href="cases.html">кейсы</a>
 						</li>
-						<li class="tags__item">
-							<a href="#">Ивент</a>
+						<li class="menu-nav__item">
+							<a href="vacancies.html">вакансии</a>
 						</li>
-						<li class="tags__item">
-							<a href="#">Вечеринка</a>
+						<li class="menu-nav__item">
+							<a href="contacts.html">контакты</a>
+						</li>
+					</ul>
+					<a href="#" class="main-menu__lang">english</a>
+					<ul class="main-menu__soc soc-list list">
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/facebook.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/instagram.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/tiktok.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/youtube.svg" alt="" class="img-svg">
+							</a>
 						</li>
 					</ul>
 				</div>
+				
+			<section class="cases-0">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<h1 class="cases-0__title page-title">Party Like A Russian</h1>
+						</div>
+						<div class="col-lg-4">
+							<div class="cases-0__info cases-0-info">
+								<div class="cases-0-info__left">
+									<h5>Клиент:</h5>
+									<h5>Категория:</h5>
+								</div>
+								<div class="cases-0-info__right">
+									<h5>Lamoda</h5>
+									<h5>корпоративный ивент</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="cases-0__info cases-0-info">
+								<div class="cases-0-info__left">
+									<h5>Дата проведения:</h5>
+									<h5>Место:</h5>
+								</div>
+								<div class="cases-0-info__right">
+									<h5>20 декабря 2016</h5>
+									<h5>Дом Союзов, Москва</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="cases-0__info cases-0-info">
+								<div class="cases-0-info__left">
+									<h5>Гостей:</h5>
+								</div>
+								<div class="cases-0-info__right">
+									<h5>240</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="cases-0__video block-video block-video_medium">
+								<iframe src="https://www.youtube.com/embed/xp0pf-7_SO8?&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0;enablejsapi=1&amp;mute=1&amp;autohide=1" width="100%" height="420" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" muted autoplay playsinline loop allowfullscreen></iframe>
+								<div class="block-video__bg" style="background-image: url(https://img.youtube.com/vi/xp0pf-7_SO8/maxresdefault.jpg);"></div>
+								<button class="block-video__btn js-start-video">
+									<img src="img/icon/play.svg" alt="" class="img-svg">
+									<span>Видео кейса</span>
+								</button>
+							</div>
+							<ul class="cases-0__tags tags">
+								<li class="tags__item">
+									<a href="#">Мероприятие</a>
+								</li>
+								<li class="tags__item tags__item_active">
+									<a href="#">Событие</a>
+								</li>
+								<li class="tags__item">
+									<a href="#">Ивент</a>
+								</li>
+								<li class="tags__item">
+									<a href="#">Вечеринка</a>
+								</li>
+							</ul>
+						</div>
+						<div class="offset-lg-2 col-lg-8">
+							<div class="cases-0__content b-content b-content_ac">
+								<p>Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды 
+									в России. Концепция мероприятия была разработана в стиле клипа Робби Уиллиамса
+									"Party Like A Russian". В Качестве площадки был выбран «Дом Союзов» в центре Москвы. 
+									Здание с 200-т летней историей, где еще свои балы проводила Екатерина II, а Пушкин делал предложение руки и сердца своей очередной пассии.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<hr class="sect-line">
+					</div>
+				</div>
 			</div>
+			<section class="content-sect">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4">
+							<h2>О мероприятии</h2>
+						</div>
+						<div class="col-lg-8">
+							<div class="b-content">
+								<p>Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды 
+									в России. Концепция мероприятия была разработана в стиле клипа Робби Уиллиамса
+									"Party Like A Russian". В Качестве площадки был выбран «Дом Союзов» в центре Москвы. 
+									Здание с 200-т летней историей, где еще свои балы проводила Екатерина II, а Пушкин делалпредложениеруки и сердца своей очередной пассии.
+								</p>
+								<p>
+									Мы первые кто реализовали мероприятие такого масштаба на данной площадке и первые кто сделали ночное 
+									мероприятие (продолжалось с 20:00 – 03:00).
+								</p>
+								<p>
+									Welcome часть проходила в роскошной амфиладе состоящей из 7-ми фойе. Гостей ожидали изысканные закуски и выступление арфисток, которые создавали настроение для гостей 
+									и играли современные мелодии на классических инструментах. Также для гостей работали несколько гадалок, интерактивный тир с русской охотой, гусарские алко-игры, фотозоны 
+									с аниматорами, которые воссоздавали образы девушек из клипа Робби Уиллиамса.
+								</p>
+								<p>
+									Во второй части мероприятия для гостей открылся огромный Колонный зал с огромными люстрами и уникальной подсветкой, которую мы сделали. Гостям был показан специально разработанный номер открытия – постановка с классическим балетом, современными танцами под кавер версию песни Робби Уиллиамса от лучшей кавер группы Москвы «Пятый Элемент». В процессе мероприятия гостей ожидала насыщенная интерактивная программа срозыгрышем билетов на концерт Робби Уиллиамса в Москвы, выступление кавер группы «Пятый Элемент» и сеты от ди-джеев. Ведущим вечера был резидент программы «Вечерний Ургант» – Константин Анисимов. Танцевальный блок состоял из 2-х коллективов: Супер стильный и популярный ди-джей дуэт братьев близнецов «S-Brother-S», а также выступление резидента клуба Gipsy и Rolling Stone 
+									Bar – DJ «D-One»
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<hr class="sect-line">
+					</div>
+				</div>
 			</div>
-		</section>
-	</main>
+			<section class="content-sect">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4">
+							<h2>Фото</h2>
+						</div>
+						<div class="col-lg-12">
+							<div class="content-sect__wrap">
+								<img src="img/content/bg.png" alt="">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<h3>Атмосфера</h3>
+						</div>
+						<div class="col-lg-8">
+							<div class="content-sect__content b-content">
+								<p>Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды 
+									в России. Концепция мероприятия была разработана в стиле клипа Робби Уиллиамса
+									"Party Like A Russian". В Качестве площадки был выбран «Дом Союзов» в центре Москвы.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="content-sect__wrap">
+								<img src="img/content/bg.png" alt="">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<h3>технический концепт</h3>
+						</div>
+						<div class="col-lg-8">
+							<div class="content-sect__content b-content">
+								<p>Во второй части мероприятия для гостей открылся огромный Колонный зал с огромными люстрами и уникальной подсветкой, которую мы сделали.</p>
+								<p>Гостям был показан специально разработанный номер открытия – постановка с классическим балетом, современными танцами под кавер версию песни Робби Уиллиамса от лучшей кавер группы Москвы «Пятый Элемент».</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<hr class="sect-line">
+					</div>
+				</div>
+			</div>
+			<section class="content-sect">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4">
+							<h2>Видео</h2>
+						</div>
+						<div class="col-lg-12">
+							<div class="content-sect__video block-video block-video_large">
+								<iframe src="https://www.youtube.com/embed/6JmDyQeievA?&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0;enablejsapi=1&mute=1" width="100%" height="420" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" muted autoplay playsinline loop allowfullscreen></iframe>
+								<div class="block-video__bg" style="background-image: url(https://img.youtube.com/vi/6JmDyQeievA/maxresdefault.jpg);"></div>
+								<button class="block-video__btn js-start-video">
+									<img src="img/icon/play.svg" alt="" class="img-svg">
+								</button>
+							</div>
+						</div>
+						<div class="0ffset-lg-4 col-lg-8">
+							<div class="b-content">
+								<p>
+									Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды 
+									в России. Концепция мероприятия была разработана в стиле клипа Робби Уиллиамса
+									"Party Like A Russian". В Качестве площадки был выбран «Дом Союзов» в центре Москвы.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<hr class="sect-line">
+					</div>
+				</div>
+			</div>
+		</main>
+		
+	</div>
 
 </body>
 </html>

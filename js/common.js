@@ -141,16 +141,18 @@ $(function () {
 		var paretn = $(this).parent('.block-video');
 		var iframe = paretn.children('iframe')[0];
 		var bg = paretn.children('.block-video__bg');
+		// $('iframe').each(function() {
+		// 	$(this)[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+		// });
 		iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
 		$(this).hide();
 		bg.hide();
 	});
 
+	// Бг "шапки"
 	$('.root').on('scroll', function() {
-		console.log($(this).scrollTop());
 		if ($(this).scrollTop() < 51) {
 			var opacity = $(this).scrollTop() / 100 + 0.3
-			console.log(opacity)
 			$('.main__top-bg').css('background', 'rgba(0, 0, 0,' + opacity + ')');
 		}
 		if ($(this).scrollTop() > 70) {

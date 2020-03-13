@@ -307,11 +307,24 @@ h5, .h5, p {
 
 .block-video {
 	display: block;
+	width: 66.67vw;
 	position: relative;
-	width: 100%;
-	@include aspect-ratio(400, 169);
+	background-color: #000;
+	@include aspect-ratio(16, 9);
+	&.transform {
+		transform: translateY(0);
+	}
+	&_medium {
+		width: 100%;
+		@include aspect-ratio(400, 169);
+	}
 	&_large {
-		@include aspect-ratio(16, 9);
+		width: 100%;
+		@include aspect-ratio(400, 207);
+	}
+	&_popup {
+		transform: translateY(100%);
+		transition: transform .4s ease;
 	}
 	&__bg {
 		position: absolute;
@@ -364,10 +377,65 @@ h5, .h5, p {
 	}
 }
 
+@media (max-width: $xs) {
+	.block-video {
+		width: 100%;
+	}
+}
+
+.page-title {
+	display: block;
+	text-transform: uppercase;
+}
+
 hr {
 	display: block;
-	background-color: $ac;
+	width: 100%;
 	height: 1px;
 	margin: 0;
+	background-color: $ac;
 	border: none;
+}
+
+.b-content {
+	*:last-child {
+		margin-bottom: 0;
+	}
+	font-family: "Montserrat", sans-serif;
+	&_ac {
+		p {
+			position: relative;
+			display: block;
+			padding: 36px 0;
+			font-family: inherit;
+			font-size: 24px;
+			line-height: 1.5;
+			color: #fff;
+			text-align: center;
+			&::before, &::after {
+				content: "";
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				display: block;
+				width: 16px;
+				height: 16px;
+				background-color: $ac;
+			}
+			&::before {
+				top: 0;
+			}
+			&::after {
+				bottom: 0;
+			}
+		}
+	}
+	p {
+		display: block;
+		margin-bottom: 32px;
+		font-family: inherit;
+		font-size: 20px;
+		line-height: 1.5;
+		color: #fff;
+	}
 }

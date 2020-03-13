@@ -109,6 +109,7 @@
 }
 
 .menu-nav {
+	backface-visibility: hidden;
 	&__item {
 		display: block;
 		margin-right: 60px;
