@@ -1,4 +1,5 @@
 .popup {
+	$p: &;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -39,6 +40,11 @@
 	display: block;
 	width: 66.67vw;
 	background-color: #000;
+	transform: translateY(100%);
+	transition: transform .4s ease;
+	&.transform {
+		transform: translateY(0);
+	}
 	&__wrap {
 		position: relative;
 		display: block;

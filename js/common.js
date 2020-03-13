@@ -65,33 +65,6 @@ $(function () {
 		$('html').css('overflow', 'auto');
 	});
 
-	// Видео на главной
-	var popupVideo = $('.popup-video');
-	popupVideo.switchPopup({
-		btnClass: 'js-tgl-video',
-		duration: 300,
-		overflow: true,
-	});
-
-	popupVideo.on('beforeClose', function() {
-		$('.js-wrap iframe')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-	});
-
-	// Скролл
-	function animateSect(sect) {
-		$('html, body').animate({
-			scrollTop: sect.offset().top
-		}, 600);
-	}
-
-	$('.js-first-next').on('click', function() {
-		animateSect($('.js-second'));
-	});
-
-	$('.js-second-next').on('click', function() {
-		animateSect($('.js-third'));
-	});
-
 	// Время при наведении на лого
 	var firstNum, secondNum;
 	var cnt = 0;
@@ -165,13 +138,24 @@ $(function () {
 
 	// Запуск видео по нажатию на нашу кнопку, скрытие постера
 	$('.js-start-video').on('click', function() {
-		var paretn = $(this).parent('.video-full');
+		var paretn = $(this).parent('.block-video');
 		var iframe = paretn.children('iframe')[0];
-		console.log(iframe)
-		var bg = paretn.children('.video-full__bg');
+		var bg = paretn.children('.block-video__bg');
 		iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
 		$(this).hide();
 		bg.hide();
 	});
+
+	$('.root').on('scroll', function() {
+		console.log($(this).scrollTop());
+		if ($(this).scrollTop() < 51) {
+			var opacity = $(this).scrollTop() / 100 + 0.3
+			console.log(opacity)
+			$('.main__top-bg').css('background', 'rgba(0, 0, 0,' + opacity + ')');
+		}
+		if ($(this).scrollTop() > 70) {
+			$('.main__top-bg').css('background', 'rgba(0, 0, 0, 0.8)');
+		}
+	})
 
 });

@@ -37,9 +37,9 @@
 			_.$popup.trigger('afterChange', [_.$popup, 'open']);
 		}, _.duration);
 		if(_.overflow) {
-			$('html').css({
+			$('.root').css({
 				'padding-right': _.scrollWidth,
-				'overflow': 'hidden'
+				'overflow-y': 'hidden'
 			});
 		}
 	}
@@ -56,9 +56,9 @@
 			_.$popup.trigger('afterClose', [_.$popup]);
 			_.$popup.trigger('afterChange', [_.$popup, 'close']);
 			if(_.overflow) {
-				$('html').css({
+				$('.root').css({
 					'padding-right': 0,
-					'overflow': 'auto'
+					'overflow-y': 'auto'
 				});
 			}
 		}, _.duration);
