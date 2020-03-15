@@ -19,33 +19,37 @@
 
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap&subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="css/swipebox.css">
 	<link rel="stylesheet" href="css/main.css">
 
-	<script src="js/libs/jquery-3.2.1.min.js"></script>
+	<script src="js/libs/jquery-3.4.1.min.js"></script>
 	<script src="https://www.youtube.com/iframe_api"></script>
 	<script>
 		function onYouTubeIframeAPIReady() {
-				var players = [];
-				$('.block-video iframe').each( function (i, el) {
-						if (!this.id) { this.id='video-iframe' + i }
-						players.push(new YT.Player(this.id, {
-								events: {
-										'onStateChange': function(event) {
-												if (event.data == YT.PlayerState.PLAYING) {
-														$.each(players, function() {
-																if (this.getIframe().id != event.target.getIframe().id) {
-																		this.pauseVideo();
-																}
-														});
-												}
-										}
-								}
-						}))
-				});
+			var players = [];
+			$('.block-video iframe').each( function (i, el) {
+				if (!this.id) { this.id='video-iframe' + i }
+				players.push(new YT.Player(this.id, {
+					events: {
+						'onStateChange': function(event) {
+							if (event.data == YT.PlayerState.PLAYING) {
+								$.each(players, function() {
+									if (this.getIframe().id != event.target.getIframe().id) {
+										this.pauseVideo();
+									}
+								});
+							}
+						}
+					}
+				}))
+			});
 		}
 	</script>
 	<script src="js/libs/jquery.smoothscroll.js"></script>
 	<script src="js/libs/jquery.switchPopup.js"></script>
+	<script src="js/libs/ios-orientationchange-fix.js"></script>
+	<script src="js/libs/jquery.swipebox.min.js"></script>
+	<!-- <script src="js/libs/jquery.swipebox.js"></script> -->
 	<script src="js/common.js"></script>
 
 </head>
@@ -107,44 +111,48 @@
 			<section class="cases-0">
 				<div class="container">
 					<div class="row">
-						<div class="col-12">
+						<div class="col-xs col-12">
 							<h1 class="cases-0__title page-title">Party Like A Russian</h1>
 						</div>
-						<div class="col-lg-4">
-							<div class="cases-0__info cases-0-info">
-								<div class="cases-0-info__left">
-									<h5>Клиент:</h5>
-									<h5>Категория:</h5>
+						<div class="col-xs col-12">
+							<div class="row cases-0__row-info">
+								<div class="col-12 col-sm-6 col-md-4 col-lg-4">
+									<div class="cases-0__info cases-info">
+										<div class="cases-info__left">
+											<span>Клиент:</span>
+											<span>Категория:</span>
+										</div>
+										<div class="cases-info__right">
+											<span>Lamoda</span>
+											<span>корпоративный ивент</span>
+										</div>
+									</div>
 								</div>
-								<div class="cases-0-info__right">
-									<h5>Lamoda</h5>
-									<h5>корпоративный ивент</h5>
+								<div class="col-12 col-sm-6 col-md-4 col-lg-4">
+									<div class="cases-0__info cases-info">
+										<div class="cases-info__left">
+											<span>Дата проведения:</span>
+											<span>Место:</span>
+										</div>
+										<div class="cases-info__right">
+											<span>20 декабря 2016</span>
+											<span>Дом Союзов, Москва</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-sm-6 col-md-4 col-lg-4">
+									<div class="cases-0__info cases-info">
+										<div class="cases-info__left">
+											<span>Гостей:</span>
+										</div>
+										<div class="cases-info__right">
+											<span>240</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-4">
-							<div class="cases-0__info cases-0-info">
-								<div class="cases-0-info__left">
-									<h5>Дата проведения:</h5>
-									<h5>Место:</h5>
-								</div>
-								<div class="cases-0-info__right">
-									<h5>20 декабря 2016</h5>
-									<h5>Дом Союзов, Москва</h5>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="cases-0__info cases-0-info">
-								<div class="cases-0-info__left">
-									<h5>Гостей:</h5>
-								</div>
-								<div class="cases-0-info__right">
-									<h5>240</h5>
-								</div>
-							</div>
-						</div>
-						<div class="col-12">
+						<div class="col-xs col-12">
 							<div class="cases-0__video block-video block-video_medium">
 								<iframe src="https://www.youtube.com/embed/xp0pf-7_SO8?&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0;enablejsapi=1&amp;mute=1&amp;autohide=1" width="100%" height="420" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" muted autoplay playsinline loop allowfullscreen></iframe>
 								<div class="block-video__bg" style="background-image: url(https://img.youtube.com/vi/xp0pf-7_SO8/maxresdefault.jpg);"></div>
@@ -168,7 +176,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="offset-lg-2 col-lg-8">
+						<div class="col-xs offset-lg-2 col-lg-8">
 							<div class="cases-0__content b-content b-content_ac">
 								<p>Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды 
 									в России. Концепция мероприятия была разработана в стиле клипа Робби Уиллиамса
@@ -181,7 +189,7 @@
 			</section>
 			<div class="container">
 				<div class="row">
-					<div class="col-12">
+					<div class="col-xs col-12">
 						<hr class="sect-line">
 					</div>
 				</div>
@@ -189,10 +197,10 @@
 			<section class="content-sect">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-4">
+						<div class="col-xs col-md-4 col-lg-4">
 							<h2>О мероприятии</h2>
 						</div>
-						<div class="col-lg-8">
+						<div class="col-xs col-md-8 col-lg-8">
 							<div class="b-content">
 								<p>Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды 
 									в России. Концепция мероприятия была разработана в стиле клипа Робби Уиллиамса
@@ -219,7 +227,7 @@
 			</section>
 			<div class="container">
 				<div class="row">
-					<div class="col-12">
+					<div class="col-xs col-12">
 						<hr class="sect-line">
 					</div>
 				</div>
@@ -230,15 +238,15 @@
 						<div class="col-lg-4">
 							<h2>Фото</h2>
 						</div>
-						<div class="col-lg-12">
+						<div class="col-xs col-lg-12">
 							<div class="content-sect__wrap">
 								<img src="img/content/bg.png" alt="">
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-xs col-md-4 col-lg-4">
 							<h3>Атмосфера</h3>
 						</div>
-						<div class="col-lg-8">
+						<div class="col-xs col-md-8 col-lg-8">
 							<div class="content-sect__content b-content">
 								<p>Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды 
 									в России. Концепция мероприятия была разработана в стиле клипа Робби Уиллиамса
@@ -246,15 +254,15 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-lg-12">
+						<div class="col-xs col-lg-12">
 							<div class="content-sect__wrap">
 								<img src="img/content/bg.png" alt="">
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-xs col-md-4 col-lg-4">
 							<h3>технический концепт</h3>
 						</div>
-						<div class="col-lg-8">
+						<div class="col-xs col-md-8 col-lg-8">
 							<div class="content-sect__content b-content">
 								<p>Во второй части мероприятия для гостей открылся огромный Колонный зал с огромными люстрами и уникальной подсветкой, которую мы сделали.</p>
 								<p>Гостям был показан специально разработанный номер открытия – постановка с классическим балетом, современными танцами под кавер версию песни Робби Уиллиамса от лучшей кавер группы Москвы «Пятый Элемент».</p>
@@ -265,7 +273,7 @@
 			</section>
 			<div class="container">
 				<div class="row">
-					<div class="col-12">
+					<div class="col-xs col-12">
 						<hr class="sect-line">
 					</div>
 				</div>
@@ -273,10 +281,10 @@
 			<section class="content-sect">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-4">
+						<div class="col-xs col-md-4 col-lg-4">
 							<h2>Видео</h2>
 						</div>
-						<div class="col-lg-12">
+						<div class="col-xs col-lg-12">
 							<div class="content-sect__video block-video block-video_large">
 								<iframe src="https://www.youtube.com/embed/6JmDyQeievA?&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0;enablejsapi=1&mute=1" width="100%" height="420" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" muted autoplay playsinline loop allowfullscreen></iframe>
 								<div class="block-video__bg" style="background-image: url(https://img.youtube.com/vi/6JmDyQeievA/maxresdefault.jpg);"></div>
@@ -285,7 +293,7 @@
 								</button>
 							</div>
 						</div>
-						<div class="0ffset-lg-4 col-lg-8">
+						<div class="col-xs offset-md-4 col-md-8 offset-lg-4 col-lg-8">
 							<div class="b-content">
 								<p>
 									Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды 
@@ -299,11 +307,144 @@
 			</section>
 			<div class="container">
 				<div class="row">
-					<div class="col-12">
+					<div class="col-xs col-12">
 						<hr class="sect-line">
 					</div>
 				</div>
 			</div>
+			<section class="gallery-sect">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs col-md-4 col-lg-4">
+							<h2>Фотогалерея</h2>
+						</div>
+					</div>
+					<div class="row row_xs-p">
+						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
+							<a href="img/content/1.jpg" class="swipebox gallery-sect__card card" rel="gallery" title="My Caption">
+								<div class="card__wrap">
+									<img src="img/content/1.jpg" alt="">
+								</div>
+							</a>
+						</div>
+						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
+							<a href="img/content/bg.png" class="swipebox gallery-sect__card card" rel="gallery" title="Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды в России. Концепция мероприятия была разработана в стиле клипа Робби Уиллиамса &#34;Party Like A Russian&#34;. В Качестве площадки был выбран «Дом Союзов» в центре Москвы.">
+								<div class="card__wrap">
+									<img src="img/content/2.jpg" alt="">
+								</div>
+							</a>
+						</div>
+						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
+							<a href="img/content/3.jpg" class="swipebox gallery-sect__card card" rel="gallery">
+								<div class="card__wrap">
+									<img src="img/content/3.jpg" alt="">
+								</div>
+							</a>
+						</div>
+						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
+							<a href="img/content/4.jpg" class="swipebox gallery-sect__card card" rel="gallery">
+								<div class="card__wrap">
+									<img src="img/content/4.jpg" alt="">
+								</div>
+							</a>
+						</div>
+						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
+							<a href="img/content/5.jpg" class="swipebox gallery-sect__card card" rel="gallery">
+								<div class="card__wrap">
+									<img src="img/content/5.jpg" alt="">
+								</div>
+							</a>
+						</div>
+						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
+							<a href="img/content/6.jpg" class="swipebox gallery-sect__card card" rel="gallery">
+								<div class="card__wrap">
+									<img src="img/content/6.jpg" alt="">
+								</div>
+							</a>
+						</div>
+						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
+							<a href="img/content/7.jpg" class="swipebox gallery-sect__card card" rel="gallery">
+								<div class="card__wrap">
+									<img src="img/content/7.jpg" alt="">
+								</div>
+							</a>
+						</div>
+						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
+							<a href="img/content/8.jpg" class="swipebox gallery-sect__card card" rel="gallery">
+								<div class="card__wrap">
+									<img src="img/content/8.jpg" alt="">
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="content-sect">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs col-md-4 col-lg-4">
+							<h2>Команда</h2>
+						</div>
+						<div class="col-xs col-md-8 col-lg-8">
+							<div class="content-sect__names">
+								<ul>
+									<li>Игорь Демидов — CEO | Partner</li>
+									<li>Анна Демилова — Commercial Director | Partner</li>
+									<li>Анастасия Гладкая — Senior Account Manager</li>
+									<li>Дарья Сметанинав — Account Manager</li>
+									<li>Лина Березовская — Junior Account Manager</li>
+									<li>Адель Ахмадуллина — Junior Account Manager</li>
+									<li>Екатерина Бородина — Art Director</li>
+									<li>Тимур Лютцков — Creative Сopywriter</li>
+									<li>Илья Иванов — Designer</li>
+									<li>Михаил Леликов — Strategic Director</li>
+									<li>Иван Шичко — Technical Director</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs col-12">
+						<hr class="sect-line">
+					</div>
+				</div>
+			</div>
+			<section class="cases-more">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs col-12 col-md-4 col-lg-4">
+							<h2>Смотрите также</h2>
+						</div>
+						<div class="col-xs col-12 col-md-8 col-lg-8">
+							<div class="cases-more__cards">
+								<div class="row">
+									<div class="col-12 col-sm-6">
+										<a href="#" class="cases-more__card card">
+											<div class="card__wrap">
+												<img src="img/content/1.jpg" alt="">
+											</div>
+											<p class="card__text card__text_left">black party</p>
+											<p class="card__text card__text_right">lamoda</p>
+										</a>
+									</div>
+									<div class="col-12 col-sm-6">
+										<a href="#" class="cases-more__card card">
+											<div class="card__wrap">
+												<img src="img/content/2.jpg" alt="">
+											</div>
+											<p class="card__text card__text_left">"Огни Большой Деревни"</p>
+											<p class="card__text card__text_right">Киностудия «Rock Films»</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 		
 	</div>

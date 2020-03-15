@@ -158,6 +158,13 @@ $(function () {
 		if ($(this).scrollTop() > 70) {
 			$('.main__top-bg').css('background', 'rgba(0, 0, 0, 0.8)');
 		}
-	})
+	});
+
+	$('.swipebox').swipebox(
+		{
+			useSVG: false,
+			loopAtEnd: false,
+		}
+	);
 
 });
