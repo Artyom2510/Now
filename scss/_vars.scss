@@ -1,35 +1,29 @@
 // Общие настройки
-$font-formats: ("eot", "woff", "ttf"); // Доступны в snippets - eot, woff2, woff, ttf, svg
 $url-img: "/img"; // Путь к изображениям
-$url-fonts: "/fonts"; // Путь к шрифтам
 
 // Переменные цветов
 $ac: #ee0e33;
 $ac2: #cc1535;
+$gray: #979797;
 
 $xs: 767.98px;
 $sm: 992px;
 $md: 1280px;
-
-// Отступ на мобиле
-.col-xs {
-	padding: 0 24px;
-}
 
 // Настройки брэкпоинтов
 $breakpoints: (
 	"xs": 0,
 	"sm": 768px,
 	"md": 1280px,
-	"lg": 1698px
+	"lg": 1700px
 ) !default;
 
 // Настройки контейнера
 $max-widths: (
 	"xs": 100%,
-	"sm": 668px,
-	"md": 1120px,
-	"lg": 1600px
+	"sm": 708px,
+	"md": 1160px,
+	"lg": 1640px
 ) !default;
 
 // Переопределение Bootstrap переменных из "bootstrap/_variables.scss"

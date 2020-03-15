@@ -1,0 +1,276 @@
+@import 'vars';
+@import "snippets";
+/*! Swipebox v1.3.0 | Constantin Saguin csag.co | MIT License | github.com/brutaldesign/swipebox */
+html.swipebox-html.swipebox-touch {
+	overflow: hidden !important;
+}
+
+#swipebox-overlay img {
+	border: none !important;
+}
+
+#swipebox-overlay {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99999 !important;
+	overflow: hidden;
+	-webkit-user-select: none;
+		-moz-user-select: none;
+			-ms-user-select: none;
+					user-select: none;
+}
+
+#swipebox-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#swipebox-slider {
+	-webkit-transition: -webkit-transform 0.4s ease;
+					transition: transform 0.4s ease;
+	height: 100%;
+	left: 0;
+	top: 0;
+	width: 100%;
+	white-space: nowrap;
+	position: absolute;
+	display: none;
+	cursor: pointer;
+}
+#swipebox-slider .slide {
+	height: 100%;
+	width: 100%;
+	line-height: 1px;
+	text-align: center;
+	display: inline-block;
+}
+#swipebox-slider .slide:before {
+	content: "";
+	display: inline-block;
+	height: 50%;
+	width: 1px;
+	margin-right: -1px;
+}
+#swipebox-slider .slide img,
+#swipebox-slider .slide .swipebox-video-container,
+#swipebox-slider .slide .swipebox-inline-container {
+	display: inline-block;
+  max-height: calc(100vh - 240px);
+  max-width: 83.33vw;
+	margin: 0;
+	padding: 0;
+	width: auto;
+  height: auto;
+	vertical-align: middle;
+}
+#swipebox-slider .slide img {
+	object-fit: contain;
+	object-position: 50% 50%;
+}
+#swipebox-slider .slide .swipebox-video-container {
+	background: none;
+	max-width: 1140px;
+	max-height: 100%;
+	width: 100%;
+	padding: 5%;
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+}
+
+#swipebox-slider .slide .swipebox-video-container .swipebox-video {
+	width: 100%;
+	height: 0;
+  padding-bottom: 56.25%;
+	overflow: hidden;
+	position: relative;
+}
+#swipebox-slider .slide .swipebox-video-container .swipebox-video iframe {
+	width: 100% !important;
+	height: 100% !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+// #swipebox-slider .slide-loading {
+// 	background: url(../img/loader.gif) no-repeat center center;
+// }
+
+
+#swipebox-title {
+	position: absolute;
+	left: 50%;
+	bottom: 70px;
+	transform: translateX(-50%);
+	display: block;
+	width: 52vw;
+	height: 40px;
+	font-family: "Montserrat", sans-serif;
+	overflow: hidden;
+	font-size: 14px;
+	line-height: 20px;
+	color: #fff;
+	text-align: center;
+}
+
+@media (max-width: $sm) {
+	#swipebox-title {
+		width: 80vw;
+		bottom: 80px;
+		height: 60px;
+	}
+}
+
+#swipebox-prev,
+#swipebox-next,
+#swipebox-close {
+	position: absolute;
+	display: block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	outline: none !important;
+	border: none !important;
+	text-decoration: none !important;
+	cursor: pointer;
+	opacity: .5;
+	transition: opacity .2s ease;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+#swipebox-prev,
+#swipebox-next {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#swipebox-prev {
+	left: 20px;
+	background: url(#{$url-img}/icon/ui-icon/left.svg) center no-repeat;
+}
+
+#swipebox-next {
+	right: 20px;
+	background: url(#{$url-img}/icon/ui-icon/right.svg) center no-repeat;
+}
+
+#swipebox-close {
+	top: 20px;
+	right: 20px;
+	z-index: 9999;
+	background: url(#{$url-img}/icon/ui-icon/close.svg) center no-repeat;
+}
+
+.swipebox-no-close-button #swipebox-close {
+	display: none;
+}
+
+#swipebox-prev.disabled,
+#swipebox-next.disabled {
+	opacity: 0.3;
+}
+
+.swipebox-no-touch #swipebox-overlay.rightSpring #swipebox-slider {
+	-webkit-animation: rightSpring 0.3s;
+					animation: rightSpring 0.3s;
+}
+.swipebox-no-touch #swipebox-overlay.leftSpring #swipebox-slider {
+	-webkit-animation: leftSpring 0.3s;
+					animation: leftSpring 0.3s;
+}
+
+.swipebox-touch #swipebox-container:before, .swipebox-touch #swipebox-container:after {
+	-webkit-backface-visibility: hidden;
+					backface-visibility: hidden;
+	-webkit-transition: all .3s ease;
+					transition: all .3s ease;
+	content: ' ';
+	position: absolute;
+	z-index: 999;
+	top: 0;
+	height: 100%;
+	width: 20px;
+	opacity: 0;
+}
+.swipebox-touch #swipebox-container:before {
+	left: 0;
+	-webkit-box-shadow: inset 10px 0px 10px -8px #656565;
+					box-shadow: inset 10px 0px 10px -8px #656565;
+}
+.swipebox-touch #swipebox-container:after {
+	right: 0;
+	-webkit-box-shadow: inset -10px 0px 10px -8px #656565;
+					box-shadow: inset -10px 0px 10px -8px #656565;
+}
+.swipebox-touch #swipebox-overlay.leftSpringTouch #swipebox-container:before {
+	opacity: 1;
+}
+.swipebox-touch #swipebox-overlay.rightSpringTouch #swipebox-container:after {
+	opacity: 1;
+}
+
+@-webkit-keyframes rightSpring {
+	0% {
+		left: 0;
+	}
+
+	50% {
+		left: -30px;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+
+@keyframes rightSpring {
+	0% {
+		left: 0;
+	}
+
+	50% {
+		left: -30px;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+@-webkit-keyframes leftSpring {
+	0% {
+		left: 0;
+	}
+
+	50% {
+		left: 30px;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+@keyframes leftSpring {
+	0% {
+		left: 0;
+	}
+
+	50% {
+		left: 30px;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+
+// Skin
+#swipebox-overlay {
+	background: #0d0d0d;
+}
+
+
