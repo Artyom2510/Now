@@ -160,11 +160,4 @@ $(function () {
 		}
 	});
 
-	$('.swipebox').swipebox(
-		{
-			useSVG: false,
-			loopAtEnd: false,
-		}
-	);
-
 });

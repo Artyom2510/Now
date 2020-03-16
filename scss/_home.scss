@@ -148,9 +148,13 @@
 	// 	width: 0;
 	// 	height: 0;
 	// }
+	&_wrap {
+		flex-wrap: wrap;
+		overflow: none;
+	}
 	&__item {
 		display: block;
-		margin-right: 48px;
+		margin-right: 28px;
 		&:last-child {
 			margin-right: 0;
 		}
@@ -207,7 +211,15 @@
 @media (max-width: $sm) {
 	.tags {
 		&__item {
-			margin-right: 32px;
+			margin-right: 22px;
+		}
+	}
+}
+
+@media (max-width: $xs) {
+	.tags {
+		&__item {
+			margin-right: 14px;
 		}
 	}
 }
