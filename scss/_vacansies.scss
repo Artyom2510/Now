@@ -1,0 +1,36 @@
+.vacansies {
+	padding-top: 130px;
+	&__title {
+		margin-bottom: 80px;
+	}
+	&__annotation {
+		margin-bottom: 230px;
+	}
+}
+
+@media (max-width: $md) {
+	.vacansies {
+		&__annotation {
+			margin-bottom: 120px;
+		}
+	}
+}
+
+@media (max-width: $sm) {
+	.vacansies {
+		&__annotation {
+			margin-bottom: 170px;
+		}
+	}
+}
+
+@media (max-width: $Xs) {
+	.vacansies {
+		&__title {
+			margin-bottom: 120px;
+		}
+		&__annotation {
+			margin-bottom: 80px;
+		}
+	}
+}
