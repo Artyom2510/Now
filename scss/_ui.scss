@@ -158,7 +158,8 @@ h5, .h5, p {
 		z-index: 4;
 		top: 0;
 		left: 0;
-		width: calc(100% - 17px);
+		// width: calc(100% - 17px);
+		width: 100%;
 		height: 100px;
 		background-color: rgba(#000, 0);
 		transition: background-color .3s ease;
@@ -232,7 +233,7 @@ h5, .h5, p {
 	}
 }
 
-@media (min-width: $md) {
+@media (min-width: $sm) {
 	.next {
 		&:hover {
 			svg {
@@ -396,7 +397,7 @@ h5, .h5, p {
 	}
 }
 
-@media (min-width: $md) {
+@media (min-width: $sm) {
 	.block-video {
 		&__btn {
 			&:hover, &:focus {

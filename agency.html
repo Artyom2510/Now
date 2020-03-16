@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Кейсы</title>
+	<title>Агентство</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,10 +12,10 @@
 	
 	<meta property="og:image" content="path/to/image.jpg">
 	
-	<link rel="shortcut icon" href="img/favicon/favicon.png" type="image/png">
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+	<link rel="shortcut icon" href="/img/favicon/favicon.png" type="image/png">
+	<link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-touch-icon-114x114.png">
 
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap&subset=cyrillic" rel="stylesheet">
@@ -32,7 +32,12 @@
 	<div class="root">
 		<body>
 			<main class="main agency">
+				<!-- Затемнение шапки -->
 				<div class="main__top-bg"></div>
+				
+				<!-- В верху странице изображение -->
+				<div class="agency__top-bg"></div>
+
 				<a href="/" class="main__logo js-logo">
 					<img src="/img/icon/ui-icon/logo.svg" alt="" class="img-svg">
 					<img src="/img/icon/ui-icon/time-logo.svg" alt="" class="img-svg">
@@ -82,9 +87,6 @@
 						</li>
 					</ul>
 				</div>
-
-				<!-- Верхнее изображение -->
-				<div class="agency__top-bg"></div>
 
 				<section class="about">
 					<div class="container">
@@ -242,10 +244,11 @@
 									<h2>Что мы делаем</h2>
 								</div>
 							</div>
+							<!-- data-poster - картинка-заглушка дял планшета, мобилы, чтоб не добавлять еще 1 блок для картинки -->
 							<div class="col-xs col-12">
-								<div class="we-do__video-card js-video-card">
-									<div class="video-card">
-										<video class="video-card__object" muted playsinline loop>
+								<div class="we-do__video-card">
+									<div class="video-card js-video-card">
+										<video class="video-card__object" muted playsinline loop data-poster="/img/content/1.jpg">
 											<source src="/video/vidos.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 										</video>
 										<img src="/img/icon/ui-icon/event.svg" alt="" class="video-card__icon img-svg">
@@ -253,9 +256,9 @@
 										<p class="video-card__text">70% наших проектов это ивенты и btl: интеграции, активации, корпоративы, клиентские мероприятия, бренд-зоны, pr-мероприятия, открытия и презентации, конференции и конечно вечеринки. Будь это городской праздник в 8-ми часовых поясах, конференция или собрание сотрудников у моря, федеральное NCP промо, серия небольших проектов в регионах, интеграция бренда в фестиваль или стильная вечеринка на 53 этаже самого дорогого пентхауса столицы - мы сделаем это.</p>
 									</div>
 								</div>
-								<div class="we-do__video-card js-video-card">
-									<div class="video-card">
-										<video class="video-card__object" muted playsinline loop>
+								<div class="we-do__video-card">
+									<div class="video-card js-video-card">
+										<video class="video-card__object" muted playsinline loop data-poster="/img/content/2.jpg">
 											<source src="/video/vidos.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 										</video>
 										<img src="/img/icon/ui-icon/spaces.svg" alt="" class="video-card__icon img-svg">
@@ -263,15 +266,205 @@
 										<p class="video-card__text">Мы умеем создавать стенды, пространства, бренд зоны и интегрировать их в различные мероприятия. Креатив и механика, продакшн, сложная логистика, персонал, posm и сувенирка, коммуникация с площадкой и документация.</p>
 									</div>
 								</div>
-								<div class="we-do__video-card js-video-card">
-									<div class="video-card">
-										<video class="video-card__object" muted playsinline loop>
+								<div class="we-do__video-card">
+									<div class="video-card js-video-card">
+										<video class="video-card__object" muted playsinline loop data-poster="/img/content/3.jpg">
 											<source src="/video/vidos.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 										</video>
 										<img src="/img/icon/ui-icon/creative.svg" alt="" class="video-card__icon img-svg">
 										<h3 class="video-card__name">CREATIVE</h3>
 										<p class="video-card__text">В N:OW очень сильный креативный отдел и мы сможем помочь c big idea, концепцией мероприятия, btl механикой, интегрированной кампанией, мотивационной программой, нестандартной активацией, сценарием ролика или спецпроектом.</p>
 									</div>
+								</div>
+							</div>
+							<div class="col-xs col-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="we-do__small-card">
+									<div class="small-card">
+										<img src="/img/icon/ui-icon/megaphone.svg" alt="" class="small-card__icon img-svg">
+										<h3 class="small-card__name">PR</h3>
+										<p class="small-card__text">Блогеры, инфлюенсеры, СМИ, спецпроекты, перевыполнение KPI.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs col-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="we-do__small-card">
+									<div class="small-card">
+										<img src="/img/icon/ui-icon/branding.svg" alt="" class="small-card__icon img-svg">
+										<h3 class="small-card__name">Branding</h3>
+										<p class="small-card__text">Мы умеем исследовать, анализировать, изучать и создавать бренды, разрабатывать платформу бренда, позиционирование, нейминг, айдентику и фирменный стиль.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs col-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="we-do__small-card">
+									<div class="small-card">
+										<img src="/img/icon/ui-icon/strategy.svg" alt="" class="small-card__icon img-svg">
+										<h3 class="small-card__name">STRATEGY</h3>
+										<p class="small-card__text">Аналитика, коммуникационная стратеги, бренд-стратегия и работа в каналах. Это может быть большое исследование и полноценная стратегия, либо небольшой анализ аудитории и стратегическое обоснование для спец проекта или кампании.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs col-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="we-do__small-card">
+									<div class="small-card">
+										<img src="/img/icon/ui-icon/digital.svg" alt="" class="small-card__icon img-svg">
+										<h3 class="small-card__name">Digital</h3>
+										<p class="small-card__text">Мы умеем разрабатывать и запускать полноценные digital-кампании и отдельные спец проекты, вести паблики в соц сетях и классно продвигать видео в youtube, разрабатывать сайты и реализовывать спец проекты.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="container">
+					<div class="row">
+						<div class="col-xs col-12">
+							<hr class="sect-line">
+						</div>
+					</div>
+				</div>
+				<section class="clients">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs col-12">
+								<div class="clients__title">
+									<h2>Клиенты</h2>
+								</div>
+								<div class="clients__logos">
+									<img src="/img/content/clients-logo/1.png" alt="">
+									<img src="/img/content/clients-logo/2.png" alt="">
+									<img src="/img/content/clients-logo/3.png" alt="">
+									<img src="/img/content/clients-logo/4.png" alt="">
+									<img src="/img/content/clients-logo/5.png" alt="">
+									<img src="/img/content/clients-logo/6.png" alt="">
+									<img src="/img/content/clients-logo/7.png" alt="">
+									<img src="/img/content/clients-logo/8.png" alt="">
+									<img src="/img/content/clients-logo/9.png" alt="">
+									<img src="/img/content/clients-logo/10.png" alt="">
+									<img src="/img/content/clients-logo/11.png" alt="">
+									<img src="/img/content/clients-logo/12.png" alt="">
+									<img src="/img/content/clients-logo/13.png" alt="">
+									<img src="/img/content/clients-logo/14.png" alt="">
+									<img src="/img/content/clients-logo/15.png" alt="">
+									<img src="/img/content/clients-logo/16.png" alt="">
+									<img src="/img/content/clients-logo/17.png" alt="">
+									<img src="/img/content/clients-logo/18.png" alt="">
+									<img src="/img/content/clients-logo/19.png" alt="">
+									<img src="/img/content/clients-logo/20.png" alt="">
+									<img src="/img/content/clients-logo/21.png" alt="">
+									<img src="/img/content/clients-logo/22.png" alt="">
+									<img src="/img/content/clients-logo/23.png" alt="">
+									<img src="/img/content/clients-logo/24.png" alt="">
+									<img src="/img/content/clients-logo/25.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="team">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs col-sm-12 col-md-4 col-lg-6">
+								<div class="team__title">
+									<span>Dream team</span>
+								</div>
+							</div>
+							<div class="col-sx col-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="team__card team__card_large team-card team-card_large">
+									<img src="/img/content/team/1.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Игорь Демидов</span>
+									<p class="team-card__post">CEO | Partner</p>
+								</div>
+							</div>
+							<div class="col-sx col-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="team__card team__card_large team-card team-card_large">
+									<img src="/img/content/team/2.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Анна Демидова</span>
+									<p class="team-card__post"> Commercial Director | Partner</p>
+								</div>
+							</div>
+							<div class="col-xs col-6 col-sm-4 col-md-3 col-lg-2">
+								<div class="team__card team-card">
+									<img src="/img/content/team/3.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Анастасия Гладкая</span>
+									<p class="team-card__post">Senior Account Manager</p>
+								</div>
+							</div>
+							<div class="col-xs col-6 col-sm-4 col-md-3 col-lg-2">
+								<div class="team__card team-card">
+									<img src="/img/content/team/4.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Адель Ахмадуллина</span>
+									<p class="team-card__post">Senior Account Manager</p>
+								</div>
+							</div>
+							<div class="col-xs col-6 col-sm-4 col-md-3 col-lg-2">
+								<div class="team__card team-card">
+									<img src="/img/content/team/5.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Дарья Сметанина</span>
+									<p class="team-card__post">Senior Account Manager</p>
+								</div>
+							</div>
+							<div class="col-xs col-6 col-sm-4 col-md-3 col-lg-2">
+								<div class="team__card team-card">
+									<img src="/img/content/team/6.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Екатерина Бородина</span>
+									<p class="team-card__post">Senior Account Manager</p>
+								</div>
+							</div>
+							<div class="col-xs col-6 col-sm-4 col-md-3 col-lg-2">
+								<div class="team__card team-card">
+									<img src="/img/content/team/7.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Анастасия Гладкая</span>
+									<p class="team-card__post">Senior Account Manager</p>
+								</div>
+							</div>
+							<div class="col-xs col-6 col-sm-4 col-md-3 col-lg-2">
+								<div class="team__card team-card">
+									<img src="/img/content/team/1.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Анна Демидова</span>
+									<p class="team-card__post">Commercial Director | Partner</p>
+								</div>
+							</div>
+							<div class="col-xs col-6 col-sm-4 col-md-3 col-lg-2">
+								<div class="team__card team-card">
+									<img src="/img/content/team/2.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Анна Демидова</span>
+									<p class="team-card__post">Commercial Director | Partner</p>
+								</div>
+							</div>
+							<div class="col-xs col-6 col-sm-4 col-md-3 col-lg-2">
+								<div class="team__card team-card">
+									<img src="/img/content/team/3.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Анна Демидова</span>
+									<p class="team-card__post"> Commercial Director | Partner</p>
+								</div>
+							</div>
+							<div class="col-xs col-6 col-sm-4 col-md-3 col-lg-2">
+								<div class="team__card team-card">
+									<img src="/img/content/team/4.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Анна Демидова</span>
+									<p class="team-card__post"> Commercial Director | Partner</p>
+								</div>
+							</div>
+							<div class="col-xs col-6 col-sm-4 col-md-3 col-lg-2">
+								<div class="team__card team-card">
+									<img src="/img/content/team/5.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Анна Демидова</span>
+									<p class="team-card__post"> Commercial Director | Partner</p>
+								</div>
+							</div>
+							<div class="col-xs col-6 col-sm-4 col-md-3 col-lg-2">
+								<div class="team__card team-card">
+									<img src="/img/content/team/6.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Анна Демидова</span>
+									<p class="team-card__post"> Commercial Director | Partner</p>
+								</div>
+							</div>
+							<div class="col-xs col-6 col-sm-4 col-md-3 col-lg-2">
+								<div class="team__card team-card">
+									<img src="/img/content/team/7.png" alt="" class="team-card__ava">
+									<span class="team-card__full-name">Анна Демидова</span>
+									<p class="team-card__post"> Commercial Director | Partner</p>
 								</div>
 							</div>
 						</div>

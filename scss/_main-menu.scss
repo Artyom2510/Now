@@ -31,7 +31,7 @@
 	}
 }
 
-@media (min-width: $md) {
+@media (min-width: $sm) {
 	.main-menu {
 		&__lang {
 			&::before {
@@ -140,24 +140,24 @@
 				transition: width .2s ease;
 			}
 		}
+		&_active {
+			a {
+				color: $ac;
+				&::before {
+					width: 100%;
+				}
+			}
+		}
 	}
 }
 
-@media (min-width: $md) {
+@media (min-width: $sm) {
 	.menu-nav {
 		&__item {
 			a {
 				&:hover, &:focus, &:active {
 					color: $ac;
 					text-decoration: none;
-					&::before {
-						width: 100%;
-					}
-				}
-			}
-			&_active {
-				a {
-					color: $ac;
 					&::before {
 						width: 100%;
 					}
@@ -194,8 +194,12 @@
 			&_active {
 				background-color: rgba(#fff, .1);
 				a {
+					color: #fff;
 					&::after {
 						height: 100%;
+					}
+					&::before {
+						content: none;
 					}
 				}
 			}

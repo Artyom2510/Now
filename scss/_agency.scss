@@ -1,5 +1,6 @@
 .agency {
 	position: relative;
+	padding-bottom: 108px;
 	&__top-bg {
 		position: absolute;
 		top: 0;
@@ -7,9 +8,31 @@
 		display: block;
 		width: 100%;
 		height: 1080px;
-		background: url(#{$url-img}/bg-agency.png) center center / cover no-repeat;
+		background: url(#{$url-img}/bg-agency-top.png) center center / cover no-repeat;
 	}
 }
+
+@media (max-width: $md) {
+	.agency {
+		padding-bottom: 200px;
+		&__top-bg {
+			height: 800px;
+		}
+	}
+}
+
+@media (max-width: $sm) {
+	.agency {
+		padding-bottom: 100px;
+	}
+}
+
+@media (max-width: $xs) {
+	.agency {
+		padding-bottom: 0;
+	}
+}
+
 .about {
 	padding-top: 130px;
 	padding-bottom: 120px;
@@ -192,7 +215,7 @@
 	}
 }
 
-@media (min-width: $md) {
+@media (min-width: $sm) {
 	.awards-card {
 		$p: &;
 		&:hover {
@@ -270,6 +293,9 @@
 	&__video-card {
 		margin-bottom: 50px;
 	}
+	&__small-card {
+		margin-bottom: 50px;
+	}
 }
 
 @media (max-width: $md) {
@@ -284,6 +310,36 @@
 	}
 }
 
+@media (max-width: $sm) {
+	.we-do {
+		&__video-card {
+			margin-bottom: 40px;
+			&:last-child {
+				margin-bottom: 50px;
+			}
+		}
+	}
+}
+
+@media (max-width: $xs) {
+	.we-do {
+		padding-top: 20px;
+		padding-bottom: 10px;
+		&__title {
+			margin-bottom: 20px;
+		}
+		&__video-card {
+			margin-bottom: 20px;
+			&:last-child {
+				margin-bottom: 40px;
+			}
+		}
+		&__small-card {
+			margin-bottom: 40px;
+		}
+	}
+}
+
 .video-card {
 	position: relative;
 	display: flex;
@@ -293,6 +349,16 @@
 	padding: 86px;
 	overflow: hidden;
 	background-color: #181818;
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(#000, 0);
+	}
 	&__object {
 		position: absolute;
 		z-index: 0;
@@ -308,10 +374,11 @@
 	}
 	&__icon {
 		position: relative;
-		z-index: 1;
+		z-index: 2;
 		display: block;
 		margin-right: 6.25vw;
 		width: 90px;
+		min-width: 90px;
 		height: 90px;
 		path {
 			fill: rgba(255, 255, 255, .5);
@@ -320,7 +387,7 @@
 	}
 	&__name {
 		position: relative;
-		z-index: 1;
+		z-index: 2;
 		width: 13vw;
 		min-width: 13vw;
 		margin-right: 40px;
@@ -328,7 +395,7 @@
 	}
 	&__text {
 		position: relative;
-		z-index: 1;
+		z-index: 2;
 		display: block;
 		width: 40.63vw;
 		margin: 0;
@@ -340,10 +407,13 @@
 	}
 }
 
-@media (min-width: $md) {
+@media (min-width: $sm) {
 	.video-card {
 		$p: &;
 		&:hover {
+			&::before {
+				background-color: rgba(#000, .7);
+			}
 			#{$p}__object {
 				opacity: 1;
 			}
@@ -364,6 +434,402 @@
 		}
 		&__text {
 			width: 45vw;
+		}
+	}
+}
+
+@media (max-width: $sm) {
+	.video-card {
+		padding: 40px 60px 60px;
+		flex-wrap: wrap;
+		&::before {
+			background-color: rgba(#000, .7);
+		}
+		&__object {
+			opacity: 1;
+		}
+		&__icon {
+			margin-right: 40px;
+			margin-bottom: 40px;
+			path {
+				fill: rgba(255, 255, 255, 1);
+			}
+		}
+		&__name {
+			width: calc(100% - 130px);
+			margin-right: 0;
+			margin-bottom: 40px;
+		}
+		&__text {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: $xs) {
+	.video-card {
+		padding: 32px 20px 30px;
+		justify-content: center;
+		&__icon {
+			margin-right: 0;
+			margin-bottom: 24px;
+		}
+		&__name {
+			width: 100%;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+	}
+}
+
+.small-card {
+	display: block;
+	&__icon {
+		display: block;
+		width: 90px;
+		height: 90px;
+		margin-bottom: 30px;
+		path {
+			fill: rgba(255, 255, 255, .5);
+			transition: fill .2s ease;
+		}
+	}
+	&__name {
+		margin-bottom: 16px;
+		text-transform: uppercase;
+		transition: color .2s ease;
+	}
+	&__text {
+		display: block;
+		width: calc(100% - 36px);
+		margin-bottom: 0;
+		font-family: "Montserrat", sans-serif;
+		font-size: 14px;
+		line-height: 20px;
+		font-weight: 400;
+		color: #fff;
+	}
+}
+
+@media (min-width: $sm) {
+	.small-card {
+		$p: &;
+		&:hover {
+			#{$p}__name {
+				color: $ac;
+			}
+			#{$p}__icon {
+				path {
+					fill: rgba(255, 255, 255, 1);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $md) {
+	.small-card {
+		&__name {
+			margin-bottom: 20px;
+		}
+		&__text {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: $sm) {
+	.small-card {
+		&__name {
+			margin-bottom: 16px;
+		}
+	}
+}
+
+@media (max-width: $xs) {
+	.small-card {
+		&__icon {
+			margin: 0 auto 20px;
+		}
+		&__name,
+		&__text {
+			text-align: center;
+		}
+	}
+}
+
+.clients {
+	padding-top: 24px;
+	padding-bottom: 64px;
+	&__title {
+		display: block;
+		margin-bottom: 80px;
+	}
+	&__logos {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		img, svg {
+			display: block;
+			width: calc(20% - 32px);
+			height: auto;
+			margin-bottom: 56px;
+			object-fit: contain;
+			object-position: 50% 50%;
+			filter: grayscale(100%);
+			transition: filter .2s ease;
+		}
+	}
+}
+
+@media (min-width: $sm) {
+	.clients {
+		$p: &;
+		&__logos {
+			img, svg {
+				&:hover {
+					filter: none;
+				}
+			}
+		}
+	}
+}
+
+
+@media (max-width: $md) {
+	.clients {
+		padding-bottom: 60px;
+		&__logos {
+			img, svg {
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+
+@media (max-width: $sm) {
+	.clients {
+		padding-bottom: 80px;
+		&__logos {
+			img, svg {
+				margin-right: 40px;
+				margin-bottom: 20px;
+				&:nth-child(5n) {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $xs) {
+	.clients {
+		padding-top: 20px;
+		padding-bottom: 40px;
+		&__logos {
+			img, svg {
+				width: 25%;
+				margin-bottom: 10px;
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.team {
+	padding-top: 136px;
+	background: url(#{$url-img}/bg-agency-bottom.jpg) center center / cover no-repeat;
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 280px;
+	}
+	&::before {
+		top: 0;
+		background-image: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
+	}
+	&::after {
+		bottom: 0;
+		background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0));
+	}
+	&__title {
+		display: block;
+		font-family: "Montserrat", sans-serif;
+		font-size: 120px;
+		font-weight: 900;
+		line-height: 100px;
+		color: #fff;
+		text-transform: uppercase;
+	}
+	&__card {
+		display: block;
+		margin-bottom: 170px;
+		&_large {
+			margin-bottom: 110px;
+		}
+	}
+}
+
+@media (max-width: $md) {
+	.team {
+		padding-top: 80px;
+		padding-bottom: 0;
+		&__title {
+			font-size: 70px;
+			line-height: 90px;
+		}
+		&__card {
+			margin-bottom: 50px;
+			&_large {
+				margin-bottom: 50px;
+			}
+		}
+	}
+}
+
+@media (max-width: $sm) {
+	.team {
+		&::after {
+			height: 100px;
+		}
+		background-position: 36% center;
+		&__title {
+			margin-bottom: 72px;
+			font-size: 50px;
+			line-height: 50px;
+		}
+		&__card {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+@media (max-width: $xs) {
+	.team {
+		padding-top: 50px;
+		padding-bottom: 90px;
+		&::after {
+			content: none;
+		}
+		&__title {
+			margin-bottom: 56px;
+			font-size: 35px;
+			line-height: 40px;
+		}
+		&__card {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.team-card {
+	$p: &;
+	&__ava {
+		display: block;
+		width: 164px;
+		height: 164px;
+		margin: 0 auto 16px;
+		object-fit: contain;
+		object-position: 50% 50%;
+		border-radius: 50%;
+	}
+	&__full-name {
+		display: block;
+		margin-bottom: 8px;
+		font-family: "Montserrat", sans-serif;
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 600;
+		color: #fff;
+		text-align: center;
+	}
+	&__post {
+		display: block;
+		margin: 0 auto 0;
+		max-width: 148px;
+		font-family: "Montserrat", sans-serif;
+		font-size: 14px;
+		line-height: 21px;
+		font-weight: 400;
+		color: #fff;
+		text-align: center;
+	}
+	&_large {
+		#{$p}__ava {
+			width: 300px;
+			height: 300px;
+			margin: 0 0 28px;
+		}
+		#{$p}__full-name {
+			padding-right: 3vw;
+			font-size: 32px;
+			line-height: 40px;
+		}
+		#{$p}__post {
+			max-width: 100%;
+			margin: 0;
+			padding-right: 3.2vw;
+		}
+	}
+}
+
+@media (max-width: $sm) {
+	.team-card {
+		$p: &;
+		&__post {
+			max-width: 100%;
+		}
+		&_large {
+			#{$p}__ava {
+				width: 256px;
+				height: 256px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			#{$p}__full-name {
+				padding-right: 0;
+				font-size: 24px;
+				line-height: 40px;
+			}
+			#{$p}__post {
+				font-size: 14px;
+				line-height: 20px;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: $xs) {
+	.team-card {
+		$p: &;
+		&__ava {
+			width: 112px;
+			height: 112px;
+			margin-bottom: 10px;
+		}
+		&__full-name {
+			font-size: 14px;
+			line-height: 16px;
+		}
+		&__post {
+			font-size: 10px;
+			line-height: 15px;
+		}
+		&_large {
+			#{$p}__ava {
+				width: 180px;
+				height: 180px;
+				margin-bottom: 16px;
+			}
+			#{$p}__full-name {
+				font-size: 20px;
+				line-height: 30px;
+			}
 		}
 	}
 }

@@ -12,10 +12,10 @@
 	
 	<meta property="og:image" content="path/to/image.jpg">
 	
-	<link rel="shortcut icon" href="img/favicon/favicon.png" type="image/png">
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+	<link rel="shortcut icon" href="/img/favicon/favicon.png" type="image/png">
+	<link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-touch-icon-114x114.png">
 
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap&subset=cyrillic" rel="stylesheet">
@@ -161,11 +161,12 @@
 									<span>Видео кейса</span>
 								</button>
 							</div>
-							<ul class="cases-0__tags tags">
+							<!-- Это просто ссылки, они ничего не фильтруют -->
+							<ul class="cases-0__tags tags tags_wrap">
 								<li class="tags__item">
 									<a href="#">Мероприятие</a>
 								</li>
-								<li class="tags__item tags__item_active">
+								<li class="tags__item">
 									<a href="#">Событие</a>
 								</li>
 								<li class="tags__item">
@@ -197,10 +198,10 @@
 			<section class="content-sect">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs col-md-4 col-lg-4">
+						<div class="col-xs col-md-5 col-lg-4">
 							<h2>О мероприятии</h2>
 						</div>
-						<div class="col-xs col-md-8 col-lg-8">
+						<div class="col-xs col-md-7 col-lg-8">
 							<div class="b-content">
 								<p>Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды 
 									в России. Концепция мероприятия была разработана в стиле клипа Робби Уиллиамса
@@ -240,13 +241,13 @@
 						</div>
 						<div class="col-xs col-lg-12">
 							<div class="content-sect__wrap">
-								<img src="/img/content/bg.png" alt="">
+								<img src="/img/content/zaglushka.png" alt="">
 							</div>
 						</div>
-						<div class="col-xs col-md-4 col-lg-4">
+						<div class="col-xs col-md-5 col-lg-4">
 							<h3>Атмосфера</h3>
 						</div>
-						<div class="col-xs col-md-8 col-lg-8">
+						<div class="col-xs col-md-7 col-lg-8">
 							<div class="content-sect__content b-content">
 								<p>Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды 
 									в России. Концепция мероприятия была разработана в стиле клипа Робби Уиллиамса
@@ -256,13 +257,13 @@
 						</div>
 						<div class="col-xs col-lg-12">
 							<div class="content-sect__wrap">
-								<img src="/img/content/bg.png" alt="">
+								<img src="/img/content/zaglushka.png" alt="">
 							</div>
 						</div>
-						<div class="col-xs col-md-4 col-lg-4">
+						<div class="col-xs col-md-5 col-lg-4">
 							<h3>технический концепт</h3>
 						</div>
-						<div class="col-xs col-md-8 col-lg-8">
+						<div class="col-xs col-md-7 col-lg-8">
 							<div class="content-sect__content b-content">
 								<p>Во второй части мероприятия для гостей открылся огромный Колонный зал с огромными люстрами и уникальной подсветкой, которую мы сделали.</p>
 								<p>Гостям был показан специально разработанный номер открытия – постановка с классическим балетом, современными танцами под кавер версию песни Робби Уиллиамса от лучшей кавер группы Москвы «Пятый Элемент».</p>
@@ -281,7 +282,7 @@
 			<section class="content-sect">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs col-md-4 col-lg-4">
+						<div class="col-xs col-md-5 col-lg-4">
 							<h2>Видео</h2>
 						</div>
 						<div class="col-xs col-lg-12">
@@ -293,7 +294,7 @@
 								</button>
 							</div>
 						</div>
-						<div class="col-xs offset-md-4 col-md-8 offset-lg-4 col-lg-8">
+						<div class="col-xs offset-md-5 col-md-7 offset-lg-4 col-lg-8">
 							<div class="b-content">
 								<p>
 									Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды 
@@ -315,62 +316,62 @@
 			<section class="gallery-sect">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs col-md-4 col-lg-4">
+						<div class="col-xs col-md-5 col-lg-4">
 							<h2>Фотогалерея</h2>
 						</div>
 					</div>
 					<div class="row row_xs-p">
 						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
-							<a href="img/content/1.jpg" class="swipebox gallery-sect__card card" rel="gallery" title="My Caption">
+							<a href="/img/content/1.jpg" class="swipebox gallery-sect__card card" rel="gallery" title="My Caption">
 								<div class="card__wrap">
 									<img src="/img/content/1.jpg" alt="">
 								</div>
 							</a>
 						</div>
 						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
-							<a href="img/content/bg.png" class="swipebox gallery-sect__card card" rel="gallery" title="Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды в России. Концепция мероприятия была разработана в стиле клипа Робби Уиллиамса &#34;Party Like A Russian&#34;. В Качестве площадки был выбран «Дом Союзов» в центре Москвы.">
+							<a href="/img/content/zaglushka.png" class="swipebox gallery-sect__card card" rel="gallery" title="Новогоднее корпоративное мероприятие для крупнейшего интернет - магазина одежды в России. Концепция мероприятия была разработана в стиле клипа Робби Уиллиамса &#34;Party Like A Russian&#34;. В Качестве площадки был выбран «Дом Союзов» в центре Москвы.">
 								<div class="card__wrap">
 									<img src="/img/content/2.jpg" alt="">
 								</div>
 							</a>
 						</div>
 						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
-							<a href="img/content/3.jpg" class="swipebox gallery-sect__card card" rel="gallery">
+							<a href="/img/content/3.jpg" class="swipebox gallery-sect__card card" rel="gallery">
 								<div class="card__wrap">
 									<img src="/img/content/3.jpg" alt="">
 								</div>
 							</a>
 						</div>
 						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
-							<a href="img/content/4.jpg" class="swipebox gallery-sect__card card" rel="gallery">
+							<a href="/img/content/4.jpg" class="swipebox gallery-sect__card card" rel="gallery">
 								<div class="card__wrap">
 									<img src="/img/content/4.jpg" alt="">
 								</div>
 							</a>
 						</div>
 						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
-							<a href="img/content/5.jpg" class="swipebox gallery-sect__card card" rel="gallery">
+							<a href="/img/content/5.jpg" class="swipebox gallery-sect__card card" rel="gallery">
 								<div class="card__wrap">
 									<img src="/img/content/5.jpg" alt="">
 								</div>
 							</a>
 						</div>
 						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
-							<a href="img/content/6.jpg" class="swipebox gallery-sect__card card" rel="gallery">
+							<a href="/img/content/6.jpg" class="swipebox gallery-sect__card card" rel="gallery">
 								<div class="card__wrap">
 									<img src="/img/content/6.jpg" alt="">
 								</div>
 							</a>
 						</div>
 						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
-							<a href="img/content/7.jpg" class="swipebox gallery-sect__card card" rel="gallery">
+							<a href="/img/content/7.jpg" class="swipebox gallery-sect__card card" rel="gallery">
 								<div class="card__wrap">
 									<img src="/img/content/7.jpg" alt="">
 								</div>
 							</a>
 						</div>
 						<div class="col-xs-no-p col-3 col-sm-3 col-md-3 col-lg-3">
-							<a href="img/content/8.jpg" class="swipebox gallery-sect__card card" rel="gallery">
+							<a href="/img/content/8.jpg" class="swipebox gallery-sect__card card" rel="gallery">
 								<div class="card__wrap">
 									<img src="/img/content/8.jpg" alt="">
 								</div>
@@ -382,10 +383,10 @@
 			<section class="content-sect">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs col-md-4 col-lg-4">
+						<div class="col-xs col-md-5 col-lg-4">
 							<h2>Команда</h2>
 						</div>
-						<div class="col-xs col-md-8 col-lg-8">
+						<div class="col-xs col-md-7 col-lg-8">
 							<div class="content-sect__names">
 								<ul>
 									<li>Игорь Демидов — CEO | Partner</li>
