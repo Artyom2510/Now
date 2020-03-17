@@ -62,6 +62,12 @@ $(function () {
 		}
 	});
 
+	$(window).on('resize', function() {
+		if ($(this).width() > 767) {
+			header.width($('.main').width());
+		}
+	});
+
 	// Бг шапки
 	var opacity;
 	

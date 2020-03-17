@@ -461,10 +461,27 @@ hr {
 	}
 }
 
-.bg-dark-bottom {
-	background-position: center center;
+.background {
 	background-size: cover;
 	background-repeat: no-repeat;
+	&_center {
+		background-position: center center;
+	}
+	&_left {
+		background-position: 0 center;
+	}
+	&_right {
+		background-position: 100% center;
+	}
+	&_top {
+		background-position: center 100%;
+	}
+	&_bottom {
+		background-position: center 0;
+	}
+}
+
+.bg-dark-bottom {
 	&::after {
 		content: "";
 		position: absolute;
@@ -478,9 +495,6 @@ hr {
 }
 
 .bg-dark-top {
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
 	&::before {
 		content: "";
 		position: absolute;
