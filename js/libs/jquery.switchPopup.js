@@ -13,7 +13,7 @@
 			_.overflow = true;
 			_.displayClass = 'display';
 			_.visibleClass = 'visible';
-			_.scrollWidth = window.innerWidth - document.documentElement.clientWidth;
+			_.scrollWidth = window.innerWidth - $('.main').width();
 
 			_.options = $.extend(_, settings);
 

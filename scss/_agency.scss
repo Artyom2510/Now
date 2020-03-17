@@ -1,5 +1,4 @@
 .agency {
-	position: relative;
 	padding-bottom: 108px;
 	&__top-bg {
 		position: absolute;
@@ -8,7 +7,6 @@
 		display: block;
 		width: 100%;
 		height: 1080px;
-		background: url(#{$url-img}/bg-agency-top.png) center center / cover no-repeat;
 	}
 }
 
@@ -549,15 +547,21 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		img, svg {
+		a {
 			display: block;
 			width: calc(20% - 32px);
-			height: auto;
 			margin-bottom: 56px;
-			object-fit: contain;
-			object-position: 50% 50%;
-			filter: grayscale(100%);
-			transition: filter .2s ease;
+			outline: none !important;
+			cursor: pointer;
+			img, svg {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				object-position: 50% 50%;
+				filter: grayscale(100%);
+				transition: filter .2s ease;
+			}
 		}
 	}
 }
@@ -580,7 +584,7 @@
 	.clients {
 		padding-bottom: 60px;
 		&__logos {
-			img, svg {
+			a {
 				margin-bottom: 40px;
 			}
 		}
@@ -591,7 +595,8 @@
 	.clients {
 		padding-bottom: 80px;
 		&__logos {
-			img, svg {
+			a {
+				height: 48px;
 				margin-right: 40px;
 				margin-bottom: 20px;
 				&:nth-child(5n) {
@@ -607,8 +612,9 @@
 		padding-top: 20px;
 		padding-bottom: 40px;
 		&__logos {
-			img, svg {
+			a {
 				width: 25%;
+				height: 30px;
 				margin-bottom: 10px;
 				margin-right: 0;
 			}
@@ -618,24 +624,6 @@
 
 .team {
 	padding-top: 136px;
-	background: url(#{$url-img}/bg-agency-bottom.jpg) center center / cover no-repeat;
-	&::before,
-	&::after {
-		content: "";
-		position: absolute;
-		left: 0;
-		display: block;
-		width: 100%;
-		height: 280px;
-	}
-	&::before {
-		top: 0;
-		background-image: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
-	}
-	&::after {
-		bottom: 0;
-		background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0));
-	}
 	&__title {
 		display: block;
 		font-family: "Montserrat", sans-serif;
@@ -646,6 +634,8 @@
 		text-transform: uppercase;
 	}
 	&__card {
+		position: relative;
+		z-index: 1;
 		display: block;
 		margin-bottom: 170px;
 		&_large {
@@ -673,9 +663,6 @@
 
 @include media(sm) {
 	.team {
-		&::after {
-			height: 100px;
-		}
 		background-position: 36% center;
 		&__title {
 			margin-bottom: 72px;
@@ -692,9 +679,6 @@
 	.team {
 		padding-top: 50px;
 		padding-bottom: 90px;
-		&::after {
-			content: none;
-		}
 		&__title {
 			margin-bottom: 56px;
 			font-size: 35px;

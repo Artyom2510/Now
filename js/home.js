@@ -1,5 +1,16 @@
 $(function () {
 
+	// Скролл по хешу
+	$(document).ready(function() {
+		if (window.hashId) {
+			setTimeout(function() {
+				$('.root').animate({
+					scrollTop: $(window.hashId).offset().top
+				}, 500);
+			}, 1);
+		}
+	});
+
 	// Видео на главной
 	var popupVideo = $('.popup-video');
 	popupVideo.switchPopup({
@@ -21,7 +32,7 @@ $(function () {
 	
 	// Скролл по стрелке
 	var root = $('.root');
-	var sects = ['.js-second', '.js-third'];
+	var sects = ['.js-second', '#contacts'];
 	var length = sects.length;
 	var i = 0;
 	var next = $('.js-next-sect');
@@ -46,6 +57,11 @@ $(function () {
 			next.hide();
 		}
 		// console.log(i)
+	});
+
+	$('.js-anchor a').on('click', function(e) {
+		e.preventDefault();
+		animateSect($(sects[1]));
 	});
 
 });

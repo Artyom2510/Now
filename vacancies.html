@@ -30,59 +30,40 @@
 <body>
 	<div class="root">
 
-		<main class="main">
-			<div class="main__top-bg"></div>
-			<a href="/" class="main__logo js-logo">
-				<img src="/img/icon/ui-icon/logo.svg" alt="" class="img-svg">
-				<img src="/img/icon/ui-icon/time-logo.svg" alt="" class="img-svg">
-			</a>
-			<div class="main__burder">
-				<button class="btn-burger js-btn-open"></button>
+		<header class="header js-header">
+			<div class="header__burder">
+				<button class="btn-burger btn-burger_close js-btn-close"></button>
 			</div>
-			<div class="main__menu main-menu js-menu">
-				<div class="main__burder">
-					<button class="btn-burger btn-burger_close js-btn-close"></button>
-				</div>
-				<ul class="main-menu__nav menu-nav list list_column">
+			<div class="header__menu">
+				<ul class="menu-nav">
 					<li class="menu-nav__item">
 						<a href="agency.html">агентство</a>
 					</li>
 					<li class="menu-nav__item">
 						<a href="cases.html">кейсы</a>
 					</li>
-					<li class="menu-nav__item">
+					<li class="menu-nav__item menu-nav__item_active">
 						<a href="vacancies.html">вакансии</a>
 					</li>
-					<li class="menu-nav__item">
-						<a href="contacts.html">контакты</a>
-					</li>
-				</ul>
-				<a href="#" class="main-menu__lang">english</a>
-				<ul class="main-menu__soc soc-list list">
-					<li class="soc-list__item">
-						<a href="#">
-							<img src="/img/icon/soc/facebook.svg" alt="" class="img-svg">
-						</a>
-					</li>
-					<li class="soc-list__item">
-						<a href="#">
-							<img src="/img/icon/soc/instagram.svg" alt="" class="img-svg">
-						</a>
-					</li>
-					<li class="soc-list__item">
-						<a href="#">
-							<img src="/img/icon/soc/tiktok.svg" alt="" class="img-svg">
-						</a>
-					</li>
-					<li class="soc-list__item">
-						<a href="#">
-							<img src="/img/icon/soc/youtube.svg" alt="" class="img-svg">
-						</a>
+					<li class="menu-nav__item js-anchor">
+						<a href="index-home.html#contacts">контакты</a>
 					</li>
 				</ul>
 			</div>
+			<a href="#" class="header__lang">english</a>
+		</header>
+
+		<main class="main">
+			<div class="main__burder">
+				<button class="btn-burger js-btn-open"></button>
+			</div>
+			<a href="index-home.html" class="main__logo js-logo">
+				<img src="/img/icon/ui-icon/logo.svg" alt="" class="img-svg">
+				<img src="/img/icon/ui-icon/time-logo.svg" alt="" class="img-svg">
+			</a>
 
 			<section class="vacansies">
+				<div class="vacansies__top-bg bg-dark-bottom background background_bottom" style="background-image: url(/img/content/bg-vacancy.png);"></div>
 				<div class="container">
 					<div class="row">
 						<div class="col-xs col-12">
