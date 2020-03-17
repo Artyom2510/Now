@@ -49,7 +49,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.first {
 		padding-left: 7vw;
 		padding-right: 12.11vw;
@@ -61,7 +61,7 @@
 }
 
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.first {
 		flex-direction: column;
 		align-items: flex-start;
@@ -75,7 +75,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.first {
 		padding-left: 24px;
 		padding-right: 24px;
@@ -117,7 +117,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.second {
 		padding: 17.22vh 7.03vw 0;
 		&__tags {
@@ -126,7 +126,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.second {
 		padding: 13.67vh 50px 0;
 		&__tags {
@@ -208,7 +208,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.tags {
 		&__item {
 			margin-right: 22px;
@@ -216,7 +216,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.tags {
 		&__item {
 			margin-right: 14px;
@@ -310,7 +310,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.card {
 		&_sm {
 			width: 33.33%;
@@ -320,7 +320,7 @@
 		}
 	}
 }
-@media (max-width: $sm) {
+@include media(sm) {
 	.card {
 		&_sm {
 			width: 50%;
@@ -331,7 +331,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.card {
 		&_sm {
 			width: 100%;
@@ -386,7 +386,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.third {
 		padding: 27.31vh 7.03vw 0;
 		&__contact-us {
@@ -403,7 +403,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.third {
 		padding: 27.83vw 84px 0 50px;
 		flex-wrap: wrap;
@@ -424,7 +424,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.third {
 		padding: 150px 24px 0;
 		justify-content: flex-start;
@@ -474,19 +474,19 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.info {
 		padding-right: 6vw;
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.info {
 		padding-right: 0;
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.info {
 		flex-wrap: wrap;
 		&__email {

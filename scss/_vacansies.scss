@@ -1,0 +1,220 @@
+.vacansies {
+	padding-top: 130px;
+	padding-bottom: 150px;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 1080px;
+		background: url(#{$url-img}/bg-vacancy.png) 50% 0% / contain no-repeat;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		top: 800px;
+		display: block;
+		width: 100%;
+		height: 280px;
+		background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0));
+	}
+	&__title,
+	&__annotation,
+	&__card {
+		position: relative;
+		z-index: 2;
+	}
+	&__title {
+		margin-bottom: 80px;
+	}
+	&__annotation {
+		margin-bottom: 230px;
+	}
+	&__card {
+		margin-bottom: 50px;
+	}
+}
+
+@include media(md) {
+	.vacansies {
+		&::before {
+			height: 720px;
+			background-size: cover;
+		}
+		&::after {
+			top: 500px
+		}
+		&__annotation {
+			margin-bottom: 120px;
+		}
+	}
+}
+
+@include media(sm) {
+	.vacansies {
+		&::before {
+			background-position: 0% 0%;
+		}
+		&__annotation {
+			margin-bottom: 170px;
+		}
+	}
+}
+
+@include media(xs) {
+	.vacansies {
+		padding-bottom: 130px;
+		&::before {
+			height: 500px;
+			background-position: 15% 0%;
+		}
+		&::after {
+			top: 400px;
+			width: 200px;
+		}
+		padding-top: 86px;
+		&__title {
+			margin-bottom: 120px;
+		}
+		&__annotation {
+			margin-bottom: 80px;
+		}
+	}
+}
+
+.vacansies-card {
+	$p: &;
+	display: block;
+	padding-top: 30px;
+	border-top: 1px solid #fff;
+	transition: border-color .2s ease;
+	text-decoration: none;
+	cursor: pointer;
+	outline: none !important;
+	&:hover, &:focus, &:active {
+		border-color: $ac;
+		text-decoration: none;
+		#{$p}__post {
+			color: $ac;
+		}
+	}
+	&__prew {
+		display: block;
+		width: 100%;
+		height: 324px;
+		margin-bottom: 30px;
+		object-fit: cover;
+		object-position: 50% 50%;
+	}
+	&__post {
+		display: block;
+		min-height: 80px;
+		margin-bottom: 24px;
+		transition: color .2s ease;
+	}
+	&__list {
+		li {
+			margin-bottom: 12px;
+			font-size: 20px;
+			line-height: 1.5;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+@include media(md) {
+	.vacansies-card {
+		&__post {
+			margin-bottom: 10px;
+		}
+		&__list {
+			li {
+				margin-bottom: 10px;
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+@include media(sm) {
+	.vacansies-card {
+		&__prew {
+			margin-bottom: 20px;
+		}
+		&__post {
+			font-size: 24px;
+			line-height: 30px;
+		}
+		&__list {
+			li {
+				font-size: 14px;
+				line-height: 20px;
+			}
+		}
+	}
+}
+
+.vacancie {
+	padding-top: 145px;
+	padding-bottom: 120px;
+	background: url(#{$url-img}/bg-vacancie.png) 50% 0% / cover no-repeat;
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		bottom: 0;
+		display: block;
+		width: 100%;
+		height: 280px;
+		background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0));
+	}
+	&__back {
+		display: block;
+		width: 97px;
+		height: 47px;
+		margin-bottom: 40px;
+		outline: none !important;
+		cursor: pointer;
+		img, svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+	&__title {
+		position: relative;
+		z-index: 2;
+		margin-bottom: 80px;
+	}
+	&__content {
+		position: relative;
+		z-index: 2;
+	}
+}
+
+@include media(sm) {
+	.vacancie {
+		&__back {
+			width: 49px;
+			height: 24px;
+			margin-bottom: 30px;
+		}
+	}
+}
+@include media(xs) {
+	.vacancie {
+		background-size: cover;
+		&__title {
+			margin-bottom: 75px;
+		}
+	}
+}
+

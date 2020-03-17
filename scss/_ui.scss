@@ -36,7 +36,7 @@ section {
 	position: relative;
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.col-xs {
 		padding: 0 24px;
 	}
@@ -69,14 +69,14 @@ h1, .h1 {
 	text-transform: uppercase;
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	h1, .h1 {
 		font-size: 35px;
 		line-height: 40px;
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	h1, .h1 {
 		font-size: 28px;
 		line-height: 30px;
@@ -89,14 +89,14 @@ h2, .h2 {
 	font-weight: 600;
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	h2, .h2 {
 		font-size: 32px;
 		line-height: 36px;
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	h2, .h2 {
 		font-size: 24px;
 		line-height: 30px;
@@ -110,7 +110,7 @@ h3, .h3 {
 	letter-spacing: 4.4px;
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	h3, .h3 {
 		font-size: 16px;
 		line-height: 20px;
@@ -124,7 +124,7 @@ h4, .h4 {
 	font-weight: 400;
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	h4, .h4 {
 		font-size: 16px;
 	}
@@ -136,12 +136,12 @@ h5, .h5, p {
 	font-weight: 400;
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	h5, .h5, p {
 		font-size: 18px;
 	}
 }
-@media (max-width: $xs) {
+@include media(xs) {
 	h5, .h5, p {
 		font-size: 14px;
 		line-height: 20px;
@@ -233,7 +233,7 @@ h5, .h5, p {
 	}
 }
 
-@media (min-width: $sm) {
+@include media-up(sm) {
 	.next {
 		&:hover {
 			svg {
@@ -254,7 +254,7 @@ h5, .h5, p {
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.main {
 		&__next {
 			bottom: 40px;
@@ -262,7 +262,7 @@ h5, .h5, p {
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.main {
 		&__logo {
 			top: 24px;
@@ -397,7 +397,7 @@ h5, .h5, p {
 	}
 }
 
-@media (min-width: $sm) {
+@include media-up(sm) {
 	.block-video {
 		&__btn {
 			&:hover, &:focus {
@@ -417,7 +417,7 @@ h5, .h5, p {
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.block-video {
 		&_medium {
 			@include aspect-ratio(334, 175);
@@ -428,7 +428,7 @@ h5, .h5, p {
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.block-video {
 		width: 100%;
 		&_medium {
@@ -449,11 +449,6 @@ h5, .h5, p {
 	}
 }
 
-.page-title {
-	display: block;
-	text-transform: uppercase;
-}
-
 hr {
 	display: block;
 	width: 100%;
@@ -461,4 +456,30 @@ hr {
 	margin: 0;
 	background-color: $ac;
 	border: none;
+}
+
+.dash-list {
+	display: block;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	li {
+		position: relative;
+		display: block;
+		padding-left: 24px;
+		font-family: "Montserrat", sans-serif;
+		color: #fff;
+		&::before {
+			content: "—";
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			font-family: "Montserrat", sans-serif;
+			font-size: 14px;
+			line-height: 20px;
+			font-weight: 400;
+			color: #fff;
+		}
+	}
 }

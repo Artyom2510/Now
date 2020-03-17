@@ -12,7 +12,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.agency {
 		padding-bottom: 200px;
 		&__top-bg {
@@ -21,13 +21,13 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.agency {
 		padding-bottom: 100px;
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.agency {
 		padding-bottom: 0;
 	}
@@ -58,13 +58,13 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.about {
 		padding-bottom: 100px;
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.about {
 		padding-bottom: 100px;
 		&__title {
@@ -77,7 +77,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.about {
 		padding-top: 86px;
 		padding-bottom: 50px;
@@ -108,7 +108,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.awards {
 		&__card,
 		&__title {
@@ -117,7 +117,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.awards {
 		padding-top: 20px;
 		padding-bottom: 10px;
@@ -127,7 +127,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.awards {
 		padding-top: 20px;
 		&__card {
@@ -183,39 +183,19 @@
 		transition: color .2s ease;
 	}
 	&__list {
-		display: block;
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
 		li {
-			position: relative;
-			display: block;
 			margin-bottom: 16px;
-			padding-left: 24px;
-			font-family: "Montserrat", sans-serif;
 			font-size: 14px;
 			line-height: 20px;
 			font-weight: 400;
-			color: #fff;
 			&:last-child {
 				margin-bottom: 0;
-			}
-			&::before {
-				content: "—";
-				position: absolute;
-				left: 0;
-				top: 0;
-				display: block;
-				font-family: "Montserrat", sans-serif;
-				font-size: 14px;
-				line-height: 20px;
-				color: #fff;
 			}
 		}
 	}
 }
 
-@media (min-width: $sm) {
+@include media-up(sm) {
 	.awards-card {
 		$p: &;
 		&:hover {
@@ -229,7 +209,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.awards-card {
 		&__top {
 			margin-bottom: 20px;
@@ -242,7 +222,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.awards-card {
 		&__top {
 			margin-bottom: 24px;
@@ -254,7 +234,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.awards-card {
 		&__top {
 			margin-bottom: 10px;
@@ -298,7 +278,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.we-do {
 		padding-bottom: 50px;
 		&__video-card {
@@ -310,7 +290,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.we-do {
 		&__video-card {
 			margin-bottom: 40px;
@@ -321,7 +301,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.we-do {
 		padding-top: 20px;
 		padding-bottom: 10px;
@@ -407,7 +387,7 @@
 	}
 }
 
-@media (min-width: $sm) {
+@include media-up(sm) {
 	.video-card {
 		$p: &;
 		&:hover {
@@ -426,7 +406,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.video-card {
 		padding: 65px 60px 65px 40px;
 		&__name {
@@ -438,7 +418,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.video-card {
 		padding: 40px 60px 60px;
 		flex-wrap: wrap;
@@ -466,7 +446,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.video-card {
 		padding: 32px 20px 30px;
 		justify-content: center;
@@ -511,7 +491,7 @@
 	}
 }
 
-@media (min-width: $sm) {
+@include media-up(sm) {
 	.small-card {
 		$p: &;
 		&:hover {
@@ -527,7 +507,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.small-card {
 		&__name {
 			margin-bottom: 20px;
@@ -538,7 +518,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.small-card {
 		&__name {
 			margin-bottom: 16px;
@@ -546,7 +526,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.small-card {
 		&__icon {
 			margin: 0 auto 20px;
@@ -582,7 +562,7 @@
 	}
 }
 
-@media (min-width: $sm) {
+@include media-up(sm) {
 	.clients {
 		$p: &;
 		&__logos {
@@ -596,7 +576,7 @@
 }
 
 
-@media (max-width: $md) {
+@include media(md) {
 	.clients {
 		padding-bottom: 60px;
 		&__logos {
@@ -607,7 +587,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.clients {
 		padding-bottom: 80px;
 		&__logos {
@@ -622,7 +602,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.clients {
 		padding-top: 20px;
 		padding-bottom: 40px;
@@ -674,7 +654,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.team {
 		padding-top: 80px;
 		padding-bottom: 0;
@@ -691,7 +671,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.team {
 		&::after {
 			height: 100px;
@@ -708,7 +688,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.team {
 		padding-top: 50px;
 		padding-bottom: 90px;
@@ -777,7 +757,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.team-card {
 		$p: &;
 		&__post {
@@ -804,7 +784,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.team-card {
 		$p: &;
 		&__ava {
