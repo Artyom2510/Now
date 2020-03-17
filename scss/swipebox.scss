@@ -116,7 +116,7 @@ html.swipebox-html.swipebox-touch {
 	text-align: center;
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	#swipebox-title {
 		width: 80vw;
 		bottom: 80px;

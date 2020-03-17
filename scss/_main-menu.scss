@@ -31,7 +31,7 @@
 	}
 }
 
-@media (min-width: $sm) {
+@include media-up(sm) {
 	.main-menu {
 		&__lang {
 			&::before {
@@ -56,7 +56,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.main-menu {
 		&__soc,
 		&__lang {
@@ -65,7 +65,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.main-menu {
 		display: block;
 		width: 72.81vw;
@@ -100,7 +100,7 @@
 	list-style: none;
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.list {
 		&_column {
 			flex-direction: column;
@@ -151,7 +151,7 @@
 	}
 }
 
-@media (min-width: $sm) {
+@include media-up(sm) {
 	.menu-nav {
 		&__item {
 			a {
@@ -167,7 +167,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.menu-nav {
 		&__item {
 			margin-right: 0;
@@ -237,7 +237,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.soc-list {
 		padding-left: 24px;
 		&__item {

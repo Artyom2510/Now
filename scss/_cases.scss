@@ -3,7 +3,9 @@
 	padding-top: 130px;
 	padding-bottom: 120px;
 	&__title {
+		display: block;
 		margin-bottom: 40px;
+		text-transform: uppercase;
 	}
 	&__row-info {
 		margin-bottom: 16px;
@@ -19,7 +21,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.cases-0 {
 		&__row-info {
 			margin-bottom: 8px;
@@ -27,7 +29,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.cases-0 {
 		padding-bottom: 92px;
 		&__title {
@@ -45,7 +47,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.cases-0 {
 		padding-top: 86px;
 		padding-bottom: 65px;
@@ -91,7 +93,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.cases-info {
 		&__left,
 		&__right {
@@ -103,7 +105,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.cases-info {
 		&__left,
 		&__right {
@@ -116,7 +118,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.cases-info {
 		&__left,
 		&__right {
@@ -144,7 +146,7 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.gallery-sect {
 		h2 {
 			margin-bottom: 56px;
@@ -152,7 +154,7 @@
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.gallery-sect {
 		h2 {
 			margin-bottom: 40px;
@@ -160,7 +162,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.gallery-sect {
 		padding-top: 20px;
 		padding-bottom: 50px;
@@ -183,13 +185,13 @@
 	}
 }
 
-@media (max-width: $md) {
+@include media(md) {
 	.cases-more {
 		padding-bottom: 235px;
 	}
 }
 
-@media (max-width: $sm) {
+@include media(sm) {
 	.cases-more {
 		padding-bottom: 154px;
 		h2 {
@@ -201,7 +203,7 @@
 	}
 }
 
-@media (max-width: $xs) {
+@include media(xs) {
 	.cases-more {
 		padding-top: 20px;
 		padding-bottom: 64px;
