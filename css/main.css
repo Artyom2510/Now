@@ -38,6 +38,7 @@ img {
 
 section {
 	position: relative;
+	z-index: 1;
 }
 
 @media (max-width: 767.98px) {
@@ -594,6 +595,44 @@ hr {
 	color: #fff;
 }
 
+.bg-dark-bottom::after {
+	content: "";
+	position: absolute;
+	z-index: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 280px;
+	background-image: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0)));
+	background-image: -webkit-linear-gradient(bottom, #000000, rgba(0, 0, 0, 0));
+	background-image: -o-linear-gradient(bottom, #000000, rgba(0, 0, 0, 0));
+	background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0));
+}
+
+.bg-dark-top::before {
+	content: "";
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 280px;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#000000), to(rgba(0, 0, 0, 0)));
+	background-image: -webkit-linear-gradient(top, #000000, rgba(0, 0, 0, 0));
+	background-image: -o-linear-gradient(top, #000000, rgba(0, 0, 0, 0));
+	background-image: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
+}
+
+@media (max-width: 1279.98px) {
+	.bg-dark-bottom::after {
+		height: 100px;
+	}
+
+	.bg-dark-top::before {
+		height: 100%;
+	}
+}
+
 .header {
 	position: fixed;
 	z-index: 10;
@@ -657,7 +696,7 @@ hr {
 	transform-origin: 0 50%;
 	display: block;
 	width: 100%;
-	height: 1px;
+	height: 2px;
 	background-color: #ee0e33;
 	-webkit-transition: -webkit-transform .2s ease;
 	transition: -webkit-transform .2s ease;
@@ -780,7 +819,7 @@ hr {
 	left: 0;
 	display: block;
 	width: 100%;
-	height: 1px;
+	height: 2px;
 	-webkit-transform-origin: 0 50%;
 	-ms-transform-origin: 0 50%;
 	transform-origin: 0 50%;
@@ -2995,32 +3034,10 @@ hr {
 
 .team {
 	padding-top: 136px;
-	background: url(/img/bg-agency-bottom.jpg) center center/cover no-repeat;
-}
-
-.team::before, .team::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	display: block;
-	width: 100%;
-	height: 280px;
-}
-
-.team::before {
-	top: 0;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#000000), to(rgba(0, 0, 0, 0)));
-	background-image: -webkit-linear-gradient(top, #000000, rgba(0, 0, 0, 0));
-	background-image: -o-linear-gradient(top, #000000, rgba(0, 0, 0, 0));
-	background-image: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
-}
-
-.team::after {
-	bottom: 0;
-	background-image: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0)));
-	background-image: -webkit-linear-gradient(bottom, #000000, rgba(0, 0, 0, 0));
-	background-image: -o-linear-gradient(bottom, #000000, rgba(0, 0, 0, 0));
-	background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0));
+	background-position: center center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .team__title {
@@ -3034,6 +3051,8 @@ hr {
 }
 
 .team__card {
+	position: relative;
+	z-index: 1;
 	display: block;
 	margin-bottom: 170px;
 }
@@ -3067,10 +3086,6 @@ hr {
 		background-position: 36% center;
 	}
 
-	.team::after {
-		height: 100px;
-	}
-
 	.team__title {
 		margin-bottom: 72px;
 		font-size: 50px;
@@ -3086,10 +3101,6 @@ hr {
 	.team {
 		padding-top: 50px;
 		padding-bottom: 90px;
-	}
-
-	.team::after {
-		content: none;
 	}
 
 	.team__title {
