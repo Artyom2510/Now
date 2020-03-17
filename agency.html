@@ -28,65 +28,49 @@
 	<script src="js/agency.js"></script>
 
 </head>
+<body>
 
 	<div class="root">
-		<body>
-			<main class="main agency">
-				<!-- Затемнение шапки -->
-				<div class="main__top-bg"></div>
-				
-				<!-- В верху странице изображение -->
-				<div class="agency__top-bg"></div>
 
-				<a href="/" class="main__logo js-logo">
-					<img src="/img/icon/ui-icon/logo.svg" alt="" class="img-svg">
-					<img src="/img/icon/ui-icon/time-logo.svg" alt="" class="img-svg">
-				</a>
+		<header class="header js-header">
+			<div class="header__burder">
+				<button class="btn-burger btn-burger_close js-btn-close"></button>
+			</div>
+			<div class="header__menu">
+				<ul class="menu-nav">
+					<li class="menu-nav__item menu-nav__item_active">
+						<a href="agency.html">агентство</a>
+					</li>
+					<li class="menu-nav__item">
+						<a href="cases.html">кейсы</a>
+					</li>
+					<li class="menu-nav__item">
+						<a href="vacancies.html">вакансии</a>
+					</li>
+					<li class="menu-nav__item js-anchor">
+						<a href="#contacts">контакты</a>
+					</li>
+				</ul>
+			</div>
+			<a href="#" class="header__lang">english</a>
+		</header>
+
+			<main class="main agency">
+
 				<div class="main__burder">
 					<button class="btn-burger js-btn-open"></button>
 				</div>
-				<div class="main__menu main-menu js-menu">
-					<div class="main__burder">
-						<button class="btn-burger btn-burger_close js-btn-close"></button>
-					</div>
-					<ul class="main-menu__nav menu-nav list list_column">
-						<li class="menu-nav__item menu-nav__item_active">
-							<a href="agency.html">агентство</a>
-						</li>
-						<li class="menu-nav__item">
-							<a href="cases.html">кейсы</a>
-						</li>
-						<li class="menu-nav__item">
-							<a href="vacancies.html">вакансии</a>
-						</li>
-						<li class="menu-nav__item">
-							<a href="contacts.html">контакты</a>
-						</li>
-					</ul>
-					<a href="#" class="main-menu__lang">english</a>
-					<ul class="main-menu__soc soc-list list">
-						<li class="soc-list__item">
-							<a href="#">
-								<img src="/img/icon/soc/facebook.svg" alt="" class="img-svg">
-							</a>
-						</li>
-						<li class="soc-list__item">
-							<a href="#">
-								<img src="/img/icon/soc/instagram.svg" alt="" class="img-svg">
-							</a>
-						</li>
-						<li class="soc-list__item">
-							<a href="#">
-								<img src="/img/icon/soc/tiktok.svg" alt="" class="img-svg">
-							</a>
-						</li>
-						<li class="soc-list__item">
-							<a href="#">
-								<img src="/img/icon/soc/youtube.svg" alt="" class="img-svg">
-							</a>
-						</li>
-					</ul>
-				</div>
+				<a href="index-home.html" class="main__logo js-logo">
+					<img src="/img/icon/ui-icon/logo.svg" alt="" class="img-svg">
+					<img src="/img/icon/ui-icon/time-logo.svg" alt="" class="img-svg">
+				</a>
+	
+				<button class="main__next next js-next-sect">
+					<img src="/img/icon/ui-icon/arrow.svg" alt="" class="img-svg">
+				</button>
+				
+				<!-- В верху странице изображение -->
+				<div class="agency__top-bg" style="background-image: url(/img/bg-agency-top.png);"></div>
 
 				<section class="about">
 					<div class="container">
@@ -108,6 +92,94 @@
 								<div class="b-content b-content_fz18">
 									<p>Наше агентство амбициозно называется N:OW.<br>Мы верим в то, что лучший время и момент для чего угодно это «сейчас». Нам 3 года, и за это время мы успели сделать много важных для нас проектов - от интеграций в музыкальные фестивали разных брендов и вечеринок в небоскребах, до городских проектов на Сахалине и огромного мероприятия в горах Чеченской республики для того самого человека (кстати, за этот проект мы получили большую event-премию «Событие года»).</p>
 									<p>Мы интересуемся современной культурой, стараемся заниматься спортом, много путешествуем и и изучаем мир, любим вкусные рестораны и доставку еды, новые сериальчики и слушать музыку с винила в офисе. Мы любим и уважаем наших клиентов и убеждены, что лучшие проекты делаются только сообща. Мы испытываем истинное удовольствие от работы и любим нестандартные задачи на стыке диджитал и оффлайн коммуникаций.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="container">
+					<div class="row">
+						<div class="col-xs col-12">
+							<hr class="sect-line">
+						</div>
+					</div>
+				</div>
+				
+				<section class="we-do">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs col-12">
+								<div class="we-do__title">
+									<h2>Что мы делаем</h2>
+								</div>
+							</div>
+							<!-- data-poster - картинка-заглушка дял планшета, мобилы, чтоб не добавлять еще 1 блок для картинки -->
+							<div class="col-xs col-12">
+								<div class="we-do__video-card">
+									<div class="video-card js-video-card">
+										<video class="video-card__object" muted playsinline loop data-poster="/img/content/1.jpg">
+											<source src="/video/vidos.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+										</video>
+										<img src="/img/icon/ui-icon/event.svg" alt="" class="video-card__icon img-svg">
+										<h3 class="video-card__name">Event & BTL</h3>
+										<p class="video-card__text">70% наших проектов это ивенты и btl: интеграции, активации, корпоративы, клиентские мероприятия, бренд-зоны, pr-мероприятия, открытия и презентации, конференции и конечно вечеринки. Будь это городской праздник в 8-ми часовых поясах, конференция или собрание сотрудников у моря, федеральное NCP промо, серия небольших проектов в регионах, интеграция бренда в фестиваль или стильная вечеринка на 53 этаже самого дорогого пентхауса столицы - мы сделаем это.</p>
+									</div>
+								</div>
+								<div class="we-do__video-card">
+									<div class="video-card js-video-card">
+										<video class="video-card__object" muted playsinline loop data-poster="/img/content/2.jpg">
+											<source src="/video/vidos.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+										</video>
+										<img src="/img/icon/ui-icon/spaces.svg" alt="" class="video-card__icon img-svg">
+										<h3 class="video-card__name">SPACES & BRAND ZONE</h3>
+										<p class="video-card__text">Мы умеем создавать стенды, пространства, бренд зоны и интегрировать их в различные мероприятия. Креатив и механика, продакшн, сложная логистика, персонал, posm и сувенирка, коммуникация с площадкой и документация.</p>
+									</div>
+								</div>
+								<div class="we-do__video-card">
+									<div class="video-card js-video-card">
+										<video class="video-card__object" muted playsinline loop data-poster="/img/content/3.jpg">
+											<source src="/video/vidos.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+										</video>
+										<img src="/img/icon/ui-icon/creative.svg" alt="" class="video-card__icon img-svg">
+										<h3 class="video-card__name">CREATIVE</h3>
+										<p class="video-card__text">В N:OW очень сильный креативный отдел и мы сможем помочь c big idea, концепцией мероприятия, btl механикой, интегрированной кампанией, мотивационной программой, нестандартной активацией, сценарием ролика или спецпроектом.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs col-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="we-do__small-card">
+									<div class="small-card">
+										<img src="/img/icon/ui-icon/megaphone.svg" alt="" class="small-card__icon img-svg">
+										<h3 class="small-card__name">PR</h3>
+										<p class="small-card__text">Блогеры, инфлюенсеры, СМИ, спецпроекты, перевыполнение KPI.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs col-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="we-do__small-card">
+									<div class="small-card">
+										<img src="/img/icon/ui-icon/branding.svg" alt="" class="small-card__icon img-svg">
+										<h3 class="small-card__name">Branding</h3>
+										<p class="small-card__text">Мы умеем исследовать, анализировать, изучать и создавать бренды, разрабатывать платформу бренда, позиционирование, нейминг, айдентику и фирменный стиль.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs col-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="we-do__small-card">
+									<div class="small-card">
+										<img src="/img/icon/ui-icon/strategy.svg" alt="" class="small-card__icon img-svg">
+										<h3 class="small-card__name">STRATEGY</h3>
+										<p class="small-card__text">Аналитика, коммуникационная стратеги, бренд-стратегия и работа в каналах. Это может быть большое исследование и полноценная стратегия, либо небольшой анализ аудитории и стратегическое обоснование для спец проекта или кампании.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs col-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="we-do__small-card">
+									<div class="small-card">
+										<img src="/img/icon/ui-icon/digital.svg" alt="" class="small-card__icon img-svg">
+										<h3 class="small-card__name">Digital</h3>
+										<p class="small-card__text">Мы умеем разрабатывать и запускать полноценные digital-кампании и отдельные спец проекты, вести паблики в соц сетях и классно продвигать видео в youtube, разрабатывать сайты и реализовывать спец проекты.</p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -222,93 +294,6 @@
 											<li>золото с проектом "Hennessy X Felipe Pantone" в категории "Лонч Года"</li>
 											<li>2 шорт листа</li>
 										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<div class="container">
-					<div class="row">
-						<div class="col-xs col-12">
-							<hr class="sect-line">
-						</div>
-					</div>
-				</div>
-				<section class="we-do">
-					<div class="container">
-						<div class="row">
-							<div class="col-xs col-12">
-								<div class="we-do__title">
-									<h2>Что мы делаем</h2>
-								</div>
-							</div>
-							<!-- data-poster - картинка-заглушка дял планшета, мобилы, чтоб не добавлять еще 1 блок для картинки -->
-							<div class="col-xs col-12">
-								<div class="we-do__video-card">
-									<div class="video-card js-video-card">
-										<video class="video-card__object" muted playsinline loop data-poster="/img/content/1.jpg">
-											<source src="/video/vidos.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-										</video>
-										<img src="/img/icon/ui-icon/event.svg" alt="" class="video-card__icon img-svg">
-										<h3 class="video-card__name">Event & BTL</h3>
-										<p class="video-card__text">70% наших проектов это ивенты и btl: интеграции, активации, корпоративы, клиентские мероприятия, бренд-зоны, pr-мероприятия, открытия и презентации, конференции и конечно вечеринки. Будь это городской праздник в 8-ми часовых поясах, конференция или собрание сотрудников у моря, федеральное NCP промо, серия небольших проектов в регионах, интеграция бренда в фестиваль или стильная вечеринка на 53 этаже самого дорогого пентхауса столицы - мы сделаем это.</p>
-									</div>
-								</div>
-								<div class="we-do__video-card">
-									<div class="video-card js-video-card">
-										<video class="video-card__object" muted playsinline loop data-poster="/img/content/2.jpg">
-											<source src="/video/vidos.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-										</video>
-										<img src="/img/icon/ui-icon/spaces.svg" alt="" class="video-card__icon img-svg">
-										<h3 class="video-card__name">SPACES & BRAND ZONE</h3>
-										<p class="video-card__text">Мы умеем создавать стенды, пространства, бренд зоны и интегрировать их в различные мероприятия. Креатив и механика, продакшн, сложная логистика, персонал, posm и сувенирка, коммуникация с площадкой и документация.</p>
-									</div>
-								</div>
-								<div class="we-do__video-card">
-									<div class="video-card js-video-card">
-										<video class="video-card__object" muted playsinline loop data-poster="/img/content/3.jpg">
-											<source src="/video/vidos.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-										</video>
-										<img src="/img/icon/ui-icon/creative.svg" alt="" class="video-card__icon img-svg">
-										<h3 class="video-card__name">CREATIVE</h3>
-										<p class="video-card__text">В N:OW очень сильный креативный отдел и мы сможем помочь c big idea, концепцией мероприятия, btl механикой, интегрированной кампанией, мотивационной программой, нестандартной активацией, сценарием ролика или спецпроектом.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs col-12 col-sm-6 col-md-3 col-lg-3">
-								<div class="we-do__small-card">
-									<div class="small-card">
-										<img src="/img/icon/ui-icon/megaphone.svg" alt="" class="small-card__icon img-svg">
-										<h3 class="small-card__name">PR</h3>
-										<p class="small-card__text">Блогеры, инфлюенсеры, СМИ, спецпроекты, перевыполнение KPI.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs col-12 col-sm-6 col-md-3 col-lg-3">
-								<div class="we-do__small-card">
-									<div class="small-card">
-										<img src="/img/icon/ui-icon/branding.svg" alt="" class="small-card__icon img-svg">
-										<h3 class="small-card__name">Branding</h3>
-										<p class="small-card__text">Мы умеем исследовать, анализировать, изучать и создавать бренды, разрабатывать платформу бренда, позиционирование, нейминг, айдентику и фирменный стиль.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs col-12 col-sm-6 col-md-3 col-lg-3">
-								<div class="we-do__small-card">
-									<div class="small-card">
-										<img src="/img/icon/ui-icon/strategy.svg" alt="" class="small-card__icon img-svg">
-										<h3 class="small-card__name">STRATEGY</h3>
-										<p class="small-card__text">Аналитика, коммуникационная стратеги, бренд-стратегия и работа в каналах. Это может быть большое исследование и полноценная стратегия, либо небольшой анализ аудитории и стратегическое обоснование для спец проекта или кампании.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs col-12 col-sm-6 col-md-3 col-lg-3">
-								<div class="we-do__small-card">
-									<div class="small-card">
-										<img src="/img/icon/ui-icon/digital.svg" alt="" class="small-card__icon img-svg">
-										<h3 class="small-card__name">Digital</h3>
-										<p class="small-card__text">Мы умеем разрабатывать и запускать полноценные digital-кампании и отдельные спец проекты, вести паблики в соц сетях и классно продвигать видео в youtube, разрабатывать сайты и реализовывать спец проекты.</p>
 									</div>
 								</div>
 							</div>

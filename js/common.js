@@ -53,15 +53,37 @@ $(function () {
 	});
 
 	// Меню
-	var menu = $('.js-menu');
+	var header = $('.js-header');
+
+	// Ширина не учитывая скролл
+	$(document).ready(function() {
+		if ($(window).width() > 767) {
+			header.width($('.main').width());
+		}
+	});
+
+	// Бг шапки
+	var opacity;
 	
+	$('.root').on('scroll', function() {
+		if ($(window).width() > 767) {
+			if ($(this).scrollTop() < 51) {
+				opacity = $(this).scrollTop() / 100
+			}
+			if ($(this).scrollTop() > 70) {
+				opacity = 0.8;
+			}
+			header.css('background', 'rgba(0, 0, 0,' + opacity + ')');
+		}
+	});
+
 	$('.js-btn-open').on('click', function() {
-		menu.addClass('transform');
+		header.addClass('transform');
 		$('html').css('overflow', 'hidden');
 	});
 
 	$('.js-btn-close').on('click', function() {
-		menu.removeClass('transform');
+		header.removeClass('transform');
 		$('html').css('overflow', 'auto');
 	});
 
@@ -141,23 +163,9 @@ $(function () {
 		var paretn = $(this).parent('.block-video');
 		var iframe = paretn.children('iframe')[0];
 		var bg = paretn.children('.block-video__bg');
-		// $('iframe').each(function() {
-		// 	$(this)[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-		// });
 		iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
 		$(this).hide();
 		bg.hide();
-	});
-
-	// Бг "шапки"
-	$('.root').on('scroll', function() {
-		if ($(this).scrollTop() < 51) {
-			var opacity = $(this).scrollTop() / 100 + 0.3
-			$('.main__top-bg').css('background', 'rgba(0, 0, 0,' + opacity + ')');
-		}
-		if ($(this).scrollTop() > 70) {
-			$('.main__top-bg').css('background', 'rgba(0, 0, 0, 0.8)');
-		}
 	});
 
 });

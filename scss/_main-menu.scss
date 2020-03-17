@@ -31,7 +31,7 @@
 	}
 }
 
-@include media-up(sm) {
+@media (min-width: $sm) {
 	.main-menu {
 		&__lang {
 			&::before {
@@ -151,7 +151,7 @@
 	}
 }
 
-@include media-up(sm) {
+@media (min-width: $sm) {
 	.menu-nav {
 		&__item {
 			a {

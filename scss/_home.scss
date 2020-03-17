@@ -3,7 +3,7 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
-	height: 100vh;
+	height: calc(100vh - 100px);
 	padding-right: 21.25vw;
 	padding-left: 8.85vw;
 	transition: transform .5s ease;
@@ -53,6 +53,7 @@
 	.first {
 		padding-left: 7vw;
 		padding-right: 12.11vw;
+		height: calc(100vh - 90px);
 		&__slogan {
 			width: 42.66vw;
 			@include aspect-ratio(91, 25);
@@ -107,7 +108,7 @@
 	&__tags {
 		position: sticky;
 		z-index: 6;
-		top: 80px;
+		top: 100px;
 		left: 0;
 		margin: 0 0 46px;
 	}
@@ -121,6 +122,7 @@
 	.second {
 		padding: 17.22vh 7.03vw 0;
 		&__tags {
+			top: 90px;
 			margin-bottom: 32px;
 		}
 	}
@@ -135,11 +137,20 @@
 	}
 }
 
+@include media(xs) {
+	.second {
+		&__tags {
+			top: 80px;
+		}
+	}
+}
+
 .tags {
 	display: flex;
 	flex-wrap: nowrap;
 	padding: 0;
 	overflow-x: auto;
+	background-color: rgba(#000, .8);
 	// -webkit-overflow-scrolling: touch;
 	// overflow: -moz-scrollbars-none;
 	// scrollbar-width: none;
@@ -342,7 +353,7 @@
 	}
 }
 
-.third {
+.contacts {
 	display: flex;
 	justify-content: space-between;
 	padding: 30vh 9.32vw 0 8.54vw;
@@ -368,6 +379,12 @@
 			object-position: 0 50%;
 		}
 	}
+	&__info {
+		margin-bottom: 64px;
+	}
+	&__soc {
+		margin: 0;
+	}
 	&__decorate-img {
 		position: relative;
 		@include aspect-ratio(644, 757);
@@ -387,13 +404,16 @@
 }
 
 @include media(md) {
-	.third {
+	.contacts {
 		padding: 27.31vh 7.03vw 0;
 		&__contact-us {
 			padding-top: 5vh;
 		}
 		&__wrap-img {
 			width: 51.78vw;
+			margin-bottom: 40px;
+		}
+		&__info {
 			margin-bottom: 40px;
 		}
 		&__decorate-img {
@@ -404,17 +424,20 @@
 }
 
 @include media(sm) {
-	.third {
+	.contacts {
 		padding: 27.83vw 84px 0 50px;
 		flex-wrap: wrap;
 		&__contact-us {
 			width: 100%;
-			margin-bottom: 80px;
+			margin-bottom: 30px;
 			padding-top: 0;
 		}
 		&__wrap-img {
 			width: 578px;
 			margin-bottom: 66px;
+		}
+		&__info {
+			margin-bottom: 30px;
 		}
 		&__decorate-img {
 			width: 364px;
@@ -425,7 +448,7 @@
 }
 
 @include media(xs) {
-	.third {
+	.contacts {
 		padding: 150px 24px 0;
 		justify-content: flex-start;
 		&__wrap-img {
@@ -434,6 +457,9 @@
 		}
 		&__contact-us {
 			margin-bottom: 56px;
+		}
+		&__info {
+			margin-bottom: 40px;
 		}
 		&__decorate-img {
 			width: 100%;
@@ -496,6 +522,47 @@
 			p {
 				max-width: 218px;
 			}
+		}
+	}
+}
+
+.soc-list {
+	display: flex;
+	padding: 0;
+	list-style-type: none;
+	&__item {
+		display: block;
+		width: 20px;
+		height: 20px;
+		margin-right: 40px;
+		&:last-child {
+			margin-right: 0;
+		}
+		a {
+			display: inline-block;
+			img, svg {
+				display: block;
+				width: 100%;
+				height: 100%;
+				path {
+					transition: fill .2s ease;
+				}
+			}
+			&:hover, &:focus, &:active {
+				img, svg {
+					path {
+						fill: $ac;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media(md) {
+	.soc-list {
+		&__item {
+			margin-right: 36px;
 		}
 	}
 }
