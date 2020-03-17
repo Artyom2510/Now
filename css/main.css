@@ -162,19 +162,6 @@ h5, .h5, p {
 	background-color: #000;
 }
 
-.main__top-bg {
-	position: fixed;
-	z-index: 4;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100px;
-	background-color: rgba(0, 0, 0, 0);
-	-webkit-transition: background-color .3s ease;
-	-o-transition: background-color .3s ease;
-	transition: background-color .3s ease;
-}
-
 .main__logo {
 	position: fixed;
 	z-index: 11;
@@ -595,6 +582,13 @@ hr {
 	color: #fff;
 }
 
+.bg-dark-bottom {
+	background-position: center center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 .bg-dark-bottom::after {
 	content: "";
 	position: absolute;
@@ -607,6 +601,13 @@ hr {
 	background-image: -webkit-linear-gradient(bottom, #000000, rgba(0, 0, 0, 0));
 	background-image: -o-linear-gradient(bottom, #000000, rgba(0, 0, 0, 0));
 	background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0));
+}
+
+.bg-dark-top {
+	background-position: center center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .bg-dark-top::before {
@@ -2302,7 +2303,6 @@ hr {
 .cases-more {
 	padding-top: 24px;
 	padding-bottom: 250px;
-	background: url(/img/bg-cases-bottom.jpg) center bottom/cover no-repeat;
 }
 
 .cases-more__cards {
@@ -2352,10 +2352,6 @@ hr {
 	display: block;
 	width: 100%;
 	height: 1080px;
-	background-position: center center;
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-repeat: no-repeat;
 }
 
 @media (max-width: 1699.98px) {
@@ -3034,10 +3030,6 @@ hr {
 
 .team {
 	padding-top: 136px;
-	background-position: center center;
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-repeat: no-repeat;
 }
 
 .team__title {
@@ -3273,8 +3265,6 @@ hr {
 @media (max-width: 1699.98px) {
 	.vacansies::before {
 		height: 720px;
-		-webkit-background-size: cover;
-		background-size: cover;
 	}
 
 	.vacansies::after {
@@ -3457,11 +3447,6 @@ hr {
 }
 
 @media (max-width: 767.98px) {
-	.vacancie {
-		-webkit-background-size: cover;
-		background-size: cover;
-	}
-
 	.vacancie__title {
 		margin-bottom: 75px;
 	}

@@ -43,7 +43,6 @@
 	.vacansies {
 		&::before {
 			height: 720px;
-			background-size: cover;
 		}
 		&::after {
 			top: 500px
@@ -211,7 +210,6 @@
 }
 @include media(xs) {
 	.vacancie {
-		background-size: cover;
 		&__title {
 			margin-bottom: 75px;
 		}
