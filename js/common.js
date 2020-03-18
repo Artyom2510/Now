@@ -70,14 +70,15 @@ $(function () {
 
 	// Бг шапки
 	var opacity;
+	var root = $('.root');
 	
-	$('.root').on('scroll', function() {
+	root.on('scroll', function() {
 		if ($(window).width() > 767) {
 			if ($(this).scrollTop() < 51) {
 				opacity = $(this).scrollTop() / 100
 			}
 			if ($(this).scrollTop() > 70) {
-				opacity = 0.95;
+				opacity = 0.9;
 			}
 			header.css('background', 'rgba(0, 0, 0,' + opacity + ')');
 		}
@@ -85,16 +86,16 @@ $(function () {
 
 	$('.js-btn-open').on('click', function() {
 		header.addClass('transform');
-		$('html').css('overflow', 'hidden');
+		root.addClass('overflow');
 	});
 
 	$('.js-btn-close').on('click', function() {
 		header.removeClass('transform');
-		$('html').css('overflow', 'auto');
+		root.removeClass('overflow');
 	});
 
 	// Время при наведении на лого
-	var firstNum, casesNum;
+	var firstNum, secondNum;
 	var cnt = 0;
 	function addZero(num) {
 		num += "".split('');

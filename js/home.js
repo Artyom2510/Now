@@ -28,6 +28,10 @@ $(function () {
 	$('.js-anchor a').on('click', function(e) {
 		e.preventDefault();
 		var hash = $(this).attr("href");
+		if ($(window).width() < 768) {
+			$('.js-header').removeClass('transform');
+			root.removeClass('overflow');
+		}
 		animateSect($(hash));
 	});
 
