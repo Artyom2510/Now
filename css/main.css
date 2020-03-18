@@ -697,7 +697,7 @@ hr {
 .menu-nav__item a {
 	position: relative;
 	display: inline-block;
-	font-family: 'Mosterrat', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	line-height: 1;
 	text-transform: uppercase;
@@ -1605,7 +1605,7 @@ hr {
 .info__email {
 	position: relative;
 	display: inline-block;
-	font-family: 'Mosterrat', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	line-height: 1;
 	font-weight: 700;
@@ -1656,7 +1656,7 @@ hr {
 
 .info__contacts p, .info__contacts span {
 	display: block;
-	font-family: 'Mosterrat', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	line-height: 1;
 	font-weight: 700;
@@ -3488,4 +3488,65 @@ hr {
 	.vacancie__title {
 		margin-bottom: 75px;
 	}
+}
+
+.p-404 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.middle-block {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+}
+
+.middle-block h2 {
+	margin-bottom: 80px;
+}
+
+.middle-block a {
+	display: inline-block;
+	padding: 15px 40px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	line-height: 30px;
+	border: 2px solid #fff;
+	color: #fff;
+	outline: none !important;
+	background-color: transparent;
+	text-decoration: none;
+	-webkit-transition: background-color .3s ease-out, border-color .3s ease-out;
+	-o-transition: background-color .3s ease-out, border-color .3s ease-out;
+	transition: background-color .3s ease-out, border-color .3s ease-out;
+	cursor: pointer;
+}
+
+.middle-block a:hover, .middle-block a:focus, .middle-block a:active {
+	text-decoration: none;
+	background-color: #ee0e33;
+	border-color: #ee0e33;
 }
