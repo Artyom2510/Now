@@ -1,9 +1,6 @@
 $(function () {
 
 	var root = $('.root');
-	var sects = ['.js-second', '#contacts'];
-	var length = sects.length;
-	var i = 0;
 	var next = $('.js-next-sect');
 
 	// Скролл по хешу - контакты
@@ -24,29 +21,17 @@ $(function () {
 	}
 
 	next.on('click', function() {
-		animateSect($(sects[i]));
+		animateSect($('#cases'));
 	});
-
-	// root.on('scroll', function() {
-	// 	i === length ? next.hide() : next.show();
-	// 	if ($(this).scrollTop() >= $(sects[i]).offset().top && $(this).scrollTop() <= $(sects[i]).outerHeight(true)) {
-	// 		i++;
-	// 	}
-	// 	// if (i < length) {
-	// 	// 	next.show();
-	// 	// 	if ($(this).scrollTop() >= $(sects[i]).offset().top) {
-	// 	// 		i++;
-	// 	// 	}
-	// 	// } else {
-	// 	// 	next.hide();
-	// 	// }
-	// 	console.log(i)
-	// });
 
 	// Якорь - контакты
 	$('.js-anchor a').on('click', function(e) {
 		e.preventDefault();
 		var hash = $(this).attr("href");
+		if ($(window).width() < 768) {
+			$('.js-header').removeClass('transform');
+			root.removeClass('overflow');
+		}
 		animateSect($(hash));
 	});
 

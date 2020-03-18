@@ -27,7 +27,7 @@
 	}
 	&__bg {
 		z-index: 1;
-		background-image: linear-gradient(top, rgba(#000 , 0.6), rgba(#000, 0.7))
+		background-image: linear-gradient(to top, rgba(#000 , 0.6), rgba(#000, 0.7))
 	}
 	&__slogan {
 		position: relative;
@@ -69,6 +69,44 @@
 			font-weight: 400;
 		}
 	}
+	&__next {
+		position: absolute;
+		z-index: 5;
+		bottom: 50px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: block;
+		width: 22px;
+		height: 32px;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		outline: none !important;
+		cursor: pointer;
+		img, svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+			path {
+				fill: rgba(#fff, .5);
+				transition: fill .2s ease;
+			}
+		}
+	}
+}
+
+@include media-up(sm) {
+	.first {
+		&__next {
+			&:hover {
+				svg {
+					path {
+						fill: #fff;
+					}
+				}
+			}
+		}
+	}
 }
 
 @include media(md) {
@@ -94,6 +132,9 @@
 			width: 71.09vw;
 			margin-bottom: 90px;
 		}
+		&__next {
+			bottom: 40px;
+		}
 	}
 }
 
@@ -113,6 +154,9 @@
 				margin-right: 24px;
 			}
 		}
+		&__next {
+			bottom: 24px;
+		}
 	}
 }
 
@@ -121,7 +165,7 @@
 	display: block;
 	width: 100%;
 	min-height: 100vh;
-	padding: 15.74vh 8.33vw 0;
+	padding: 14.54vh 8.33vw 0;
 	transition: transform .5s ease;
 	&.transform {
 		transform: translateY(-100%);
@@ -129,9 +173,9 @@
 	&__tags {
 		position: sticky;
 		z-index: 12;
-		top: 85px;
+		top: 100px;
 		left: 0;
-		margin: 0 0 46px;
+		margin: 0 0 33px;
 	}
 	&__cards {
 		display: flex;
@@ -141,20 +185,17 @@
 
 @include media(md) {
 	.cases {
-		padding: 17.22vh 7.03vw 0;
+		padding: 15.42vh 7.03vw 0;
 		&__tags {
-			top: 75px;
-			margin-bottom: 32px;
+			top: 90px;
+			margin-bottom: 19px;
 		}
 	}
 }
 
 @include media(sm) {
 	.cases {
-		padding: 13.67vh 50px 0;
-		&__tags {
-			margin-bottom: 32px;
-		}
+		padding: 12.4vh 50px 0;
 	}
 }
 
@@ -171,12 +212,14 @@
 .tags {
 	display: flex;
 	flex-wrap: nowrap;
-	padding: 0;
+	padding: 13px 0;
 	overflow-x: auto;
-	background-color: rgba(#000, .8);
+	background-color: rgba(#000, .9);
 	&_wrap {
 		flex-wrap: wrap;
 		overflow: none;
+		padding: 0;
+		background-color: none;
 	}
 	&__item {
 		display: block;
