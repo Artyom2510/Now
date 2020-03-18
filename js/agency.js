@@ -7,18 +7,13 @@ $(function () {
 	
 			videoCard.on({
 				'mouseenter': function() {
-					var video = $(this).children(object);
+					var video = $(this).find(object);
 					video[0].play();
 				},
 				'mouseleave': function() {
-					var video = $(this).children(object);
+					var video = $(this).find(object);
 					video[0].pause();
 				}
-			});
-		} else {
-			videoCard.each(function() {
-				var poster = $(this).children(object).data('poster');
-				$(this).children(object).attr("poster", poster);
 			});
 		}
 	}
