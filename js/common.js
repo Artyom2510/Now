@@ -94,7 +94,7 @@ $(function () {
 	});
 
 	// Время при наведении на лого
-	var firstNum, secondNum;
+	var firstNum, casesNum;
 	var cnt = 0;
 	function addZero(num) {
 		num += "".split('');

@@ -60,8 +60,9 @@
 			transition: transform .2s ease;
 		}
 		&:hover, &:focus, &:active {
+			color: $ac;
+			text-decoration: none;
 			&::after {
-				text-decoration: none;
 				transform: scaleX(1);
 			}
 		}

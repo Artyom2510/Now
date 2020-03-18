@@ -3,7 +3,7 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
-	height: calc(100vh - 100px);
+	height: 100vh;
 	padding-right: 21.25vw;
 	padding-left: 8.85vw;
 	transition: transform .5s ease;
@@ -53,7 +53,6 @@
 	.first {
 		padding-left: 7vw;
 		padding-right: 12.11vw;
-		height: calc(100vh - 90px);
 		&__slogan {
 			width: 42.66vw;
 			@include aspect-ratio(91, 25);
@@ -95,7 +94,7 @@
 	}
 }
 
-.second {
+.cases {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -107,8 +106,8 @@
 	}
 	&__tags {
 		position: sticky;
-		z-index: 6;
-		top: 100px;
+		z-index: 12;
+		top: 85px;
 		left: 0;
 		margin: 0 0 46px;
 	}
@@ -119,17 +118,17 @@
 }
 
 @include media(md) {
-	.second {
+	.cases {
 		padding: 17.22vh 7.03vw 0;
 		&__tags {
-			top: 90px;
+			top: 75px;
 			margin-bottom: 32px;
 		}
 	}
 }
 
 @include media(sm) {
-	.second {
+	.cases {
 		padding: 13.67vh 50px 0;
 		&__tags {
 			margin-bottom: 32px;
@@ -138,9 +137,11 @@
 }
 
 @include media(xs) {
-	.second {
+	.cases {
+		padding: 0 24px 0;
 		&__tags {
 			top: 80px;
+			margin-right: -24px;
 		}
 	}
 }
@@ -151,14 +152,6 @@
 	padding: 0;
 	overflow-x: auto;
 	background-color: rgba(#000, .8);
-	// -webkit-overflow-scrolling: touch;
-	// overflow: -moz-scrollbars-none;
-	// scrollbar-width: none;
-	// &::-webkit-scrollbar {
-	// 	display: none;
-	// 	width: 0;
-	// 	height: 0;
-	// }
 	&_wrap {
 		flex-wrap: wrap;
 		overflow: none;
@@ -472,8 +465,10 @@
 .info {
 	display: flex;
 	justify-content: space-between;
+	align-items: flex-start;
 	padding-right: 10vw;
 	&__email {
+		position: relative;
 		display: inline-block;
 		font-family: 'Mosterrat', sans-serif;
 		font-size: 14px;
@@ -481,6 +476,29 @@
 		font-weight: 700;
 		color: $ac;
 		text-transform: uppercase;
+		text-decoration: none;
+		outline: none !important;
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: 2;
+			left: 0;
+			bottom: 0;
+			display: block;
+			width: 100%;
+			height: 1px;
+			background-color: $ac;
+			transform: scaleX(0);
+			transform-origin: 0 50%;
+			transition: transform .2s ease;
+		}
+		&:hover, &:focus, &:active {
+			color: $ac;
+			text-decoration: none;
+			&::after {
+				transform: scaleX(1);
+			}
+		}
 	}
 	&__contacts {
 		display: block;

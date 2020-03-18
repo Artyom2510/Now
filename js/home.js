@@ -46,7 +46,8 @@ $(function () {
 	// Якорь - контакты
 	$('.js-anchor a').on('click', function(e) {
 		e.preventDefault();
-		animateSect($(sects[1]));
+		var hash = $(this).attr("href");
+		// animateSect($(this).attr("href"));
 	});
 
 	// Видео на главной
