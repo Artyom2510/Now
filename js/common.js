@@ -77,7 +77,7 @@ $(function () {
 				opacity = $(this).scrollTop() / 100
 			}
 			if ($(this).scrollTop() > 70) {
-				opacity = 0.8;
+				opacity = 0.95;
 			}
 			header.css('background', 'rgba(0, 0, 0,' + opacity + ')');
 		}

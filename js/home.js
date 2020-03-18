@@ -47,7 +47,7 @@ $(function () {
 	$('.js-anchor a').on('click', function(e) {
 		e.preventDefault();
 		var hash = $(this).attr("href");
-		// animateSect($(this).attr("href"));
+		animateSect($(hash));
 	});
 
 	// Видео на главной
