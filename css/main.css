@@ -219,18 +219,44 @@ h5, .h5, p {
 }
 
 .main__next {
-	position: absolute;
+	position: fixed;
 	z-index: 5;
 	bottom: 50px;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	-ms-transform: translateX(-50%);
 	transform: translateX(-50%);
+	display: block;
+	width: 22px;
+	height: 32px;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	outline: none !important;
+	cursor: pointer;
+}
+
+.main__next img, .main__next svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.main__next img path, .main__next svg path {
+	-webkit-transition: fill .2s ease;
+	-o-transition: fill .2s ease;
+	transition: fill .2s ease;
 }
 
 @media (max-width: 1699.98px) {
 	.main__logo {
 		top: 18px;
+	}
+}
+
+@media (max-width: 1279.98px) {
+	.main__next {
+		bottom: 40px;
 	}
 }
 
@@ -269,31 +295,8 @@ h5, .h5, p {
 	}
 }
 
-.next {
-	display: block;
-	width: 22px;
-	height: 32px;
-	padding: 0;
-	border: none;
-	background-color: transparent;
-	outline: none !important;
-	cursor: pointer;
-}
-
-.next img, .next svg {
-	display: block;
-	width: 100%;
-	height: 100%;
-}
-
-.next img path, .next svg path {
-	-webkit-transition: fill .2s ease;
-	-o-transition: fill .2s ease;
-	transition: fill .2s ease;
-}
-
 @media (min-width: 768px) {
-	.next:hover svg path {
+	.main__next:hover svg path {
 		fill: #ee0e33;
 	}
 }
@@ -315,12 +318,6 @@ h5, .h5, p {
 
 	100% {
 		fill: rgba(238, 14, 51, 0);
-	}
-}
-
-@media (max-width: 1279.98px) {
-	.main__next {
-		bottom: 40px;
 	}
 }
 
