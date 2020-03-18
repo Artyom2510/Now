@@ -197,43 +197,12 @@ h5, .h5, p {
 	&__burder {
 		display: none;
 	}
-	&__next {
-		position: fixed;
-		z-index: 5;
-		bottom: 50px;
-		left: 50%;
-		transform: translateX(-50%);
-		display: block;
-		width: 22px;
-		height: 32px;
-		padding: 0;
-		border: none;
-		background-color: transparent;
-		outline: none !important;
-		cursor: pointer;
-		img, svg {
-			display: block;
-			width: 100%;
-			height: 100%;
-			path {
-				transition: fill .2s ease;
-			}
-		}
-	}
 }
 
 @include media(md) {
 	.main {
 		&__logo {
 			top: 18px;
-		}
-	}
-}
-
-@include media(sm) {
-	.main {
-		&__next {
-			bottom: 40px;
 		}
 	}
 }
@@ -256,9 +225,6 @@ h5, .h5, p {
 			width: 72px;
 			height: 32px;
 		}
-		&__next {
-			bottom: 24px;
-		}
 		&__burder {
 			position: fixed;
 			z-index: 11;
@@ -268,20 +234,6 @@ h5, .h5, p {
 			line-height: 1;
 			width: 34px;
 			height: 30px;
-		}
-	}
-}
-
-@include media-up(sm) {
-	.main {
-		&__next {
-			&:hover {
-				svg {
-					path {
-						fill: $ac;
-					}
-				}
-			}
 		}
 	}
 }

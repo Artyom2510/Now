@@ -4,7 +4,7 @@
 	top: 0;
 	left: 0;
 	display: block;
-	height: 85px;
+	height: 100px;
 	background-color: transparent;
 	transition: background-color .3s ease;
 	&__burder {
@@ -69,7 +69,7 @@
 
 @include media(md) {
 	.header {
-		height: 75px;
+		height: 90px;
 		&__menu {
 			top: 33px;
 		}
