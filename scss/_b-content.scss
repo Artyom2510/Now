@@ -67,12 +67,90 @@
 			}
 		}
 	}
+	h2 {
+		display: block;
+		margin-bottom: 40px;
+		font-size: 40px;
+		line-height: 1;
+		font-weight: 600;
+		color: #fff;
+	}
+	h3 {
+		display: block;
+		margin-bottom: 20px;
+		font-size: 22px;
+		line-height: 1;
+		font-weight: 700;
+		letter-spacing: 4.4px;
+		text-transform: uppercase;
+		color: #fff;
+	}
+	h4 {
+		display: block;
+		margin-bottom: 20px;
+		font-size: 24px;
+		line-height: 1.5;
+		font-weight: 400;
+		color: #fff;
+	}
+	h5 {
+		display: block;
+		font-size: 20px;
+		line-height: 1.5;
+		font-weight: 400;
+		margin-bottom: 10px;
+		color: #fff;
+	}
+	ul, ol {
+		display: block;
+		padding: 0;
+		margin: 0 0 20px;
+		list-style-type: none;
+		li {
+			position: relative;
+			display: block;
+			margin-bottom: 12px;
+			padding-left: 24px;
+			font-family: "Montserrat", sans-serif;
+			font-size: 20px;
+			line-height: 1.5;
+			font-weight: 400;
+			color: #fff;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&::before {
+				content: "—";
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: block;
+				font-family: "Montserrat", sans-serif;
+				font-size: 20px;
+				line-height: 1.5;
+				font-weight: 400;
+				color: #fff;
+			}
+		}
+	}
+	strong, b {
+		font-weight: 600;
+	}
 }
 
 @include media(md) {
 	.b-content {
 		p {
 			font-size: 18px;
+		}
+		h5 {
+			font-size: 18px;
+		}
+		ul, ol {
+			li {
+				margin-bottom: 10px;
+				font-size: 18px;
+			}
 		}
 	}
 }
@@ -81,6 +159,17 @@
 	.b-content {
 		p {
 			margin-bottom: 24px;
+		}
+		h2 {
+			margin-bottom: 20px;
+			font-size: 32px;
+			line-height: 36px;
+		}
+		ul, ol {
+			li {
+				font-size: 14px;
+				line-height: 20px;
+			}
 		}
 	}
 }
@@ -97,11 +186,25 @@
 				font-size: 16px;
 			}
 		}
-		&_fz18 {
-			p {
-				font-size: 18px;
-				line-height: 27px;
-			}
+		p.has-small-font-size {
+			font-size: 18px;
+			line-height: 27px;
+		}
+		h2 {
+			font-size: 24px;
+			line-height: 30px;
+		}
+		h3 {
+			font-size: 16px;
+			line-height: 20px;
+			letter-spacing: 3.2px;
+		}
+		h4 {
+			font-size: 16px;
+		}
+		h5 {
+			font-size: 14px;
+			line-height: 20px;
 		}
 	}
 }
