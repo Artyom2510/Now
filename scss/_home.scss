@@ -300,6 +300,11 @@
 	overflow: hidden;
 	outline: none !important;
 	text-decoration: none;
+	transform: translateY(200px);
+	transition: transform .8s cubic-bezier(.25, .1, .02, .99) .2s;
+	&.up {
+		transform: translateY(0);
+	}
 	&_sm {
 		width: 25%;
 	}

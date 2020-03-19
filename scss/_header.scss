@@ -165,7 +165,7 @@
 @include media-up(md) {
 	.menu-nav {
 		&__item {
-			&:hover, &:focus, &:active {
+			&:hover {
 				&::before {
 					transform: scaleX(1);
 				}
@@ -175,7 +175,10 @@
 				}
 			}
 			a {
-				&:hover, &:focus, &:active {
+				&:focus {
+					text-decoration: none;
+				}
+				&:hover {
 					color: #000;
 					text-decoration: none;
 				}

@@ -213,6 +213,11 @@
 	display: block;
 	padding-top: 24px;
 	padding-bottom: 120px;
+	transform: translateY(120px);
+	transition: transform .8s cubic-bezier(.25, .1, .02, .99);
+	&.up {
+		transform: translateY(0);
+	}
 	h2 {
 		margin-bottom: 40px;
 	}

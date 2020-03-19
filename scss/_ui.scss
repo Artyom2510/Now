@@ -305,6 +305,12 @@ hr {
 	margin: 0;
 	background-color: $ac;
 	border: none;
+	transform: scaleX(0);
+	transform-origin: 0 0;
+	transition: transform .8s cubic-bezier(.25, .1, .02, .99) .2s;
+	&.full-width {
+		transform: scaleX(1);
+	}
 }
 
 .dash-list {

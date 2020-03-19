@@ -72,9 +72,8 @@ $(function () {
 	var root = $('.root');
 	var animateParent = $('.js-parent-offset-top');
 	var animateChild = $('.js-child-animate');
-	var animateSmallCard = $('.js-small-animate');
-	var animateAwardsCard = $('.js-awards-animate');
-	
+	var sectLine = $('.js-sect-line');
+	var contentSect = $('.js-offset-top-sect');
 	root.on('scroll', function() {
 
 		if ($(this).scrollTop() < 51) {
@@ -86,18 +85,24 @@ $(function () {
 		header.css('background', 'rgba(0, 0, 0,' + opacity + ')');
 
 		animateParent.each(function(i, el) {
-			if ($(el).offset().top < halfWindowHeight && !animateChild.hasClass('up')) {
-				animateChild.addClass('up');
+			if ($(el).offset().top < halfWindowHeight) {
+				$(el).find(animateChild).each(function(k) {
+					$(this).css('transition-delay', k * 0.1 + "s").addClass('up');
+				});
 			}
 		});
 
-		if (animateSmallCard.offset().top < halfWindowHeight && !animateSmallCard.hasClass('up')) {
-			animateSmallCard.addClass('up');
-		}
+		sectLine.each(function() {
+			if ($(this).offset().top < halfWindowHeight) {
+				$(this).addClass('full-width');
+			}
+		});
 
-		if (animateAwardsCard.offset().top < halfWindowHeight && !animateAwardsCard.hasClass('up')) {
-			animateAwardsCard.addClass('up');
-		}
+		contentSect.each(function() {
+			if ($(this).offset().top < halfWindowHeight) {
+				$(this).addClass('up');
+			}
+		});
 
 	});
 
