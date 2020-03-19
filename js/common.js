@@ -70,8 +70,13 @@ $(function () {
 	// Бг шапки
 	var opacity;
 	var root = $('.root');
+	var animateParent = $('.js-parent-offset-top');
+	var animateChild = $('.js-child-animate');
+	var animateSmallCard = $('.js-small-animate');
+	var animateAwardsCard = $('.js-awards-animate');
 	
 	root.on('scroll', function() {
+
 		if ($(this).scrollTop() < 51) {
 			opacity = $(this).scrollTop() / 100
 		}
@@ -79,6 +84,21 @@ $(function () {
 			opacity = 0.9;
 		}
 		header.css('background', 'rgba(0, 0, 0,' + opacity + ')');
+
+		animateParent.each(function(i, el) {
+			if ($(el).offset().top < halfWindowHeight && !animateChild.hasClass('up')) {
+				animateChild.addClass('up');
+			}
+		});
+
+		if (animateSmallCard.offset().top < halfWindowHeight && !animateSmallCard.hasClass('up')) {
+			animateSmallCard.addClass('up');
+		}
+
+		if (animateAwardsCard.offset().top < halfWindowHeight && !animateAwardsCard.hasClass('up')) {
+			animateAwardsCard.addClass('up');
+		}
+
 	});
 
 	$('.js-btn-burder').on('click', function() {

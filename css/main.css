@@ -671,7 +671,6 @@ hr {
 	display: block;
 	margin-right: 50px;
 	line-height: 1;
-	padding: 8px 5px;
 }
 
 .menu-nav__item:last-child {
@@ -693,7 +692,7 @@ hr {
 	-webkit-transform: scaleX(0);
 	-ms-transform: scaleX(0);
 	transform: scaleX(0);
-	background-color: #fff;
+	background-color: #ee0e33;
 	-webkit-transition: -webkit-transform .2s ease;
 	transition: -webkit-transform .2s ease;
 	-o-transition: transform .2s ease;
@@ -707,6 +706,7 @@ hr {
 	display: inline-block;
 	width: 100%;
 	height: 100%;
+	padding: 8px 5px;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	line-height: 1;
@@ -727,16 +727,22 @@ hr {
 
 .menu-nav__item_active a {
 	color: #000;
+	text-decoration: none;
 }
 
-@media (min-width: 768px) {
-	.menu-nav__item:hover::before, .menu-nav__item:focus::before {
+@media (min-width: 1280px) {
+	.menu-nav__item:hover::before, .menu-nav__item:focus::before, .menu-nav__item:active::before {
 		-webkit-transform: scaleX(1);
 		-ms-transform: scaleX(1);
 		transform: scaleX(1);
 	}
 
-	.menu-nav__item:hover a, .menu-nav__item:focus a {
+	.menu-nav__item:hover a, .menu-nav__item:focus a, .menu-nav__item:active a {
+		color: #000;
+		text-decoration: none;
+	}
+
+	.menu-nav__item a:hover, .menu-nav__item a:focus, .menu-nav__item a:active {
 		color: #000;
 		text-decoration: none;
 	}
@@ -761,7 +767,6 @@ hr {
 
 	.menu-nav__item {
 		width: 100%;
-		padding: 11px 0 11px 24px;
 		margin-right: 0;
 		margin-bottom: 20px;
 	}
@@ -775,6 +780,7 @@ hr {
 	}
 
 	.menu-nav__item a {
+		padding: 11px 0 11px 24px;
 		font-size: 18px;
 		font-weight: 600;
 	}
@@ -790,7 +796,7 @@ hr {
 		background-color: #fff;
 	}
 
-	.menu-nav__item_active {
+	.menu-nav__item_active::before {
 		background-color: rgba(255, 255, 255, 0.1);
 	}
 
@@ -800,10 +806,6 @@ hr {
 
 	.menu-nav__item_active a::after {
 		height: 100%;
-	}
-
-	.menu-nav__item_active a::before {
-		content: none;
 	}
 }
 
@@ -1044,7 +1046,7 @@ hr {
 	}
 
 	.first__next {
-		bottom: 24px;
+		bottom: 64px;
 	}
 }
 
@@ -2681,6 +2683,20 @@ hr {
 .awards__card {
 	display: block;
 	margin-bottom: 60px;
+	-webkit-transition: -webkit-transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	transition: -webkit-transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	-o-transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99), -webkit-transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	-webkit-transform: translateY(100px);
+	-ms-transform: translateY(100px);
+	transform: translateY(100px);
+}
+
+.awards__card.up {
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
 }
 
 @media (max-width: 1699.98px) {
@@ -2864,10 +2880,50 @@ hr {
 
 .we-do__video-card {
 	margin-bottom: 50px;
+	-webkit-transition: -webkit-transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	transition: -webkit-transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	-o-transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99), -webkit-transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	-webkit-transform: translateY(200px);
+	-ms-transform: translateY(200px);
+	transform: translateY(200px);
+}
+
+.we-do__video-card.up {
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.we-do__video-card:nth-child(2) {
+	-webkit-transition-delay: .1s;
+	-o-transition-delay: .1s;
+	transition-delay: .1s;
+}
+
+.we-do__video-card:nth-child(3) {
+	-webkit-transition-delay: .2s;
+	-o-transition-delay: .2s;
+	transition-delay: .2s;
 }
 
 .we-do__small-card {
 	margin-bottom: 50px;
+	-webkit-transition: -webkit-transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	transition: -webkit-transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	-o-transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99), -webkit-transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	-webkit-transform: translateY(100px);
+	-ms-transform: translateY(100px);
+	transform: translateY(100px);
+}
+
+.we-do__small-card.up {
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
 }
 
 @media (max-width: 1699.98px) {
