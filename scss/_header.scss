@@ -7,13 +7,53 @@
 	height: 100px;
 	background-color: transparent;
 	transition: background-color .3s ease;
+	&__logo {
+		position: fixed;
+		z-index: 11;
+		top: 28px;
+		left: 50px;
+		display: block;
+		width: 101px;
+		height: 44px;
+		cursor: pointer;
+		outline: none !important;
+		img, svg {
+			transition: opacity .8s ease;
+			path {
+				transition: fill .1s ease;
+			}
+			#now {
+				transition: opacity .8s ease;
+			}
+			&:first-child {
+				display: block;
+				width: 100%;
+				height: 100%;
+				opacity: 1;
+				#fliker {
+					animation: fliker 1s linear infinite;
+				}
+			}
+			&:last-child {
+				position: absolute;
+				top: 0;
+				left: -28px;
+				display: block;
+				width: 124px;
+				height: 44px;
+				opacity: 0;
+			}
+		}
+	}
 	&__burder {
 		position: absolute;
-		z-index: 10;
+		z-index: 13;
 		top: 26px;
 		right: 20px;
 		padding: 0;
 		display: none;
+		align-items: center;
+		justify-content: center;
 		border: none;
 		background-color: transparent;
 		outline: none !important;
@@ -29,6 +69,9 @@
 @include media(md) {
 	.header {
 		height: 90px;
+		&__logo {
+			top: 18px;
+		}
 		&__menu {
 			top: 33px;
 		}
@@ -37,26 +80,28 @@
 
 @include media(xs) {
 	.header {
-		position: absolute;
-		z-index: 12;
-		left: auto;
-		right: 0;
-		width: 72.81vw;
-		height: 100vh;
-		padding-top: 20vh;
-		background-color: $ac2;
-		transform: translateX(100%);
-		transition: transform .3s ease;
-		&.transform {
-			transform: translateX(0);
-		}
-		&__burder {
-			display: block;
+		&__logo {
+			top: 24px;
+			left: 24px;
+			width: 72px;
+			height: 32px;
 		}
 		&__menu {
-			position: relative;
-			top: auto;
-			right: auto;
+			position: fixed;
+			top: 0;
+			right: 0;
+			z-index: 12;
+			left: auto;
+			width: 72.81vw;
+			height: 100vh;
+			transform: translateX(100vw);
+			transition: transform .3s ease;
+			&.transform {
+				transform: translateX(0);
+			}
+		}
+		&__burder {
+			display: flex;
 		}
 	}
 }
@@ -68,15 +113,34 @@
 	list-style: none;
 	backface-visibility: hidden;
 	&__item {
+		position: relative;
 		display: block;
-		margin-right: 60px;
+		margin-right: 50px;
 		line-height: 1;
+		padding: 8px 5px;
 		&:last-child {
 			margin-right: 0;
 		}
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			transform-origin: 0 50%;
+			transform: scaleX(0);
+			background-color: #fff;
+			transition: transform .2s ease;
+		}
 		a {
 			position: relative;
+			z-index: 1;
 			display: inline-block;
+			width: 100%;
+			height: 100%;
 			font-family: 'Montserrat', sans-serif;
 			font-size: 14px;
 			line-height: 1;
@@ -85,26 +149,13 @@
 			outline: none !important;
 			text-decoration: none;
 			transition: color .2s ease;
-			&::before {
-				content: "";
-				position: absolute;
-				bottom: -2px;
-				left: 0;
-				display: block;
-				width: 100%;
-				height: 2px;
-				transform-origin: 0 50%;
-				transform: scaleX(0);
-				background-color: $ac;
-				transition: transform .2s ease;
-			}
 		}
 		&_active {
+			&::before {
+				transform: scaleX(1);
+			}
 			a {
-				color: $ac;
-				&::before {
-					transform: scaleX(1);
-				}
+				color: #000;
 			}
 		}
 	}
@@ -113,13 +164,13 @@
 @include media-up(sm) {
 	.menu-nav {
 		&__item {
-			a {
-				&:hover, &:focus {
-					color: $ac;
+			&:hover, &:focus {
+				&::before {
+					transform: scaleX(1);
+				}
+				a {
+					color: #000;
 					text-decoration: none;
-					&::before {
-						transform: scaleX(1);
-					}
 				}
 			}
 		}
@@ -129,15 +180,19 @@
 @include media(sm) {
 	.menu-nav {
 		&__item {
-			margin-right: 40px;
+			margin-right: 30px;
 		}
 	}
 }
 
 @include media(xs) {
 	.menu-nav {
+		padding-top: 20vh;
 		flex-direction: column;
+		background-color: $ac2;
 		&__item {
+			width: 100%;
+			padding: 11px 0 11px 24px;
 			margin-right: 0;
 			margin-bottom: 20px;
 			&:nth-last-child(2) {
@@ -147,8 +202,6 @@
 				margin-bottom: 0;
 			}
 			a {
-				width: 100%;
-				padding: 11px 0 11px 24px;
 				font-size: 18px;
 				font-weight: 600;
 				&::after {

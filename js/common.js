@@ -52,20 +52,19 @@ $(function () {
 		imgSvg();
 	});
 
-	// Меню
 	var header = $('.js-header');
+	var menu = $('.js-menu');
+	var halfWindowHeight;
 
 	// Ширина не учитывая скролл
 	$(document).ready(function() {
-		if ($(window).width() > 767) {
-			header.width($('.main').width());
-		}
+		header.width($('.main').width());
+		halfWindowHeight = $(window).height() / 2;
 	});
 
 	$(window).on('resize', function() {
-		if ($(this).width() > 767) {
-			header.width($('.main').width());
-		}
+		header.width($('.main').width());
+		halfWindowHeight = $(window).height() / 2;
 	});
 
 	// Бг шапки
@@ -73,25 +72,19 @@ $(function () {
 	var root = $('.root');
 	
 	root.on('scroll', function() {
-		if ($(window).width() > 767) {
-			if ($(this).scrollTop() < 51) {
-				opacity = $(this).scrollTop() / 100
-			}
-			if ($(this).scrollTop() > 70) {
-				opacity = 0.9;
-			}
-			header.css('background', 'rgba(0, 0, 0,' + opacity + ')');
+		if ($(this).scrollTop() < 51) {
+			opacity = $(this).scrollTop() / 100
 		}
+		if ($(this).scrollTop() > 70) {
+			opacity = 0.9;
+		}
+		header.css('background', 'rgba(0, 0, 0,' + opacity + ')');
 	});
 
-	$('.js-btn-open').on('click', function() {
-		header.addClass('transform');
-		root.addClass('overflow');
-	});
-
-	$('.js-btn-close').on('click', function() {
-		header.removeClass('transform');
-		root.removeClass('overflow');
+	$('.js-btn-burder').on('click', function() {
+		$(this).children().toggleClass('open close');
+		menu.toggleClass('transform');
+		root.toggleClass('overflow');
 	});
 
 	// Время при наведении на лого

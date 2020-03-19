@@ -29,7 +29,8 @@ $(function () {
 		e.preventDefault();
 		var hash = $(this).attr("href");
 		if ($(window).width() < 768) {
-			$('.js-header').removeClass('transform');
+			$('.js-menu').removeClass('transform');
+			$('.js-btn-burder').children().toggleClass('open close');
 			root.removeClass('overflow');
 		}
 		animateSect($(hash));
