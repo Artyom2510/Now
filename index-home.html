@@ -40,39 +40,36 @@
 	<div class="root">
 
 		<header class="header js-header">
-			<div class="header__burder">
-				<button class="btn-burger btn-burger_close js-btn-close"></button>
-			</div>
-			<div class="header__menu">
-				<ul class="menu-nav">
-					<li class="menu-nav__item">
-						<a href="agency.html">агентство</a>
-					</li>
-					<li class="menu-nav__item js-anchor">
-						<a href="#cases">кейсы</a>
-					</li>
-					<li class="menu-nav__item">
-						<a href="vacancies.html">вакансии</a>
-					</li>
-					<li class="menu-nav__item js-anchor">
-						<a href="#contacts">контакты</a>
-					</li>
-					<li class="menu-nav__item">
-						<a href="#">ru</a>
-					</li>
-				</ul>
-			</div>
+			<button class="header__burder js-btn-close">
+				<span class="btn-burger btn-burger_close"></span>
+			</button>
+			<ul class="header__menu menu-nav">
+				<li class="menu-nav__item">
+					<a href="agency.html">агентство</a>
+				</li>
+				<li class="menu-nav__item js-anchor">
+					<a href="#cases">кейсы</a>
+				</li>
+				<li class="menu-nav__item">
+					<a href="vacancies.html">вакансии</a>
+				</li>
+				<li class="menu-nav__item js-anchor">
+					<a href="#contacts">контакты</a>
+				</li>
+				<li class="menu-nav__item">
+					<a href="#">ru</a>
+				</li>
+			</ul>
 		</header>
 
 		<main class="main">
-
-			<div class="main__burder">
-				<button class="btn-burger js-btn-open"></button>
-			</div>
 			<a href="index-home.html" class="main__logo js-logo">
 				<img src="img/icon/ui-icon/logo.svg" alt="" class="img-svg">
 				<img src="img/icon/ui-icon/time-logo.svg" alt="" class="img-svg">
 			</a>
+			<button class="main__burder js-btn-open">
+				<span class="btn-burger"></span>
+			</button>
 
 			<section class="first">
 				<div class="first__bg"></div>
@@ -99,11 +96,11 @@
 					<li class="tags__item">
 						<a href="#">Тег</a>
 					</li>
-					<li class="tags__item">
+					<li class="tags__item tags__item_active">
 						<a href="#">Мероприятие</a>
 					</li>
 					<li class="tags__item tags__item_active">
-						<a href="#">Событие</a>
+						<button>Событие</button>
 					</li>
 					<li class="tags__item">
 						<a href="#">Ивент</a>
