@@ -1,3 +1,39 @@
+#its-now {
+	path {
+		stroke-width: 1;
+		stroke: #fff;
+		stroke-dashoffset: -250;
+		stroke-dasharray: 250;
+		stroke-linejoin: round;
+		animation: dash 2.25s ease-in-out forwards;
+	}
+	path.path-ac {
+		stroke: $ac;
+		animation: dash-ac 2.25s ease-in-out forwards;
+	}
+}
+
+// Свг анимация слогана
+@keyframes dash {
+	80% {
+		stroke-dashoffset: 0;
+		fill: transparent;
+	}
+	100% {
+		fill: #fff;
+	}
+}
+
+@keyframes dash-ac {
+	80% {
+		stroke-dashoffset: 0;
+		fill: transparent;
+	}
+	100% {
+		fill: $ac;
+	}
+}
+
 .first {
 	display: flex;
 	align-items: center;
@@ -35,7 +71,7 @@
 		display: block;
 		width: 35.83vw;
 		@include aspect-ratio(86, 25);
-		img {
+		img, svg {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -129,7 +165,8 @@
 		padding-left: 11.72vw;
 		padding-right: 17.19vw;
 		&__slogan {
-			width: 71.09vw;
+			@include aspect-ratio(224, 75);
+			width: 58.33vw;
 			margin-bottom: 90px;
 		}
 		&__next {
@@ -301,8 +338,10 @@
 	outline: none !important;
 	text-decoration: none;
 	transform: translateY(200px);
-	transition: transform .8s cubic-bezier(.25, .1, .02, .99) .2s;
+	opacity: 0;
+	transition: transform .8s cubic-bezier(.25, .1, .02, .99), opacity .8s cubic-bezier(.25, .1, .02, .99);
 	&.up {
+		opacity: 1;
 		transform: translateY(0);
 	}
 	&_sm {

@@ -10,6 +10,7 @@ $(function () {
 				animateSect($(window.hashId));
 			}, 1);
 		}
+
 	});
 
 	// Скролл по стрелке + по якорю
@@ -48,10 +49,11 @@ $(function () {
 
 	popupVideo.on('afterOpen', function() {
 		blockVideo.addClass('transform');
+		$(this).find('iframe')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
 	});
 
 	popupVideo.on('beforeClose', function() {
-		$(this).find('iframe')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+		$(this).find('iframe')[0].contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
 		blockVideo.removeClass('transform');
 	});
 

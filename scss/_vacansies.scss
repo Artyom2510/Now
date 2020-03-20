@@ -23,6 +23,13 @@
 	}
 	&__card {
 		margin-bottom: 50px;
+		transform: translateY(100px);
+		opacity: 0;
+		transition: transform .8s cubic-bezier(.25, .1, .02, .99), opacity .8s cubic-bezier(.25, .1, .02, .99);
+		&.up {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 }
 

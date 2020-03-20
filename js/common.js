@@ -55,25 +55,67 @@ $(function () {
 	var header = $('.js-header');
 	var menu = $('.js-menu');
 	var halfWindowHeight;
-
-	// Ширина не учитывая скролл
-	$(document).ready(function() {
-		header.width($('.main').width());
-		halfWindowHeight = $(window).height() / 2;
-	});
-
-	$(window).on('resize', function() {
-		header.width($('.main').width());
-		halfWindowHeight = $(window).height() / 2;
-	});
-
-	// Бг шапки
 	var opacity;
 	var root = $('.root');
 	var animateParent = $('.js-parent-offset-top');
 	var animateChild = $('.js-child-animate');
 	var sectLine = $('.js-sect-line');
 	var contentSect = $('.js-offset-top-sect');
+
+	// Карточки
+	function opacityTranslate(parent, child, wHeight, delay) {
+		parent.each(function(i, el) {
+			if ($(el).offset().top < wHeight) {
+				$(el).find(child).each(function(k) {
+					$(this).css('transition-delay', k * delay + "s").addClass('up');
+				});
+			}
+		});
+	}
+
+	// Линии
+	function sectLines(line, wHeight) {
+		line.each(function() {
+			if ($(this).offset().top < wHeight) {
+				$(this).addClass('full-width');
+			}
+		});
+	}
+
+	// Контент
+	function sectContent(content, wHeight) {
+		content.each(function() {
+			if ($(this).offset().top < wHeight) {
+				$(this).addClass('up');
+			}
+		});
+	}
+
+	$(document).ready(function() {
+		// Ширина не учитывая скролл
+		header.width($('.main').width());
+
+		var windowHeight = $(window).height();
+		halfWindowHeight = windowHeight / 1.75;
+
+		// анимации
+		if (animateParent.length) {
+			opacityTranslate(animateParent, animateChild, windowHeight, 0.2);
+		}
+		
+		if (sectLine.length) {
+			sectLines(sectLine, windowHeight);
+		}
+		if (contentSect.length) {
+			sectContent(contentSect, windowHeight);
+		}
+	});
+
+	$(window).on('resize', function() {
+		header.width($('.main').width());
+		halfWindowHeight = $(window).height() / 1.75;
+	});
+
 	root.on('scroll', function() {
 
 		if ($(this).scrollTop() < 51) {
@@ -82,27 +124,18 @@ $(function () {
 		if ($(this).scrollTop() > 70) {
 			opacity = 0.9;
 		}
+		// Бг шапки
 		header.css('background', 'rgba(0, 0, 0,' + opacity + ')');
 
-		animateParent.each(function(i, el) {
-			if ($(el).offset().top < halfWindowHeight) {
-				$(el).find(animateChild).each(function(k) {
-					$(this).css('transition-delay', k * 0.1 + "s").addClass('up');
-				});
-			}
-		});
-
-		sectLine.each(function() {
-			if ($(this).offset().top < halfWindowHeight) {
-				$(this).addClass('full-width');
-			}
-		});
-
-		contentSect.each(function() {
-			if ($(this).offset().top < halfWindowHeight) {
-				$(this).addClass('up');
-			}
-		});
+		if (animateParent.length) {
+			opacityTranslate(animateParent, animateChild, halfWindowHeight, 0.1);
+		}
+		if (sectLine.length) {
+			sectLines(sectLine, halfWindowHeight);
+		}
+		if (contentSect.length) {
+			sectContent(contentSect, halfWindowHeight);
+		}
 
 	});
 
@@ -126,6 +159,25 @@ $(function () {
 		}
 		caseOfNum(firstNum);
 		caseOfNum(secondNum);
+	}
+
+	var timer;
+
+	function start() {
+		timer = setInterval(function() {
+			nowTime();
+		}, 10000);
+	};
+
+	function nowTime() {
+		$('.js-logo').find('svg:last-child path').attr('fill', '#ee0e33');
+		var now = new Date();
+		var hours = now.getHours();
+		var minutes = now.getMinutes();
+		cnt = 0;
+		addZero(hours);
+		addZero(minutes);
+		console.log(now)
 	}
 
 	function caseOfNum(part) {
@@ -166,19 +218,19 @@ $(function () {
 	if($(window).width() > 1024) {
 		$('.js-logo').on({
 			'mouseenter': function() {
-				$(this).find('#now').css('opacity', '0');
+				$(this).find('.now').css('opacity', '0');
 				$(this).children('svg:last-child').css('opacity', '1');
-				var now = new Date();
-				var hours = now.getHours();
-				var minutes = now.getMinutes();
-				addZero(hours);
-				addZero(minutes);
+				start();
+				nowTime();
 			},
 			'mouseleave': function() {
-				$(this).find('#now').css('opacity', '1');
+				$(this).find('.now').css('opacity', '1');
 				$(this).children('svg:last-child').css('opacity', '0');
-				$(this).find('svg:last-child path').attr('fill', '#ee0e33');
+				setTimeout(function() {
+					$(this).find('svg:last-child path').attr('fill', '#ee0e33');
+				}, 100);
 				cnt = 0;
+				clearTimeout(timer);
 			}
 		});
 	}

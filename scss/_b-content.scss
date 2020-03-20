@@ -213,9 +213,11 @@
 	display: block;
 	padding-top: 24px;
 	padding-bottom: 120px;
+	opacity: 0;
 	transform: translateY(120px);
-	transition: transform .8s cubic-bezier(.25, .1, .02, .99);
+	transition: transform .8s cubic-bezier(.25, .1, .02, .99), opacity .8s cubic-bezier(.25, .1, .02, .99);
 	&.up {
+		opacity: 1;
 		transform: translateY(0);
 	}
 	h2 {

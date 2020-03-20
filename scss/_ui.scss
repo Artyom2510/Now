@@ -158,16 +158,6 @@ h5, .h5, p {
 	background-color: #000;
 }
 
-
-@keyframes fliker {
-	0% {
-		fill: rgba($ac, 1);
-	}
-	100% {
-		fill: rgba($ac, 0);
-	}
-}
-
 .block-video {
 	display: block;
 	width: 66.67vw;
@@ -298,18 +288,39 @@ h5, .h5, p {
 	}
 }
 
-hr {
+.sect-line {
+	position: absolute;
+	top: 0;
+	left: 50%;
 	display: block;
-	width: 100%;
+	width: calc(#{_col(12, lg)} - 40px);
 	height: 1px;
-	margin: 0;
+	margin: 0 auto;
 	background-color: $ac;
 	border: none;
-	transform: scaleX(0);
+	transform: translateX(-50%) scaleX(0);
 	transform-origin: 0 0;
-	transition: transform .8s cubic-bezier(.25, .1, .02, .99) .2s;
+	transition: transform .8s cubic-bezier(.25, .1, .02, .99) .4s;
 	&.full-width {
-		transform: scaleX(1);
+		transform: translateX(-50%) scaleX(1);
+	}
+}
+
+@include media(md) {
+	.sect-line {
+		width: calc(#{_col(12, md)} - 40px);
+	}
+}
+
+@include media(sm) {
+	.sect-line {
+		width: calc(#{_col(12, sm)} - 40px);
+	}
+}
+
+@include media(xs) {
+	.sect-line {
+		width: calc(#{_col(12, xs)} - 48px);
 	}
 }
 

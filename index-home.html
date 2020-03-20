@@ -74,7 +74,7 @@
 					<source src="video/vidos.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 				</video>
 				<div class="first__slogan">
-					<img src="img/icon/its-now.svg" alt="">
+					<img src="img/icon/its-now.svg" alt="" class="img-svg">
 				</div>
 				<button class="first__btn-video js-tgl-video">
 					<img src="img/icon/play.svg" alt="">
@@ -110,71 +110,71 @@
 					</li>
 				</ul>
 
-				<div class="cases__cards">
-					<a href="#" class="card card_sm">
+				<div class="cases__cards js-parent-offset-top">
+					<a href="#" class="card card_sm js-child-animate">
 						<div class="card__wrap">
 							<img src="img/content/1.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left">black party</p>
 						<p class="card__text card__text_right">lamoda</p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
 						<div class="card__wrap">
 							<img src="img/content/2.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left">"Огни Большой Деревни"</p>
 						<p class="card__text card__text_right">Киностудия «Rock Films»</p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
 						<div class="card__wrap">
 							<img src="img/content/3.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left">С НОВЫМ ГОРНЫМ!</p>
 						<p class="card__text card__text_right">emco</p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
 						<div class="card__wrap">
 							<img src="img/content/4.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left">С НОВЫМ ГОРНЫМ!</p>
 						<p class="card__text card__text_right">emco</p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
 						<div class="card__wrap">
 							<img src="img/content/5.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left"></p>
 						<p class="card__text card__text_right"></p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
 						<div class="card__wrap">
 							<img src="img/content/6.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left"></p>
 						<p class="card__text card__text_right"></p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
 						<div class="card__wrap">
 							<img src="img/content/7.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left"></p>
 						<p class="card__text card__text_right"></p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
 						<div class="card__wrap">
 							<img src="img/content/8.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left"></p>
 						<p class="card__text card__text_right"></p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
 						<div class="card__wrap">
 							<img src="img/content/1.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left"></p>
 						<p class="card__text card__text_right"></p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
 						<div class="card__wrap">
 							<img src="img/content/2.jpg" alt="">
 						</div>
@@ -224,7 +224,7 @@
 			</section>
 		</main>
 	
-		<!-- Попап открывается по клику на "Смотреть шоурил" -->
+		<!-- Попап открывается по клику на "Смотреть шоурил", тут видео запускается сразу, поэтому без бг и кнопки -->
 		<div class="popup popup-video">
 			<div class="popup__bg js-tgl-video"></div>
 			<button class="popup__close btn-gallary js-tgl-video">
@@ -232,10 +232,6 @@
 			</button>
 			<div class="block-video block-video_popup">
 				<iframe src="https://www.youtube.com/embed/6JmDyQeievA?&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0;enablejsapi=1&mute=1" width="100%" height="420" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" muted autoplay playsinline loop allowfullscreen></iframe>
-				<div class="block-video__bg" style="background-image: url(https:/img.youtube.com/vi/6JmDyQeievA/maxresdefault.jpg);"></div>
-				<button class="block-video__btn js-start-video">
-					<img src="img/icon/play.svg" alt="" class="img-svg">
-				</button>
 			</div>
 		</div>
 	</div>
