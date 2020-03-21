@@ -1,7 +1,6 @@
 $(function () {
 
 	var root = $('.root');
-	var next = $('.js-next-sect');
 
 	// Скролл по хешу - контакты
 	$(document).ready(function() {
@@ -21,8 +20,8 @@ $(function () {
 		return false;
 	}
 
-	next.on('click', function() {
-		animateSect($('#cases'));
+	$('.js-next-sect').on('click', function() {
+		animateSect($('.cases'));
 	});
 
 	// Якорь - контакты
@@ -55,6 +54,11 @@ $(function () {
 	popupVideo.on('beforeClose', function() {
 		$(this).find('iframe')[0].contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
 		blockVideo.removeClass('transform');
+	});
+
+	// Свг анимация надпись в контактах
+	root.on('scroll', function() {
+		if ($('.contacts').offset().top < $(window).height() / 2) $('.anim-svg').addClass('go');
 	});
 
 });

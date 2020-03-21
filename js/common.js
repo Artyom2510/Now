@@ -96,7 +96,7 @@ $(function () {
 		header.width($('.main').width());
 
 		var windowHeight = $(window).height();
-		halfWindowHeight = windowHeight / 1.75;
+		halfWindowHeight = windowHeight / 1.5;
 
 		// анимации
 		if (animateParent.length) {
@@ -113,7 +113,7 @@ $(function () {
 
 	$(window).on('resize', function() {
 		header.width($('.main').width());
-		halfWindowHeight = $(window).height() / 1.75;
+		halfWindowHeight = $(window).height() / 1.5;
 	});
 
 	root.on('scroll', function() {

@@ -1,15 +1,17 @@
-#its-now {
-	path {
-		stroke-width: 1;
-		stroke: #fff;
-		stroke-dashoffset: -250;
-		stroke-dasharray: 250;
-		stroke-linejoin: round;
-		animation: dash 2.25s ease-in-out forwards;
-	}
-	path.path-ac {
-		stroke: $ac;
-		animation: dash-ac 2.25s ease-in-out forwards;
+.anim-svg {
+	&.go {
+		path {
+			stroke-width: 1;
+			stroke: #fff;
+			stroke-dashoffset: -250;
+			stroke-dasharray: 250;
+			stroke-linejoin: round;
+			animation: dash 2.25s ease-in-out forwards;
+		}
+		path.path-ac {
+			stroke: $ac;
+			animation: dash-ac 2.25s ease-in-out forwards;
+		}
 	}
 }
 
@@ -466,19 +468,17 @@
 	}
 	&__wrap-img {
 		position: relative;
-		@include aspect-ratio(731, 176);
+		@include aspect-ratio(130, 33);
 		display: block;
-		width: 45.21vw;
+		width: 43.54vw;
 		margin-bottom: 54px;
-		img {
+		img, svg {
 			position: absolute;
 			top: 0;
 			left: 0;
 			display: block;
 			width: 100%;
 			height: 100%;
-			object-fit: contain;
-			object-position: 0 50%;
 		}
 	}
 	&__info {
