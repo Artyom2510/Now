@@ -186,6 +186,12 @@
 		font-weight: 700;
 		color: #fff;
 		transition: color .2s ease;
+		text-decoration: none;
+		outline: none !important;
+		cursor: pointer;
+		&:hover, &:focus, &:active {
+			text-decoration: none;
+		}
 	}
 	&__list {
 		li {

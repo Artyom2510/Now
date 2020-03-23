@@ -218,8 +218,8 @@ $(function () {
 	if($(window).width() > 1024) {
 		$('.js-logo').on({
 			'mouseenter': function() {
-				$('.js-logo').find('.now').css('opacity', '0');
-				$('.js-logo').children('svg:last-child').css('opacity', '1');
+				$(this).find('.now').css('opacity', '0');
+				$(this).children('svg:last-child').css('opacity', '1');
 				start();
 				nowTime();
 			},
