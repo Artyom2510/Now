@@ -184,33 +184,33 @@ $(function () {
 		cnt++;
 		switch (part) {
 			case "0":
-				$('#middle' + cnt).attr("fill", "transparent");
+				$('.middle' + cnt).attr("fill", "transparent");
 				break;
 			case "1":
-				$('#middle' + cnt + ', #left-top' + cnt + ', #left-bottom' + cnt + ', #top' + cnt + ', #bottom' + cnt).attr("fill", "transparent");
+				$('.middle' + cnt + ', .left-top' + cnt + ', .left-bottom' + cnt + ', .top' + cnt + ', .bottom' + cnt).attr("fill", "transparent");
 				break;
 			case "2":
-				$('#left-top' + cnt + ', #right-bottom' + cnt).attr("fill", "transparent");
+				$('.left-top' + cnt + ', .right-bottom' + cnt).attr("fill", "transparent");
 				break;
 			case "3":
-				$('#left-top' + cnt + ', #left-bottom' + cnt).attr("fill", "transparent");
+				$('.left-top' + cnt + ', .left-bottom' + cnt).attr("fill", "transparent");
 				break;
 			case "4":
-				$('#top' + cnt + ', #left-bottom' + cnt + ', #bottom' + cnt).attr("fill", "transparent");
+				$('.top' + cnt + ', .left-bottom' + cnt + ', .bottom' + cnt).attr("fill", "transparent");
 				break;
 			case "5":
-				$('#right-top' + cnt + ', #left-bottom' + cnt).attr("fill", "transparent");
+				$('.right-top' + cnt + ', .left-bottom' + cnt).attr("fill", "transparent");
 				break;
 			case "6":
-				$('#right-top' + cnt).attr("fill", "transparent");
+				$('.right-top' + cnt).attr("fill", "transparent");
 				break;
 			case "7":
-				$('#middle' + cnt + ', #left-top' + cnt + ', #left-bottom' + cnt + ', #bottom' + cnt).attr("fill", "transparent");
+				$('.middle' + cnt + ', .left-top' + cnt + ', .left-bottom' + cnt + ', .bottom' + cnt).attr("fill", "transparent");
 				break;
 			case "8":
 				break;
 			case "9":
-				$('#left-bottom' + cnt).attr("fill", "transparent");
+				$('.left-bottom' + cnt).attr("fill", "transparent");
 				break;
 		};
 	}
@@ -218,8 +218,8 @@ $(function () {
 	if($(window).width() > 1024) {
 		$('.js-logo').on({
 			'mouseenter': function() {
-				$(this).find('.now').css('opacity', '0');
-				$(this).children('svg:last-child').css('opacity', '1');
+				$('.js-logo').find('.now').css('opacity', '0');
+				$('.js-logo').children('svg:last-child').css('opacity', '1');
 				start();
 				nowTime();
 			},

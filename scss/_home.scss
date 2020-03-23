@@ -5,6 +5,7 @@
 			stroke: #fff;
 			stroke-dashoffset: -250;
 			stroke-dasharray: 250;
+			stroke-miterlimit: 5;
 			stroke-linejoin: round;
 			animation: dash 2.25s ease-in-out forwards;
 		}

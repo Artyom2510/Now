@@ -556,9 +556,9 @@ h5, .h5, p {
 }
 
 .header__logo img, .header__logo svg {
-	-webkit-transition: opacity .8s ease;
-	-o-transition: opacity .8s ease;
-	transition: opacity .8s ease;
+	-webkit-transition: opacity .6s ease;
+	-o-transition: opacity .6s ease;
+	transition: opacity .6s ease;
 }
 
 .header__logo img path, .header__logo svg path {
@@ -593,6 +593,10 @@ h5, .h5, p {
 	width: 124px;
 	height: 44px;
 	opacity: 0;
+}
+
+.header__logo_wow svg:last-child {
+	left: -14px;
 }
 
 .header__burder {
@@ -860,6 +864,7 @@ h5, .h5, p {
 	stroke: #fff;
 	stroke-dashoffset: -250;
 	stroke-dasharray: 250;
+	stroke-miterlimit: 5;
 	stroke-linejoin: round;
 	-webkit-animation: dash 2.25s ease-in-out forwards;
 	animation: dash 2.25s ease-in-out forwards;

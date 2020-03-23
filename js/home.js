@@ -56,9 +56,4 @@ $(function () {
 		blockVideo.removeClass('transform');
 	});
 
-	// Свг анимация надпись в контактах
-	root.on('scroll', function() {
-		if ($('.contacts').offset().top < $(window).height() / 2) $('.anim-svg').addClass('go');
-	});
-
 });

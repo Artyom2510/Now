@@ -18,7 +18,7 @@
 		cursor: pointer;
 		outline: none !important;
 		img, svg {
-			transition: opacity .8s ease;
+			transition: opacity .6s ease;
 			path {
 				transition: fill .1s ease;
 			}
@@ -42,6 +42,13 @@
 				width: 124px;
 				height: 44px;
 				opacity: 0;
+			}
+		}
+		&_wow {
+			svg {
+				&:last-child {
+					left: -14px;
+				}
 			}
 		}
 	}
@@ -74,6 +81,7 @@
 		fill: rgba($ac, 0);
 	}
 }
+
 
 @include media(md) {
 	.header {
@@ -248,3 +256,4 @@
 		}
 	}
 }
+
