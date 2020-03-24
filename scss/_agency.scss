@@ -1,22 +1,7 @@
 .agency {
 	padding-bottom: 108px;
-	// &__top-bg {
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-	// 	display: block;
-	// 	width: 100%;
-	// 	height: 1080px;
-	// }
 }
 
-// @include media(md) {
-// 	.agency {
-// 		&__top-bg {
-// 			height: 800px;
-// 		}
-// 	}
-// }
 
 @include media(sm) {
 	.agency {
