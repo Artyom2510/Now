@@ -860,9 +860,10 @@ h5, .h5, p {
 
 .home__bullet button {
 	display: block;
-	margin-bottom: 76px;
-	width: 20px;
-	height: 20px;
+	padding: 0;
+	width: 10px;
+	height: 10px;
+	margin-bottom: 38px;
 	border: 1px solid #fff;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
