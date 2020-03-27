@@ -45,35 +45,66 @@
 <body>
 	<div class="root">
 
-		<header class="header js-header">
-			<a href="index-home.html" class="header__logo header__logo_wow js-logo">
-				<img src="img/icon/ui-icon/logo.svg" alt="" class="img-svg">
-				<!-- <img src="img/icon/ui-icon/time-logo.svg" alt="" class="img-svg"> -->
-				<img src="img/icon/ui-icon/wow-logo.svg" alt="" class="img-svg">
-			</a>
-			<button class="header__burder js-btn-burder">
-				<span class="btn-burger open"></span>
-			</button>
-			<ul class="header__menu menu-nav js-menu">
-				<li class="menu-nav__item">
-					<a href="agency.html">агентство</a>
-				</li>
-				<li class="menu-nav__item js-anchor">
-					<a href="#cases">кейсы</a>
-				</li>
-				<li class="menu-nav__item">
-					<a href="vacancies.html">вакансии</a>
-				</li>
-				<li class="menu-nav__item js-anchor">
-					<a href="#contacts">контакты</a>
-				</li>
-				<li class="menu-nav__item">
-					<a href="#">ru</a>
-				</li>
-			</ul>
-		</header>
-
 		<main class="main">
+
+			<div class="main-menu js-main-menu">
+				<a href="index-home.html" class="main-menu__logo">
+					<img src="img/icon/ui-icon/logo.svg" alt="" class="img-svg">
+				</a>
+				<button class="main-menu__burder js-btn-burder">
+					<span class="btn-burger open"></span>
+				</button>
+				<div class="main-menu__menu js-menu">
+					<ul class="main-menu__nav menu-nav">
+						<li class="menu-nav__item link">
+							<a href="agency.html">агентство</a>
+						</li>
+						<li class="menu-nav__item link js-anchor">
+							<a href="#cases">кейсы</a>
+						</li>
+						<li class="menu-nav__item link">
+							<a href="vacancies.html">вакансии</a>
+						</li>
+						<li class="menu-nav__item link js-anchor">
+							<a href="#contacts">контакты</a>
+						</li>
+					</ul>
+
+					<div class="main-menu__lang link js-pos">
+						<a href="#" class="">english</a>
+					</div>
+					
+					<ul class="main-menu__soc soc-list">
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/facebook.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/instagram.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/tiktok.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/youtube.svg" alt="" class="img-svg">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Только на главной -->
+			<div class="home__bullet js-pos">
+				<button class="js-anc-btn active" data-id="first"></button>
+				<button class="js-anc-btn" data-id="cases"></button>
+				<button class="js-anc-btn" data-id="contacts"></button>
+			</div>
 
 			<section class="first">
 				<div class="first__bg"></div>
@@ -119,6 +150,7 @@
 
 				<div class="cases__cards js-parent-offset-top">
 					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/1.jpg" alt="">
 						</div>
@@ -126,6 +158,7 @@
 						<p class="card__text card__text_right">lamoda</p>
 					</a>
 					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/2.jpg" alt="">
 						</div>
@@ -133,6 +166,7 @@
 						<p class="card__text card__text_right">Киностудия «Rock Films»</p>
 					</a>
 					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/3.jpg" alt="">
 						</div>
@@ -140,6 +174,7 @@
 						<p class="card__text card__text_right">emco</p>
 					</a>
 					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/4.jpg" alt="">
 						</div>
@@ -147,6 +182,7 @@
 						<p class="card__text card__text_right">emco</p>
 					</a>
 					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/5.jpg" alt="">
 						</div>
@@ -154,6 +190,7 @@
 						<p class="card__text card__text_right"></p>
 					</a>
 					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/6.jpg" alt="">
 						</div>
@@ -161,6 +198,7 @@
 						<p class="card__text card__text_right"></p>
 					</a>
 					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/7.jpg" alt="">
 						</div>
@@ -168,6 +206,7 @@
 						<p class="card__text card__text_right"></p>
 					</a>
 					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/8.jpg" alt="">
 						</div>
@@ -175,6 +214,7 @@
 						<p class="card__text card__text_right"></p>
 					</a>
 					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/1.jpg" alt="">
 						</div>
@@ -182,6 +222,7 @@
 						<p class="card__text card__text_right"></p>
 					</a>
 					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/2.jpg" alt="">
 						</div>
@@ -202,28 +243,6 @@
 							<span>+7 (495) 604-10-57</span>
 						</div>
 					</div>
-					<ul class="contacts__soc soc-list">
-						<li class="soc-list__item">
-							<a href="#">
-								<img src="img/icon/soc/facebook.svg" alt="" class="img-svg">
-							</a>
-						</li>
-						<li class="soc-list__item">
-							<a href="#">
-								<img src="img/icon/soc/instagram.svg" alt="" class="img-svg">
-							</a>
-						</li>
-						<li class="soc-list__item">
-							<a href="#">
-								<img src="img/icon/soc/tiktok.svg" alt="" class="img-svg">
-							</a>
-						</li>
-						<li class="soc-list__item">
-							<a href="#">
-								<img src="img/icon/soc/youtube.svg" alt="" class="img-svg">
-							</a>
-						</li>
-					</ul>
 				</div>
 				<div class="contacts__decorate-img">
 					<img src="img/elvis.png" alt="">

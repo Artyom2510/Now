@@ -52,10 +52,13 @@ $(function () {
 		imgSvg();
 	});
 
-	var header = $('.js-header');
+	var header = $('.js-main-menu');
 	var menu = $('.js-menu');
-	var halfWindowHeight;
+	var rightPos = $('.js-pos');
+	var widhtMain;
+	var wWidth, windowHeight, halfWindowHeight;
 	var opacity;
+	var scrollW;
 	var root = $('.root');
 	var animateParent = $('.js-parent-offset-top');
 	var animateChild = $('.js-child-animate');
@@ -93,9 +96,15 @@ $(function () {
 
 	$(document).ready(function() {
 		// Ширина не учитывая скролл
-		header.width($('.main').width());
+		widhtMain = $('.main').width();
+		header.width(widhtMain);
+		wWidth = $(window).width();
+		if (wWidth > 767) {
+			scrollW = wWidth - widhtMain;
+			rightPos.css('right', 40 + scrollW + 'px');
+		}
 
-		var windowHeight = $(window).height();
+		windowHeight = $(window).height();
 		halfWindowHeight = windowHeight / 1.5;
 
 		// анимации
@@ -112,8 +121,16 @@ $(function () {
 	});
 
 	$(window).on('resize', function() {
-		header.width($('.main').width());
-		halfWindowHeight = $(window).height() / 1.5;
+		widhtMain = $('.main').width();
+		header.width(widhtMain);
+		wWidth = $(window).width();
+		if (wWidth > 767) {
+			scrollW = wWidth - widhtMain;
+			rightPos.css('right', 40 + scrollW + 'px');
+		}
+
+		windowHeight = $(window).height();
+		halfWindowHeight = windowHeight / 1.5;
 	});
 
 	root.on('scroll', function() {
@@ -144,96 +161,6 @@ $(function () {
 		menu.toggleClass('transform');
 		root.toggleClass('overflow');
 	});
-
-	// Время при наведении на лого
-	var firstNum, secondNum;
-	var cnt = 0;
-	function addZero(num) {
-		num += "".split('');
-		if(num.length > 1) {
-			firstNum = num[0];
-			secondNum = num[1];
-		} else {
-			firstNum = "0";
-			secondNum = num;
-		}
-		caseOfNum(firstNum);
-		caseOfNum(secondNum);
-	}
-
-	var timer;
-
-	function start() {
-		timer = setInterval(function() {
-			nowTime();
-		}, 10000);
-	};
-
-	function nowTime() {
-		$('.js-logo').find('svg:last-child path').attr('fill', '#ee0e33');
-		var now = new Date();
-		var hours = now.getHours();
-		var minutes = now.getMinutes();
-		cnt = 0;
-		addZero(hours);
-		addZero(minutes);
-		console.log(now)
-	}
-
-	function caseOfNum(part) {
-		cnt++;
-		switch (part) {
-			case "0":
-				$('.middle' + cnt).attr("fill", "transparent");
-				break;
-			case "1":
-				$('.middle' + cnt + ', .left-top' + cnt + ', .left-bottom' + cnt + ', .top' + cnt + ', .bottom' + cnt).attr("fill", "transparent");
-				break;
-			case "2":
-				$('.left-top' + cnt + ', .right-bottom' + cnt).attr("fill", "transparent");
-				break;
-			case "3":
-				$('.left-top' + cnt + ', .left-bottom' + cnt).attr("fill", "transparent");
-				break;
-			case "4":
-				$('.top' + cnt + ', .left-bottom' + cnt + ', .bottom' + cnt).attr("fill", "transparent");
-				break;
-			case "5":
-				$('.right-top' + cnt + ', .left-bottom' + cnt).attr("fill", "transparent");
-				break;
-			case "6":
-				$('.right-top' + cnt).attr("fill", "transparent");
-				break;
-			case "7":
-				$('.middle' + cnt + ', .left-top' + cnt + ', .left-bottom' + cnt + ', .bottom' + cnt).attr("fill", "transparent");
-				break;
-			case "8":
-				break;
-			case "9":
-				$('.left-bottom' + cnt).attr("fill", "transparent");
-				break;
-		};
-	}
-
-	if($(window).width() > 1024) {
-		$('.js-logo').on({
-			'mouseenter': function() {
-				$(this).find('.now').css('opacity', '0');
-				$(this).children('svg:last-child').css('opacity', '1');
-				start();
-				nowTime();
-			},
-			'mouseleave': function() {
-				$(this).find('.now').css('opacity', '1');
-				$(this).children('svg:last-child').css('opacity', '0');
-				setTimeout(function() {
-					$(this).find('svg:last-child path').attr('fill', '#ee0e33');
-				}, 100);
-				cnt = 0;
-				clearTimeout(timer);
-			}
-		});
-	}
 
 	// Запуск видео по нажатию на нашу кнопку, скрытие постера
 	$('.js-start-video').on('click', function() {
