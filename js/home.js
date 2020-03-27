@@ -15,11 +15,9 @@ $(function () {
 		wHeight = $(window).height() / 1.5;
 	});
 
-	// $(window).on('resize', function() {
-	// 	firstHeight = $('.first').outerHeight(true);
-	// 	casesHeight = $('.cases').outerHeight(true);
-	// 	contactsHeight = $('.contacts').outerHeight(true);
-	// });
+	$(window).on('resize', function() {
+		wHeight = $(window).height() / 1.5;
+	});
 
 	// Скролл по стрелке + по якорю
 	function animateSect(sect) {
