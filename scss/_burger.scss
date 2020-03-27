@@ -16,18 +16,57 @@
 	}
 	&::before {
 		top: 9px;
+		transform-origin: right;
 	}
 	&::after {
 		bottom: 9px;
+		transform-origin: left;
 	}
-	&_close {
+	&.open {
 		&::before {
-			top: 14px;
-			transform: rotate(-45deg);
+			animation: scale .4s cubic-bezier(0.85, 0, 0.3, 1) forwards;
 		}
 		&::after {
-			bottom: 14px;
-			transform: rotate(45deg);
+			animation: scale .4s cubic-bezier(0.85, 0, 0.3, 1) forwards;
 		}
+	}
+	&.close {
+		&::before {
+			top: 14px;
+			transform-origin: center;
+			animation: scale-1 .4s cubic-bezier(0.85, 0, 0.3, 1) forwards;
+		}
+		&::after {
+			top: 14px;
+			transform-origin: center;
+			animation: scale-2 .4s cubic-bezier(0.85, 0, 0.3, 1) forwards;
+		}
+	}
+}
+
+@keyframes scale {
+	0% {
+		transform: scaleX(0);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes scale-1 {
+	0% {
+		transform: rotate(45deg) scaleX(0);
+	}
+	100% {
+		transform: rotate(45deg) scaleX(1);
+	}
+}
+
+@keyframes scale-2 {
+	0% {
+		transform: rotate(-45deg) scaleX(0);
+	}
+	100% {
+		transform: rotate(-45deg) scaleX(1);
 	}
 }

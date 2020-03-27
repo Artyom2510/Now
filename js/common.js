@@ -52,118 +52,115 @@ $(function () {
 		imgSvg();
 	});
 
-	// Меню
-	var header = $('.js-header');
+	var header = $('.js-main-menu');
+	var menu = $('.js-menu');
+	var rightPos = $('.js-pos');
+	var widhtMain;
+	var wWidth, windowHeight, halfWindowHeight;
+	var opacity;
+	var scrollW;
+	var root = $('.root');
+	var animateParent = $('.js-parent-offset-top');
+	var animateChild = $('.js-child-animate');
+	var sectLine = $('.js-sect-line');
+	var contentSect = $('.js-offset-top-sect');
 
-	// Ширина не учитывая скролл
+	// Карточки
+	function opacityTranslate(parent, child, wHeight, delay) {
+		parent.each(function(i, el) {
+			if ($(el).offset().top < wHeight) {
+				$(el).find(child).each(function(k) {
+					$(this).css('transition-delay', k * delay + "s").addClass('up');
+				});
+			}
+		});
+	}
+
+	// Линии
+	function sectLines(line, wHeight) {
+		line.each(function() {
+			if ($(this).offset().top < wHeight) {
+				$(this).addClass('full-width');
+			}
+		});
+	}
+
+	// Контент
+	function sectContent(content, wHeight) {
+		content.each(function() {
+			if ($(this).offset().top < wHeight) {
+				$(this).addClass('up');
+			}
+		});
+	}
+
 	$(document).ready(function() {
-		if ($(window).width() > 767) {
-			header.width($('.main').width());
+		// Ширина не учитывая скролл
+		widhtMain = $('.main').width();
+		header.width(widhtMain);
+		wWidth = $(window).width();
+		if (wWidth > 767) {
+			scrollW = wWidth - widhtMain;
+			rightPos.css('right', 40 + scrollW + 'px');
+		}
+
+		windowHeight = $(window).height();
+		halfWindowHeight = windowHeight / 1.5;
+
+		// анимации
+		if (animateParent.length) {
+			opacityTranslate(animateParent, animateChild, windowHeight, 0.2);
+		}
+		
+		if (sectLine.length) {
+			sectLines(sectLine, windowHeight);
+		}
+		if (contentSect.length) {
+			sectContent(contentSect, windowHeight);
 		}
 	});
 
 	$(window).on('resize', function() {
-		if ($(this).width() > 767) {
-			header.width($('.main').width());
+		widhtMain = $('.main').width();
+		header.width(widhtMain);
+		wWidth = $(window).width();
+		if (wWidth > 767) {
+			scrollW = wWidth - widhtMain;
+			rightPos.css('right', 40 + scrollW + 'px');
 		}
+
+		windowHeight = $(window).height();
+		halfWindowHeight = windowHeight / 1.5;
 	});
 
-	// Бг шапки
-	var opacity;
-	var root = $('.root');
-	
 	root.on('scroll', function() {
-		if ($(window).width() > 767) {
-			if ($(this).scrollTop() < 51) {
-				opacity = $(this).scrollTop() / 100
-			}
-			if ($(this).scrollTop() > 70) {
-				opacity = 0.9;
-			}
-			header.css('background', 'rgba(0, 0, 0,' + opacity + ')');
+
+		if ($(this).scrollTop() < 51) {
+			opacity = $(this).scrollTop() / 100
 		}
-	});
-
-	$('.js-btn-open').on('click', function() {
-		header.addClass('transform');
-		root.addClass('overflow');
-	});
-
-	$('.js-btn-close').on('click', function() {
-		header.removeClass('transform');
-		root.removeClass('overflow');
-	});
-
-	// Время при наведении на лого
-	var firstNum, secondNum;
-	var cnt = 0;
-	function addZero(num) {
-		num += "".split('');
-		if(num.length > 1) {
-			firstNum = num[0];
-			secondNum = num[1];
-		} else {
-			firstNum = "0";
-			secondNum = num;
+		if ($(this).scrollTop() > 70) {
+			opacity = 0.9;
 		}
-		caseOfNum(firstNum);
-		caseOfNum(secondNum);
-	}
+		// Бг шапки
+		header.css('background', 'rgba(0, 0, 0,' + opacity + ')');
 
-	function caseOfNum(part) {
-		cnt++;
-		switch (part) {
-			case "0":
-				$('#middle' + cnt).attr("fill", "transparent");
-				break;
-			case "1":
-				$('#middle' + cnt + ', #left-top' + cnt + ', #left-bottom' + cnt + ', #top' + cnt + ', #bottom' + cnt).attr("fill", "transparent");
-				break;
-			case "2":
-				$('#left-top' + cnt + ', #right-bottom' + cnt).attr("fill", "transparent");
-				break;
-			case "3":
-				$('#left-top' + cnt + ', #left-bottom' + cnt).attr("fill", "transparent");
-				break;
-			case "4":
-				$('#top' + cnt + ', #left-bottom' + cnt + ', #bottom' + cnt).attr("fill", "transparent");
-				break;
-			case "5":
-				$('#right-top' + cnt + ', #left-bottom' + cnt).attr("fill", "transparent");
-				break;
-			case "6":
-				$('#right-top' + cnt).attr("fill", "transparent");
-				break;
-			case "7":
-				$('#middle' + cnt + ', #left-top' + cnt + ', #left-bottom' + cnt + ', #bottom' + cnt).attr("fill", "transparent");
-				break;
-			case "8":
-				break;
-			case "9":
-				$('#left-bottom' + cnt).attr("fill", "transparent");
-				break;
-		};
-	}
+		if (animateParent.length) {
+			opacityTranslate(animateParent, animateChild, halfWindowHeight, 0.1);
+		}
+		if (sectLine.length) {
+			sectLines(sectLine, halfWindowHeight);
+		}
+		if (contentSect.length) {
+			sectContent(contentSect, halfWindowHeight);
+		}
 
-	if($(window).width() > 1024) {
-		$('.js-logo').on({
-			'mouseenter': function() {
-				$(this).find('#now').css('opacity', '0');
-				$(this).children('svg:last-child').css('opacity', '1');
-				var now = new Date();
-				var hours = now.getHours();
-				var minutes = now.getMinutes();
-				addZero(hours);
-				addZero(minutes);
-			},
-			'mouseleave': function() {
-				$(this).find('#now').css('opacity', '1');
-				$(this).children('svg:last-child').css('opacity', '0');
-				$(this).find('svg:last-child path').attr('fill', '#ee0e33');
-				cnt = 0;
-			}
-		});
-	}
+	});
+
+	$('.js-btn-burder').on('click', function() {
+		$(this).children().toggleClass('open close');
+		menu.toggleClass('transform');
+		root.toggleClass('overflow');
+	});
 
 	// Запуск видео по нажатию на нашу кнопку, скрытие постера
 	$('.js-start-video').on('click', function() {

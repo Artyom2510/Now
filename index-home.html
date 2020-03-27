@@ -11,11 +11,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
 	<meta property="og:image" content="path/to/image.jpg">
+	<meta name="application-name" content="NOW">
 	
-	<link rel="shortcut icon" href="img/favicon/favicon.png" type="image/png">
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon/favicon.ico">
+	<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="img/favicon/mstile-144x144.png" sizes="144x144">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#ee0e33">
+	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#000">
 
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap&subset=cyrillic" rel="stylesheet">
@@ -39,37 +45,66 @@
 <body>
 	<div class="root">
 
-		<header class="header js-header">
-			<button class="header__burder js-btn-close">
-				<span class="btn-burger btn-burger_close"></span>
-			</button>
-			<ul class="header__menu menu-nav">
-				<li class="menu-nav__item">
-					<a href="agency.html">агентство</a>
-				</li>
-				<li class="menu-nav__item js-anchor">
-					<a href="#cases">кейсы</a>
-				</li>
-				<li class="menu-nav__item">
-					<a href="vacancies.html">вакансии</a>
-				</li>
-				<li class="menu-nav__item js-anchor">
-					<a href="#contacts">контакты</a>
-				</li>
-				<li class="menu-nav__item">
-					<a href="#">ru</a>
-				</li>
-			</ul>
-		</header>
-
 		<main class="main">
-			<a href="index-home.html" class="main__logo js-logo">
-				<img src="img/icon/ui-icon/logo.svg" alt="" class="img-svg">
-				<img src="img/icon/ui-icon/time-logo.svg" alt="" class="img-svg">
-			</a>
-			<button class="main__burder js-btn-open">
-				<span class="btn-burger"></span>
-			</button>
+
+			<div class="main-menu js-main-menu">
+				<a href="index-home.html" class="main-menu__logo">
+					<img src="img/icon/ui-icon/logo.svg" alt="" class="img-svg">
+				</a>
+				<button class="main-menu__burder js-btn-burder">
+					<span class="btn-burger open"></span>
+				</button>
+				<div class="main-menu__menu js-menu">
+					<ul class="main-menu__nav menu-nav">
+						<li class="menu-nav__item link">
+							<a href="agency.html">агентство</a>
+						</li>
+						<li class="menu-nav__item link js-anchor">
+							<a href="#cases">кейсы</a>
+						</li>
+						<li class="menu-nav__item link">
+							<a href="vacancies.html">вакансии</a>
+						</li>
+						<li class="menu-nav__item link js-anchor">
+							<a href="#contacts">контакты</a>
+						</li>
+					</ul>
+
+					<div class="main-menu__lang link js-pos">
+						<a href="#" class="">english</a>
+					</div>
+					
+					<ul class="main-menu__soc soc-list">
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/facebook.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/instagram.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/tiktok.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/youtube.svg" alt="" class="img-svg">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Только на главной -->
+			<div class="home__bullet js-pos">
+				<button class="js-anc-btn active" data-id="first"></button>
+				<button class="js-anc-btn" data-id="cases"></button>
+				<button class="js-anc-btn" data-id="contacts"></button>
+			</div>
 
 			<section class="first">
 				<div class="first__bg"></div>
@@ -77,7 +112,7 @@
 					<source src="video/vidos.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 				</video>
 				<div class="first__slogan">
-					<img src="img/icon/its-now.svg" alt="">
+					<img src="img/icon/its-now.svg" alt="" class="anim-svg go img-svg">
 				</div>
 				<button class="first__btn-video js-tgl-video">
 					<img src="img/icon/play.svg" alt="">
@@ -113,71 +148,81 @@
 					</li>
 				</ul>
 
-				<div class="cases__cards">
-					<a href="#" class="card card_sm">
+				<div class="cases__cards js-parent-offset-top">
+					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/1.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left">black party</p>
 						<p class="card__text card__text_right">lamoda</p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/2.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left">"Огни Большой Деревни"</p>
 						<p class="card__text card__text_right">Киностудия «Rock Films»</p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/3.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left">С НОВЫМ ГОРНЫМ!</p>
 						<p class="card__text card__text_right">emco</p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/4.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left">С НОВЫМ ГОРНЫМ!</p>
 						<p class="card__text card__text_right">emco</p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/5.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left"></p>
 						<p class="card__text card__text_right"></p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/6.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left"></p>
 						<p class="card__text card__text_right"></p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/7.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left"></p>
 						<p class="card__text card__text_right"></p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/8.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left"></p>
 						<p class="card__text card__text_right"></p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/1.jpg" alt="">
 						</div>
 						<p class="card__text card__text_left"></p>
 						<p class="card__text card__text_right"></p>
 					</a>
-					<a href="#" class="card card_sm">
+					<a href="#" class="card card_sm js-child-animate">
+						<span></span>
 						<div class="card__wrap">
 							<img src="img/content/2.jpg" alt="">
 						</div>
@@ -198,28 +243,6 @@
 							<span>+7 (495) 604-10-57</span>
 						</div>
 					</div>
-					<ul class="contacts__soc soc-list">
-						<li class="soc-list__item">
-							<a href="#">
-								<img src="img/icon/soc/facebook.svg" alt="" class="img-svg">
-							</a>
-						</li>
-						<li class="soc-list__item">
-							<a href="#">
-								<img src="img/icon/soc/instagram.svg" alt="" class="img-svg">
-							</a>
-						</li>
-						<li class="soc-list__item">
-							<a href="#">
-								<img src="img/icon/soc/tiktok.svg" alt="" class="img-svg">
-							</a>
-						</li>
-						<li class="soc-list__item">
-							<a href="#">
-								<img src="img/icon/soc/youtube.svg" alt="" class="img-svg">
-							</a>
-						</li>
-					</ul>
 				</div>
 				<div class="contacts__decorate-img">
 					<img src="img/elvis.png" alt="">
@@ -227,7 +250,7 @@
 			</section>
 		</main>
 	
-		<!-- Попап открывается по клику на "Смотреть шоурил" -->
+		<!-- Попап открывается по клику на "Смотреть шоурил", тут видео запускается сразу, поэтому без бг и кнопки -->
 		<div class="popup popup-video">
 			<div class="popup__bg js-tgl-video"></div>
 			<button class="popup__close btn-gallary js-tgl-video">
@@ -235,10 +258,6 @@
 			</button>
 			<div class="block-video block-video_popup">
 				<iframe src="https://www.youtube.com/embed/6JmDyQeievA?&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0;enablejsapi=1&mute=1" width="100%" height="420" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" muted autoplay playsinline loop allowfullscreen></iframe>
-				<div class="block-video__bg" style="background-image: url(https:/img.youtube.com/vi/6JmDyQeievA/maxresdefault.jpg);"></div>
-				<button class="block-video__btn js-start-video">
-					<img src="img/icon/play.svg" alt="" class="img-svg">
-				</button>
 			</div>
 		</div>
 	</div>

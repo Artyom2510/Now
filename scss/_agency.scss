@@ -103,6 +103,13 @@
 	&__card {
 		display: block;
 		margin-bottom: 60px;
+		opacity: 0;
+		transition: transform .8s cubic-bezier(.25, .1, .02, .99), opacity .8s cubic-bezier(.25, .1, .02, .99);
+		transform: translateY(100px);
+		&.up {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 }
 
@@ -179,6 +186,12 @@
 		font-weight: 700;
 		color: #fff;
 		transition: color .2s ease;
+		text-decoration: none;
+		outline: none !important;
+		cursor: pointer;
+		&:hover, &:focus, &:active {
+			text-decoration: none;
+		}
 	}
 	&__list {
 		li {
@@ -270,6 +283,15 @@
 	}
 	&__video-card {
 		margin-bottom: 50px;
+		opacity: 0;
+		transform: translateY(200px);
+		transition-property: transform, opacity;
+		transition-duration: .8s;
+		transition-timing-function: cubic-bezier(.25, .1, .02, .99);
+		&.up {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 	&__small-card {
 		margin-bottom: 50px;
@@ -657,7 +679,18 @@
 		z-index: 1;
 		display: block;
 		margin-bottom: 170px;
+		opacity: 0;
+		transform: translateY(200px);
+		transition-property: transform, opacity;
+		transition-duration: .8s;
+		transition-timing-function: cubic-bezier(.25, .1, .02, .99);
+		&.up {
+			opacity: 1;
+			transform: translateY(0);
+		}
 		&_large {
+			opacity: 1;
+			transform: translateY(0);
 			margin-bottom: 110px;
 		}
 	}

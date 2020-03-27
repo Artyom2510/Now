@@ -11,11 +11,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
 	<meta property="og:image" content="path/to/image.jpg">
+	<meta name="application-name" content="NOW">
 	
-	<link rel="shortcut icon" href="img/favicon/favicon.png" type="image/png">
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon/favicon.ico">
+	<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="img/favicon/mstile-144x144.png" sizes="144x144">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#ee0e33">
+	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#000">
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap&subset=cyrillic"
+		rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+
+	<script src="js/libs/jquery-3.4.1.min.js"></script>
+	<script src="js/libs/jquery.smoothscroll.js"></script>
+	<script src="js/libs/jquery.switchPopup.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/agency.js"></script>
 
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap&subset=cyrillic" rel="stylesheet">
@@ -30,41 +47,61 @@
 <body>
 	<div class="root">
 
-		<header class="header js-header">
-			<button class="header__burder js-btn-close">
-				<span class="btn-burger btn-burger_close"></span>
-			</button>
-			<div class="header__menu">
-				<ul class="menu-nav">
-					<li class="menu-nav__item">
-						<a href="agency.html">агентство</a>
-					</li>
-					<li class="menu-nav__item">
-						<a href="index-home.html#cases">кейсы</a>
-					</li>
-					<li class="menu-nav__item menu-nav__item_active">
-						<a href="vacancies.html">вакансии</a>
-					</li>
-					<li class="menu-nav__item">
-						<a href="index-home.html#contacts">контакты</a>
-					</li>
-					<li class="menu-nav__item">
-						<a href="#">en</a>
-					</li>
-				</ul>
+		<main class="main home">
+
+			<div class="main-menu js-main-menu">
+				<a href="index-home.html" class="main-menu__logo">
+					<img src="img/icon/ui-icon/logo.svg" alt="" class="img-svg">
+				</a>
+				<button class="main-menu__burder js-btn-burder">
+					<span class="btn-burger open"></span>
+				</button>
+				<div class="main-menu__menu js-menu">
+					<ul class="main-menu__nav menu-nav">
+						<li class="menu-nav__item link">
+							<a href="agency.html">агентство</a>
+						</li>
+						<li class="menu-nav__item link">
+							<a href="index-home.html#cases">кейсы</a>
+						</li>
+						<li class="menu-nav__item link">
+							<a href="vacancies.html">вакансии</a>
+						</li>
+						<li class="menu-nav__item link">
+							<a href="index-home.html#contacts">контакты</a>
+						</li>
+					</ul>
+
+					<div class="main-menu__lang link js-pos-lang">
+						<a href="#" class="">english</a>
+					</div>
+					
+					<ul class="main-menu__soc soc-list">
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/facebook.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/instagram.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/tiktok.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/youtube.svg" alt="" class="img-svg">
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
-		</header>
 
-		<main class="main">
-			<a href="index-home.html" class="main__logo js-logo">
-				<img src="img/icon/ui-icon/logo.svg" alt="" class="img-svg">
-				<img src="img/icon/ui-icon/time-logo.svg" alt="" class="img-svg">
-			</a>
-			<button class="main__burder js-btn-open">
-				<span class="btn-burger"></span>
-			</button>
-
-			<section class="vacancie bg-dark-bottom background background_center" style="background-image: url(img/content/bg-vacancie.png);">
+			<section class="vacancie bg-dark-bottom background background_center" style="background-image: url(img/content/bg-vacancie.jpg);">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs col-12">
@@ -86,15 +123,8 @@
 				</div>
 			</section>
 
-			<div class="container">
-				<div class="row">
-					<div class="col-xs col-12">
-						<hr class="sect-line">
-					</div>
-				</div>
-			</div>
-
-			<section class="content-sect">
+			<section class="content-sect js-offset-top-sect">
+				<hr class="sect-line js-sect-line">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs col-12 col-sm-12 col-md-5 col-lg-4">
@@ -110,15 +140,8 @@
 				</div>
 			</section>
 
-			<div class="container">
-				<div class="row">
-					<div class="col-xs col-12">
-						<hr class="sect-line">
-					</div>
-				</div>
-			</div>
-
-			<section class="content-sect">
+			<section class="content-sect js-offset-top-sect">
+				<hr class="sect-line js-sect-line">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs col-12 col-sm-12 col-md-5 col-lg-4">
