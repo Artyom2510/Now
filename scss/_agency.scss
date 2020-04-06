@@ -35,30 +35,39 @@
 	padding-top: 130px;
 	padding-bottom: 120px;
 	&__title {
-		display: block;
-		margin-bottom: 80px;
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		margin-bottom: 34px;
+		hr {
+			display: block;
+			width: _col(4, lg);
+			height: 1px;
+			margin: 0 40px 0 0;
+			background-color: $ac;
+			border: none;
+		}
 	}
-	&__cnt {
+	&__bruce-img {
 		display: block;
-		margin-bottom: 10px;
-		font-family: "Montserrat", sans-serif;
-		font-size: 73px;
-		line-height: 1;
-		font-weight: 900;
-		color: #fff;
-	}
-	&__desc {
-		font-family: "Montserrat", sans-serif;
-		font-size: 18px;
-		line-height: 1.5;
-		font-weight: 400;
-		color: #fff;
+		margin-top: 80px;
+		margin-left: 50px;
+		width: 100%;
+		height: auto;
+		max-width: 584px;
+		object-position: 50% 50%;
+		object-fit: contain;
 	}
 }
 
 @include media(md) {
 	.about {
 		padding-bottom: 100px;
+		&__title {
+			hr {
+				width: _col(5, md);
+			}
+		}
 	}
 }
 
@@ -67,6 +76,9 @@
 		padding-bottom: 100px;
 		&__title {
 			margin-bottom: 50px;
+			hr {
+				display: none;
+			}
 		}
 		&__desc {
 			display: block;

@@ -30,6 +30,13 @@
 
 	<script src="js/libs/jquery-3.4.1.min.js"></script>
 	<script src="js/libs/jquery.smoothscroll.js"></script>
+	<!-- Cкрипт для скрола по хешу -->
+	<script>
+		if (window.location.hash) {
+			window.hashId = window.location.hash;
+			window.location.hash = '';
+		}
+	</script>
 	<script src="js/libs/jquery.switchPopup.js"></script>
 	<script src="js/common.js"></script>
 	<script src="js/agency.js"></script>
@@ -53,12 +60,23 @@
 					<ul class="main-menu__nav menu-nav">
 						<li class="menu-nav__item link link_active">
 							<a href="agency.html">агентство</a>
+							<ul>
+								<li>
+									<a href="#we-do">Что мы делаем?</a>
+								</li>
+								<li>
+									<a href="#team">Команда</a>
+								</li>
+								<li>
+									<a href="#clients">Клиенты</a>
+								</li>
+								<li>
+									<a href="#awards">Награды</a>
+								</li>
+							</ul>
 						</li>
 						<li class="menu-nav__item link">
 							<a href="index-home.html#cases">кейсы</a>
-						</li>
-						<li class="menu-nav__item link">
-							<a href="vacancies.html">вакансии</a>
 						</li>
 						<li class="menu-nav__item link">
 							<a href="index-home.html#contacts">контакты</a>
@@ -101,27 +119,26 @@
 			<section class="about">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs col-12">
+						<div class="col-xs col-md-11 col-lg-11">
 							<div class="about__title">
 								<h1>Об агентстве</h1>
+								<hr>
 							</div>
 						</div>
-						<div class="col-xs col-6 col-sm-4 col-md-2 col-lg-2">
-							<div class="about__cnt">3</div>
-							<span class="about__desc">года<br> работы</span>
+						<div class="col-lg-6">
+							<img src="img/content/bruce.png" alt="" class="about__bruce-img">
 						</div>
-						<div class="col-xs col-6 col-sm-4 col-md-2 col-lg-2">
-							<div class="about__cnt">200</div>
-							<span class="about__desc">проектов<br> реализовано</span>
-						</div>
-						<div class="col-xs col-12 col-md-8 col-lg-8">
+						<div class="col-xs col-12 col-md-8 col-lg-6">
 							<div class="b-content">
-								<p class="has-small-font-size">Наше агентство амбициозно называется N:OW.<br>Мы верим в то, что лучший
-									время и момент для чего угодно это «сейчас». Нам 3 года, и за это время мы успели сделать много важных
+								<p>Наше агентство амбициозно называется N:OW.<br>Мы верим в то, что лучший
+									время и момент для чего угодно это «сейчас».
+								</p>
+								<p>Нам 3 года, и за это время мы успели сделать много важных
 									для нас проектов - от интеграций в музыкальные фестивали разных брендов и вечеринок в небоскребах, до
 									городских проектов на Сахалине и огромного мероприятия в горах Чеченской республики для того самого
-									человека (кстати, за этот проект мы получили большую event-премию «Событие года»).</p>
-								<p class="has-small-font-size">Мы интересуемся современной культурой, стараемся заниматься спортом,
+									человека (кстати, за этот проект мы получили большую event-премию «Событие года»).
+								</p>
+								<p class="has-small-size">Мы интересуемся современной культурой, стараемся заниматься спортом,
 									много путешествуем и и изучаем мир, любим вкусные рестораны и доставку еды, новые сериальчики и
 									слушать музыку с винила в офисе. Мы любим и уважаем наших клиентов и убеждены, что лучшие проекты
 									делаются только сообща. Мы испытываем истинное удовольствие от работы и любим нестандартные задачи на
@@ -132,7 +149,7 @@
 				</div>
 			</section>
 
-			<section class="we-do js-parent-offset-top">
+			<section class="we-do js-parent-offset-top" id="we-do">
 				<hr class="sect-line js-sect-line">
 				<div class="container">
 					<div class="row">
@@ -227,7 +244,7 @@
 						</div>
 					</div>
 			</section>
-			<section class="awards js-parent-offset-top">
+			<section class="awards js-parent-offset-top" id="awards">
 				<hr class="sect-line js-sect-line">
 				<div class="container">
 					<div class="row">
@@ -338,7 +355,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="clients">
+			<section class="clients" id="clients">
 				<hr class="sect-line js-sect-line">
 				<div class="container">
 					<div class="row">
@@ -428,7 +445,7 @@
 				</div>
 			</section>
 			<section class="team background background_center background_fixed bg-dark-bottom bg-dark-top"
-				style="background-image: url(img/content/bg-agency-bottom.jpg);">
+				style="background-image: url(img/content/bg-agency-bottom.jpg);" id="team">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs col-sm-12 col-md-4 col-lg-6">
