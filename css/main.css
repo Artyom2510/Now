@@ -1235,7 +1235,6 @@ h5, .h5, p {
 	position: relative;
 	display: block;
 	width: 100%;
-	min-height: 100vh;
 	padding: 14.54vh 8.33vw 0;
 	-webkit-transition: -webkit-transform .5s ease;
 	transition: -webkit-transform .5s ease;
@@ -1326,7 +1325,20 @@ h5, .h5, p {
 	margin-right: 0;
 }
 
-.tags__item a, .tags__item button {
+.tags__item input[type="checkbox"] {
+	display: none;
+}
+
+.tags__item input[type="checkbox"]:checked + label {
+	color: #000;
+	background-color: #fff;
+}
+
+.tags__item input[type="checkbox"]:checked + label::before {
+	color: #000;
+}
+
+.tags__item a, .tags__item button, .tags__item label {
 	position: relative;
 	display: inline-block;
 	padding: 5px 10px 5px 19px;
@@ -1338,14 +1350,14 @@ h5, .h5, p {
 	cursor: pointer;
 	text-decoration: none;
 	color: #fff;
-	background-color: transparent;
+	background-color: #000;
 	outline: none !important;
 	-webkit-transition: background-color .2s ease-in, color .2s ease-in;
 	-o-transition: background-color .2s ease-in, color .2s ease-in;
 	transition: background-color .2s ease-in, color .2s ease-in;
 }
 
-.tags__item a::before, .tags__item button::before {
+.tags__item a::before, .tags__item button::before, .tags__item label::before {
 	content: "#";
 	position: absolute;
 	display: block;
@@ -1363,23 +1375,13 @@ h5, .h5, p {
 	transition: color .2s ease-in;
 }
 
-.tags__item a:hover, .tags__item a:focus, .tags__item a:active, .tags__item button:hover, .tags__item button:focus, .tags__item button:active {
+.tags__item a:hover, .tags__item a:focus, .tags__item a:active, .tags__item button:hover, .tags__item button:focus, .tags__item button:active, .tags__item label:hover, .tags__item label:focus, .tags__item label:active {
 	text-decoration: none;
 	color: #000;
 	background-color: #fff;
 }
 
-.tags__item a:hover::before, .tags__item a:focus::before, .tags__item a:active::before, .tags__item button:hover::before, .tags__item button:focus::before, .tags__item button:active::before {
-	color: #000;
-}
-
-.tags__item_active a, .tags__item_active button {
-	text-decoration: none;
-	color: #000;
-	background-color: #fff;
-}
-
-.tags__item_active a::before, .tags__item_active button::before {
+.tags__item a:hover::before, .tags__item a:focus::before, .tags__item a:active::before, .tags__item button:hover::before, .tags__item button:focus::before, .tags__item button:active::before, .tags__item label:hover::before, .tags__item label:focus::before, .tags__item label:active::before {
 	color: #000;
 }
 
@@ -1601,7 +1603,7 @@ h5, .h5, p {
 	}
 
 	.card_sm:nth-child(3n + 2) {
-		width: 33.34%;
+		width: 33.33%;
 	}
 }
 

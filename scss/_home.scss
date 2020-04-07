@@ -243,7 +243,6 @@
 	position: relative;
 	display: block;
 	width: 100%;
-	min-height: 100vh;
 	padding: 14.54vh 8.33vw 0;
 	transition: transform .5s ease;
 	&.transform {
@@ -304,7 +303,17 @@
 		&:last-child {
 			margin-right: 0;
 		}
-		a, button {
+		input[type="checkbox"] {
+			display: none;
+			&:checked + label {
+				color: #000;
+				background-color: #fff;
+				&::before {
+					color: #000;
+				}
+			}
+		}
+		a, button, label {
 			position: relative;
 			display: inline-block;
 			padding: 5px 10px 5px 19px;
@@ -316,7 +325,7 @@
 			cursor: pointer;
 			text-decoration: none;
 			color: #fff;
-			background-color: transparent;
+			background-color: #000;
 			outline: none !important;
 			transition: background-color .2s ease-in, color .2s ease-in;
 			&::before {
@@ -333,16 +342,6 @@
 				transition: color .2s ease-in;
 			}
 			&:hover, &:focus, &:active {
-				text-decoration: none;
-				color: #000;
-				background-color: #fff;
-				&::before {
-					color: #000;
-				}
-			}
-		}
-		&_active {
-			a, button {
 				text-decoration: none;
 				color: #000;
 				background-color: #fff;
@@ -506,7 +505,7 @@
 		&_sm {
 			width: 33.33%;
 			&:nth-child(3n + 2) {
-				width: 33.34%;
+				width: 33.33%;
 			}
 		}
 	}
