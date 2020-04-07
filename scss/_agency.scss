@@ -35,30 +35,45 @@
 	padding-top: 130px;
 	padding-bottom: 120px;
 	&__title {
-		display: block;
-		margin-bottom: 80px;
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		margin-bottom: 34px;
+		hr {
+			display: block;
+			width: _col(5, lg);
+			height: 1px;
+			margin: 0 4.8vw 0 0;
+			background-color: $ac;
+			border: none;
+		}
 	}
-	&__cnt {
+	&__bruce-img {
 		display: block;
-		margin-bottom: 10px;
-		font-family: "Montserrat", sans-serif;
-		font-size: 73px;
-		line-height: 1;
-		font-weight: 900;
-		color: #fff;
-	}
-	&__desc {
-		font-family: "Montserrat", sans-serif;
-		font-size: 18px;
-		line-height: 1.5;
-		font-weight: 400;
-		color: #fff;
+		width: 100%;
+		height: auto;
+		margin-top: 80px;
+		margin-left: 50px;
+		max-width: 584px;
+		object-position: 50% 50%;
+		object-fit: contain;
 	}
 }
 
 @include media(md) {
 	.about {
 		padding-bottom: 100px;
+		&__title {
+			margin-bottom: 84px;
+			hr {
+				width: _col(6);
+				margin: 0 24px 0 0;
+			}
+		}
+		&__bruce-img {
+			width: 100%;
+			margin: 0;
+		}
 	}
 }
 
@@ -66,11 +81,13 @@
 	.about {
 		padding-bottom: 100px;
 		&__title {
-			margin-bottom: 50px;
+			margin-bottom: 45px;
+			hr {
+				display: none;
+			}
 		}
-		&__desc {
-			display: block;
-			margin-bottom: 54px;
+		&__bruce-img {
+			margin-bottom: 64px;
 		}
 	}
 }
@@ -81,14 +98,6 @@
 		padding-bottom: 50px;
 		&__title {
 			margin-bottom: 50px;
-		}
-		&__cnt {
-			margin-bottom: 5px;
-			font-size: 40px;
-		}
-		&__desc {
-			margin-bottom: 40px;
-			font-size: 14px;
 		}
 	}
 }
@@ -279,10 +288,10 @@
 	padding-top: 24px;
 	padding-bottom: 70px;
 	&__title {
-		margin-bottom: 40px;
+		margin-bottom: 100px;
 	}
 	&__video-card {
-		margin-bottom: 50px;
+		margin-bottom: 28px;
 		opacity: 0;
 		transform: translateY(200px);
 		transition-property: transform, opacity;

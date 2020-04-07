@@ -25,7 +25,7 @@ $(function () {
 			scrollTop: sect.offset().top + root.scrollTop()
 		}, 500);
 		return false;
-	}
+	};
 
 	$('.js-next-sect').on('click', function() {
 		animateSect($('.cases'));

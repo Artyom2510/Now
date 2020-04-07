@@ -67,8 +67,7 @@ p {
 h1, .h1 {
 	font-size: 50px;
 	line-height: 1.2;
-	font-weight: 900;
-	text-transform: uppercase;
+	font-weight: 600;
 }
 
 @include media(sm) {
@@ -86,63 +85,56 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	font-size: 40px;
-	line-height: 1;
+	font-size: 36px;
+	line-height: 40px;
 	font-weight: 600;
 }
 
 @include media(sm) {
 	h2, .h2 {
 		font-size: 32px;
-		line-height: 36px;
+		line-height: 1.25;
 	}
 }
 
 @include media(xs) {
 	h2, .h2 {
 		font-size: 24px;
-		line-height: 30px;
 	}
 }
 
 h3, .h3 {
-	font-size: 22px;
+	font-size: 24px;
 	line-height: 1;
-	font-weight: 700;
-	letter-spacing: 4.4px;
+	font-weight: 600;
 }
 
 @include media(xs) {
 	h3, .h3 {
-		font-size: 16px;
+		font-size: 18px;
 		line-height: 20px;
-		letter-spacing: 3.2px;
 	}
 }
 
 h4, .h4 {
-	font-size: 24px;
-	line-height: 1.5;
+	font-size: 28px;
+	line-height: 36px;
 	font-weight: 400;
 }
 
 @include media(xs) {
 	h4, .h4 {
 		font-size: 16px;
+		line-height: 24px;
 	}
 }
 
 h5, .h5, p {
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 1.5;
 	font-weight: 400;
 }
 
-@include media(md) {
-	h5, .h5, p {
-		font-size: 18px;
-	}
-}
 @include media(xs) {
 	h5, .h5, p {
 		font-size: 14px;
@@ -289,39 +281,44 @@ h5, .h5, p {
 }
 
 .sect-line {
-	position: absolute;
-	top: 0;
-	left: 50%;
 	display: block;
-	width: calc(#{_col(12, lg)} - 40px);
+	width: 100%;
 	height: 1px;
-	margin: 0 auto;
+	margin: 12px 0 24px;
 	background-color: $ac;
 	border: none;
-	transform: translateX(-50%) scaleX(0);
+	transform: scaleX(0);
 	transform-origin: 0 0;
 	transition: transform .8s cubic-bezier(.25, .1, .02, .99) .4s;
 	&.full-width {
-		transform: translateX(-50%) scaleX(1);
+		transform: scaleX(1);
 	}
 }
 
-@include media(md) {
-	.sect-line {
-		width: calc(#{_col(12, md)} - 40px);
-	}
-}
+// @include media(md) {
+// 	.sect-line {
+// 		width: calc(#{_col(12, md)} - 40px);
+// 	}
+// }
 
-@include media(sm) {
-	.sect-line {
-		width: calc(#{_col(12, sm)} - 40px);
-	}
-}
+// @include media(sm) {
+// 	.sect-line {
+// 		width: calc(#{_col(12, sm)} - 40px);
+// 	}
+// }
 
-@include media(xs) {
-	.sect-line {
-		width: calc(#{_col(12, xs)} - 48px);
-	}
+// @include media(xs) {
+// 	.sect-line {
+// 		width: calc(#{_col(12, xs)} - 48px);
+// 	}
+// }
+
+.sect-number {
+	display: block;
+	font-size: 18px;
+	line-height: 27px;
+	font-weight: 400;
+	color: $ac;
 }
 
 .dash-list {
