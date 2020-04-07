@@ -85,4 +85,38 @@ $(function () {
 		blockVideo.removeClass('transform');
 	});
 
+	// Фильтр
+	var l, idTag;
+	$('.js-checkbox').on('change', function() {
+		idTag = $(this)[0].id;
+		l = $('.js-checkbox:checked').length;
+		if (l === 1) {
+			$('.card').each(function() {
+				if ($(this).data('id') === $('.js-checkbox:checked')[0].id) {
+					$(this).show();
+				} else {
+					$(this).hide();
+				}
+			});
+		}
+		if (!l) {
+			$('.card').show();
+		}
+		if (l > 1) {
+			if ($(this).is(':checked')) {
+				$('.card').each(function() {
+					if ($(this).data('id') === idTag) {
+						$(this).show();
+					}
+				});
+			} else {
+				$('.card').each(function() {
+					if ($(this).data('id') === idTag) {
+						$(this).hide();
+					}
+				});
+			}
+		}
+	});
+
 });
