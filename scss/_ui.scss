@@ -295,11 +295,11 @@ h5, .h5, p {
 	}
 }
 
-// @include media(md) {
-// 	.sect-line {
-// 		width: calc(#{_col(12, md)} - 40px);
-// 	}
-// }
+@include media(md) {
+	.sect-line {
+		margin-top: 16px;
+	}
+}
 
 // @include media(sm) {
 // 	.sect-line {

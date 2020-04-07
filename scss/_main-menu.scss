@@ -277,11 +277,12 @@
 			}
 		}
 		&_active {
-			&::before {
-				transform: scaleX(1);
-				background-color: rgba(#fff, .1);
-			}
 			a {
+				&::before {
+					height: 100%;
+					transform: scaleX(1);
+					background-color: rgba(#fff, .1);
+				}
 				color: #fff;
 				&::after {
 					height: 100%;

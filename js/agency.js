@@ -14,10 +14,16 @@ $(function () {
 	// Скролл по стрелке + по якорю
 	function animateSect(sect) {
 		root.stop().animate({
-			scrollTop: sect.offset().top + root.scrollTop() + 70
+			scrollTop: sect.offset().top + root.scrollTop()
 		}, 700);
 		return false;
 	};
+
+	$('.menu-nav__item ul li a').on('click', function(e) {
+		e.preventDefault();
+		var hash = $(this).attr("href");
+		animateSect($(hash));
+	});
 
 	// Видео по наведению на карточку
 	var videoCard = $('.js-video-card');
