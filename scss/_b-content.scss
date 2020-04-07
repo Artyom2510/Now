@@ -15,35 +15,6 @@
 			line-height: 24px;
 		}
 	}
-	&_ac {
-		p {
-			position: relative;
-			display: block;
-			padding: 36px 0;
-			font-family: inherit;
-			font-size: 24px;
-			line-height: 1.5;
-			font-weight: 400;
-			color: #fff;
-			text-align: center;
-			&::before, &::after {
-				content: "";
-				position: absolute;
-				left: 50%;
-				transform: translateX(-50%);
-				display: block;
-				width: 16px;
-				height: 16px;
-				background-color: $ac;
-			}
-			&::before {
-				top: 0;
-			}
-			&::after {
-				bottom: 0;
-			}
-		}
-	}
 	a {
 		position: relative;
 		display: inline-block;
@@ -183,10 +154,11 @@
 @include media(xs) {
 	.b-content {
 		p {
-		}
-		&_ac {
-			p {
-				font-size: 16px;
+			font-size: 14px;
+			line-height: 20px;
+			&.has-small-size {
+				font-size: 12px;
+				line-height: 16px;
 			}
 		}
 		p.has-small-font-size {
@@ -214,7 +186,6 @@
 
 .content-sect {
 	display: block;
-	padding-top: 24px;
 	padding-bottom: 120px;
 	opacity: 0;
 	transform: translateY(120px);
@@ -302,7 +273,6 @@
 
 @include media(xs) {
 	.content-sect {
-		padding-top: 20px;
 		padding-bottom: 50px;
 		&__wrap {
 			@include aspect-ratio(34, 25);

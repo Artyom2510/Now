@@ -293,9 +293,9 @@
 	background-color: rgba(#000, .9);
 	&_wrap {
 		flex-wrap: wrap;
-		overflow: none;
+		overflow: visible;
 		padding: 0;
-		background-color: none;
+		background-color: transparent;
 	}
 	&__item {
 		display: block;
