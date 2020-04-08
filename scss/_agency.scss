@@ -1,23 +1,22 @@
 .agency {
 	padding-bottom: 108px;
-	&__top-bg {
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: block;
-		width: 100%;
-		height: 1080px;
-	}
+	// &__top-bg {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	display: block;
+	// 	width: 100%;
+	// 	height: 1080px;
+	// }
 }
 
-@include media(md) {
-	.agency {
-		padding-bottom: 200px;
-		&__top-bg {
-			height: 800px;
-		}
-	}
-}
+// @include media(md) {
+// 	.agency {
+// 		&__top-bg {
+// 			height: 800px;
+// 		}
+// 	}
+// }
 
 @include media(sm) {
 	.agency {
@@ -32,8 +31,8 @@
 }
 
 .about {
-	padding-top: 130px;
-	padding-bottom: 120px;
+	padding-top: 210px;
+	padding-bottom: 30px;
 	&__title {
 		display: flex;
 		justify-content: space-between;
@@ -62,9 +61,9 @@
 
 @include media(md) {
 	.about {
-		padding-bottom: 100px;
+		padding-bottom: 30px;
 		&__title {
-			margin-bottom: 84px;
+			margin-bottom: 40px;
 			hr {
 				width: _col(6);
 				margin: 0 24px 0 0;
@@ -72,6 +71,7 @@
 		}
 		&__bruce-img {
 			width: 100%;
+			max-width: 100%;
 			margin: 0;
 		}
 	}
@@ -79,7 +79,7 @@
 
 @include media(sm) {
 	.about {
-		padding-bottom: 100px;
+		padding-bottom: 70px;
 		&__title {
 			margin-bottom: 45px;
 			hr {
@@ -97,17 +97,16 @@
 		padding-top: 86px;
 		padding-bottom: 50px;
 		&__title {
-			margin-bottom: 50px;
+			margin-bottom: 36px;
 		}
 	}
 }
 
 .awards {
-	padding-top: 24px;
-	padding-bottom: 60px;
+	padding-bottom: 70px;
 	&__title {
 		display: block;
-		margin-bottom: 68px;
+		margin-bottom: 120px;
 	}
 	&__card {
 		display: block;
@@ -124,6 +123,7 @@
 
 @include media(md) {
 	.awards {
+		padding-bottom: 40px;
 		&__card,
 		&__title {
 			margin-bottom: 40px;
@@ -144,6 +144,9 @@
 @include media(xs) {
 	.awards {
 		padding-top: 20px;
+		&__title {
+			margin-bottom: 36px;
+		}
 		&__card {
 			margin-bottom: 40px;
 		}
@@ -285,8 +288,7 @@
 }
 
 .we-do {
-	padding-top: 24px;
-	padding-bottom: 70px;
+	padding-bottom: 110px;
 	&__title {
 		margin-bottom: 100px;
 	}
@@ -301,6 +303,9 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
+		&:last-child {
+			margin-bottom: 130px;
+		}
 	}
 	&__small-card {
 		margin-bottom: 50px;
@@ -309,7 +314,10 @@
 
 @include media(md) {
 	.we-do {
-		padding-bottom: 50px;
+		padding-bottom: 10px;
+		&__title {
+			margin-bottom: 40px;
+		}
 		&__video-card {
 			margin-bottom: 40px;
 			&:last-child {
@@ -335,7 +343,7 @@
 		padding-top: 20px;
 		padding-bottom: 10px;
 		&__title {
-			margin-bottom: 20px;
+			margin-bottom: 36px;
 		}
 		&__video-card {
 			margin-bottom: 20px;
@@ -357,7 +365,9 @@
 	min-height: 272px;
 	padding: 86px;
 	overflow: hidden;
-	background-color: #181818;
+	border: 1px solid #fff;
+	background-color: #000;
+	transition: border-color .3s ease-out;
 	&::before {
 		content: "";
 		position: absolute;
@@ -397,7 +407,7 @@
 		position: relative;
 		z-index: 2;
 		display: block;
-		margin-right: 6.25vw;
+		margin-right: 2.08vw;
 		width: 90px;
 		min-width: 90px;
 		height: 90px;
@@ -413,10 +423,9 @@
 	&__name {
 		position: relative;
 		z-index: 2;
-		width: 13vw;
-		min-width: 13vw;
-		margin-right: 40px;
-		text-transform: uppercase;
+		width: 234px;
+		min-width: 234px;
+		margin-right: 6.56vw;
 	}
 	&__text {
 		position: relative;
@@ -436,6 +445,7 @@
 	.video-card {
 		$p: &;
 		&:hover {
+			border-color: transparent;
 			&::before {
 				background-color: rgba(#000, .7);
 			}
@@ -514,9 +524,9 @@
 	display: block;
 	&__icon {
 		display: block;
-		width: 90px;
+		width: auto;
 		height: 90px;
-		margin-bottom: 30px;
+		margin-bottom: 50px;
 		path {
 			fill: rgba(255, 255, 255, .5);
 			transition: fill .2s ease;
@@ -524,7 +534,6 @@
 	}
 	&__name {
 		margin-bottom: 16px;
-		text-transform: uppercase;
 		transition: color .2s ease;
 	}
 	&__text {
@@ -587,8 +596,7 @@
 }
 
 .clients {
-	padding-top: 24px;
-	padding-bottom: 64px;
+	padding-bottom: 84px;
 	&__title {
 		display: block;
 		margin-bottom: 80px;
@@ -596,17 +604,18 @@
 	&__logos {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
 		a {
-			display: block;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			width: calc(20% - 32px);
-			margin-bottom: 56px;
+			margin-bottom: 40px;
 			outline: none !important;
 			cursor: pointer;
 			img, svg {
 				display: block;
-				width: 100%;
-				height: 100%;
+				width: 130px;
+				height: auto;
 				object-fit: contain;
 				object-position: 50% 50%;
 				filter: grayscale(100%) invert(50%);
@@ -618,7 +627,6 @@
 
 @include media-up(sm) {
 	.clients {
-		$p: &;
 		&__logos {
 			img, svg {
 				&:hover {
@@ -632,10 +640,13 @@
 
 @include media(md) {
 	.clients {
-		padding-bottom: 60px;
+		padding-bottom: 40px;
+		&__title {
+			margin-bottom: 40px;
+		}
 		&__logos {
 			a {
-				margin-bottom: 40px;
+				margin-bottom: 30px;
 			}
 		}
 	}
@@ -643,7 +654,7 @@
 
 @include media(sm) {
 	.clients {
-		padding-bottom: 80px;
+		padding-bottom: 60px;
 		&__logos {
 			a {
 				height: 48px;
@@ -651,6 +662,9 @@
 				margin-bottom: 20px;
 				&:nth-child(5n) {
 					margin-right: 0;
+				}
+				img, svg {
+					width: 100%;
 				}
 			}
 		}
@@ -661,6 +675,9 @@
 	.clients {
 		padding-top: 20px;
 		padding-bottom: 40px;
+		&__title {
+			margin-bottom: 36px;
+		}
 		&__logos {
 			a {
 				width: 25%;
@@ -673,21 +690,16 @@
 }
 
 .team {
-	padding-top: 136px;
+	padding-bottom: 64px;
 	&__title {
 		display: block;
-		font-family: "Montserrat", sans-serif;
-		font-size: 120px;
-		font-weight: 900;
-		line-height: 100px;
-		color: #fff;
-		text-transform: uppercase;
+		margin-bottom: 80px;
 	}
 	&__card {
 		position: relative;
 		z-index: 1;
 		display: block;
-		margin-bottom: 170px;
+		margin-bottom: 60px;
 		opacity: 0;
 		transform: translateY(200px);
 		transition-property: transform, opacity;
@@ -697,38 +709,26 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
-		&_large {
-			opacity: 1;
-			transform: translateY(0);
-			margin-bottom: 110px;
-		}
 	}
 }
 
 @include media(md) {
 	.team {
-		padding-top: 80px;
-		padding-bottom: 0;
+		padding-bottom: 40px;
 		&__title {
-			font-size: 70px;
-			line-height: 90px;
+			margin-bottom: 60px;
 		}
 		&__card {
 			margin-bottom: 50px;
-			&_large {
-				margin-bottom: 50px;
-			}
 		}
 	}
 }
 
 @include media(sm) {
 	.team {
-		background-position: 36% center;
+		padding-bottom: 20px;
 		&__title {
-			margin-bottom: 72px;
-			font-size: 50px;
-			line-height: 50px;
+			margin-bottom: 80px;
 		}
 		&__card {
 			margin-bottom: 40px;
@@ -738,123 +738,69 @@
 
 @include media(xs) {
 	.team {
-		padding-top: 50px;
-		padding-bottom: 90px;
 		&__title {
-			margin-bottom: 56px;
-			font-size: 35px;
-			line-height: 40px;
+			margin-bottom: 36px;
 		}
 		&__card {
-			margin-bottom: 30px;
+			margin-bottom: 20px;
 		}
 	}
 }
 
 .team-card {
-	$p: &;
 	&__ava {
+		position: relative;
 		display: block;
-		width: 164px;
-		height: 164px;
-		margin: 0 auto 16px;
-		object-fit: contain;
-		object-position: 50% 50%;
-		border-radius: 50%;
+		width: 100%;
+		margin-bottom: 27px;
+		@include aspect-ratio(1);
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: 50% 50%;
+		}
 	}
 	&__full-name {
-		display: block;
-		margin-bottom: 8px;
-		font-family: "Montserrat", sans-serif;
-		font-size: 16px;
-		line-height: 24px;
-		font-weight: 600;
+		min-height: 48px;
 		color: #fff;
-		text-align: center;
 	}
 	&__post {
 		display: block;
-		margin: 0 auto 0;
-		max-width: 148px;
 		font-family: "Montserrat", sans-serif;
-		font-size: 14px;
-		line-height: 21px;
+		font-size: 18px;
+		line-height: 27px;
 		font-weight: 400;
-		color: #fff;
-		text-align: center;
-	}
-	&_large {
-		#{$p}__ava {
-			width: 300px;
-			height: 300px;
-			margin: 0 0 28px;
-		}
-		#{$p}__full-name {
-			padding-right: 3vw;
-			font-size: 32px;
-			line-height: 40px;
-		}
-		#{$p}__post {
-			max-width: 100%;
-			margin: 0;
-			padding-right: 3.2vw;
-		}
+		color: $ac;
 	}
 }
 
 @include media(sm) {
 	.team-card {
-		$p: &;
-		&__post {
-			max-width: 100%;
+		&__full-name {
 		}
-		&_large {
-			#{$p}__ava {
-				width: 256px;
-				height: 256px;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			#{$p}__full-name {
-				padding-right: 0;
-				font-size: 24px;
-				line-height: 40px;
-			}
-			#{$p}__post {
-				font-size: 14px;
-				line-height: 20px;
-				padding-right: 0;
-			}
+		&__post {
+			font-size: 14px;
+			line-height: 20px;
 		}
 	}
 }
 
 @include media(xs) {
 	.team-card {
-		$p: &;
 		&__ava {
-			width: 112px;
-			height: 112px;
 			margin-bottom: 10px;
 		}
 		&__full-name {
-			font-size: 14px;
-			line-height: 16px;
+			min-height: 20px;
 		}
 		&__post {
 			font-size: 10px;
 			line-height: 15px;
-		}
-		&_large {
-			#{$p}__ava {
-				width: 180px;
-				height: 180px;
-				margin-bottom: 16px;
-			}
-			#{$p}__full-name {
-				font-size: 20px;
-				line-height: 30px;
-			}
 		}
 	}
 }

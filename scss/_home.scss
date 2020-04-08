@@ -293,9 +293,9 @@
 	background-color: rgba(#000, .9);
 	&_wrap {
 		flex-wrap: wrap;
-		overflow: none;
+		overflow: visible;
 		padding: 0;
-		background-color: none;
+		background-color: transparent;
 	}
 	&__item {
 		display: block;
@@ -325,7 +325,7 @@
 			cursor: pointer;
 			text-decoration: none;
 			color: #fff;
-			background-color: #000;
+			background-color: transparent;
 			outline: none !important;
 			transition: background-color .2s ease-in, color .2s ease-in;
 			&::before {

@@ -1,14 +1,4 @@
 .vacansies {
-	padding-top: 130px;
-	padding-bottom: 150px;
-	&__top-bg {
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: block;
-		width: 100%;
-		height: 1080px;
-	}
 	&__title,
 	&__annotation,
 	&__card {
@@ -35,36 +25,32 @@
 
 @include media(md) {
 	.vacansies {
-		&__top-bg {
-			height: 720px;
-		}
 		&__annotation {
 			margin-bottom: 120px;
 		}
 	}
 }
 
-@include media(sm) {
-	.vacansies {
-		&__annotation {
-			margin-bottom: 170px;
-		}
-	}
-}
+// @include media(sm) {
+// 	.vacansies {
+// 		&__annotation {
+// 			margin-bottom: 170px;
+// 		}
+// 	}
+// }
 
 @include media(xs) {
 	.vacansies {
-		padding-bottom: 130px;
-		&__top-bg {
-			height: 500px;
-		}
-		padding-top: 86px;
+		padding-bottom: 50px;
+		// &__top-bg {
+		// 	height: 500px;
+		// }
 		&__title {
-			margin-bottom: 120px;
+			margin-bottom: 56px;
 		}
-		&__annotation {
-			margin-bottom: 80px;
-		}
+		// &__annotation {
+		// 	margin-bottom: 80px;
+		// }
 	}
 }
 
@@ -108,15 +94,15 @@
 	}
 	&__post {
 		display: block;
-		min-height: 80px;
-		margin-bottom: 24px;
+		min-height: 48px;
+		margin-bottom: 20px;
 		transition: color .2s ease-out;
 	}
 	&__list {
 		li {
 			margin-bottom: 12px;
-			font-size: 20px;
-			line-height: 1.5;
+			font-size: 14px;
+			line-height: 20px;
 			&:last-child {
 				margin-bottom: 0;
 			}
@@ -142,17 +128,6 @@
 	.vacansies-card {
 		&__prew {
 			margin-bottom: 20px;
-		}
-		&__post {
-			font-size: 24px;
-			line-height: 30px;
-			min-height: 60px;
-		}
-		&__list {
-			li {
-				font-size: 14px;
-				line-height: 20px;
-			}
 		}
 	}
 }
