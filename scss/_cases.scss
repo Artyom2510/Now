@@ -4,14 +4,9 @@
 	padding-bottom: 120px;
 	&__title {
 		display: block;
-		margin-bottom: 40px;
-		text-transform: uppercase;
-	}
-	&__row-info {
-		margin-bottom: 16px;
 	}
 	&__info {
-		margin-bottom: 12px;
+		margin-bottom: 56px;
 	}
 	&__video {
 		margin-bottom: 28px;
@@ -21,22 +16,12 @@
 	}
 }
 
-@include media(md) {
-	.cases-0 {
-		&__row-info {
-			margin-bottom: 8px;
-		}
-	}
-}
 
 @include media(sm) {
 	.cases-0 {
-		padding-bottom: 92px;
+		padding-bottom: 62px;
 		&__title {
-			margin-bottom: 30px;
-		}
-		&__row-info {
-			margin-bottom: 18px;
+			margin-bottom: 36px;
 		}
 		&__video {
 			margin-bottom: 36px;
@@ -47,12 +32,9 @@
 @include media(xs) {
 	.cases-0 {
 		padding-top: 86px;
-		padding-bottom: 65px;
-		&__row-info {
-			margin-bottom: 6px;
-		}
-		&__row-info {
-			margin-bottom: 22px;
+		padding-bottom: 62px;
+		&__title {
+			margin-bottom: 24px;
 		}
 		&__info {
 			margin-bottom: 8px;
@@ -64,67 +46,42 @@
 }
 
 .cases-info {
-	display: flex;
-	&__left {
-		span {
-			color: $gray;
-		}
+	display: block;
+	&__item {
 		display: block;
 		margin-right: 10px;
-	}
-	&__left,
-	&__right {
+		&:last-child {
+			margin-bottom: 0;
+		}
 		span {
-			display: block;
-			margin-bottom: 10px;
+			display: inline-block;
 			font-family: "Montserrat", sans-serif;
-			font-size: 20px;
-			line-height: 1.5;
-			&:last-child {
-				margin-bottom: 0;
+			font-size: 18px;
+			line-height: 1.2;
+			&:first-child {
+				color: $gray;
 			}
 		}
 	}
 }
 
-@include media(md) {
-	.cases-info {
-		&__left,
-		&__right {
-			span {
-				margin-bottom: 12px;
-				font-size: 18px;
-			}
-		}
-	}
-}
+// @include media(md) {
+// 	.cases-info {
+// 	}
+// }
 
-@include media(sm) {
-	.cases-info {
-		&__left,
-		&__right {
-			span {
-				margin-bottom: 12px;
-				font-size: 14px;
-				line-height: 20px;
-			}
-		}
-	}
-}
+// @include media(sm) {
+// 	.cases-info {
+
+// 	}
+// }
 
 @include media(xs) {
 	.cases-info {
-		&__left,
-		&__right {
-			width: calc(50% - 12px);
+		&__item {
 			span {
-				margin-bottom: 8px;
-				font-size: 12px;
-				line-height: 1.33;
+				font-size: 14px;
 			}
-		}
-		&__left {
-			margin-right: 24px;
 		}
 	}
 }

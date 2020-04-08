@@ -325,7 +325,7 @@
 			cursor: pointer;
 			text-decoration: none;
 			color: #fff;
-			background-color: #000;
+			background-color: transparent;
 			outline: none !important;
 			transition: background-color .2s ease-in, color .2s ease-in;
 			&::before {
