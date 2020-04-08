@@ -166,19 +166,19 @@ html.swipebox-html.swipebox-touch {
 
 #swipebox-prev {
 	left: 20px;
-	background: url(/now/img/icon/ui-icon/left.svg) center no-repeat;
+	background: url(/img/icon/ui-icon/left.svg) center no-repeat;
 }
 
 #swipebox-next {
 	right: 20px;
-	background: url(/now/img/icon/ui-icon/right.svg) center no-repeat;
+	background: url(/img/icon/ui-icon/right.svg) center no-repeat;
 }
 
 #swipebox-close {
 	top: 20px;
 	right: 20px;
 	z-index: 9999;
-	background: url(/now/img/icon/ui-icon/close.svg) center no-repeat;
+	background: url(/img/icon/ui-icon/close.svg) center no-repeat;
 }
 
 .swipebox-no-close-button #swipebox-close {
