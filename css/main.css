@@ -442,74 +442,6 @@ h5, .h5, p {
 	color: #fff;
 }
 
-.background {
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.background_center {
-	background-position: center center;
-}
-
-.background_left {
-	background-position: 0 center;
-}
-
-.background_right {
-	background-position: 100% center;
-}
-
-.background_top {
-	background-position: center 100%;
-}
-
-.background_bottom {
-	background-position: center 0;
-}
-
-.background_fixed {
-	background-attachment: fixed;
-}
-
-.bg-dark-bottom::after {
-	content: "";
-	position: absolute;
-	z-index: 0;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 280px;
-	background-image: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0)));
-	background-image: -webkit-linear-gradient(bottom, #000000, rgba(0, 0, 0, 0));
-	background-image: -o-linear-gradient(bottom, #000000, rgba(0, 0, 0, 0));
-	background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0));
-}
-
-.bg-dark-top::before {
-	content: "";
-	position: absolute;
-	z-index: 0;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 280px;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#000000), to(rgba(0, 0, 0, 0)));
-	background-image: -webkit-linear-gradient(top, #000000, rgba(0, 0, 0, 0));
-	background-image: -o-linear-gradient(top, #000000, rgba(0, 0, 0, 0));
-	background-image: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
-}
-
-@media (max-width: 1279.98px) {
-	.bg-dark-bottom::after {
-		height: 100px;
-	}
-
-	.bg-dark-top::before {
-		height: 100%;
-	}
-}
-
 .main-menu {
 	position: fixed;
 	z-index: 10;
@@ -3891,24 +3823,44 @@ h5, .h5, p {
 }
 
 .p-404__middle-block {
+	position: relative;
 	margin: 0 auto;
 }
 
 .middle-block {
-	display: block;
-	padding-top: 40vh;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	padding-top: 38vh;
 }
 
 .middle-block__404 {
 	position: relative;
 	z-index: 2;
 	display: block;
+	width: auto;
+	margin: 0 auto;
+	font-weight: 900;
+	font-size: 280px;
+	line-height: 264px;
+	color: #ee0e33;
 }
 
 .middle-block h2 {
 	position: relative;
+	display: block;
+	margin: 0 auto 150px;
+	text-align: center;
 	z-index: 2;
-	margin-bottom: 150px;
+	font-size: 40px;
+	line-height: 1;
 }
 
 .middle-block a {
@@ -3922,7 +3874,6 @@ h5, .h5, p {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-	width: 350px;
 	margin: 0 auto;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 18px;
@@ -3946,4 +3897,53 @@ h5, .h5, p {
 	margin-right: 20px;
 	width: 35px;
 	height: 16px;
+}
+
+@media (max-width: 1699.98px) {
+	.middle-block h2 {
+		font-size: 40px;
+		line-height: 1;
+	}
+}
+
+@media (max-width: 1279.98px) {
+	.middle-block {
+		padding-top: 43vh;
+	}
+
+	.middle-block__404 {
+		font-size: 240px;
+		line-height: 1.17;
+	}
+
+	.middle-block h2 {
+		margin-bottom: 14px;
+		max-width: 600px;
+		font-size: 40px;
+		line-height: 1;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.middle-block {
+		margin: 0;
+		width: 100%;
+		padding-top: 40vh;
+	}
+
+	.middle-block__404 {
+		font-size: 110px;
+		line-height: 1;
+		margin-bottom: 10px;
+	}
+
+	.middle-block h2 {
+		font-size: 18px;
+		line-height: 20px;
+	}
+
+	.middle-block a {
+		font-size: 14px;
+		line-height: 20px;
+	}
 }
