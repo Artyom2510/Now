@@ -67,6 +67,10 @@ p {
 	color: #fff;
 }
 
+figure {
+	margin: 0;
+}
+
 h1, .h1 {
 	font-size: 50px;
 	line-height: 1.2;
@@ -2864,16 +2868,6 @@ h5, .h5, p {
 	line-height: 1;
 	font-weight: 700;
 	color: #fff;
-	-webkit-transition: color .2s ease;
-	-o-transition: color .2s ease;
-	transition: color .2s ease;
-	text-decoration: none;
-	outline: none !important;
-	cursor: pointer;
-}
-
-.awards-card__name:hover, .awards-card__name:focus, .awards-card__name:active {
-	text-decoration: none;
 }
 
 .awards-card ul {
@@ -2884,9 +2878,17 @@ h5, .h5, p {
 }
 
 .awards-card ul li {
-	position: relative;
 	display: block;
 	margin-bottom: 12px;
+}
+
+.awards-card ul li:last-child {
+	margin-bottom: 0;
+}
+
+.awards-card ul li a, .awards-card ul li p {
+	position: relative;
+	display: block;
 	padding-left: 24px;
 	font-family: "Montserrat", sans-serif;
 	color: #fff;
@@ -2895,11 +2897,7 @@ h5, .h5, p {
 	font-weight: 400;
 }
 
-.awards-card ul li:last-child {
-	margin-bottom: 0;
-}
-
-.awards-card ul li::before {
+.awards-card ul li a::before, .awards-card ul li p::before {
 	content: "—";
 	position: absolute;
 	top: 0;
@@ -2910,15 +2908,32 @@ h5, .h5, p {
 	line-height: 20px;
 	font-weight: 400;
 	color: #fff;
+	-webkit-transition: color .2s ease;
+	-o-transition: color .2s ease;
+	transition: color .2s ease;
+}
+
+.awards-card ul li a {
+	-webkit-transition: color .2s ease;
+	-o-transition: color .2s ease;
+	transition: color .2s ease;
+	text-decoration: none;
+	outline: none !important;
+	cursor: pointer;
+}
+
+.awards-card ul li a:hover, .awards-card ul li a:focus, .awards-card ul li a:active {
+	text-decoration: none;
+	color: #ee0e33;
+}
+
+.awards-card ul li a:hover::before, .awards-card ul li a:focus::before, .awards-card ul li a:active::before {
+	color: #ee0e33;
 }
 
 @media (min-width: 768px) {
 	.awards-card:hover .awards-card__top {
 		border-color: #ee0e33;
-	}
-
-	.awards-card:hover .awards-card__name {
-		color: #ee0e33;
 	}
 }
 
