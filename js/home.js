@@ -92,7 +92,7 @@ $(function () {
 		l = $('.js-checkbox:checked').length;
 		if (l === 1) {
 			$('.card').each(function() {
-				if ($(this).data('id') === $('.js-checkbox:checked')[0].id) {
+				if ($(this).data('id').indexOf($('.js-checkbox:checked')[0].id) !== - 1) {
 					$(this).show();
 				} else {
 					$(this).hide();
@@ -105,14 +105,14 @@ $(function () {
 		if (l > 1) {
 			if ($(this).is(':checked')) {
 				$('.card').each(function() {
-					if ($(this).data('id') === idTag) {
+					if ($(this).data('id').indexOf(idTag) !== - 1) {
 						$(this).show();
 					}
 				});
 			} else {
 				$('.card').each(function() {
-					if ($(this).data('id') === idTag) {
-						$(this).hide();
+					if ($(this).data('id').indexOf(idTag) !== - 1) {
+					$(this).hide();
 					}
 				});
 			}
