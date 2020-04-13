@@ -321,29 +321,3 @@ h5, .h5, p {
 	color: $ac;
 }
 
-.dash-list {
-	display: block;
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
-	li {
-		position: relative;
-		display: block;
-		padding-left: 24px;
-		font-family: "Montserrat", sans-serif;
-		color: #fff;
-		&::before {
-			content: "—";
-			position: absolute;
-			top: 0;
-			left: 0;
-			display: block;
-			font-family: "Montserrat", sans-serif;
-			font-size: 14px;
-			line-height: 20px;
-			font-weight: 400;
-			color: #fff;
-		}
-	}
-}
-

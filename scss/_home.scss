@@ -644,7 +644,6 @@
 		line-height: 1;
 		font-weight: 700;
 		color: $ac;
-		text-transform: uppercase;
 		text-decoration: none;
 		outline: none !important;
 		&::after {
@@ -682,7 +681,6 @@
 		}
 		p {
 			margin-bottom: 12px;
-			text-transform: uppercase;
 		}
 	}
 }

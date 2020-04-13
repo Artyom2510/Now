@@ -205,14 +205,35 @@
 			text-decoration: none;
 		}
 	}
-	&__list {
+	ul {
+		display: block;
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
 		li {
-			margin-bottom: 16px;
+			position: relative;
+			display: block;
+			margin-bottom: 12px;
+			padding-left: 24px;
+			font-family: "Montserrat", sans-serif;
+			color: #fff;
 			font-size: 14px;
 			line-height: 20px;
 			font-weight: 400;
 			&:last-child {
 				margin-bottom: 0;
+			}
+			&::before {
+				content: "—";
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: block;
+				font-family: "Montserrat", sans-serif;
+				font-size: 14px;
+				line-height: 20px;
+				font-weight: 400;
+				color: #fff;
 			}
 		}
 	}
@@ -237,11 +258,6 @@
 		&__top {
 			margin-bottom: 20px;
 		}
-		&__list {
-			li {
-				margin-bottom: 20px;
-			}
-		}
 	}
 }
 
@@ -253,6 +269,11 @@
 		}
 		&__name {
 			margin-bottom: 16px;
+		}
+		ul {
+			li {
+				margin-bottom: 10px;
+			}
 		}
 	}
 }
@@ -279,7 +300,7 @@
 			font-size: 18px;
 			line-height: 30px;
 		}
-		&__list {
+		ul {
 			li {
 				margin-bottom: 10px;
 			}
@@ -608,7 +629,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: calc(20% - 32px);
+			width: 20%;
 			margin-bottom: 40px;
 			outline: none !important;
 			cursor: pointer;
