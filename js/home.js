@@ -110,10 +110,16 @@ $(function () {
 					}
 				});
 			} else {
-				$('.card').each(function() {
-					if ($(this).data('id').indexOf(idTag) !== - 1) {
-					$(this).hide();
-					}
+				$('.card').each(function(i, el) {
+					var cardId = $(el).data('id');
+					$('.js-checkbox:checked').each(function() {
+						if (cardId.indexOf($(this)[0].id) !== - 1) {
+							$(el).show();
+							return false;
+						} else {
+							$(el).hide();
+						}
+					});
 				});
 			}
 		}
