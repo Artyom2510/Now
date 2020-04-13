@@ -414,34 +414,6 @@ h5, .h5, p {
 	color: #ee0e33;
 }
 
-.dash-list {
-	display: block;
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
-}
-
-.dash-list li {
-	position: relative;
-	display: block;
-	padding-left: 24px;
-	font-family: "Montserrat", sans-serif;
-	color: #fff;
-}
-
-.dash-list li::before {
-	content: "—";
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: block;
-	font-family: "Montserrat", sans-serif;
-	font-size: 14px;
-	line-height: 20px;
-	font-weight: 400;
-	color: #fff;
-}
-
 .main-menu {
 	position: fixed;
 	z-index: 10;
@@ -1771,7 +1743,6 @@ h5, .h5, p {
 	line-height: 1;
 	font-weight: 700;
 	color: #ee0e33;
-	text-transform: uppercase;
 	text-decoration: none;
 	outline: none !important;
 }
@@ -1826,7 +1797,6 @@ h5, .h5, p {
 
 .info__contacts p {
 	margin-bottom: 12px;
-	text-transform: uppercase;
 }
 
 @media (max-width: 1699.98px) {
@@ -2906,15 +2876,40 @@ h5, .h5, p {
 	text-decoration: none;
 }
 
-.awards-card__list li {
-	margin-bottom: 16px;
+.awards-card ul {
+	display: block;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.awards-card ul li {
+	position: relative;
+	display: block;
+	margin-bottom: 12px;
+	padding-left: 24px;
+	font-family: "Montserrat", sans-serif;
+	color: #fff;
 	font-size: 14px;
 	line-height: 20px;
 	font-weight: 400;
 }
 
-.awards-card__list li:last-child {
+.awards-card ul li:last-child {
 	margin-bottom: 0;
+}
+
+.awards-card ul li::before {
+	content: "—";
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	font-family: "Montserrat", sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -2931,10 +2926,6 @@ h5, .h5, p {
 	.awards-card__top {
 		margin-bottom: 20px;
 	}
-
-	.awards-card__list li {
-		margin-bottom: 20px;
-	}
 }
 
 @media (max-width: 1279.98px) {
@@ -2945,6 +2936,10 @@ h5, .h5, p {
 
 	.awards-card__name {
 		margin-bottom: 16px;
+	}
+
+	.awards-card ul li {
+		margin-bottom: 10px;
 	}
 }
 
@@ -2974,7 +2969,7 @@ h5, .h5, p {
 		line-height: 30px;
 	}
 
-	.awards-card__list li {
+	.awards-card ul li {
 		margin-bottom: 10px;
 	}
 }
@@ -3381,8 +3376,7 @@ h5, .h5, p {
 	-webkit-justify-content: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	width: -webkit-calc(20% - 32px);
-	width: calc(20% - 32px);
+	width: 20%;
 	margin-bottom: 40px;
 	outline: none !important;
 	cursor: pointer;
@@ -3716,30 +3710,57 @@ h5, .h5, p {
 	transition: color .2s ease-out;
 }
 
-.vacansies-card__list li {
-	margin-bottom: 12px;
-	font-size: 14px;
-	line-height: 20px;
+.vacansies-card ul {
+	display: block;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
 }
 
-.vacansies-card__list li:last-child {
+.vacansies-card ul li {
+	position: relative;
+	display: block;
+	margin-bottom: 12px;
+	padding-left: 24px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 18px;
+	line-height: 27px;
+	font-weight: 400;
+	color: #fff;
+}
+
+.vacansies-card ul li:last-child {
 	margin-bottom: 0;
+}
+
+.vacansies-card ul li::before {
+	content: "—";
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	font-family: "Montserrat", sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	color: #fff;
 }
 
 @media (max-width: 1699.98px) {
 	.vacansies-card__post {
 		margin-bottom: 10px;
 	}
-
-	.vacansies-card__list li {
-		margin-bottom: 10px;
-		font-size: 18px;
-	}
 }
 
 @media (max-width: 1279.98px) {
 	.vacansies-card__prew {
 		margin-bottom: 20px;
+	}
+
+	.vacansies-card ul li {
+		margin-bottom: 10px;
+		font-size: 14px;
+		line-height: 20px;
 	}
 }
 
@@ -3856,7 +3877,7 @@ h5, .h5, p {
 .middle-block h2 {
 	position: relative;
 	display: block;
-	margin: 0 auto 150px;
+	margin: 0 auto 100px;
 	text-align: center;
 	z-index: 2;
 	font-size: 40px;
