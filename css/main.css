@@ -2878,26 +2878,13 @@ h5, .h5, p {
 }
 
 .awards-card ul li {
-	display: block;
-	margin-bottom: 12px;
-}
-
-.awards-card ul li:last-child {
-	margin-bottom: 0;
-}
-
-.awards-card ul li a, .awards-card ul li p {
 	position: relative;
 	display: block;
+	margin-bottom: 12px;
 	padding-left: 24px;
-	font-family: "Montserrat", sans-serif;
-	color: #fff;
-	font-size: 14px;
-	line-height: 20px;
-	font-weight: 400;
 }
 
-.awards-card ul li a::before, .awards-card ul li p::before {
+.awards-card ul li::before {
 	content: "—";
 	position: absolute;
 	top: 0;
@@ -2913,7 +2900,17 @@ h5, .h5, p {
 	transition: color .2s ease;
 }
 
+.awards-card ul li:last-child {
+	margin-bottom: 0;
+}
+
 .awards-card ul li a {
+	display: block;
+	font-family: "Montserrat", sans-serif;
+	color: #fff;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
 	-webkit-transition: color .2s ease;
 	-o-transition: color .2s ease;
 	transition: color .2s ease;
@@ -2924,10 +2921,6 @@ h5, .h5, p {
 
 .awards-card ul li a:hover, .awards-card ul li a:focus, .awards-card ul li a:active {
 	text-decoration: none;
-	color: #ee0e33;
-}
-
-.awards-card ul li a:hover::before, .awards-card ul li a:focus::before, .awards-card ul li a:active::before {
 	color: #ee0e33;
 }
 
