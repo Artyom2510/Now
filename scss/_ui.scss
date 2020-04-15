@@ -152,6 +152,17 @@ h5, .h5, p {
 	width: 100%;
 	min-height: 100vh;
 	background-color: #000;
+	&_content {
+		padding-bottom: 100px;
+	}
+}
+
+@include media(xs) {
+	.main {
+		&_content {
+			padding-bottom: 0;
+		}
+	}
 }
 
 .block-video {

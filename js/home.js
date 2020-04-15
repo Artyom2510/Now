@@ -4,18 +4,8 @@ $(function () {
 	var sections = ['first', 'cases', 'contacts'];
 	var wHeight;
 
-	// Скролл по хешу - контакты
+	// Скролл по хешу
 	$(document).ready(function() {
-		if (window.hashId) {
-			setTimeout(function() {
-				animateSect($(window.hashId));
-			}, 1);
-		}
-
-		wHeight = $(window).height() / 1.5;
-	});
-
-	$(window).on('resize', function() {
 		wHeight = $(window).height() / 1.5;
 	});
 
@@ -27,27 +17,22 @@ $(function () {
 		return false;
 	};
 
+	$(window).on('resize', function() {
+		wHeight = $(window).height() / 1.5;
+	});
+
+	// Скролл по стрелке
 	$('.js-next-sect').on('click', function() {
 		animateSect($('.cases'));
 	});
 
-	// Якорь - контакты
-	$('.js-anchor a').on('click', function(e) {
-		e.preventDefault();
-		var hash = $(this).attr("href");
-		if ($(window).width() < 768) {
-			$('.js-menu').removeClass('transform');
-			$('.js-btn-burder').children().toggleClass('open close');
-			root.removeClass('overflow');
-		}
-		animateSect($(hash));
-	});
-
+	// Скролл по булетам
 	$('.js-anc-btn').on('click', function() {
 		var thisSectId = "." + $(this).data('id');
 		animateSect($(thisSectId));
 	});
 
+	// При скролле страницы меняется активный булет
 	root.on('scroll', function() {
 		if ($(window).width() > 767) {
 			if ($("." + sections[0]).offset().top === 0) {

@@ -65,6 +65,32 @@ $(function () {
 	var sectLine = $('.js-sect-line');
 	var contentSect = $('.js-offset-top-sect');
 
+	// Скролл по стрелке + по якорю
+	function animateSect(sect) {
+		root.stop().animate({
+			scrollTop: sect.offset().top + root.scrollTop()
+		}, 500);
+		return false;
+	};
+
+	$('.js-menu a').on('click', function (e) {
+		if ($(window).width() < 768) {
+			$('.js-menu').removeClass('transform');
+			$('.js-btn-burder').children().toggleClass('open close');
+			root.removeClass('overflow');
+		}
+		var href = $(this).attr('href');
+		var matches = href.match(/#\w+/);
+		if (matches.length) {
+			if ($(matches[0]).length) {
+				e.preventDefault();
+				animateSect($(matches[0]));
+				return false;
+			}
+		}
+		return;
+	});
+
 	// Карточки
 	function opacityTranslate(parent, child, wHeight, delay) {
 		parent.each(function(i, el) {
@@ -95,6 +121,14 @@ $(function () {
 	}
 
 	$(document).ready(function() {
+
+		// Скролл по хешу
+		if (window.hashId) {
+			setTimeout(function() {
+				animateSect($(window.hashId));
+			}, 1);
+		}
+
 		// Ширина не учитывая скролл
 		widhtMain = $('.main').width();
 		header.width(widhtMain);
@@ -114,10 +148,16 @@ $(function () {
 		
 		if (sectLine.length) {
 			sectLines(sectLine, windowHeight);
+			sectLine.each(function(i, el) {
+				i++;
+				i = i < 10 ? "0" + i : i;
+				$(el).siblings('.sect-number').text(i);
+			});
 		}
 		if (contentSect.length) {
 			sectContent(contentSect, windowHeight);
 		}
+
 	});
 
 	$(window).on('resize', function() {
