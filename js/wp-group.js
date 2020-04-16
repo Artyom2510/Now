@@ -5,7 +5,7 @@ $(function () {
 	var sectLine;
 	var children = $('.start-numbering').children('.wp-block-group');
 	var animateParent = $('.blocks-gallery-grid');
-	var animateChild = $('.js-child-animate');
+	var animateChild = $('.swipebox');
 
 	// Карточки - Фотогалерея
 	function opacityTranslate(parent, child, wHeight, delay) {

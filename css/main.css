@@ -1443,6 +1443,9 @@ h5, .h5, p {
 	height: 40px;
 	opacity: 0;
 	pointer-events: none;
+	-webkit-transition: opacity .2s ease;
+	-o-transition: opacity .2s ease;
+	transition: opacity .2s ease;
 }
 
 .card span::before, .card span::after {
@@ -3067,10 +3070,47 @@ h5, .h5, p {
 }
 
 .blocks-gallery-item {
+	position: relative;
 	display: block;
 	width: -webkit-calc(25% - 30px);
 	width: calc(25% - 30px);
 	margin: 0 20px 40px;
+	overflow: hidden;
+}
+
+.blocks-gallery-item:hover::before, .blocks-gallery-item:hover::after {
+	opacity: 1;
+}
+
+.blocks-gallery-item:hover figure::before {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.blocks-gallery-item::before, .blocks-gallery-item::after {
+	content: "";
+	position: absolute;
+	z-index: 4;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	display: block;
+	background-color: #ee0e33;
+	opacity: 0;
+	-webkit-transition: opacity .2s ease;
+	-o-transition: opacity .2s ease;
+	transition: opacity .2s ease;
+}
+
+.blocks-gallery-item::before {
+	width: 5px;
+	height: 40px;
+}
+
+.blocks-gallery-item::after {
+	width: 40px;
+	height: 5px;
 }
 
 .blocks-gallery-item:nth-child(4n + 1) {
@@ -3081,45 +3121,28 @@ h5, .h5, p {
 	margin-right: 0;
 }
 
+.blocks-gallery-item:last-child {
+	margin-bottom: 40px !important;
+}
+
 .blocks-gallery-item figure {
 	position: relative;
 	display: block;
 	width: 100%;
 }
 
-.blocks-gallery-item figure > a.card {
-	position: relative;
-	display: block;
-	width: 100%;
-}
-
-.blocks-gallery-item figure > a.card::before {
-	content: '';
-	float: left;
-	padding-bottom: 100%;
-}
-
-.blocks-gallery-item figure > a.card::after {
-	content: '';
-	display: table;
-	clear: both;
-}
-
-.blocks-gallery-item figure > a.card::before {
-	position: relative;
-}
-
-.blocks-gallery-item figure > a.card > img {
+.blocks-gallery-item figure::before {
+	content: "";
 	position: absolute;
-	top: 0;
-	left: 0;
+	z-index: 2;
 	display: block;
-	width: 100%;
 	height: 100%;
-	-o-object-position: 50% 50%;
-	object-position: 50% 50%;
-	-o-object-fit: cover;
-	object-fit: cover;
+	width: 100%;
+	background-color: transparent;
+	-webkit-transition: background-color .3s ease;
+	-o-transition: background-color .3s ease;
+	transition: background-color .3s ease;
+	pointer-events: none;
 }
 
 .blocks-gallery-item__caption {
@@ -3131,6 +3154,75 @@ h5, .h5, p {
 		width: 25%;
 		margin: 0;
 	}
+
+	.blocks-gallery-item:last-child {
+		margin-bottom: 0 !important;
+	}
+}
+
+.swipebox {
+	position: relative;
+	z-index: 1;
+	display: block;
+	overflow: hidden;
+	outline: none !important;
+	text-decoration: none;
+	-webkit-transform: translateY(200px);
+	-ms-transform: translateY(200px);
+	transform: translateY(200px);
+	opacity: 0;
+	-webkit-transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99), -webkit-transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99), -webkit-transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	-o-transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99), opacity 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99), opacity 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+	transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99), opacity 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99), -webkit-transform 0.8s cubic-bezier(0.25, 0.1, 0.02, 0.99);
+}
+
+.swipebox::before {
+	content: '';
+	float: left;
+	padding-bottom: 100%;
+}
+
+.swipebox::after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.swipebox:hover, .swipebox:focus, .swipebox:active {
+	text-decoration: none;
+}
+
+.swipebox:hover > img, .swipebox:focus > img, .swipebox:active > img {
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.swipebox > img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+	-o-object-position: 50% 50%;
+	object-position: 50% 50%;
+	-webkit-transition: -webkit-transform .2s ease;
+	transition: -webkit-transform .2s ease;
+	-o-transition: transform .2s ease;
+	transition: transform .2s ease;
+	transition: transform .2s ease, -webkit-transform .2s ease;
+}
+
+.swipebox.up {
+	opacity: 1;
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
 }
 
 .cases-0 {

@@ -682,37 +682,66 @@
 }
 
 .blocks-gallery-item {
+	position: relative;
 	display: block;
 	width: calc(25% - 30px);
 	margin: 0 20px 40px;
+	overflow: hidden;
+	&:hover {
+		&::before,
+		&::after {
+			opacity: 1;
+		}
+		figure {
+			&::before {
+				background-color: rgba(#fff, .8);
+			}
+		}
+	}
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 4;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		display: block;
+		background-color: $ac;
+		opacity: 0;
+		transition: opacity .2s ease;
+	}
+	&::before {
+		width: 5px;
+		height: 40px;
+	}
+	&::after {
+		width: 40px;
+		height: 5px;
+	}
 	&:nth-child(4n + 1) {
 		margin-left: 0;
 	}
 	&:nth-child(4n + 4) {
 		margin-right: 0;
 	}
+	&:last-child {
+		margin-bottom: 40px !important;
+	}
 	figure {
 		position: relative;
 		display: block;
 		width: 100%;
-		> a.card {
-			position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: 2;
 			display: block;
+			height: 100%;
 			width: 100%;
-			@include aspect-ratio(1);
-			&::before {
-				position: relative;
-			}
-			> img {
-				position: absolute;
-				top: 0;
-				left: 0;
-				display: block;
-				width: 100%;
-				height: 100%;
-				object-position: 50% 50%;
-				object-fit: cover;
-			}
+			background-color: transparent;
+			transition: background-color .3s ease;
+			pointer-events: none;
 		}
 	}
 	&__caption {
@@ -724,5 +753,43 @@
 	.blocks-gallery-item {
 		width: 25%;
 		margin: 0;
+		&:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+}
+
+.swipebox {
+	$p: &;
+	position: relative;
+	z-index: 1;
+	display: block;
+	overflow: hidden;
+	outline: none !important;
+	text-decoration: none;
+	transform: translateY(200px);
+	opacity: 0;
+	transition: transform .8s cubic-bezier(.25, .1, .02, .99), opacity .8s cubic-bezier(.25, .1, .02, .99);
+	@include aspect-ratio(1);
+	&:hover, &:focus, &:active {
+		text-decoration: none;
+		> img {
+			transform: scale(1.1);
+		}
+	}
+	> img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 50% 50%;
+		transition: transform .2s ease;
+	}
+	&.up {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
