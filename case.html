@@ -30,14 +30,16 @@
 	<link rel="stylesheet" href="css/main.css">
 
 	<script src="js/libs/jquery-3.4.1.min.js"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
 	<script>
 		function onYouTubeIframeAPIReady() {
 			var players = [];
 			$('.block-video iframe').each(function (i, el) {
 				if (!this.id) {
-					this.id = 'video-iframe' + i
+					this.id = 'video-iframe' + i;
 				}
 				players.push(new YT.Player(this.id, {
+					host: 'https://www.youtube.com',
 					events: {
 						'onStateChange': function (event) {
 							if (event.data == YT.PlayerState.PLAYING) {
@@ -448,7 +450,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="cases-more">
+			<section class="cases-more js-offset-top-sect">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs col-12 col-md-5 col-lg-4">

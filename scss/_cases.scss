@@ -65,17 +65,6 @@
 	}
 }
 
-// @include media(md) {
-// 	.cases-info {
-// 	}
-// }
-
-// @include media(sm) {
-// 	.cases-info {
-
-// 	}
-// }
-
 @include media(xs) {
 	.cases-info {
 		&__item {
@@ -129,6 +118,13 @@
 .cases-more {
 	padding-top: 24px;
 	padding-bottom: 250px;
+	opacity: 0;
+	transition: transform .8s cubic-bezier(.25, .1, .02, .99), opacity .8s cubic-bezier(.25, .1, .02, .99);
+	transform: translateY(100px);
+	&.up {
+		opacity: 1;
+		transform: translateY(0);
+	}
 	&__cards {
 		display: block;
 		margin-top: 34px;
