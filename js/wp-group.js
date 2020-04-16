@@ -35,7 +35,6 @@ $(function () {
 		halfWindowHeight = windowHeight / 1.25;
 
 		children.each(function(i, el) {
-			console.log(i)
 			i++;
 			i = i < 10 ? "0" + i : i;
 			$(el)
