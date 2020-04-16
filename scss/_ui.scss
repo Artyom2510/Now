@@ -152,17 +152,6 @@ h5, .h5, p {
 	width: 100%;
 	min-height: 100vh;
 	background-color: #000;
-	&_content {
-		padding-bottom: 100px;
-	}
-}
-
-@include media(xs) {
-	.main {
-		&_content {
-			padding-bottom: 0;
-		}
-	}
 }
 
 .block-video {
@@ -305,6 +294,9 @@ h5, .h5, p {
 	transform: scaleX(0);
 	transform-origin: 0 0;
 	transition: transform .8s cubic-bezier(.25, .1, .02, .99) .4s;
+	&_wp {
+		width: calc(#{_col(4)} - 27px);
+	}
 	&.full-width {
 		transform: scaleX(1);
 	}
@@ -312,21 +304,20 @@ h5, .h5, p {
 
 @include media(md) {
 	.sect-line {
+		&_wp {
+			width: calc(#{_col(5)} - 23px);
+		}
 		margin-top: 16px;
 	}
 }
 
-// @include media(sm) {
-// 	.sect-line {
-// 		width: calc(#{_col(12, sm)} - 40px);
-// 	}
-// }
-
-// @include media(xs) {
-// 	.sect-line {
-// 		width: calc(#{_col(12, xs)} - 48px);
-// 	}
-// }
+@include media(sm) {
+	.sect-line {
+		&_wp {
+			width: 100%;
+		}
+	}
+}
 
 .sect-number {
 	display: block;

@@ -204,9 +204,9 @@ $(function () {
 
 	// Запуск видео по нажатию на нашу кнопку, скрытие постера
 	$('.js-start-video').on('click', function() {
-		var paretn = $(this).parent('.block-video');
-		var iframe = paretn.children('iframe')[0];
-		var bg = paretn.children('.block-video__bg');
+		var paretn = $(this).parents('.block-video');
+		var iframe = paretn.find('iframe')[0];
+		var bg = paretn.find('.block-video__bg');
 		iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
 		$(this).hide();
 		bg.hide();
