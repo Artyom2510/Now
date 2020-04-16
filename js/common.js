@@ -204,7 +204,7 @@ $(function () {
 
 	// Запуск видео по нажатию на нашу кнопку, скрытие постера
 	$('.js-start-video').on('click', function() {
-		var paretn = $(this).parents('.block-video');
+		var paretn = $(this).parents('.wp-block-embed__wrapper');
 		var iframe = paretn.find('iframe')[0];
 		var bg = paretn.find('.block-video__bg');
 		iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');

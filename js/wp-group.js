@@ -32,10 +32,9 @@ $(function () {
 
 		// Высрта экрана
 		windowHeight = $(window).height();
-		halfWindowHeight = windowHeight / 1.5;
+		halfWindowHeight = windowHeight / 1.25;
 
 		children.each(function(i, el) {
-			console.log(i)
 			i++;
 			i = i < 10 ? "0" + i : i;
 			$(el)
@@ -59,7 +58,7 @@ $(function () {
 
 	$(window).on('resize', function() {
 		windowHeight = $(window).height();
-		halfWindowHeight = windowHeight / 1.5;
+		halfWindowHeight = windowHeight / 1.25;
 	});
 
 	root.on('scroll', function() {
