@@ -11,8 +11,8 @@
 		line-height: 1.5;
 		color: #fff;
 		&.has-large-size {
-			font-size: 28px;
-			line-height: 39px;
+			font-size: 24px;
+			line-height: 30px;
 		}
 	}
 	a {
@@ -115,11 +115,6 @@
 
 @include media(md) {
 	.b-content {
-		p {
-			&.has-large-size {
-				line-height: 34px;
-			}
-		}
 		h5 {
 			font-size: 18px;
 		}
@@ -160,10 +155,6 @@
 		p {
 			font-size: 14px;
 			line-height: 20px;
-		}
-		p.has-small-font-size {
-			font-size: 18px;
-			line-height: 27px;
 		}
 		h2 {
 			font-size: 24px;
@@ -363,8 +354,8 @@
 			line-height: 1.5;
 			color: #fff;
 			&.has-large-size {
-				font-size: 28px;
-				line-height: 39px;
+				font-size: 24px;
+				line-height: 30px;
 			}
 			> a {
 				position: relative;
@@ -498,11 +489,6 @@
 			h2, h3 {
 				width: _col(5);
 			}
-			p {
-				&.has-large-size {
-					line-height: 34px;
-				}
-			}
 			h5 {
 				font-size: 18px;
 			}
@@ -563,10 +549,6 @@
 			p {
 				font-size: 14px;
 				line-height: 20px;
-			}
-			p.has-small-font-size {
-				font-size: 18px;
-				line-height: 27px;
 			}
 			h2 {
 				font-size: 24px;

@@ -212,4 +212,18 @@ $(function () {
 		bg.hide();
 	});
 
+	var logo = $('.main-menu__logo');
+	var logoAnimClass = ['neon', 'glitchtext', 'glitch-noise', 'noise', 'neon2'];
+
+	if ($(window).width() > 1024) {
+		logo.on({
+			'mouseenter': function() {
+				logo.addClass(logoAnimClass[Math.floor(Math.random() * logoAnimClass.length)]);
+			},
+			'mouseleave': function() {
+				logo.removeClass(logoAnimClass)
+			}
+		});
+	}
+
 });
