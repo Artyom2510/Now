@@ -197,6 +197,13 @@
 		line-height: 1;
 		font-weight: 700;
 		color: #fff;
+		text-decoration: none;
+		outline: none !important;
+		transition: color .2s ease;
+		&:hover, &:focus, &:active {
+			text-decoration: none;
+			color: $ac;
+		}
 	}
 	ul {
 		display: block;
@@ -258,6 +265,8 @@
 @include media(md) {
 	.awards-card {
 		&__top {
+			align-items: flex-start;
+			min-height: 179px;
 			margin-bottom: 20px;
 		}
 	}
@@ -266,6 +275,7 @@
 @include media(sm) {
 	.awards-card {
 		&__top {
+			min-height: 185px;
 			margin-bottom: 24px;
 			padding-bottom: 30px;
 		}
@@ -283,6 +293,7 @@
 @include media(xs) {
 	.awards-card {
 		&__top {
+			min-height: auto;
 			margin-bottom: 10px;
 			padding-bottom: 20px;
 		}
@@ -627,6 +638,7 @@
 	&__logos {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 		a {
 			display: flex;
 			align-items: center;
@@ -637,7 +649,7 @@
 			cursor: pointer;
 			img, svg {
 				display: block;
-				width: 130px;
+				width: 200px;
 				height: auto;
 				object-fit: contain;
 				object-position: 50% 50%;
@@ -681,11 +693,7 @@
 		&__logos {
 			a {
 				height: 48px;
-				margin-right: 40px;
 				margin-bottom: 20px;
-				&:nth-child(5n) {
-					margin-right: 0;
-				}
 				img, svg {
 					width: 100%;
 				}
