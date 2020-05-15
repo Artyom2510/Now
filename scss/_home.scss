@@ -248,12 +248,39 @@
 	&.transform {
 		transform: translateY(-100%);
 	}
-	&__tags {
+	&__wrap {
 		position: sticky;
 		z-index: 12;
 		top: 70px;
 		left: 0;
+	}
+	&__tags {
+		position: relative;
+		z-index: 12;
 		margin: 0 0 33px;
+		background-color: rgba(#000, .9);
+	}
+	&__btn {
+		position: absolute;
+		z-index: 15;
+		top: calc(50% - 4px);
+		transform: translate(100%, -50%);
+		right: 0;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+		padding: 0;
+		border: none;
+		outline: none !important;
+		background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0.4) 100%);
+		cursor: pointer;
+		&_left {
+			left: 0;
+			right: auto;
+			transform: translate(-100%, -50%) rotate(180deg);
+		}
 	}
 	&__cards {
 		display: flex;
@@ -273,15 +300,17 @@
 @include media(sm) {
 	.cases {
 		padding: 12.4vh 50px 0;
+		&__btn {
+			&.display {
+				display: flex;
+			}
+		}
 	}
 }
 
 @include media(xs) {
 	.cases {
 		padding: 0 24px 0;
-		&__tags {
-			margin-right: -24px;
-		}
 	}
 }
 
@@ -290,7 +319,6 @@
 	flex-wrap: nowrap;
 	padding: 13px 0;
 	overflow-x: auto;
-	background-color: rgba(#000, .9);
 	&_wrap {
 		flex-wrap: wrap;
 		overflow: visible;
@@ -304,7 +332,11 @@
 			margin-right: 0;
 		}
 		input[type="checkbox"] {
-			display: none;
+			display: block;
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			opacity: 0;
 			&:checked + label {
 				color: #000;
 				background-color: #fff;
@@ -321,6 +353,7 @@
 			font-size: 14px;
 			line-height: 1;
 			font-weight: 400;
+			white-space: nowrap;
 			border: none;
 			cursor: pointer;
 			text-decoration: none;

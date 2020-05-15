@@ -71,42 +71,61 @@ $(function () {
 	});
 
 	// Фильтр
-	var l, idTag;
-	$('.js-checkbox').on('change', function() {
-		idTag = $(this)[0].id;
-		l = $('.js-checkbox:checked').length;
-		if (l === 1) {
+	var idTag;
+	var checkbox = $('.js-checkbox');
+	checkbox.on('click', function() {
+		if (!checkbox.is(':checked').length) {
+			$('.card').show();
+		}
+		if ($(this).is(':checked')) {
+			checkbox.not(this).prop('checked', false);
+			idTag = $(this)[0].id;
 			$('.card').each(function() {
-				if ($(this).data('id').indexOf($('.js-checkbox:checked')[0].id) !== - 1) {
+				if ($(this).data('id').indexOf(idTag) !== - 1) {
 					$(this).show();
 				} else {
 					$(this).hide();
 				}
 			});
 		}
-		if (!l) {
-			$('.card').show();
+	});
+
+	// Клик по стрелочке для скролла тегов
+	var scrollPos;
+	var scrollW;
+	var width;
+	// Начальная ширина прокрутки
+	$(document).ready(function () {
+		scrollW = $('.tags')[0].scrollWidth;
+		width = scrollW - $('.tags').outerWidth(true);
+	});
+
+	// Начальная ширина прокрутки при ресайзе
+	$(window).on('resize', function() {
+		scrollW = $('.tags')[0].scrollWidth;
+		width = scrollW - $('.tags').outerWidth(true);
+	});
+	// Вправо
+	$('.js-scroll-btn-right').on('click', function() {
+		scrollPos = $('.tags').scrollLeft() + 100;
+		$(this).siblings('.tags').animate({scrollLeft: scrollPos}, 200);
+	});
+	// Влево
+	$('.js-scroll-btn-left').on('click', function() {
+		scrollPos = $('.tags').scrollLeft() - 100;
+		$(this).siblings('.tags').animate({scrollLeft: scrollPos}, 200);
+	});
+
+	$('.tags').on('scroll', function() {
+		if ($(this).scrollLeft() === 0) {
+			$('.js-scroll-btn-left').removeClass('display');
+		} else {
+			$('.js-scroll-btn-left').addClass('display');
 		}
-		if (l > 1) {
-			if ($(this).is(':checked')) {
-				$('.card').each(function() {
-					if ($(this).data('id').indexOf(idTag) !== - 1) {
-						$(this).show();
-					}
-				});
-			} else {
-				$('.card').each(function(i, el) {
-					var cardId = $(el).data('id');
-					$('.js-checkbox:checked').each(function() {
-						if (cardId.indexOf($(this)[0].id) !== - 1) {
-							$(el).show();
-							return false;
-						} else {
-							$(el).hide();
-						}
-					});
-				});
-			}
+		if ($(this).scrollLeft() >= width) {
+			$('.js-scroll-btn-right').removeClass('display');
+		} else {
+			$('.js-scroll-btn-right').addClass('display');
 		}
 	});
 
