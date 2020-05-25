@@ -316,7 +316,7 @@
 
 .tags {
 	display: flex;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	padding: 13px 0;
 	overflow-x: auto;
 	&_wrap {
@@ -388,6 +388,7 @@
 
 @include media(sm) {
 	.tags {
+		flex-wrap: nowrap;
 		&__item {
 			margin-right: 22px;
 		}
@@ -785,3 +786,4 @@
 		}
 	}
 }
+
