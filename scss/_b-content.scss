@@ -79,7 +79,6 @@
 	ul, ol {
 		display: block;
 		padding: 0;
-		margin: 0 0 20px;
 		list-style-type: none;
 		li {
 			position: relative;
@@ -301,39 +300,35 @@
 		padding-left: 20px;
 		margin-left: auto;
 	}
-	&.list-dashed {
-		#{$p}__inner-container {
-			> ul, ol {
+	.dashed {
+		display: block;
+		padding: 0;
+		margin: 0 0 20px;
+		list-style-type: none;
+		li {
+			position: relative;
+			display: block;
+			margin-bottom: 12px;
+			padding-left: 24px;
+			font-family: "Montserrat", sans-serif;
+			font-size: 20px;
+			line-height: 1.5;
+			font-weight: 400;
+			color: #fff;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&::before {
+				content: "—";
+				position: absolute;
+				top: 0;
+				left: 0;
 				display: block;
-				padding: 0;
-				margin: 0 0 20px;
-				list-style-type: none;
-				> li {
-					position: relative;
-					display: block;
-					margin-bottom: 12px;
-					padding-left: 24px;
-					font-family: "Montserrat", sans-serif;
-					font-size: 20px;
-					line-height: 1.5;
-					font-weight: 400;
-					color: #fff;
-					&:last-child {
-						margin-bottom: 0;
-					}
-					&::before {
-						content: "—";
-						position: absolute;
-						top: 0;
-						left: 0;
-						display: block;
-						font-family: "Montserrat", sans-serif;
-						font-size: 20px;
-						line-height: 1.5;
-						font-weight: 400;
-						color: #fff;
-					}
-				}
+				font-family: "Montserrat", sans-serif;
+				font-size: 20px;
+				line-height: 1.5;
+				font-weight: 400;
+				color: #fff;
 			}
 		}
 	}
@@ -473,16 +468,12 @@
 		&.text-right {
 			width: _col(7);
 		}
-		&.list-dashed {
-			#{$p}__inner-container {
-				> ul, ol {
-					> li {
-						margin-bottom: 10px;
-						font-size: 18px;
-						&::before {
-							font-size: 18px;
-						}
-					}
+		.dashed {
+			li {
+				margin-bottom: 10px;
+				font-size: 18px;
+				&::before {
+					font-size: 18px;
 				}
 			}
 		}
@@ -510,17 +501,13 @@
 			margin-left: 0;
 			padding-left: 0;
 		}
-		&.list-dashed {
-			#{$p}__inner-container {
-				> ul, ol {
-					> li {
-						font-size: 14px;
-						line-height: 20px;
-						&::before {
-							font-size: 14px;
-							line-height: 20px;
-						}
-					}
+		.dashed {
+			li {
+				font-size: 14px;
+				line-height: 20px;
+				&::before {
+					font-size: 14px;
+					line-height: 20px;
 				}
 			}
 		}
