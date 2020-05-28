@@ -3345,8 +3345,8 @@ h5, .h5, p {
 	display: block;
 	width: 100%;
 	height: 100%;
-	-o-object-fit: cover;
-	object-fit: cover;
+	-o-object-fit: contain;
+	object-fit: contain;
 	-o-object-position: 50% 50%;
 	object-position: 50% 50%;
 }
@@ -3540,6 +3540,7 @@ h5, .h5, p {
 
 .wp-block-group__inner-container p {
 	display: block;
+	min-width: 100%;
 	margin-bottom: 30px;
 	font-family: inherit;
 	font-size: 18px;
@@ -3662,19 +3663,17 @@ h5, .h5, p {
 	color: #fff;
 }
 
-.wp-block-group__inner-container ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+.wp-block-group__inner-container ul, .wp-block-group__inner-container ol {
+	margin: 0 0 20px;
 }
 
-.wp-block-group__inner-container ul li {
-	display: block;
+.wp-block-group__inner-container ul li, .wp-block-group__inner-container ol li {
 	font-family: "Montserrat", sans-serif;
 	font-weight: 400;
 	font-size: 17px;
 	line-height: 1.5;
 	color: #fff;
+	list-style-type: disc;
 }
 
 .wp-block-group__inner-container strong, .wp-block-group__inner-container b {
@@ -3710,6 +3709,10 @@ h5, .h5, p {
 		font-size: 18px;
 	}
 
+	.wp-block-group.list-dashed .wp-block-group__inner-container > ul > li::before, .wp-block-group.list-dashed .wp-block-group__inner-container ol > li::before {
+		font-size: 18px;
+	}
+
 	.wp-block-group__inner-container {
 		margin-bottom: 100px;
 	}
@@ -3736,6 +3739,11 @@ h5, .h5, p {
 	}
 
 	.wp-block-group.list-dashed .wp-block-group__inner-container > ul > li, .wp-block-group.list-dashed .wp-block-group__inner-container ol > li {
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.wp-block-group.list-dashed .wp-block-group__inner-container > ul > li::before, .wp-block-group.list-dashed .wp-block-group__inner-container ol > li::before {
 		font-size: 14px;
 		line-height: 20px;
 	}
@@ -3831,8 +3839,8 @@ h5, .h5, p {
 	display: block;
 	width: 100%;
 	height: 100%;
-	-o-object-fit: cover;
-	object-fit: cover;
+	-o-object-fit: contain;
+	object-fit: contain;
 	-o-object-position: 50% 50%;
 	object-position: 50% 50%;
 }
@@ -3964,6 +3972,7 @@ h5, .h5, p {
 	width: calc(25% - 30px);
 	margin: 0 20px 40px;
 	overflow: hidden;
+	list-style-type: none;
 }
 
 .blocks-gallery-item:hover::before, .blocks-gallery-item:hover::after {
