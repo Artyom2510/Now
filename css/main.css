@@ -5098,19 +5098,12 @@ h5, .h5, p {
 	object-fit: contain;
 	-o-object-position: 50% 50%;
 	object-position: 50% 50%;
-	-webkit-filter: grayscale(100%) invert(50%);
-	filter: grayscale(100%) invert(50%);
-	-webkit-transition: -webkit-filter .2s ease;
-	transition: -webkit-filter .2s ease;
-	-o-transition: filter .2s ease;
-	transition: filter .2s ease;
-	transition: filter .2s ease, -webkit-filter .2s ease;
 }
 
 @media (min-width: 768px) {
 	.clients__logos img:hover, .clients__logos svg:hover {
-		-webkit-filter: none;
-		filter: none;
+		-webkit-filter: invert(51%) sepia(89%) saturate(7448%) hue-rotate(337deg) brightness(87%) contrast(117%);
+		filter: invert(51%) sepia(89%) saturate(7448%) hue-rotate(337deg) brightness(87%) contrast(117%);
 	}
 }
 

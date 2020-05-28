@@ -643,8 +643,6 @@
 				height: auto;
 				object-fit: contain;
 				object-position: 50% 50%;
-				filter: grayscale(100%) invert(50%);
-				transition: filter .2s ease;
 			}
 		}
 	}
@@ -655,7 +653,7 @@
 		&__logos {
 			img, svg {
 				&:hover {
-					filter: none;
+					filter: invert(51%) sepia(89%) saturate(7448%) hue-rotate(337deg) brightness(87%) contrast(117%);
 				}
 			}
 		}
