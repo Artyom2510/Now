@@ -3346,8 +3346,8 @@ h5, .h5, p {
 	height: 100%;
 	-o-object-fit: contain;
 	object-fit: contain;
-	-o-object-position: 50% 50%;
-	object-position: 50% 50%;
+	-o-object-position: 0% 50%;
+	object-position: 0% 50%;
 }
 
 .content-sect__content {
@@ -3840,8 +3840,8 @@ h5, .h5, p {
 	height: 100%;
 	-o-object-fit: contain;
 	object-fit: contain;
-	-o-object-position: 50% 50%;
-	object-position: 50% 50%;
+	-o-object-position: 0% 50%;
+	object-position: 0% 50%;
 }
 
 @media (max-width: 1699.98px) {
