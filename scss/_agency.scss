@@ -224,11 +224,10 @@
 			a {
 				display: block;
 				font-family: "Montserrat", sans-serif;
-				color: #fff;
+				color: $ac;
 				font-size: 14px;
 				line-height: 20px;
 				font-weight: 400;
-				transition: color .2s ease;
 				text-decoration: none;
 				outline: none !important;
 				cursor: pointer;
@@ -823,3 +822,4 @@
 		}
 	}
 }
+

@@ -4596,13 +4596,10 @@ h5, .h5, p {
 .awards-card ul li a {
 	display: block;
 	font-family: "Montserrat", sans-serif;
-	color: #fff;
+	color: #ee0e33;
 	font-size: 14px;
 	line-height: 20px;
 	font-weight: 400;
-	-webkit-transition: color .2s ease;
-	-o-transition: color .2s ease;
-	transition: color .2s ease;
 	text-decoration: none;
 	outline: none !important;
 	cursor: pointer;
