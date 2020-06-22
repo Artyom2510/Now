@@ -224,16 +224,17 @@
 			a {
 				display: block;
 				font-family: "Montserrat", sans-serif;
-				color: $ac;
+				color: #fff;
 				font-size: 14px;
 				line-height: 20px;
 				font-weight: 400;
-				text-decoration: none;
+				text-decoration: underline;
 				outline: none !important;
 				cursor: pointer;
+				transition: color .2s ease, text-decoration .2s ease;
 				&:hover, &:focus, &:active {
-					text-decoration: none;
 					color: $ac;
+					text-decoration: none;
 				}
 			}
 		}
