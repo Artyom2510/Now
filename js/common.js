@@ -213,7 +213,7 @@ $(function () {
 	});
 
 	var logo = $('.main-menu__logo');
-	var logoAnimClass = ['neon', 'glitchtext', 'glitch-noise', 'noise', 'neon2'];
+	var logoAnimClass = ['glitchtext', 'glitch-noise', 'noise', 'neon2'];
 
 	if ($(window).width() > 1024) {
 		logo.on({

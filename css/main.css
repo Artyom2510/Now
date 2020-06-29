@@ -489,15 +489,6 @@ h5, .h5, p {
 	transition: fill .2s ease;
 }
 
-.main-menu__logo.neon svg {
-	-webkit-animation: neon 2s ease-in-out infinite alternate;
-	animation: neon 2s ease-in-out infinite alternate;
-}
-
-.main-menu__logo.neon svg path {
-	fill: #1b0fc4;
-}
-
 .main-menu__logo.neon2 svg:first-child {
 	-webkit-animation: neon2 1s ease-in-out forwards;
 	animation: neon2 1s ease-in-out forwards;
@@ -610,30 +601,6 @@ h5, .h5, p {
 
 	100% {
 		fill: rgba(238, 14, 51, 0);
-	}
-}
-
-@-webkit-keyframes neon {
-	from {
-		-webkit-filter: drop-shadow(0 0 8px #ee0e33) drop-shadow(0 0 16px #ee0e33) drop-shadow(0 0 20px #2356FF) drop-shadow(0 0 24px #2356FF) drop-shadow(0 0 30px #2356FF);
-		filter: drop-shadow(0 0 8px #ee0e33) drop-shadow(0 0 16px #ee0e33) drop-shadow(0 0 20px #2356FF) drop-shadow(0 0 24px #2356FF) drop-shadow(0 0 30px #2356FF);
-	}
-
-	to {
-		-webkit-filter: drop-shadow(0 0 4px #ee0e33) drop-shadow(0 0 8px #ee0e33) drop-shadow(0 0 16px #2356FF) drop-shadow(0 0 20px #2356FF) drop-shadow(0 0 24px #2356FF);
-		filter: drop-shadow(0 0 4px #ee0e33) drop-shadow(0 0 8px #ee0e33) drop-shadow(0 0 16px #2356FF) drop-shadow(0 0 20px #2356FF) drop-shadow(0 0 24px #2356FF);
-	}
-}
-
-@keyframes neon {
-	from {
-		-webkit-filter: drop-shadow(0 0 8px #ee0e33) drop-shadow(0 0 16px #ee0e33) drop-shadow(0 0 20px #2356FF) drop-shadow(0 0 24px #2356FF) drop-shadow(0 0 30px #2356FF);
-		filter: drop-shadow(0 0 8px #ee0e33) drop-shadow(0 0 16px #ee0e33) drop-shadow(0 0 20px #2356FF) drop-shadow(0 0 24px #2356FF) drop-shadow(0 0 30px #2356FF);
-	}
-
-	to {
-		-webkit-filter: drop-shadow(0 0 4px #ee0e33) drop-shadow(0 0 8px #ee0e33) drop-shadow(0 0 16px #2356FF) drop-shadow(0 0 20px #2356FF) drop-shadow(0 0 24px #2356FF);
-		filter: drop-shadow(0 0 4px #ee0e33) drop-shadow(0 0 8px #ee0e33) drop-shadow(0 0 16px #2356FF) drop-shadow(0 0 20px #2356FF) drop-shadow(0 0 24px #2356FF);
 	}
 }
 

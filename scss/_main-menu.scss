@@ -36,14 +36,6 @@
 				transition: fill .2s ease;
 			}
 		}
-		&.neon {
-			svg {
-				animation: neon 2s ease-in-out infinite alternate;
-				path {
-					fill: rgb(27, 15, 196);
-				}
-			}
-		}
 		&.neon2 {
 			svg {
 				&:first-child {
@@ -134,23 +126,6 @@
 	}
 	100% {
 		fill: rgba($ac, 0);
-	}
-}
-
-@keyframes neon {
-	from {
-		filter: drop-shadow(0 0 8px $ac)
-						drop-shadow(0 0 16px $ac)
-						drop-shadow(0 0 20px #2356FF)
-						drop-shadow(0 0 24px #2356FF)
-						drop-shadow(0 0 30px #2356FF);
-	}
-	to {
-		filter: drop-shadow(0 0 4px $ac)
-						drop-shadow(0 0 8px $ac)
-						drop-shadow(0 0 16px #2356FF)
-						drop-shadow(0 0 20px #2356FF)
-						drop-shadow(0 0 24px #2356FF);
 	}
 }
 
