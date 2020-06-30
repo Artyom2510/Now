@@ -213,17 +213,18 @@ $(function () {
 	});
 
 	var logo = $('.main-menu__logo');
-	var logoAnimClass = ['glitchtext', 'glitch-noise', 'noise', 'neon2'];
+	// var logoAnimClass = ['glitchtext', 'glitch-noise', 'noise', 'neon2', 'rotate'];
+	var logoAnimClass = ['rotate'];
 
-	if ($(window).width() > 1024) {
-		logo.on({
-			'mouseenter': function() {
-				logo.addClass(logoAnimClass[Math.floor(Math.random() * logoAnimClass.length)]);
-			},
-			'mouseleave': function() {
-				logo.removeClass(logoAnimClass)
-			}
-		});
-	}
+	// if ($(window).width() > 1024) {
+	// 	logo.on({
+	// 		'mouseenter': function() {
+	// 			logo.addClass(logoAnimClass[Math.floor(Math.random() * logoAnimClass.length)]);
+	// 		},
+	// 		'mouseleave': function() {
+	// 			logo.removeClass(logoAnimClass)
+	// 		}
+	// 	});
+	// }
 
 });
