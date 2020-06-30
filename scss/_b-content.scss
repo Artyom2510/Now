@@ -577,7 +577,7 @@
 	display: block;
 	width: 100%;
 	margin-bottom: 32px;
-	@include aspect-ratio(400, 207);
+	@include aspect-ratio(1024, 530);
 	> img {
 		position: absolute;
 		top: 0;
@@ -590,22 +590,9 @@
 	}
 }
 
-@include media(md) {
-	.wp-block-image {
-		@include aspect-ratio(280, 207);
-	}
-}
-
 @include media(sm) {
 	.wp-block-image {
 		margin-bottom: 20px;
-		@include aspect-ratio(167, 207);
-	}
-}
-
-@include media(xs) {
-	.wp-block-image {
-		@include aspect-ratio(34, 25);
 	}
 }
 
