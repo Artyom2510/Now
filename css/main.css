@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+@font-face {
+	font-family: "my-fonts";
+  src: url("/fonts/my-fonts.ttf") format("truetype");
+  font-weight: 400;
+}
+
 html, body {
 	overflow: hidden;
 }
@@ -498,11 +504,35 @@ h5, .h5, p {
 	opacity: 1;
 }
 
-.main-menu__logo.canvas-img svg {
+.main-menu__logo.wobble svg:nth-of-type(2) {
+	-webkit-animation: wobble 1s ease-in infinite alternate;
+	animation: wobble 1s ease-in infinite alternate;
+}
+
+.main-menu__logo.wobble svg:last-of-type {
+	-webkit-animation: wobble 1s ease-in infinite alternate;
+	animation: wobble 1s ease-in infinite alternate;
+	-webkit-animation-delay: .4s;
+	animation-delay: .4s;
+}
+
+.main-menu__logo.canvas2 svg {
 	opacity: 0;
 }
 
-.main-menu__logo.canvas-img canvas {
+.main-menu__logo.canvas2 svg:nth-of-type(2) {
+	-webkit-animation: wobble 1s ease-in infinite alternate;
+	animation: wobble 1s ease-in infinite alternate;
+}
+
+.main-menu__logo.canvas2 svg:last-of-type {
+	-webkit-animation: wobble 1s ease-in infinite alternate;
+	animation: wobble 1s ease-in infinite alternate;
+	-webkit-animation-delay: .4s;
+	animation-delay: .4s;
+}
+
+.main-menu__logo.canvas2 canvas {
 	opacity: 1;
 }
 
@@ -697,6 +727,50 @@ h5, .h5, p {
 	margin: 0;
 }
 
+@-webkit-keyframes wobble {
+	25% {
+		-webkit-transform: translateY(-2px) rotateZ(3deg);
+		transform: translateY(-2px) rotateZ(3deg);
+	}
+
+	50% {
+		-webkit-transform: translateY(3px);
+		transform: translateY(3px);
+	}
+
+	75% {
+		-webkit-transform: translateY(-3px) rotateZ(-5deg);
+		transform: translateY(-3px) rotateZ(-5deg);
+	}
+
+	100% {
+		-webkit-transform: translateY(2px);
+		transform: translateY(2px);
+	}
+}
+
+@keyframes wobble {
+	25% {
+		-webkit-transform: translateY(-2px) rotateZ(3deg);
+		transform: translateY(-2px) rotateZ(3deg);
+	}
+
+	50% {
+		-webkit-transform: translateY(3px);
+		transform: translateY(3px);
+	}
+
+	75% {
+		-webkit-transform: translateY(-3px) rotateZ(-5deg);
+		transform: translateY(-3px) rotateZ(-5deg);
+	}
+
+	100% {
+		-webkit-transform: translateY(2px);
+		transform: translateY(2px);
+	}
+}
+
 @-webkit-keyframes pulse {
 	100% {
 		-webkit-filter: drop-shadow(0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #aaf);
@@ -758,70 +832,6 @@ h5, .h5, p {
 
 	100% {
 		fill: rgba(238, 14, 51, 0);
-	}
-}
-
-@-webkit-keyframes letter-move {
-	0% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-		-webkit-transform-origin: 50% 50%;
-		transform-origin: 50% 50%;
-	}
-
-	100% {
-		-webkit-transform: translateY(-4px);
-		transform: translateY(-4px);
-		-webkit-transform-origin: 50% 50%;
-		transform-origin: 50% 50%;
-	}
-}
-
-@keyframes letter-move {
-	0% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-		-webkit-transform-origin: 50% 50%;
-		transform-origin: 50% 50%;
-	}
-
-	100% {
-		-webkit-transform: translateY(-4px);
-		transform: translateY(-4px);
-		-webkit-transform-origin: 50% 50%;
-		transform-origin: 50% 50%;
-	}
-}
-
-@-webkit-keyframes letter-move-last {
-	0% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-		-webkit-transform-origin: 50% 50%;
-		transform-origin: 50% 50%;
-	}
-
-	100% {
-		-webkit-transform: translateY(4px);
-		transform: translateY(4px);
-		-webkit-transform-origin: 50% 50%;
-		transform-origin: 50% 50%;
-	}
-}
-
-@keyframes letter-move-last {
-	0% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-		-webkit-transform-origin: 50% 50%;
-		transform-origin: 50% 50%;
-	}
-
-	100% {
-		-webkit-transform: translateY(4px);
-		transform: translateY(4px);
-		-webkit-transform-origin: 50% 50%;
-		transform-origin: 50% 50%;
 	}
 }
 
@@ -1711,13 +1721,10 @@ h5, .h5, p {
 
 .logo-canvas {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	width: 120%;
-	height: 120%;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	opacity: 0;
 	-webkit-transition: opacity .2s ease;
 	-o-transition: opacity .2s ease;

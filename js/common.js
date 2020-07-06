@@ -158,6 +158,8 @@ $(function () {
 			sectContent(contentSect, windowHeight);
 		}
 
+		$('.main-menu__logo').append('<canvas class="logo-canvas"></canvas>');
+
 	});
 
 	$(window).on('resize', function() {
@@ -212,12 +214,7 @@ $(function () {
 		bg.hide();
 	});
 
-	var logo = $('.main-menu__logo');
-	// var logoAnimClass = ['glitchtext', 'glitch-noise', 'noise', 'neon2', 'rotate', 'stroke-glitch', 'three-d', 'pulse', 'canvas'];
-	var logoAnimClass = ['canvas-img'];
-	var clazz;
-
-	// Текст N:OW
+	// Канвас
 	function canvasFunc() {
 		var canvas = document.querySelector('.logo-canvas');
 
@@ -225,44 +222,28 @@ $(function () {
 			return false;
 		}
 
-		/********************
-			Random Number
-		********************/
-
 		function rand(min, max) {
 			return Math.floor(Math.random() * (max - min + 1) + min);
 		}
 
-		/********************
-			Var
-		********************/
-
 		var ctx = canvas.getContext('2d');
 		var offscreenCanvas = document.createElement('canvas');
 		var offscreenCtx = offscreenCanvas.getContext('2d');
-		var X = canvas.width = offscreenCanvas.width = 92;
-		var Y = canvas.height = offscreenCanvas.height = 38;
+		var X = canvas.width = offscreenCanvas.width = 77;
+		var Y = canvas.height = offscreenCanvas.height = 32;
 		var particles = [];
 		var ease = 0.3;
 		var friction = 0.8;
 
-		/********************
-			offscreenCanvas
-		********************/
-		
 		function drawText() {
 			offscreenCtx.save();
 			offscreenCtx.fillStyle = '#EE0E33';
-			offscreenCtx.font = '34px Arial, sans-serif';
+			offscreenCtx.font = '32px my-fonts';
 			offscreenCtx.textAlign = 'center';
 			offscreenCtx.textBaseline = 'middle';
-			offscreenCtx.fillText('N:OW', X / 2, Y / 1.6);
+			offscreenCtx.fillText('', X / 2, Y / 2);
 			offscreenCtx.restore();
 		}
-
-		/********************
-			Particle
-		********************/
 		
 		function Particle(ctx, x, y, r, cr, cg, cb) {
 			this.ctx = ctx;
@@ -321,10 +302,6 @@ $(function () {
 			this.draw();
 		};
 
-		/********************
-			Animation
-		********************/
-
 		window.requestAnimationFrame =
 			window.requestAnimationFrame ||
 			window.mozRequestAnimationFrame ||
@@ -333,17 +310,13 @@ $(function () {
 			function(cb) {
 				setTimeout(cb, 17);
 			};
-
-		/********************
-			Render
-		********************/
 		
 		function initText(cb) {
 			var data = offscreenCtx.getImageData(0, 0, X, Y).data;
 			var p;
 			for (var i = 0; i < Y; i++) {
 				for (var j = 0; j < X; j++) {
-					var oI = (j + i * X) * 4 + 3; // fantastic! I can not think of it.
+					var oI = (j + i * X) * 4 + 3;
 					if (data[oI] > 0) {
 						// p = new Particle(ctx, j, i, 1, rand(0, 255), rand(0, 255), rand(0, 255));
 						p = new Particle(ctx, j, i, 1, 238, 14, 51);
@@ -361,10 +334,6 @@ $(function () {
 		drawText();
 		initText(render);
 
-		/********************
-			Render
-		********************/
-		
 		function render() {
 			ctx.clearRect(0, 0, X, Y);
 			for (var i = 0; i < particles.length; i++) {
@@ -374,6 +343,71 @@ $(function () {
 		}
 	}
 
+	// Канвас2
+	function canvasFunc2() {
+		//Init canvas
+		var canvas = document.querySelector('.logo-canvas');
+		var ctx = canvas.getContext('2d');
+
+		//Set the canvas width and height to the full width of the window
+		//This also sets the width and the height of the canvas to variables, which are used later.
+		ctx.canvas.width = width = 77;
+		ctx.canvas.height = height = 32;
+		var text = "";
+		var boxPadding = 10;
+
+		//Set the Y offset
+		var yOffset = 0;
+
+		//Draw function
+		var draw = () => {
+			//Clear the canvas
+			ctx.clearRect(0, 0, width, height);
+			ctx.font = '28px my-fonts';
+			ctx.fillStyle ="#ee0e33";
+			ctx.textAlign = 'center';
+			ctx.textBaseline = 'middle';
+			ctx.fillText(text, width/2, height/2);
+			
+			//Calculate the bounding box of the text
+			//This is mostly done to improve efficiency
+			//If this wasn't done, the entire canvas would be animated
+			//This would waste significant amounts of computing power, considering it's mostly white space
+			var textSize = ctx.measureText(text);
+			var textLeft = ((width/2) - (textSize.width/2) - (boxPadding/2));
+			var textTop = ((height/2) - textSize.actualBoundingBoxAscent) - (boxPadding/2);
+			var textWidth = textSize.width + boxPadding;
+			var textHeight = (textSize.actualBoundingBoxAscent*2) + boxPadding;
+			
+			//Cycle through each row of the text
+			for(var i=0; i<textHeight; i++){
+				//Grab the text within the bounds calculated previously
+				var line = ctx.getImageData(textLeft, textTop+i, textWidth, 1);
+				//Use sin to calculate a certain offset for the current row
+				//Decrease the first 10 to increase the frequency
+				//Increase the second 10 to increase the amount of distortion
+				var xOffset = (Math.sin((i+yOffset)/5) * 5);
+				//Put the row back in the same place, along with the previously calculated offset
+				ctx.putImageData(line, textLeft+xOffset, textTop+i);
+			}
+
+			
+			//Increase the Y offset, moving where each sin calculation is done
+			//This resets once it reaches the textHeight + 5
+			//The 5 is to account for white space drawn around the text 
+			yOffset = (yOffset == textHeight+5 ? 0 : yOffset+=1);
+
+			requestAnimationFrame(draw);
+		}
+
+		draw();
+	}
+
+	var logo = $('.main-menu__logo');
+	// var logoAnimClass = ['glitchtext', 'glitch-noise', 'noise', 'neon2'];
+	var logoAnimClass = ['canvas2', 'rotate', 'stroke-glitch', 'three-d', 'pulse', 'canvas', 'wobble'];
+	var clazz;
+
 	if ($(window).width() > 1024) {
 		logo.on({
 			'mouseenter': function() {
@@ -382,7 +416,8 @@ $(function () {
 				if (clazz === 'canvas') {
 					canvasFunc();
 				}
-				if (clazz === 'canvas-img') {
+				if (clazz === 'canvas2') {
+					canvasFunc2();
 				}
 			},
 			'mouseleave': function() {
