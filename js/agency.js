@@ -1,10 +1,12 @@
 $(function () {
+
+	var wWidth = $(window).width();
+
 	// Видео по наведению на карточку
 	var videoCard = $('.js-video-card');
 	var object = $('.video-card__object');
 	if (videoCard.length) {
-		if ($(window).width() > 1279) {
-	
+		if (wWidth > 1279) {
 			videoCard.on({
 				'mouseenter': function() {
 					var video = $(this).find(object);
@@ -16,5 +18,25 @@ $(function () {
 				}
 			});
 		}
+	}
+
+	// Слайдер логотипов
+	var slider = $('.js-logos-slider');
+
+	if (slider.length && wWidth < 768) {
+		slider.slick({
+			rows: 3,
+			infinite: true,
+			dots: false,
+			arrows: false,
+			slidesToShow: 3,
+			slidesToScroll: 3,
+			speed: 300,
+			cssEase: 'ease',
+			adaptiveHeight: true,
+			swipeToSlide: true,
+			autoplay: true,
+			autoplaySpeed: 2000
+		});
 	}
 });
