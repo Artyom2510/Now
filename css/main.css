@@ -1689,12 +1689,12 @@ h5, .h5, p {
 		-webkit-transform: translateX(100vw);
 		-ms-transform: translateX(100vw);
 		transform: translateX(100vw);
+		background-color: #cc1535;
 		-webkit-transition: -webkit-transform .3s ease;
 		transition: -webkit-transform .3s ease;
 		-o-transition: transform .3s ease;
 		transition: transform .3s ease;
 		transition: transform .3s ease, -webkit-transform .3s ease;
-		background-color: #cc1535;
 	}
 
 	.main-menu__menu.transform {

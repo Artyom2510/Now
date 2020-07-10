@@ -589,8 +589,8 @@
 			width: 72.81vw;
 			height: 100vh;
 			transform: translateX(100vw);
-			transition: transform .3s ease;
 			background-color: $ac2;
+			transition: transform .3s ease;
 			&.transform {
 				transform: translateX(0);
 			}
