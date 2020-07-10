@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Главная</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<meta name="application-name" content="NOW">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon/favicon.ico">
+	<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="img/favicon/mstile-144x144.png" sizes="144x144">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#ee0e33">
+	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#000">
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap&subset=cyrillic"
+		rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+
+	<script src="js/libs/jquery-3.4.1.min.js"></script>
+	<script src="js/libs/jquery.smoothscroll.js"></script>
+	<!-- Cкрипт для скрола по хешу -->
+	<script>
+		if (window.location.hash) {
+			window.hashId = window.location.hash;
+			window.location.hash = '';
+		}
+	</script>
+	<script src="js/libs/jquery.switchPopup.js"></script>
+	<script src="js/common2.js"></script>
+	<script src="js/home.js"></script>
+
+</head>
+
+<body>
+	<div class="root">
+
+		<div class="buttons">
+			<button data-class="canvas">canvas</button>
+			<button data-class="canvas2">canvas2</button>
+			<button data-class="stroke-glitch">stroke-glitch</button>
+			<button data-class="glitchtext">glitchtext</button>
+			<button data-class="glitch-noise">glitch-noise</button>
+			<button data-class="noise">noise</button>
+			<button data-class="pulse">pulse</button>
+			<button data-class="neon2">neon2</button>
+			<button data-class="three-d" title="move mouse on logo">three-d</button>
+			<button data-class="wobble">wobble</button>
+		</div>
+
+		<main class="main">
+
+			<div class="main-menu js-main-menu">
+				<a href="index-home.html" class="main-menu__logo">
+					<img src="img/icon/ui-icon/logo.svg" alt="" class="img-svg">
+					<img src="img/icon/ui-icon/logo2.svg" alt="" class="img-svg">
+					<img src="img/icon/ui-icon/logo3.svg" alt="" class="img-svg">
+				</a>
+				<button class="main-menu__burder js-btn-burder">
+					<span class="btn-burger open"></span>
+				</button>
+				<div class="main-menu__menu js-menu">
+					<ul class="main-menu__nav menu-nav">
+						<li>
+							<a href="agency.html">агенство</a>
+							<ul>
+								<li>
+									<a href="agency.html#wedo">Услуги</a>
+								</li>
+								<li>
+									<a href="agency.html#team">Команда</a>
+								</li>
+								<li>
+									<a href="agency.html#clients">Клиенты</a>
+								</li>
+								<li>
+									<a href="agency.html#awards">Награды</a>
+								</li>
+								<li>
+									<a href="agency.html#vacansies">Вакансии</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#cases">кейсы</a>
+						</li>
+						<li>
+							<a href="#contacts">контакты</a>
+						</li>
+					</ul>
+
+					<div class="main-menu__lang link js-pos">
+						<a href="#" class="">english</a>
+					</div>
+
+					<ul class="main-menu__soc soc-list">
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/facebook.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/instagram.svg" alt="" class="img-svg">
+							</a>
+						</li>
+						<li class="soc-list__item">
+							<a href="#">
+								<img src="img/icon/soc/youtube.svg" alt="" class="img-svg">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Только на главной -->
+			<div class="home__bullet js-pos">
+				<button class="js-anc-btn active" data-id="first"></button>
+				<button class="js-anc-btn" data-id="cases"></button>
+				<button class="js-anc-btn" data-id="contacts"></button>
+			</div>
+
+			<section class="first">
+				<div class="first__bg"></div>
+				<video class="first__object" muted playsinline loop autoplay>
+					<source src="video/vidos.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+				</video>
+				<div class="first__slogan">
+					<img src="img/icon/its-now.svg" alt="" class="anim-svg go img-svg">
+				</div>
+				<button class="first__btn-video js-tgl-video">
+					<img src="img/icon/play.svg" alt="">
+					<span>Смотреть шоурил</span>
+				</button>
+				<button class="first__next js-next-sect">
+					<img src="img/icon/ui-icon/arrow.svg" alt="" class="img-svg">
+				</button>
+			</section>
+
+			<section class="cases" id="cases">
+
+				<!-- Фильтр -->
+
+				<div class="cases__wrap">
+					<button class="cases__btn js-scroll-btn-right display">
+						<img src="img/icon/arrow-tag.svg" alt="">
+					</button>
+					<button class="cases__btn cases__btn_left js-scroll-btn-left">
+						<img src="img/icon/arrow-tag.svg" alt="">
+					</button>
+					<ul class="cases__tags tags">
+						<li class="tags__item">
+							<input type="checkbox" id="tag1" class="js-checkbox">
+							<label for="tag1">event</label>
+						</li>
+						<li class="tags__item tags__item">
+							<input type="checkbox" id="tag2" class="js-checkbox">
+							<label for="tag2">pr</label>
+						</li>
+						<li class="tags__item tags__item">
+							<input type="checkbox" id="tag3" class="js-checkbox">
+							<label for="tag3">creative</label>
+						</li>
+						<li class="tags__item tags__item">
+							<input type="checkbox" id="tag8" class="js-checkbox">
+							<label for="tag8">branding</label>
+						</li>
+						<li class="tags__item">
+							<input type="checkbox" id="tag4" class="js-checkbox">
+							<label for="tag4">design</label>
+						</li>
+						<li class="tags__item">
+							<input type="checkbox" id="tag5" class="js-checkbox">
+							<label for="tag5">naming</label>
+						</li>
+						<li class="tags__item">
+							<input type="checkbox" id="tag6" class="js-checkbox">
+							<label for="tag6">corporate event</label>
+						</li>
+					</ul>
+				</div>
+
+				<div class="cases__cards js-parent-offset-top">
+					<a href="#" class="card card_sm js-child-animate" data-id="tag1, tag5">
+						<span></span>
+						<div class="card__wrap">
+							<img src="img/content/1.jpg" alt="">
+						</div>
+						<p class="card__text card__text_left">black party</p>
+						<p class="card__text card__text_right">lamoda</p>
+					</a>
+					<a href="#" class="card card_sm js-child-animate" data-id="tag2, tag4">
+						<span></span>
+						<div class="card__wrap">
+							<img src="img/content/2.jpg" alt="">
+						</div>
+						<p class="card__text card__text_left">"Огни Большой Деревни"</p>
+						<p class="card__text card__text_right">Киностудия «Rock Films»</p>
+					</a>
+					<a href="#" class="card card_sm js-child-animate" data-id="tag1">
+						<span></span>
+						<div class="card__wrap">
+							<img src="img/content/3.jpg" alt="">
+						</div>
+						<p class="card__text card__text_left">С НОВЫМ ГОРНЫМ!</p>
+						<p class="card__text card__text_right">emco</p>
+					</a>
+					<a href="#" class="card card_sm js-child-animate" data-id="tag3">
+						<span></span>
+						<div class="card__wrap">
+							<img src="img/content/4.jpg" alt="">
+						</div>
+						<p class="card__text card__text_left">С НОВЫМ ГОРНЫМ!</p>
+						<p class="card__text card__text_right">emco</p>
+					</a>
+					<a href="#" class="card card_sm js-child-animate" data-id="tag1, tag2, tag3, tag4, tag6">
+						<span></span>
+						<div class="card__wrap">
+							<img src="img/content/5.jpg" alt="">
+						</div>
+						<p class="card__text card__text_left"></p>
+						<p class="card__text card__text_right"></p>
+					</a>
+					<a href="#" class="card card_sm js-child-animate" data-id="tag1, tag2, tag3, tag4, tag5, tag6">
+						<span></span>
+						<div class="card__wrap">
+							<img src="img/content/6.jpg" alt="">
+						</div>
+						<p class="card__text card__text_left"></p>
+						<p class="card__text card__text_right"></p>
+					</a>
+					<a href="#" class="card card_sm js-child-animate" data-id="tag8">
+						<span></span>
+						<div class="card__wrap">
+							<img src="img/content/7.jpg" alt="">
+						</div>
+						<p class="card__text card__text_left"></p>
+						<p class="card__text card__text_right"></p>
+					</a>
+					<a href="#" class="card card_sm js-child-animate" data-id="tag6">
+						<span></span>
+						<div class="card__wrap">
+							<img src="img/content/8.jpg" alt="">
+						</div>
+						<p class="card__text card__text_left"></p>
+						<p class="card__text card__text_right"></p>
+					</a>
+					<a href="#" class="card card_sm js-child-animate" data-id="tag6">
+						<span></span>
+						<div class="card__wrap">
+							<img src="img/content/1.jpg" alt="">
+						</div>
+						<p class="card__text card__text_left"></p>
+						<p class="card__text card__text_right"></p>
+					</a>
+					<a href="#" class="card card_sm js-child-animate" data-id="tag5">
+						<span></span>
+						<div class="card__wrap">
+							<img src="img/content/2.jpg" alt="">
+						</div>
+						<p class="card__text card__text_left"></p>
+						<p class="card__text card__text_right"></p>
+					</a>
+				</div>
+			</section>
+			<section class="contacts" id="contacts">
+				<div class="contacts__contact-us">
+					<div class="contacts__wrap-img">
+						<img src="img/icon/contact-us.svg" alt="">
+					</div>
+					<div class="contacts__info info">
+						<a href="mailto:http://hello@now-agency.ru" class="info__email">Hello@now-agency.ru</a>
+						<div class="info__contacts">
+							<p>Россия, Москва, м. Белорусская, ул. Скаковая д.36, 3 этаж, офис 301</p>
+							<span>+7 (495) 604-10-57</span>
+						</div>
+					</div>
+				</div>
+				<div class="contacts__decorate-img">
+					<img src="img/elvis.png" alt="">
+				</div>
+			</section>
+		</main>
+
+		<!-- Попап открывается по клику на "Смотреть шоурил", тут видео запускается сразу, поэтому без бг и кнопки -->
+		<div class="popup popup-video">
+			<div class="popup__bg js-tgl-video"></div>
+			<button class="popup__close btn-gallary js-tgl-video">
+				<img src="img/icon/ui-icon/close.svg" alt="" class="img-svg">
+			</button>
+			<div class="block-video block-video_popup">
+				<iframe
+					src="https://www.youtube.com/embed/6JmDyQeievA?&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0;enablejsapi=1&mute=1"
+					width="100%" height="420" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					frameborder="0" muted autoplay playsinline loop allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

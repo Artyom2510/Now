@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+@font-face {
+	font-family: "my-fonts";
+  src: url("/now/fonts/my-fonts.ttf") format("truetype");
+  font-weight: 400;
+}
+
 html, body {
 	overflow: hidden;
 }
@@ -602,30 +608,6 @@ h5, .h5, p {
 	animation: stroke-offset 1s ease infinite alternate;
 }
 
-.main-menu__logo.rotate svg {
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	-webkit-perspective: 1000px;
-	perspective: 1000px;
-	-webkit-perspective-origin: center center;
-	perspective-origin: center center;
-}
-
-.main-menu__logo.rotate svg:first-of-type {
-	-webkit-animation: rotate 1.1s ease infinite alternate;
-	animation: rotate 1.1s ease infinite alternate;
-}
-
-.main-menu__logo.rotate svg:nth-of-type(2) {
-	-webkit-animation: rotate-2 1.1s ease-in-out infinite alternate;
-	animation: rotate-2 1.1s ease-in-out infinite alternate;
-}
-
-.main-menu__logo.rotate svg:last-of-type {
-	-webkit-animation: rotate-3 1.1s ease-in-out infinite alternate;
-	animation: rotate-3 1.1s ease-in-out infinite alternate;
-}
-
 .main-menu__logo.neon2 svg:first-of-type {
 	-webkit-animation: neon2 1s ease-in-out forwards;
 	animation: neon2 1s ease-in-out forwards;
@@ -838,48 +820,6 @@ h5, .h5, p {
 @keyframes stroke-offset {
 	100% {
 		stroke-dashoffset: -100%;
-	}
-}
-
-@-webkit-keyframes rotate {
-	100% {
-		-webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-		transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-	}
-}
-
-@keyframes rotate {
-	100% {
-		-webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-		transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-	}
-}
-
-@-webkit-keyframes rotate-2 {
-	100% {
-		-webkit-transform: rotateY(360deg) rotateZ(360deg) scale(0.8);
-		transform: rotateY(360deg) rotateZ(360deg) scale(0.8);
-	}
-}
-
-@keyframes rotate-2 {
-	100% {
-		-webkit-transform: rotateY(360deg) rotateZ(360deg) scale(0.8);
-		transform: rotateY(360deg) rotateZ(360deg) scale(0.8);
-	}
-}
-
-@-webkit-keyframes rotate-3 {
-	100% {
-		-webkit-transform: rotateZ(360deg) rotateX(360deg) scale(0.9);
-		transform: rotateZ(360deg) rotateX(360deg) scale(0.9);
-	}
-}
-
-@keyframes rotate-3 {
-	100% {
-		-webkit-transform: rotateZ(360deg) rotateX(360deg) scale(0.9);
-		transform: rotateZ(360deg) rotateX(360deg) scale(0.9);
 	}
 }
 
@@ -6042,4 +5982,11 @@ h5, .h5, p {
 		font-size: 14px;
 		line-height: 20px;
 	}
+}
+
+.buttons {
+	position: fixed;
+	z-index: 99;
+	left: 0;
+	top: 100px;
 }

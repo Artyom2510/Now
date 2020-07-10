@@ -411,30 +411,45 @@ $(function () {
 	var logo = $('.main-menu__logo');
 	// var logoAnimClass = ['glitchtext', 'glitch-noise', 'noise', 'neon2'];
 	var logoAnimClass = ['canvas2', 'stroke-glitch', 'three-d', 'pulse', 'canvas', 'wobble'];
-	// var logoAnimClass = ['canvas'];
 	var clazz;
 	var cnt = 0;
 
 	if ($(window).width() > 1024) {
-		logo.on({
-			'mouseenter': function() {
-				// clazz = logoAnimClass[Math.floor(Math.random() * logoAnimClass.length)];
-				if (cnt > 6) cnt = 0;
-				clazz = logoAnimClass[cnt];
-				cnt++;
-				logo.addClass(clazz);
-				if (clazz === 'canvas') {
+		$('.buttons button').on('click', function() {
+			console.log('aaa')
+			logo.removeClass(clazz);
+			clazz = $(this).data('class');
+			if (clazz === 'canvas') {
+				setTimeout(function() {
 					canvasFunc();
-				}
-				if (clazz === 'canvas2') {
-					canvasFunc2();
-				}
-			},
-			'mouseleave': function() {
-				logo.removeClass(logoAnimClass);
-				clazz = '';
+				}, 1);
 			}
+			if (clazz === 'canvas2') {
+				setTimeout(function() {
+					canvasFunc2();
+				}, 1);
+			}
+			logo.addClass(clazz);
 		});
+		// logo.on({
+		// 	'mouseenter': function() {
+		// 		// clazz = logoAnimClass[Math.floor(Math.random() * logoAnimClass.length)];
+		// 		if (cnt > 6) cnt = 0;
+		// 		clazz = logoAnimClass[cnt];
+		// 		cnt++;
+		// 		logo.addClass(clazz);
+		// 		if (clazz === 'canvas') {
+		// 			canvasFunc();
+		// 		}
+		// 		if (clazz === 'canvas2') {
+		// 			canvasFunc2();
+		// 		}
+		// 	},
+		// 	'mouseleave': function() {
+		// 		logo.removeClass(clazz);
+		// 		clazz = '';
+		// 	}
+		// });
 		logo.on({
 			'mousemove': function(e) {
 				if (clazz === 'three-d') {
