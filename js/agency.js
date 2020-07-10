@@ -25,12 +25,11 @@ $(function () {
 
 	if (slider.length && wWidth < 768) {
 		slider.slick({
-			rows: 3,
 			infinite: true,
 			dots: false,
 			arrows: false,
-			slidesToShow: 3,
-			slidesToScroll: 3,
+			slidesToShow: 1,
+			slidesToScroll: 1,
 			speed: 300,
 			cssEase: 'ease',
 			adaptiveHeight: true,
