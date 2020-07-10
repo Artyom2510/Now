@@ -630,7 +630,7 @@
 			}
 		}
 		&__nav {
-			margin-bottom: 20vh;
+			margin-bottom: 4vh;
 		}
 		&__burder {
 			display: flex;
@@ -772,12 +772,12 @@
 
 @include media(xs) {
 	.menu-nav {
-		padding-top: 20vh;
+		padding-top: 16vh;
 		flex-direction: column;
 		> li {
 			width: 100%;
 			margin-right: 0;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 			&:last-child {
 				margin-bottom: 0;
 			}
@@ -794,6 +794,29 @@
 					width: 5px;
 					height: 0;
 					background-color: #fff;
+				}
+			}
+			> ul {
+				position: relative;
+				bottom: auto;
+				left: auto;
+				transform: translate(0, 0);
+				display: block;
+				padding: 0;
+				width: 100%;
+				opacity: 1;
+				visibility: visible;
+				li {
+					a {
+						padding-left: 37px;
+						font-size: 16px;
+						font-weight: 600;
+						text-transform: none;
+						background-color: transparent;
+						&:hover, &:focus {
+							background-color: transparent;
+						}
+					}
 				}
 			}
 		}

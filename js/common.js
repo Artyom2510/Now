@@ -158,8 +158,6 @@ $(function () {
 			sectContent(contentSect, windowHeight);
 		}
 
-		$('.main-menu__logo').append('<canvas class="logo-canvas"></canvas>');
-
 	});
 
 	$(window).on('resize', function() {
@@ -214,232 +212,18 @@ $(function () {
 		bg.hide();
 	});
 
-	// Канвас
-	function canvasFunc() {
-		var canvas = document.querySelector('.logo-canvas');
-
-		if (!canvas || !canvas.getContext) {
-			return false;
-		}
-
-		function rand(min, max) {
-			return Math.floor(Math.random() * (max - min + 1) + min);
-		}
-
-		var ctx = canvas.getContext('2d');
-		var offscreenCanvas = document.createElement('canvas');
-		var offscreenCtx = offscreenCanvas.getContext('2d');
-		var X = canvas.width = offscreenCanvas.width = 77;
-		var Y = canvas.height = offscreenCanvas.height = 32;
-		var particles = [];
-		var ease = 0.3;
-		var friction = 0.8;
-
-		function drawText() {
-			offscreenCtx.save();
-			offscreenCtx.fillStyle = '#EE0E33';
-			offscreenCtx.font = '32px my-fonts';
-			offscreenCtx.textAlign = 'center';
-			offscreenCtx.textBaseline = 'middle';
-			offscreenCtx.fillText('', X / 2, Y / 2);
-			offscreenCtx.restore();
-		}
-		
-		function Particle(ctx, x, y, r, cr, cg, cb) {
-			this.ctx = ctx;
-			this.init(x, y, r, cr, cg, cb);
-		}
-
-		Particle.prototype.init = function(x, y, r, cr, cg, cb) {
-			this.x = x;
-			this.y = y;
-			this.xi = rand(0, X);
-			this.yi = rand(0, Y);
-			this.r = r;
-			this.s = 10;
-			this.c = {
-				r: cr,
-				g: cg,
-				b: cb,
-				a: 1
-			};
-			this.v = {
-				x: rand(-5, 5) * Math.random(),
-				y: rand(-5, 5) * Math.random()
-			};
-			this.a = rand(0, 360);
-			this.rad = this.a * Math.PI / 180;
-		};
-
-		Particle.prototype.draw = function() {
-			var ctx = this.ctx;
-			ctx.save();
-			ctx.globalCompositeOperation = 'source-over';
-			ctx.fillStyle = 'rgb(' + this.c.r + ', ' + this.c.g + ', ' + this.c.b + ')';
-			ctx.beginPath();
-			ctx.arc(this.xi, this.yi, Math.sin(this.rad) < 0 ? -Math.sin(this.rad) * this.r : Math.sin(this.rad) * this.r, 0, Math.PI * 2, false);
-			ctx.fill();
-			ctx.restore();
-		};
-
-		Particle.prototype.updatePosition = function() {
-			this.v.x += (this.xi - this.x) * ease;
-			this.v.y += (this.yi - this.y) * ease;
-			this.v.x *= friction;
-			this.v.y *= friction;
-			this.xi -= this.v.x;
-			this.yi -= this.v.y;
-		};
-
-		Particle.prototype.updateParams = function() {
-			this.a += 2;
-			this.rad = this.a * Math.PI / 180;
-		};
-
-		Particle.prototype.render = function() {
-			this.updateParams();
-			this.updatePosition();
-			this.draw();
-		};
-
-		window.requestAnimationFrame =
-			window.requestAnimationFrame ||
-			window.mozRequestAnimationFrame ||
-			window.webkitRequestAnimationFrame ||
-			window.msRequestAnimationFrame ||
-			function(cb) {
-				setTimeout(cb, 17);
-			};
-		
-		function initText(cb) {
-			var data = offscreenCtx.getImageData(0, 0, X, Y).data;
-			var p;
-			for (var i = 0; i < Y; i++) {
-				for (var j = 0; j < X; j++) {
-					var oI = (j + i * X) * 4 + 3;
-					if (data[oI] > 0) {
-						// p = new Particle(ctx, j, i, 1, rand(0, 255), rand(0, 255), rand(0, 255));
-						p = new Particle(ctx, j, i, 1, 238, 14, 51);
-						particles.push(p);
-					}
-				}
-			}
-			if (cb) {
-				cb();
-			} else {
-				return;
-			}
-		}
-
-		drawText();
-		initText(render);
-
-		function render() {
-			ctx.clearRect(0, 0, X, Y);
-			for (var i = 0; i < particles.length; i++) {
-				particles[i].render();
-			}
-			requestAnimationFrame(render);
-		}
-	}
-
-	// Канвас2
-	function canvasFunc2() {
-		//Init canvas
-		var canvas = document.querySelector('.logo-canvas');
-		var ctx = canvas.getContext('2d');
-
-		//Set the canvas width and height to the full width of the window
-		//This also sets the width and the height of the canvas to variables, which are used later.
-		ctx.canvas.width = width = 77;
-		ctx.canvas.height = height = 32;
-		var text = "";
-		var boxPadding = 10;
-
-		//Set the Y offset
-		var yOffset = 0;
-
-		//Draw function
-		var draw = () => {
-			//Clear the canvas
-			ctx.clearRect(0, 0, width, height);
-			ctx.font = '28px my-fonts';
-			ctx.fillStyle ="#ee0e33";
-			ctx.textAlign = 'center';
-			ctx.textBaseline = 'middle';
-			ctx.fillText(text, width/2, height/2);
-			
-			//Calculate the bounding box of the text
-			//This is mostly done to improve efficiency
-			//If this wasn't done, the entire canvas would be animated
-			//This would waste significant amounts of computing power, considering it's mostly white space
-			var textSize = ctx.measureText(text);
-			var textLeft = ((width/2) - (textSize.width/2) - (boxPadding/2));
-			var textTop = ((height/2) - textSize.actualBoundingBoxAscent) - (boxPadding/2);
-			var textWidth = textSize.width + boxPadding;
-			var textHeight = (textSize.actualBoundingBoxAscent*2) + boxPadding;
-			
-			//Cycle through each row of the text
-			for(var i=0; i<textHeight; i++){
-				//Grab the text within the bounds calculated previously
-				var line = ctx.getImageData(textLeft, textTop+i, textWidth, 1);
-				//Use sin to calculate a certain offset for the current row
-				//Decrease the first 10 to increase the frequency
-				//Increase the second 10 to increase the amount of distortion
-				var xOffset = (Math.sin((i+yOffset)/5) * 5);
-				//Put the row back in the same place, along with the previously calculated offset
-				ctx.putImageData(line, textLeft+xOffset, textTop+i);
-			}
-
-			
-			//Increase the Y offset, moving where each sin calculation is done
-			//This resets once it reaches the textHeight + 5
-			//The 5 is to account for white space drawn around the text 
-			yOffset = (yOffset == textHeight+5 ? 0 : yOffset+=1);
-
-			requestAnimationFrame(draw);
-		}
-
-		draw();
-	}
-
 	var logo = $('.main-menu__logo');
-	// var logoAnimClass = ['glitchtext', 'glitch-noise', 'noise', 'neon2'];
-	var logoAnimClass = ['canvas2', 'rotate', 'stroke-glitch', 'three-d', 'pulse', 'canvas', 'wobble'];
-	var clazz;
+	var logoAnimClass = ['glitchtext', 'glitch-noise', 'noise', 'neon2'];
 
 	if ($(window).width() > 1024) {
 		logo.on({
 			'mouseenter': function() {
-				clazz = logoAnimClass[Math.floor(Math.random() * logoAnimClass.length)];
-				logo.addClass(clazz);
-				if (clazz === 'canvas') {
-					canvasFunc();
-				}
-				if (clazz === 'canvas2') {
-					canvasFunc2();
-				}
+				logo.addClass(logoAnimClass[Math.floor(Math.random() * logoAnimClass.length)]);
 			},
 			'mouseleave': function() {
-				logo.removeClass(logoAnimClass);
-				clazz = '';
-			}
-		});
-		logo.on({
-			'mousemove': function(e) {
-				if (clazz === 'three-d') {
-					var x = e.offsetX;
-					var	y = e.offsetY;
-					var middleW = logo.outerWidth(true) / 2;
-					var middleH = logo.outerHeight(true) / 2;
-					var rotateX = -(x - middleW) / 10000;
-					var rotateY = -(y - middleH) / 4400;
-					logo.css('transform', 'matrix3d(1, 0, 0, ' + rotateX + ', 0, 1, 0, ' + rotateY + ', 0, 0, 1, 0, 0, 0, 0, 1)');
-				}
-			},
-			'mouseleave': function() {
-				logo.css('transform', 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)');
+				logo.removeClass(logoAnimClass)
 			}
 		});
 	}
+
 });
