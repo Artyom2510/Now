@@ -25,10 +25,13 @@ $(function () {
 
 	if (slider.length && wWidth < 768) {
 		slider.slick({
+			rows: 3,
 			infinite: true,
 			dots: false,
 			arrows: false,
-			slidesToShow: 3,
+			swipeToSlide: true,
+			slidesPerRow: 1,
+			slidesToShow: 1,
 			slidesToScroll: 3,
 			speed: 300,
 			cssEase: 'ease',
@@ -37,4 +40,21 @@ $(function () {
 			autoplaySpeed: 2000
 		});
 	}
+	
+	var sliderPrev = $('.js-clients-prev');
+	var sliderNext = $('.js-clients-next');
+
+		// Предыдущий слайд
+		if (slider.length && sliderPrev.length) {
+			sliderPrev.on('click', function() {
+				slider.slick('slickPrev');
+			});
+		}
+	
+		// Слудущий слайд
+		if (slider.length && sliderNext.length) {
+			sliderNext.on('click', function() {
+				slider.slick('slickNext');
+			});
+		}
 });
