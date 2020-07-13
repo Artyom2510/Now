@@ -28,12 +28,11 @@ $(function () {
 			infinite: true,
 			dots: false,
 			arrows: false,
-			slidesToShow: 1,
-			slidesToScroll: 1,
+			slidesToShow: 3,
+			slidesToScroll: 3,
 			speed: 300,
 			cssEase: 'ease',
 			adaptiveHeight: true,
-			swipeToSlide: true,
 			autoplay: true,
 			autoplaySpeed: 2000
 		});
