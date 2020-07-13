@@ -25,7 +25,6 @@ $(function () {
 
 	if (slider.length && wWidth < 768) {
 		slider.slick({
-			rows: 3,
 			infinite: true,
 			dots: false,
 			arrows: false,
@@ -34,7 +33,6 @@ $(function () {
 			speed: 300,
 			cssEase: 'ease',
 			adaptiveHeight: true,
-			swipeToSlide: true,
 			autoplay: true,
 			autoplaySpeed: 2000
 		});
