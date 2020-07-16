@@ -26,6 +26,8 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap&subset=cyrillic"
 		rel="stylesheet">
+	<link rel="stylesheet" href="css/libs/slick-theme.css">
+	<link rel="stylesheet" href="css/libs/slick.css">
 	<link rel="stylesheet" href="css/main.css">
 
 	<script src="js/libs/jquery-3.4.1.min.js"></script>
@@ -38,6 +40,7 @@
 		}
 	</script>
 	<script src="js/libs/jquery.switchPopup.js"></script>
+	<script src="js/libs/slick.min.js"></script>
 	<script src="js/common2.js"></script>
 	<script src="js/home.js"></script>
 
@@ -46,9 +49,8 @@
 <body>
 	<div class="root">
 
-		<div class="buttons">
+		<div class="buttons" style="position: fixed;z-index: 99;left: 0;top: 100px;">
 			<button data-class="canvas">canvas</button>
-			<button data-class="canvas2">canvas2</button>
 			<button data-class="stroke-glitch">stroke-glitch</button>
 			<button data-class="glitchtext">glitchtext</button>
 			<button data-class="glitch-noise">glitch-noise</button>
@@ -56,7 +58,6 @@
 			<button data-class="pulse">pulse</button>
 			<button data-class="neon2">neon2</button>
 			<button data-class="three-d" title="move mouse on logo">three-d</button>
-			<button data-class="wobble">wobble</button>
 		</div>
 
 		<main class="main">
@@ -288,7 +289,9 @@
 					</div>
 				</div>
 				<div class="contacts__decorate-img">
-					<img src="img/elvis.png" alt="">
+					<div class="contacts__slider">
+						<img src="img/elvis.png" alt="">
+					</div>
 				</div>
 			</section>
 		</main>

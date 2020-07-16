@@ -222,18 +222,18 @@ $(function () {
 			return false;
 		}
 
-		function rand(min, max) {
-			return Math.floor(Math.random() * (max - min + 1) + min);
-		}
-
 		var ctx = canvas.getContext('2d');
 		var offscreenCanvas = document.createElement('canvas');
 		var offscreenCtx = offscreenCanvas.getContext('2d');
-		var X = canvas.width = offscreenCanvas.width = 77;
-		var Y = canvas.height = offscreenCanvas.height = 32;
+		var X = ctx.canvas.width = width = 77;
+		var Y = ctx.canvas.height = height = 32;
 		var particles = [];
 		var ease = 0.3;
 		var friction = 0.8;
+
+		function rand(min, max) {
+			return Math.floor(Math.random() * (max - min + 1) + min);
+		}
 
 		function drawText() {
 			offscreenCtx.save();
@@ -241,7 +241,7 @@ $(function () {
 			offscreenCtx.font = '32px my-fonts';
 			offscreenCtx.textAlign = 'center';
 			offscreenCtx.textBaseline = 'middle';
-			offscreenCtx.fillText('', X / 2, Y / 2);
+			offscreenCtx.fillText("", X / 2, Y / 2);
 			offscreenCtx.restore();
 		}
 		
@@ -339,6 +339,12 @@ $(function () {
 		drawText();
 		initText(render);
 
+		// Кастыль из-за шрифта
+		setTimeout(function() {
+			drawText();
+			initText(render);
+		}, 200);
+
 		function render() {
 			ctx.clearRect(0, 0, X, Y);
 			for (var i = 0; i < particles.length; i++) {
@@ -346,66 +352,6 @@ $(function () {
 			}
 			requestAnimationFrame(render);
 		}
-	}
-
-	// Канвас2
-	function canvasFunc2() {
-		//Init canvas
-		var canvas = document.querySelector('.logo-canvas');
-		var ctx = canvas.getContext('2d');
-
-		//Set the canvas width and height to the full width of the window
-		//This also sets the width and the height of the canvas to variables, which are used later.
-		ctx.canvas.width = width = 77;
-		ctx.canvas.height = height = 32;
-		var text = "";
-		var boxPadding = 10;
-
-		//Set the Y offset
-		var yOffset = 0;
-
-		//Draw function
-		var draw = () => {
-			//Clear the canvas
-			ctx.clearRect(0, 0, width, height);
-			ctx.font = '28px my-fonts';
-			ctx.fillStyle ="#ee0e33";
-			ctx.textAlign = 'center';
-			ctx.textBaseline = 'middle';
-			ctx.fillText(text, width/2, height/2);
-			
-			//Calculate the bounding box of the text
-			//This is mostly done to improve efficiency
-			//If this wasn't done, the entire canvas would be animated
-			//This would waste significant amounts of computing power, considering it's mostly white space
-			var textSize = ctx.measureText(text);
-			var textLeft = ((width/2) - (textSize.width/2) - (boxPadding/2));
-			var textTop = ((height/2) - textSize.actualBoundingBoxAscent) - (boxPadding/2);
-			var textWidth = textSize.width + boxPadding;
-			var textHeight = (textSize.actualBoundingBoxAscent*2) + boxPadding;
-			
-			//Cycle through each row of the text
-			for(var i=0; i<textHeight; i++){
-				//Grab the text within the bounds calculated previously
-				var line = ctx.getImageData(textLeft, textTop+i, textWidth, 1);
-				//Use sin to calculate a certain offset for the current row
-				//Decrease the first 10 to increase the frequency
-				//Increase the second 10 to increase the amount of distortion
-				var xOffset = (Math.sin((i+yOffset)/5) * 5);
-				//Put the row back in the same place, along with the previously calculated offset
-				ctx.putImageData(line, textLeft+xOffset, textTop+i);
-			}
-
-			
-			//Increase the Y offset, moving where each sin calculation is done
-			//This resets once it reaches the textHeight + 5
-			//The 5 is to account for white space drawn around the text 
-			yOffset = (yOffset == textHeight+5 ? 0 : yOffset+=1);
-
-			requestAnimationFrame(draw);
-		}
-
-		draw();
 	}
 
 	var logo = $('.main-menu__logo');
@@ -416,18 +362,11 @@ $(function () {
 
 	if ($(window).width() > 1024) {
 		$('.buttons button').on('click', function() {
-			console.log('aaa')
 			logo.removeClass(clazz);
 			clazz = $(this).data('class');
+			console.log(clazz)
 			if (clazz === 'canvas') {
-				setTimeout(function() {
-					canvasFunc();
-				}, 1);
-			}
-			if (clazz === 'canvas2') {
-				setTimeout(function() {
-					canvasFunc2();
-				}, 1);
+				canvasFunc();
 			}
 			logo.addClass(clazz);
 		});

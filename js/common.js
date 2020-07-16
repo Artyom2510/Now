@@ -348,7 +348,6 @@ $(function () {
 		}
 	}
 
-	// Канвас2
 	function canvasFunc2() {
 		//Init canvas
 		var canvas = document.querySelector('.logo-canvas');
@@ -410,7 +409,7 @@ $(function () {
 
 	var logo = $('.main-menu__logo');
 	// var logoAnimClass = ['glitchtext', 'glitch-noise', 'noise', 'neon2'];
-	var logoAnimClass = ['canvas2', 'stroke-glitch', 'three-d', 'pulse', 'canvas', 'wobble'];
+	var logoAnimClass = ['stroke-glitch', 'three-d', 'pulse', 'canvas'];
 	// var logoAnimClass = ['canvas'];
 	var clazz;
 	var cnt = 0;
@@ -418,16 +417,10 @@ $(function () {
 	if ($(window).width() > 1024) {
 		logo.on({
 			'mouseenter': function() {
-				// clazz = logoAnimClass[Math.floor(Math.random() * logoAnimClass.length)];
-				if (cnt > 6) cnt = 0;
-				clazz = logoAnimClass[cnt];
-				cnt++;
+				clazz = logoAnimClass[Math.floor(Math.random() * logoAnimClass.length)];
 				logo.addClass(clazz);
 				if (clazz === 'canvas') {
 					canvasFunc();
-				}
-				if (clazz === 'canvas2') {
-					canvasFunc2();
 				}
 			},
 			'mouseleave': function() {

@@ -504,32 +504,8 @@ h5, .h5, p {
 	opacity: 1;
 }
 
-.main-menu__logo.wobble svg:nth-of-type(2) {
-	-webkit-animation: wobble 1s ease-in infinite alternate;
-	animation: wobble 1s ease-in infinite alternate;
-}
-
-.main-menu__logo.wobble svg:last-of-type {
-	-webkit-animation: wobble 1s ease-in infinite alternate;
-	animation: wobble 1s ease-in infinite alternate;
-	-webkit-animation-delay: .4s;
-	animation-delay: .4s;
-}
-
 .main-menu__logo.canvas2 svg {
 	opacity: 0;
-}
-
-.main-menu__logo.canvas2 svg:nth-of-type(2) {
-	-webkit-animation: wobble 1s ease-in infinite alternate;
-	animation: wobble 1s ease-in infinite alternate;
-}
-
-.main-menu__logo.canvas2 svg:last-of-type {
-	-webkit-animation: wobble 1s ease-in infinite alternate;
-	animation: wobble 1s ease-in infinite alternate;
-	-webkit-animation-delay: .4s;
-	animation-delay: .4s;
 }
 
 .main-menu__logo.canvas2 canvas {
@@ -567,10 +543,10 @@ h5, .h5, p {
 }
 
 .main-menu__logo.pulse svg:first-of-type {
-	-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #44a);
-	filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #44a);
-	-webkit-animation: pulse .3s ease infinite alternate;
-	animation: pulse .3s ease infinite alternate;
+	-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
+	filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
+	-webkit-animation: pulse 1s ease infinite alternate;
+	animation: pulse 1s ease infinite alternate;
 }
 
 .main-menu__logo.stroke-glitch svg:first-of-type {
@@ -618,18 +594,18 @@ h5, .h5, p {
 }
 
 .main-menu__logo.glitchtext svg:first-of-type {
-	-webkit-animation: glitchtext 1s ease infinite alternate;
-	animation: glitchtext 1s ease infinite alternate;
+	-webkit-animation: glitchtext 1.7s ease infinite alternate;
+	animation: glitchtext 1.7s ease infinite alternate;
 }
 
 .main-menu__logo.glitchtext svg:nth-of-type(2) {
-	-webkit-animation: glitchtext2 1.4s ease infinite alternate;
-	animation: glitchtext2 1.4s ease infinite alternate;
+	-webkit-animation: glitchtext2 2.1s ease infinite alternate;
+	animation: glitchtext2 2.1s ease infinite alternate;
 }
 
 .main-menu__logo.glitchtext svg:last-of-type {
-	-webkit-animation: glitchtext3 2s ease infinite alternate;
-	animation: glitchtext3 2s ease infinite alternate;
+	-webkit-animation: glitchtext3 2.7s ease infinite alternate;
+	animation: glitchtext3 2.7s ease infinite alternate;
 }
 
 .main-menu__logo.glitch-noise svg:first-of-type {
@@ -703,94 +679,6 @@ h5, .h5, p {
 	margin: 0;
 }
 
-@-webkit-keyframes wobble {
-	25% {
-		-webkit-transform: translateY(-2px) rotateZ(3deg);
-		transform: translateY(-2px) rotateZ(3deg);
-	}
-
-	50% {
-		-webkit-transform: translateY(3px);
-		transform: translateY(3px);
-	}
-
-	75% {
-		-webkit-transform: translateY(-3px) rotateZ(-5deg);
-		transform: translateY(-3px) rotateZ(-5deg);
-	}
-
-	100% {
-		-webkit-transform: translateY(2px);
-		transform: translateY(2px);
-	}
-}
-
-@keyframes wobble {
-	25% {
-		-webkit-transform: translateY(-2px) rotateZ(3deg);
-		transform: translateY(-2px) rotateZ(3deg);
-	}
-
-	50% {
-		-webkit-transform: translateY(3px);
-		transform: translateY(3px);
-	}
-
-	75% {
-		-webkit-transform: translateY(-3px) rotateZ(-5deg);
-		transform: translateY(-3px) rotateZ(-5deg);
-	}
-
-	100% {
-		-webkit-transform: translateY(2px);
-		transform: translateY(2px);
-	}
-}
-
-@-webkit-keyframes pulse {
-	100% {
-		-webkit-filter: drop-shadow(0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #aaf);
-		filter: drop-shadow(0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #aaf);
-	}
-
-	50% {
-		-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #aaa) drop-shadow(0.14em 0.14em 0 #111) drop-shadow(0.145em 0.145em 0 #44a);
-		filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #aaa) drop-shadow(0.14em 0.14em 0 #111) drop-shadow(0.145em 0.145em 0 #44a);
-	}
-
-	75% {
-		-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #aaf) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #44a);
-		filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #aaf) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #44a);
-	}
-
-	99% {
-		-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.4)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #44a);
-		filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.4)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #44a);
-	}
-}
-
-@keyframes pulse {
-	100% {
-		-webkit-filter: drop-shadow(0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #aaf);
-		filter: drop-shadow(0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #aaf);
-	}
-
-	50% {
-		-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #aaa) drop-shadow(0.14em 0.14em 0 #111) drop-shadow(0.145em 0.145em 0 #44a);
-		filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #aaa) drop-shadow(0.14em 0.14em 0 #111) drop-shadow(0.145em 0.145em 0 #44a);
-	}
-
-	75% {
-		-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #aaf) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #44a);
-		filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #aaf) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #44a);
-	}
-
-	99% {
-		-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.4)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #44a);
-		filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.4)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #66c) drop-shadow(0.14em 0.14em 0 #112) drop-shadow(0.145em 0.145em 0 #44a);
-	}
-}
-
 @-webkit-keyframes fliker {
 	0% {
 		fill: #ee0e33;
@@ -808,6 +696,50 @@ h5, .h5, p {
 
 	100% {
 		fill: rgba(238, 14, 51, 0);
+	}
+}
+
+@-webkit-keyframes pulse {
+	100% {
+		-webkit-filter: drop-shadow(0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
+		filter: drop-shadow(0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
+	}
+
+	50% {
+		-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #aaa);
+		filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #aaa);
+	}
+
+	75% {
+		-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
+		filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
+	}
+
+	99% {
+		-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.4)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
+		filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.4)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
+	}
+}
+
+@keyframes pulse {
+	100% {
+		-webkit-filter: drop-shadow(0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
+		filter: drop-shadow(0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
+	}
+
+	50% {
+		-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #aaa);
+		filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #aaa);
+	}
+
+	75% {
+		-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
+		filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.3)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #212226) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
+	}
+
+	99% {
+		-webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.4)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
+		filter: drop-shadow(0 0 0.3em rgba(200, 200, 255, 0.4)) drop-shadow(0.04em 0.04em 0 #112) drop-shadow(0.045em 0.045em 0 #88e) drop-shadow(0.09em 0.09em 0 #112) drop-shadow(0.095em 0.095em 0 #3f2223);
 	}
 }
 
@@ -976,18 +908,18 @@ h5, .h5, p {
 	}
 
 	21%, 81% {
-		-webkit-transform: skew(30deg, 0deg);
-		transform: skew(30deg, 0deg);
+		-webkit-transform: skew(25deg, 0deg);
+		transform: skew(25deg, 0deg);
 	}
 
 	22%, 82% {
-		-webkit-transform: skew(-30deg, 0deg);
-		transform: skew(-30deg, 0deg);
+		-webkit-transform: skew(-25deg, 0deg);
+		transform: skew(-25deg, 0deg);
 	}
 
 	61% {
-		-webkit-transform: skew(35deg);
-		transform: skew(35deg);
+		-webkit-transform: skew(30deg);
+		transform: skew(30deg);
 	}
 
 	62% {
@@ -1001,8 +933,8 @@ h5, .h5, p {
 	}
 
 	70% {
-		-webkit-transform: skew(-65deg);
-		transform: skew(-65deg);
+		-webkit-transform: skew(-35deg);
+		transform: skew(-35deg);
 	}
 
 	74% {
@@ -1018,18 +950,18 @@ h5, .h5, p {
 	}
 
 	21%, 81% {
-		-webkit-transform: skew(30deg, 0deg);
-		transform: skew(30deg, 0deg);
+		-webkit-transform: skew(25deg, 0deg);
+		transform: skew(25deg, 0deg);
 	}
 
 	22%, 82% {
-		-webkit-transform: skew(-30deg, 0deg);
-		transform: skew(-30deg, 0deg);
+		-webkit-transform: skew(-25deg, 0deg);
+		transform: skew(-25deg, 0deg);
 	}
 
 	61% {
-		-webkit-transform: skew(35deg);
-		transform: skew(35deg);
+		-webkit-transform: skew(30deg);
+		transform: skew(30deg);
 	}
 
 	62% {
@@ -1043,8 +975,8 @@ h5, .h5, p {
 	}
 
 	70% {
-		-webkit-transform: skew(-65deg);
-		transform: skew(-65deg);
+		-webkit-transform: skew(-35deg);
+		transform: skew(-35deg);
 	}
 
 	74% {
@@ -1139,517 +1071,517 @@ h5, .h5, p {
 
 @-webkit-keyframes noise {
 	0% {
-		clip: rect(77px, 9999px, 6px, 0);
+		clip: rect(77px, 111px, 6px, 0);
 	}
 
 	5% {
-		clip: rect(65px, 9999px, 70px, 0);
+		clip: rect(65px, 111px, 70px, 0);
 	}
 
 	10% {
-		clip: rect(82px, 9999px, 82px, 0);
+		clip: rect(82px, 111px, 82px, 0);
 	}
 
 	15% {
-		clip: rect(32px, 9999px, 35px, 0);
+		clip: rect(32px, 111px, 35px, 0);
 	}
 
 	20% {
-		clip: rect(31px, 9999px, 49px, 0);
+		clip: rect(31px, 111px, 49px, 0);
 	}
 
 	25% {
-		clip: rect(18px, 9999px, 46px, 0);
+		clip: rect(18px, 111px, 46px, 0);
 	}
 
 	30% {
-		clip: rect(94px, 9999px, 64px, 0);
+		clip: rect(94px, 111px, 64px, 0);
 	}
 
 	35% {
-		clip: rect(69px, 9999px, 31px, 0);
+		clip: rect(69px, 111px, 31px, 0);
 	}
 
 	40% {
-		clip: rect(6px, 9999px, 72px, 0);
+		clip: rect(6px, 111px, 72px, 0);
 	}
 
 	45% {
-		clip: rect(25px, 9999px, 35px, 0);
+		clip: rect(25px, 111px, 35px, 0);
 	}
 
 	50% {
-		clip: rect(82px, 9999px, 26px, 0);
+		clip: rect(82px, 111px, 26px, 0);
 	}
 
 	55% {
-		clip: rect(7px, 9999px, 92px, 0);
+		clip: rect(7px, 111px, 92px, 0);
 	}
 
 	60% {
-		clip: rect(54px, 9999px, 30px, 0);
+		clip: rect(54px, 111px, 30px, 0);
 	}
 
 	65% {
-		clip: rect(86px, 9999px, 90px, 0);
+		clip: rect(86px, 111px, 90px, 0);
 	}
 
 	70% {
-		clip: rect(38px, 9999px, 65px, 0);
+		clip: rect(38px, 111px, 65px, 0);
 	}
 
 	75% {
-		clip: rect(41px, 9999px, 66px, 0);
+		clip: rect(41px, 111px, 66px, 0);
 	}
 
 	80% {
-		clip: rect(31px, 9999px, 37px, 0);
+		clip: rect(31px, 111px, 37px, 0);
 	}
 
 	85% {
-		clip: rect(8px, 9999px, 12px, 0);
+		clip: rect(8px, 111px, 12px, 0);
 	}
 
 	90% {
-		clip: rect(50px, 9999px, 69px, 0);
+		clip: rect(50px, 111px, 69px, 0);
 	}
 
 	95% {
-		clip: rect(7px, 9999px, 42px, 0);
+		clip: rect(7px, 111px, 42px, 0);
 	}
 
 	100% {
-		clip: rect(14px, 9999px, 57px, 0);
+		clip: rect(14px, 111px, 57px, 0);
 	}
 }
 
 @keyframes noise {
 	0% {
-		clip: rect(77px, 9999px, 6px, 0);
+		clip: rect(77px, 111px, 6px, 0);
 	}
 
 	5% {
-		clip: rect(65px, 9999px, 70px, 0);
+		clip: rect(65px, 111px, 70px, 0);
 	}
 
 	10% {
-		clip: rect(82px, 9999px, 82px, 0);
+		clip: rect(82px, 111px, 82px, 0);
 	}
 
 	15% {
-		clip: rect(32px, 9999px, 35px, 0);
+		clip: rect(32px, 111px, 35px, 0);
 	}
 
 	20% {
-		clip: rect(31px, 9999px, 49px, 0);
+		clip: rect(31px, 111px, 49px, 0);
 	}
 
 	25% {
-		clip: rect(18px, 9999px, 46px, 0);
+		clip: rect(18px, 111px, 46px, 0);
 	}
 
 	30% {
-		clip: rect(94px, 9999px, 64px, 0);
+		clip: rect(94px, 111px, 64px, 0);
 	}
 
 	35% {
-		clip: rect(69px, 9999px, 31px, 0);
+		clip: rect(69px, 111px, 31px, 0);
 	}
 
 	40% {
-		clip: rect(6px, 9999px, 72px, 0);
+		clip: rect(6px, 111px, 72px, 0);
 	}
 
 	45% {
-		clip: rect(25px, 9999px, 35px, 0);
+		clip: rect(25px, 111px, 35px, 0);
 	}
 
 	50% {
-		clip: rect(82px, 9999px, 26px, 0);
+		clip: rect(82px, 111px, 26px, 0);
 	}
 
 	55% {
-		clip: rect(7px, 9999px, 92px, 0);
+		clip: rect(7px, 111px, 92px, 0);
 	}
 
 	60% {
-		clip: rect(54px, 9999px, 30px, 0);
+		clip: rect(54px, 111px, 30px, 0);
 	}
 
 	65% {
-		clip: rect(86px, 9999px, 90px, 0);
+		clip: rect(86px, 111px, 90px, 0);
 	}
 
 	70% {
-		clip: rect(38px, 9999px, 65px, 0);
+		clip: rect(38px, 111px, 65px, 0);
 	}
 
 	75% {
-		clip: rect(41px, 9999px, 66px, 0);
+		clip: rect(41px, 111px, 66px, 0);
 	}
 
 	80% {
-		clip: rect(31px, 9999px, 37px, 0);
+		clip: rect(31px, 111px, 37px, 0);
 	}
 
 	85% {
-		clip: rect(8px, 9999px, 12px, 0);
+		clip: rect(8px, 111px, 12px, 0);
 	}
 
 	90% {
-		clip: rect(50px, 9999px, 69px, 0);
+		clip: rect(50px, 111px, 69px, 0);
 	}
 
 	95% {
-		clip: rect(7px, 9999px, 42px, 0);
+		clip: rect(7px, 111px, 42px, 0);
 	}
 
 	100% {
-		clip: rect(14px, 9999px, 57px, 0);
+		clip: rect(14px, 111px, 57px, 0);
 	}
 }
 
 @-webkit-keyframes noise2 {
 	0% {
-		clip: rect(18px, 9999px, 13px, 0);
+		clip: rect(18px, 111px, 13px, 0);
 	}
 
 	5% {
-		clip: rect(74px, 9999px, 51px, 0);
+		clip: rect(74px, 111px, 51px, 0);
 	}
 
 	10% {
-		clip: rect(33px, 9999px, 65px, 0);
+		clip: rect(33px, 111px, 65px, 0);
 	}
 
 	15% {
-		clip: rect(64px, 9999px, 66px, 0);
+		clip: rect(64px, 111px, 66px, 0);
 	}
 
 	20% {
-		clip: rect(75px, 9999px, 6px, 0);
+		clip: rect(75px, 111px, 6px, 0);
 	}
 
 	25% {
-		clip: rect(40px, 9999px, 49px, 0);
+		clip: rect(40px, 111px, 49px, 0);
 	}
 
 	30% {
-		clip: rect(71px, 9999px, 1px, 0);
+		clip: rect(71px, 111px, 1px, 0);
 	}
 
 	35% {
-		clip: rect(42px, 9999px, 73px, 0);
+		clip: rect(42px, 111px, 73px, 0);
 	}
 
 	40% {
-		clip: rect(92px, 9999px, 57px, 0);
+		clip: rect(92px, 111px, 57px, 0);
 	}
 
 	45% {
-		clip: rect(4px, 9999px, 33px, 0);
+		clip: rect(4px, 111px, 33px, 0);
 	}
 
 	50% {
-		clip: rect(4px, 9999px, 34px, 0);
+		clip: rect(4px, 111px, 34px, 0);
 	}
 
 	55% {
-		clip: rect(49px, 9999px, 25px, 0);
+		clip: rect(49px, 111px, 25px, 0);
 	}
 
 	60% {
-		clip: rect(24px, 9999px, 44px, 0);
+		clip: rect(24px, 111px, 44px, 0);
 	}
 
 	65% {
-		clip: rect(31px, 9999px, 99px, 0);
+		clip: rect(31px, 111px, 99px, 0);
 	}
 
 	70% {
-		clip: rect(54px, 9999px, 83px, 0);
+		clip: rect(54px, 111px, 83px, 0);
 	}
 
 	75% {
-		clip: rect(57px, 9999px, 97px, 0);
+		clip: rect(57px, 111px, 97px, 0);
 	}
 
 	80% {
-		clip: rect(3px, 9999px, 15px, 0);
+		clip: rect(3px, 111px, 15px, 0);
 	}
 
 	85% {
-		clip: rect(84px, 9999px, 34px, 0);
+		clip: rect(84px, 111px, 34px, 0);
 	}
 
 	90% {
-		clip: rect(100px, 9999px, 88px, 0);
+		clip: rect(100px, 111px, 88px, 0);
 	}
 
 	95% {
-		clip: rect(91px, 9999px, 59px, 0);
+		clip: rect(91px, 111px, 59px, 0);
 	}
 
 	100% {
-		clip: rect(10px, 9999px, 87px, 0);
+		clip: rect(10px, 111px, 87px, 0);
 	}
 }
 
 @keyframes noise2 {
 	0% {
-		clip: rect(18px, 9999px, 13px, 0);
+		clip: rect(18px, 111px, 13px, 0);
 	}
 
 	5% {
-		clip: rect(74px, 9999px, 51px, 0);
+		clip: rect(74px, 111px, 51px, 0);
 	}
 
 	10% {
-		clip: rect(33px, 9999px, 65px, 0);
+		clip: rect(33px, 111px, 65px, 0);
 	}
 
 	15% {
-		clip: rect(64px, 9999px, 66px, 0);
+		clip: rect(64px, 111px, 66px, 0);
 	}
 
 	20% {
-		clip: rect(75px, 9999px, 6px, 0);
+		clip: rect(75px, 111px, 6px, 0);
 	}
 
 	25% {
-		clip: rect(40px, 9999px, 49px, 0);
+		clip: rect(40px, 111px, 49px, 0);
 	}
 
 	30% {
-		clip: rect(71px, 9999px, 1px, 0);
+		clip: rect(71px, 111px, 1px, 0);
 	}
 
 	35% {
-		clip: rect(42px, 9999px, 73px, 0);
+		clip: rect(42px, 111px, 73px, 0);
 	}
 
 	40% {
-		clip: rect(92px, 9999px, 57px, 0);
+		clip: rect(92px, 111px, 57px, 0);
 	}
 
 	45% {
-		clip: rect(4px, 9999px, 33px, 0);
+		clip: rect(4px, 111px, 33px, 0);
 	}
 
 	50% {
-		clip: rect(4px, 9999px, 34px, 0);
+		clip: rect(4px, 111px, 34px, 0);
 	}
 
 	55% {
-		clip: rect(49px, 9999px, 25px, 0);
+		clip: rect(49px, 111px, 25px, 0);
 	}
 
 	60% {
-		clip: rect(24px, 9999px, 44px, 0);
+		clip: rect(24px, 111px, 44px, 0);
 	}
 
 	65% {
-		clip: rect(31px, 9999px, 99px, 0);
+		clip: rect(31px, 111px, 99px, 0);
 	}
 
 	70% {
-		clip: rect(54px, 9999px, 83px, 0);
+		clip: rect(54px, 111px, 83px, 0);
 	}
 
 	75% {
-		clip: rect(57px, 9999px, 97px, 0);
+		clip: rect(57px, 111px, 97px, 0);
 	}
 
 	80% {
-		clip: rect(3px, 9999px, 15px, 0);
+		clip: rect(3px, 111px, 15px, 0);
 	}
 
 	85% {
-		clip: rect(84px, 9999px, 34px, 0);
+		clip: rect(84px, 111px, 34px, 0);
 	}
 
 	90% {
-		clip: rect(100px, 9999px, 88px, 0);
+		clip: rect(100px, 111px, 88px, 0);
 	}
 
 	95% {
-		clip: rect(91px, 9999px, 59px, 0);
+		clip: rect(91px, 111px, 59px, 0);
 	}
 
 	100% {
-		clip: rect(10px, 9999px, 87px, 0);
+		clip: rect(10px, 111px, 87px, 0);
 	}
 }
 
 @-webkit-keyframes noise-anim {
 	0% {
-		clip: rect(89px, 9999px, 100px, 0);
+		clip: rect(89px, 111px, 100px, 0);
 	}
 
 	5% {
-		clip: rect(4px, 9999px, 62px, 0);
+		clip: rect(4px, 111px, 62px, 0);
 	}
 
 	10% {
-		clip: rect(43px, 9999px, 16px, 0);
+		clip: rect(43px, 111px, 16px, 0);
 	}
 
 	15% {
-		clip: rect(2px, 9999px, 68px, 0);
+		clip: rect(2px, 111px, 68px, 0);
 	}
 
 	20% {
-		clip: rect(12px, 9999px, 6px, 0);
+		clip: rect(12px, 111px, 6px, 0);
 	}
 
 	25% {
-		clip: rect(89px, 9999px, 25px, 0);
+		clip: rect(89px, 111px, 25px, 0);
 	}
 
 	30% {
-		clip: rect(15px, 9999px, 38px, 0);
+		clip: rect(15px, 111px, 38px, 0);
 	}
 
 	35% {
-		clip: rect(57px, 9999px, 97px, 0);
+		clip: rect(57px, 111px, 97px, 0);
 	}
 
 	40% {
-		clip: rect(24px, 9999px, 72px, 0);
+		clip: rect(24px, 111px, 72px, 0);
 	}
 
 	45% {
-		clip: rect(81px, 9999px, 3px, 0);
+		clip: rect(81px, 111px, 3px, 0);
 	}
 
 	50% {
-		clip: rect(93px, 9999px, 26px, 0);
+		clip: rect(93px, 111px, 26px, 0);
 	}
 
 	55% {
-		clip: rect(68px, 9999px, 85px, 0);
+		clip: rect(68px, 111px, 85px, 0);
 	}
 
 	60% {
-		clip: rect(43px, 9999px, 28px, 0);
+		clip: rect(43px, 111px, 28px, 0);
 	}
 
 	65% {
-		clip: rect(44px, 9999px, 11px, 0);
+		clip: rect(44px, 111px, 11px, 0);
 	}
 
 	70% {
-		clip: rect(17px, 9999px, 33px, 0);
+		clip: rect(17px, 111px, 33px, 0);
 	}
 
 	75% {
-		clip: rect(74px, 9999px, 66px, 0);
+		clip: rect(74px, 111px, 66px, 0);
 	}
 
 	80% {
-		clip: rect(100px, 9999px, 4px, 0);
+		clip: rect(100px, 111px, 4px, 0);
 	}
 
 	85% {
-		clip: rect(92px, 9999px, 31px, 0);
+		clip: rect(92px, 111px, 31px, 0);
 	}
 
 	90% {
-		clip: rect(93px, 9999px, 98px, 0);
+		clip: rect(93px, 111px, 98px, 0);
 	}
 
 	95% {
-		clip: rect(23px, 9999px, 77px, 0);
+		clip: rect(23px, 111px, 77px, 0);
 	}
 
 	100% {
-		clip: rect(92px, 9999px, 8px, 0);
+		clip: rect(92px, 111px, 8px, 0);
 	}
 }
 
 @keyframes noise-anim {
 	0% {
-		clip: rect(89px, 9999px, 100px, 0);
+		clip: rect(89px, 111px, 100px, 0);
 	}
 
 	5% {
-		clip: rect(4px, 9999px, 62px, 0);
+		clip: rect(4px, 111px, 62px, 0);
 	}
 
 	10% {
-		clip: rect(43px, 9999px, 16px, 0);
+		clip: rect(43px, 111px, 16px, 0);
 	}
 
 	15% {
-		clip: rect(2px, 9999px, 68px, 0);
+		clip: rect(2px, 111px, 68px, 0);
 	}
 
 	20% {
-		clip: rect(12px, 9999px, 6px, 0);
+		clip: rect(12px, 111px, 6px, 0);
 	}
 
 	25% {
-		clip: rect(89px, 9999px, 25px, 0);
+		clip: rect(89px, 111px, 25px, 0);
 	}
 
 	30% {
-		clip: rect(15px, 9999px, 38px, 0);
+		clip: rect(15px, 111px, 38px, 0);
 	}
 
 	35% {
-		clip: rect(57px, 9999px, 97px, 0);
+		clip: rect(57px, 111px, 97px, 0);
 	}
 
 	40% {
-		clip: rect(24px, 9999px, 72px, 0);
+		clip: rect(24px, 111px, 72px, 0);
 	}
 
 	45% {
-		clip: rect(81px, 9999px, 3px, 0);
+		clip: rect(81px, 111px, 3px, 0);
 	}
 
 	50% {
-		clip: rect(93px, 9999px, 26px, 0);
+		clip: rect(93px, 111px, 26px, 0);
 	}
 
 	55% {
-		clip: rect(68px, 9999px, 85px, 0);
+		clip: rect(68px, 111px, 85px, 0);
 	}
 
 	60% {
-		clip: rect(43px, 9999px, 28px, 0);
+		clip: rect(43px, 111px, 28px, 0);
 	}
 
 	65% {
-		clip: rect(44px, 9999px, 11px, 0);
+		clip: rect(44px, 111px, 11px, 0);
 	}
 
 	70% {
-		clip: rect(17px, 9999px, 33px, 0);
+		clip: rect(17px, 111px, 33px, 0);
 	}
 
 	75% {
-		clip: rect(74px, 9999px, 66px, 0);
+		clip: rect(74px, 111px, 66px, 0);
 	}
 
 	80% {
-		clip: rect(100px, 9999px, 4px, 0);
+		clip: rect(100px, 111px, 4px, 0);
 	}
 
 	85% {
-		clip: rect(92px, 9999px, 31px, 0);
+		clip: rect(92px, 111px, 31px, 0);
 	}
 
 	90% {
-		clip: rect(93px, 9999px, 98px, 0);
+		clip: rect(93px, 111px, 98px, 0);
 	}
 
 	95% {
-		clip: rect(23px, 9999px, 77px, 0);
+		clip: rect(23px, 111px, 77px, 0);
 	}
 
 	100% {
-		clip: rect(92px, 9999px, 8px, 0);
+		clip: rect(92px, 111px, 8px, 0);
 	}
 }
 
@@ -1663,11 +1595,6 @@ h5, .h5, p {
 	-webkit-transition: opacity .2s ease;
 	-o-transition: opacity .2s ease;
 	transition: opacity .2s ease;
-}
-
-.img {
-	width: 0;
-	height: 0;
 }
 
 @media (max-width: 767.98px) {
@@ -5982,11 +5909,4 @@ h5, .h5, p {
 		font-size: 14px;
 		line-height: 20px;
 	}
-}
-
-.buttons {
-	position: fixed;
-	z-index: 99;
-	left: 0;
-	top: 100px;
 }
