@@ -1,11 +1,5 @@
 @charset "UTF-8";
 
-@font-face {
-	font-family: "my-fonts";
-  src: url("/now/fonts/my-fonts.ttf") format("truetype");
-  font-weight: 400;
-}
-
 html, body {
 	overflow: hidden;
 }
@@ -494,22 +488,6 @@ h5, .h5, p {
 	-webkit-transition: fill .2s ease;
 	-o-transition: fill .2s ease;
 	transition: fill .2s ease;
-}
-
-.main-menu__logo.canvas svg {
-	opacity: 0;
-}
-
-.main-menu__logo.canvas canvas {
-	opacity: 1;
-}
-
-.main-menu__logo.canvas2 svg {
-	opacity: 0;
-}
-
-.main-menu__logo.canvas2 canvas {
-	opacity: 1;
 }
 
 .main-menu__logo.three-d svg {
@@ -1583,18 +1561,6 @@ h5, .h5, p {
 	100% {
 		clip: rect(92px, 111px, 8px, 0);
 	}
-}
-
-.logo-canvas {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	-webkit-transition: opacity .2s ease;
-	-o-transition: opacity .2s ease;
-	transition: opacity .2s ease;
 }
 
 @media (max-width: 767.98px) {
