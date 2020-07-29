@@ -9,18 +9,18 @@ $gray: #979797;
 
 // Настройки брэкпоинтов
 $breakpoints: (
-  "xs": 0,
-  "sm": 768px,
-  "md": 1280px,
-  "lg": 1700px,
+	"xs": 0,
+	"sm": 768px,
+	"md": 1280px,
+	"lg": 1700px,
 ) !default;
 
 // Настройки контейнера
 $max-widths: (
-  "xs": 100%,
-  "sm": 708px,
-  "md": 1160px,
-  "lg": 1640px,
+	"xs": 100%,
+	"sm": 708px,
+	"md": 1160px,
+	"lg": 1640px,
 ) !default;
 
 // Переопределение Bootstrap переменных из "bootstrap/_variables.scss"
@@ -29,14 +29,14 @@ $grid-columns: 12; // Количество колонок
 
 // Переопределение Bootstrap брэкпоинтов
 $grid-breakpoints: (
-  "xs": map-get($breakpoints, "xs"),
-  "sm": map-get($breakpoints, "sm"),
-  "md": map-get($breakpoints, "md"),
-  "lg": map-get($breakpoints, "lg"),
+	"xs": map-get($breakpoints, "xs"),
+	"sm": map-get($breakpoints, "sm"),
+	"md": map-get($breakpoints, "md"),
+	"lg": map-get($breakpoints, "lg"),
 );
 // Переопределение Bootstrap контейнера
 $container-max-widths: (
-  "sm": map-get($max-widths, "sm"),
-  "md": map-get($max-widths, "md"),
-  "lg": map-get($max-widths, "lg"),
+	"sm": map-get($max-widths, "sm"),
+	"md": map-get($max-widths, "md"),
+	"lg": map-get($max-widths, "lg"),
 );
