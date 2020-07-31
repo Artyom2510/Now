@@ -593,19 +593,19 @@
 	}
 	&__decorate-img {
 		position: relative;
-		@include aspect-ratio(644, 757);
-		display: block;
+		display: flex;
+		align-items: flex-end;
 		width: 33.54vw;
-		img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			display: block;
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-			object-position: 50% 100%;
-		}
+	}
+	&__slider {
+		width: 100%;
+		// .slick-list {
+		// 	overflow: visible;
+		// }
+	}
+	&__slide {
+		position: relative;
+		@include aspect-ratio(747, 795);
 	}
 }
 
@@ -620,8 +620,10 @@
 			margin-bottom: 40px;
 		}
 		&__decorate-img {
-			@include aspect-ratio(432, 509);
 			width: 33.75vw;
+		}
+		&__slide {
+			// @include aspect-ratio(432, 509);
 		}
 	}
 }
@@ -641,7 +643,7 @@
 		}
 		&__decorate-img {
 			width: 364px;
-			@include aspect-ratio(364, 429);
+			// @include aspect-ratio(364, 429);
 			margin-left: 284px;
 		}
 	}
@@ -663,6 +665,203 @@
 			margin-left: 0;
 			@include aspect-ratio(17, 20);
 		}
+	}
+}
+
+$x-gap: 10px;
+$y-gap: 5px;
+
+.slide {
+	$p: &;
+	width: 100%;
+	outline: none !important;
+
+	@include media-up(md) {
+		&:hover {
+			#{$p}__img {
+				&:nth-of-type(2) {
+					clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 60%);
+					transform: translate3d(calc(-1 * $x-gap), calc(-1 * $y-gap), 0);
+					animation: anim-2 1s linear;
+				}
+				&:nth-of-type(3) {
+					transform: translate3d(calc(-1 * $x-gap), $y-gap, 0);
+					animation: anim-3 0.5s linear;
+				}
+				&:nth-of-type(4) {
+					transform: translate3d(calc(-1 * $x-gap), $y-gap, 0);
+					animation: anim-4 0.5s linear;
+				}
+				&:nth-of-type(5) {
+					transform: translate3d(calc(-1 * $x-gap), 0, 0);
+					animation: anim-flash 0.5s linear;
+				}
+			}
+			#{$p}__text-wrap {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		object-position: 50% 100%;
+		opacity: 0;
+		&:first-of-type {
+			opacity: 1;
+		}
+	}
+	&__text-wrap {
+		position: absolute;
+		z-index: 0;
+		top: 50%;
+		right: 0;
+		display: block;
+		padding: 16px 0 16px 20px;
+		opacity: 0;
+		pointer-events: none;
+		background-color: #000;
+		transition: opacity .3s ease;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 30px;
+			height: 25px;
+			background: url(#{$url-img}/quote.png) center/contain no-repeat;
+		}
+		&::before {
+			top: -12px;
+			left: -20px;
+			transform: rotate(180deg);
+		}
+		&::after {
+			right: 30px;
+			bottom: -3px;
+		}
+		p {
+			position: relative;
+			z-index: 1;
+			display: block;
+			width: 100%;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 24px;
+			line-height: 1.2;
+			font-weight: 700;
+			color: $ac;
+			&:first-child {
+				letter-spacing: -0.36px;
+			}
+			&:nth-child(2),
+			&:last-child {
+				letter-spacing: 0.24px;
+			}
+		}
+	}
+}
+
+@include media(md) {
+	.slide {
+		&__text-wrap {
+			p {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+@include media(sm) {
+	.slide {
+		&__text-wrap {
+			// opacity: 1;
+			&::after {
+				right: 10px;
+			}
+			p {
+				font-size: 16px;
+			}
+		}
+		&__img {
+			display: none;
+			&:nth-of-type(1) {
+				display: block;
+			}
+		}
+	}
+	.slick-slide {
+		img {
+			display: none;
+		}
+	}
+}
+
+@keyframes anim-2 {
+	0% {
+		opacity: 1;
+		transform: translate3d($x-gap, $y-gap, 0);
+		clip-path: polygon(0 0%, 100% 0%, 100% 10%, 0 10%);
+	}
+	20% {
+		clip-path: polygon(0 20%, 100% 20%, 100% 10%, 0 10%);
+	}
+	40% {
+		clip-path: polygon(0 0%, 0% 0%, 0% 0%, 0 0%);
+	}
+	50% {
+		clip-path: polygon(0 70%, 100% 70%, 100% 50%, 0 50%);
+	}
+	80% {
+		clip-path: polygon(0 100%, 100% 100%, 100% 70%, 0 70%);
+	}
+	90% {
+		clip-path: polygon(0 0%, 100% 0%, 100% 10%, 0 10%);
+	}
+	100% {
+		clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+	}
+}
+@keyframes anim-3 {
+	0% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+		clip-path: polygon(0% 70%, 100% 70%, 100% 100%, 0 100%);
+	}
+	40% {
+		clip-path: polygon(0 50%, 100% 50%, 0% 50%, 100% 50%);
+	}
+	40% {
+		clip-path: polygon(0 50%, 100% 50%, 0% 50%, 100% 50%);
+	}
+}
+@keyframes anim-4 {
+	0% {
+		opacity: 1;
+		transform: translate3d($x-gap, $y-gap, 0);
+		clip-path: polygon(0% 30%, 100% 30%, 100% 30%, 0 30%);
+	}
+	10% {
+		clip-path: polygon(0% 30%, 100% 30%, 100% 10%, 0 10%);
+	}
+	12% {
+		transform: translate3d(calc(2 * $x-gap), calc(2 * $y-gap), 0);
+		clip-path: polygon(20% 25%, 60% 25%, 60% 55%, 20% 55%);
+	}
+}
+@keyframes anim-flash {
+	0% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		opacity: 0;
+		transform: translate3d(0, $y-gap, 0);
 	}
 }
 
