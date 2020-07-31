@@ -3,10 +3,12 @@ $(function () {
 	var root = $('.root');
 	var sections = ['first', 'cases', 'contacts'];
 	var wHeight;
+	var wWidth;
 
 	// Скролл по хешу
 	$(document).ready(function() {
 		wHeight = $(window).height() / 1.5;
+		wWidth = $(window).width();
 	});
 
 	// Скролл по стрелке + по якорю
@@ -19,6 +21,7 @@ $(function () {
 
 	$(window).on('resize', function() {
 		wHeight = $(window).height() / 1.5;
+		wWidth = $(window).width();
 	});
 
 	// Скролл по стрелке
@@ -131,45 +134,32 @@ $(function () {
 
 	var slider = $('.js-now-slider');
 	var slide = $('.js-song-slide');
-	var textSong = $('.slide__text-wrap');
-	var img = $('.slide__img');
-	var child;
-	var childImg;
 
 	if (slider.length) {
 		slider.slick({
 			infinite: true,
 			dots: false,
 			arrows: false,
-			swipeToSlide: true,
-			slidesToShow: 1,
 			slidesToScroll: 1,
 			fade: true,
 			speed: 300,
 			cssEase: 'ease',
 			adaptiveHeight: true
 		});
-	}
 
-	if (slider.length) {
 		slide.on('click', function() {
-			slider.slick('slickNext');
+			if (wWidth > 1279) {
+				slider.slick('slickNext');
+			} else {
+				$(this).children('.slide__text-wrap').css('opacity', 1);
+			}
 		});
-		slide.on({
-			'mouseenter': function() {
-				child = $(this).children(textSong);
-				childImg = $(this).children(img);
-				child.addClass('transform');
-				childImg.addClass('glitch');
-			},
-			// 'mouseleave': function() {
-			// 	child = $(this).children(textSong);
-			// 	childImg = $(this).children(img);
-			// 	child.removeClass('transform');
-			// 	childImg.removeClass('glitch');
-			// }
+
+		slider.on('swipe', function() {
+			if (wWidth < 1280) {
+				$('.slide__text-wrap').css('opacity', 0);
+			}
 		});
 	}
-
 
 });
